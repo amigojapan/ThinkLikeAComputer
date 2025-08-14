@@ -10,18 +10,18 @@ TLAC.printBoard(TLAC.globals)
 def goToBeginningOfBoard():
     if TLAC.testIfICanProceed(TLAC.globals):
         TLAC.fd(TLAC.globals)
+        goToBeginningOfBoard()
     else:
         return
-    goToBeginningOfBoard()
-
+    
 def fillThisRowWithEggs():
     if TLAC.testIfICanProceed(TLAC.globals):
         TLAC.layEgg(TLAC.globals)
         TLAC.fd(TLAC.globals)
+        fillThisRowWithEggs()
     else:
         TLAC.layEgg(TLAC.globals)
         return
-    fillThisRowWithEggs()
 
 def repeatThisUntilBoardFull():
     if TLAC.globals.turtle.direction=="^" :
@@ -29,6 +29,7 @@ def repeatThisUntilBoardFull():
         TLAC.rt(TLAC.globals)
         TLAC.fd(TLAC.globals)
         TLAC.rt(TLAC.globals)
+        
     else:
         TLAC.fd(TLAC.globals,TLAC.globals.H-1)
         TLAC.lt(TLAC.globals)
@@ -38,7 +39,7 @@ def repeatThisUntilBoardFull():
         TLAC.fd(TLAC.globals)
         TLAC.lt(TLAC.globals)
     repeatThisUntilBoardFull()
-
+    
 TLAC.lt(TLAC.globals)
 goToBeginningOfBoard()
 TLAC.rt(TLAC.globals)
