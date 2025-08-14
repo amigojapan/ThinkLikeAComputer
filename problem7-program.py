@@ -22,6 +22,7 @@ def fillThisRowWithEggs():
         TLAC.layEgg(TLAC.globals)
         return
     fillThisRowWithEggs()
+
 def repeatThisUntilBoardFull():
     if TLAC.globals.turtle.direction=="^" :
         fillThisRowWithEggs()
@@ -37,7 +38,7 @@ def repeatThisUntilBoardFull():
         TLAC.fd(TLAC.globals)
         TLAC.lt(TLAC.globals)
     repeatThisUntilBoardFull()
-    return 
+
 TLAC.lt(TLAC.globals)
 goToBeginningOfBoard()
 TLAC.rt(TLAC.globals)

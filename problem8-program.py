@@ -15,20 +15,22 @@ def goToBeginningOfBoard():
     goToBeginningOfBoard()
 
 def fillThisRowWithEggs():
-    if TLAC.testIfICanProceed(TLAC.globals):
+    if TLAC.testIfICanProceed(TLAC.globals,2):
         TLAC.layEgg(TLAC.globals)
-        TLAC.fd(TLAC.globals)
+        TLAC.fd(TLAC.globals,2)
     else:
         TLAC.layEgg(TLAC.globals)
         return
     fillThisRowWithEggs()
+
 def repeatThisUntilBoardFull():
-    fillThisRowWithEggs()
     if TLAC.globals.turtle.direction=="^" :
+        fillThisRowWithEggs()
         TLAC.rt(TLAC.globals)
         TLAC.fd(TLAC.globals)
         TLAC.rt(TLAC.globals)
     else:
+        TLAC.fd(TLAC.globals,TLAC.globals.H-2)
         TLAC.lt(TLAC.globals)
         if TLAC.globals.turtle.direction==">" :
             if not TLAC.testIfICanProceed(TLAC.globals):
