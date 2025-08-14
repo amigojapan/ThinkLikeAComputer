@@ -108,24 +108,24 @@ def amILayingOnAnEgg(gloabls):
         executeMove(globals)
         return False
 
-def testIfICanProceed(gloabls):
+def testIfICanProceed(gloabls,slots=1):
     if globals.turtle.direction=="^":
-        if globals.turtle.Y-1<0:
+        if globals.turtle.Y-slots<0:
             print("Can I pass?: No")
             executeMove(globals)
             return False
     elif globals.turtle.direction=="<":
-        if globals.turtle.X-1<0:
+        if globals.turtle.X-slots<0:
             print("Can I pass?: No")
             executeMove(globals)
             return False
     elif globals.turtle.direction=="V":
-        if globals.turtle.Y+1>globals.H-1:
+        if globals.turtle.Y+slots>globals.H-1:
             print("Can I pass?: No")
             executeMove(globals)
             return False
     elif globals.turtle.direction==">":
-        if globals.turtle.X+1>globals.W-1:
+        if globals.turtle.X+slots>globals.W-1:
             print("Can I pass?: No")
             executeMove(globals)
             return False
@@ -135,7 +135,8 @@ def testIfICanProceed(gloabls):
 
 def end(gloabls):
     print("Program edned withought errors.")
-    executeMove(globals)
+    print("Final state board:")
+    printBoard(globals)
     sys.exit()
 
 globals=initGlobals()
@@ -143,21 +144,3 @@ globals.W=10
 globals.H=10
 globals.slots=initSlots(globals)
 globals.turtle=initTurtle()
-
-#board setup
-teleportTurtleTo(4,9)
-print("initial board:")
-printBoard(globals)
-
-#proram
-def P():
-    if amILayingOnAnEgg(globals):
-        end(globals)
-    if not testIfICanProceed(globals):
-        rt(globals)
-    layEgg(globals)
-    fd(globals)
-    P()
-
-lt(globals)
-P()

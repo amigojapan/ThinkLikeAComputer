@@ -1961,7 +1961,7 @@ Move Number:41
 [o][o][o][o][<][o][o][o][o][o]
 
 Program edned withought errors.
-Move Number:41
+Final state board:
 [o][o][o][o][o][o][o][o][o][o]
 [o][ ][ ][ ][ ][ ][ ][ ][ ][o]
 [o][ ][ ][ ][ ][ ][ ][ ][ ][o]
