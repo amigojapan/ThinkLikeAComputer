@@ -150,3 +150,4 @@ globals.slots=initSlots(globals)
 globals.turtle=initTurtle()
 #add a function to read a board form a text file
 #   should be easier to design boards this way
+#try pip3 install pyflowchart
