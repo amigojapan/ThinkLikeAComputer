@@ -12,6 +12,5 @@ def P():
     layEgg(globals)
     fd(globals)
     P()
-
 lt(globals)
 P()
