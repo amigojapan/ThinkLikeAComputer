@@ -1,5 +1,6 @@
 #Think Like a Computer - simulator copyright 2025 Usmar A Padow
 import sys
+
 class initGlobals:
     def __init__(self):
         self.MoveNumber = 0 # Instruction Pointer
@@ -8,16 +9,19 @@ class initGlobals:
         self.H=None
         self.slots=None
         self.turtle=None
+
 class Cell:
     def __init__(self):
         self.containsEgg = False # Instance attribute
         self.diamond = False # Instance attribute
         self.wall = False # Instance attribute
+
 class initTurtle:
     def __init__(self):
         self.X = 0 # Instance attribute
         self.Y = 0 # Instance attribute
         self.direction = "^" #UP Instance attribute
+
 def initSlots(globals):
     slots=[]
     for Y in range(0,globals.H):
@@ -144,3 +148,5 @@ globals.W=10
 globals.H=10
 globals.slots=initSlots(globals)
 globals.turtle=initTurtle()
+#add a function to read a board form a text file
+#   should be easier to design boards this way
