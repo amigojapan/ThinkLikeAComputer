@@ -6,7 +6,7 @@ TLAC.teleportTurtleTo(4,9)
 print("initial board:")
 TLAC.printBoard(TLAC.globals)
 
-#proram
+#program
 def P():
     if TLAC.amILayingOnAnEgg(TLAC.globals):
         TLAC.end(TLAC.globals)
@@ -15,5 +15,6 @@ def P():
     TLAC.layEgg(TLAC.globals)
     TLAC.fd(TLAC.globals)
     P()
+
 TLAC.lt(TLAC.globals)
 P()

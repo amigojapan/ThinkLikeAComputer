@@ -150,4 +150,8 @@ globals.slots=initSlots(globals)
 globals.turtle=initTurtle()
 #add a function to read a board form a text file
 #   should be easier to design boards this way
-#try pip3 install pyflowchart
+#(done,very bad results)try pip3 install pyflowchart
+#try pcpp, C preprocessor  for python 
+#   https://pypi.org/project/pcpp/
+#   I think I can symplify the code with stuff like hiding calls to the TLAC. library and also all the globals sending
+#   possibly can be used to make html flocharts fo the code?
