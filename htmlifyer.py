@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 
 def count_lines(filepath):
@@ -60,18 +61,23 @@ def readPythonFile(globals,boardFilename):
                         char = f.read(1)
                         if not char == " ":
                             sys.exit("Error in number of spaces per indent, on line number "+str(index)+" remember to only use 4 spaces per indent.")
-                    else:
-                        pass #todo:parse lline here
+                        else:
+                            pass #todo:parse lline here
     except FileNotFoundError:
         print("Error: The file was not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
 
+def error1quit():
+    sys.exit("first parameter is the name of the python file to parse")
+
 #main
 globals=initGlobals()
-fileName=sys.argv[1]
-if fileName=="" or fileName=="--help":
-    sys.exit("first parameter is the name of the python file to parse")
+if (len(sys.argv)<2):
+    error1quit()    
 else:
+    if sys.argv[1]=="--help":
+        error1quit()
+    fileName=sys.argv[1]
     globals.slots=initCodeInfo(globals,fileName)
     readPythonFile(globals,fileName)
