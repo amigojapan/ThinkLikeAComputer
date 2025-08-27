@@ -40,10 +40,43 @@ def printBoard(globals):
                 index = y * globals.W + x
                 if globals.slots[index].containsEgg:
                     globals.board += "[o]"
-                else:
-                    globals.board += "[ ]"
+                    continue
+                elif globals.slots[index].diamond:
+                    globals.board += "[X]"
+                    continue
+                elif globals.slots[index].wall:
+                    globals.board += "[#]"
+                    continue
+                globals.board += "[ ]"
         globals.board += "\n"
     print(globals.board)
+
+def readBoaedFromFile(globals,boardFilename):
+    index=0
+    print("reading board file")
+    try:
+        with open(boardFilename, 'r', encoding='utf-8') as f:
+            while True:
+                char = f.read(1)
+                if not char:
+                    # End of file reached
+                    print("")
+                    break
+                print(".", end='') # Process or print the character
+                if char=="[" or char=="]" or char=="\n":
+                    #index=index+1
+                    continue
+                elif char=="o":
+                    globals.slots[index].containsEgg = True
+                elif char=="X":
+                    globals.slots[index].diamond = True
+                elif char=="#":
+                    globals.slots[index].wall = True
+                index=index+1
+    except FileNotFoundError:
+        print("Error: The file was not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 def executeMove(globals):
     if(globals.turtle.X>globals.W or globals.turtle.X<0 or globals.turtle.Y>globals.H or globals.turtle.Y<0):
@@ -148,10 +181,11 @@ globals.W=10
 globals.H=10
 globals.slots=initSlots(globals)
 globals.turtle=initTurtle()
-#add a function to read a board form a text file
+#-(done)add a function to read a board form a text file
 #   should be easier to design boards this way
-#(done,very bad results)try pip3 install pyflowchart
-#try pcpp, C preprocessor  for python 
+#-add collision detection for walls and diamonds, including stuff like fd(5)
+#-(done,very bad results)try pip3 install pyflowchart
+#-(done with sed, made a bash file that converts all the programs)try pcpp, C preprocessor  for python 
 #   https://pypi.org/project/pcpp/
 #   I think I can symplify the code with stuff like hiding calls to the TLAC. library and also all the globals sending
 #   possibly can be used to make html flocharts fo the code?
