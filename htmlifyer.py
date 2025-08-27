@@ -1,5 +1,19 @@
 import sys
 
+def count_lines(filepath):
+    try:
+        with open(filepath, 'r') as file:
+            line_count = 0
+            for line in file:
+                line_count += 1
+            return line_count
+    except FileNotFoundError:
+        print(f"Error: The file '{filepath}' was not found.")
+        return -1  # Or raise an exception, depending on desired error handling
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return -1
+
 class initGlobals():
     def __init__(self):
         self.lineNumber=None
@@ -12,8 +26,9 @@ class Line():
         self.kindOfInstruction = None # Instance attribute
         self.parameters = None # Instance attribute
 
-def initCodeInfo(globals):
-    list=[]
+def initCodeInfo(globals,fileName):
+    globals.lineNumber=count_lines(fileName)
+    linesInfo=[]
     for X in range(0,globals.lineNumber):
         line=Line()
         linesInfo.append(line)
@@ -54,9 +69,9 @@ def readPythonFile(globals,boardFilename):
 
 #main
 globals=initGlobals()
-globals.slots=initCodeInfo(globals)
 fileName=sys.argv[1]
 if fileName=="" or fileName=="--help":
     sys.exit("first parameter is the name of the python file to parse")
 else:
+    globals.slots=initCodeInfo(globals,fileName)
     readPythonFile(globals,fileName)
