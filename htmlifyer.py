@@ -17,56 +17,89 @@ def count_lines(filepath):
 
 class initGlobals():
     def __init__(self):
-        self.lineNumber=None
+        self.fileLineCount=None
         self.slots=None
         self.buffer=None
 
 class Line():
     def __init__(self):
-        self.indentNumber = None # Instance attribute
-        self.kindOfInstruction = None # Instance attribute
+        self.indentNumber = 0 # Instance attribute
+        self.instruction = None # Instance attribute
         self.parameters = None # Instance attribute
 
 def initCodeInfo(globals,fileName):
-    globals.lineNumber=count_lines(fileName)
+    globals.fileLineCount=count_lines(fileName)+2#hack to avoid EOF reached in parser
     linesInfo=[]
-    for X in range(0,globals.lineNumber):
+    for X in range(0,globals.fileLineCount):
         line=Line()
         linesInfo.append(line)
     return linesInfo
 
 def printBuffer(globals):
     globals.buffer = ""
-    for ln in range(0, globals.lineNumber):  # column
+    for ln in range(0, globals.fileLineCount):  # column
         print(globals.linesInfo[ln].indentNumber) #implement this when I have parsed it,globals.linesInfo[ln].kindOfInstruction
         globals.buffer += "\n"
 
 def readPythonFile(globals,boardFilename):
-    index=0
-    print("reading board file")
+    currentLine=1
+    endIndentationForThisLine=False
+    print("reading python file...")
     try:
         with open(boardFilename, 'r', encoding='utf-8') as f:
             while True:
+                globals.slots[currentLine].indentNumber=0
                 char = f.read(1)
                 if not char:
                     # End of file reached
-                    print("")
+                    print("EOF reached.")
                     break
-                print(".", end='') # Process or print the character
+                if not char==" ":
+                    print("@"+char, end='') # Process or print the character
                 if char=="\n":
-                    index=index+1
+                    currentLine=currentLine+1
+                    endIndentationForThisLine=False
                     continue
-                elif char==" ":
-                    for indent in range(1,4):
+                elif char==" ":#**todo:probably the bug is that there will be spaces after the final fourth space, fix it
+                    print("-",end='')
+                    for indent in range(1, 4):#1-3
                         char = f.read(1)
-                        if not char == " ":
-                            sys.exit("Error in number of spaces per indent, on line number "+str(index)+" remember to only use 4 spaces per indent.")
-                        else:
-                            pass #todo:parse lline here
+                        print("-",end='')
+                    print(">",end='')
+                    globals.slots[currentLine].indentNumber+=1
+                else:  
+                    if char == " ":
+                        sys.exit(";Error in number of spaces per indent, on line number "+str(currentLine)+" remember to only use 4 spaces per indent.")
+                    else:#get command
+                        endIndentationForThisLine=True
+                        currentInstruction=""
+                        while True:
+                            char = f.read(1)                            
+                            if char=="\n":
+                                currentLine=currentLine+1
+                                endIndentationForThisLine=False
+                                globals.slots[currentLine].instruction=currentInstruction 
+                                print("\n",end='')
+                                break
+                            else:
+                                print("!"+char, end='')
+                                currentInstruction+=char                   
     except FileNotFoundError:
         print("Error: The file was not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
+def createHTML(globals):
+    HTML=""
+    endIndentationForThisLine=False
+    print("creating HTML...")
+    for currentLine in range(0,globals.fileLineCount+1):
+        for indet in range(1,globals.slots[currentLine].indentNumber+1):
+            HTML+="---->"
+        if not globals.slots[currentLine].instruction:
+            continue#hack to avodi empty line
+        HTML+=globals.slots[currentLine].instruction
+        HTML+="<BR>\n"
+    print(HTML)
 
 def error1quit():
     sys.exit("first parameter is the name of the python file to parse")
@@ -81,3 +114,4 @@ else:
     fileName=sys.argv[1]
     globals.slots=initCodeInfo(globals,fileName)
     readPythonFile(globals,fileName)
+    createHTML(globals)

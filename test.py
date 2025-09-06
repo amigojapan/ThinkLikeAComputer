@@ -7,6 +7,5 @@ def P():
     layEgg()
     fd()
     P()
-
 lt()
 P()
