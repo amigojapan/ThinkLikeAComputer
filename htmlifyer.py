@@ -4,7 +4,7 @@ import sys
 import wcwidth
 #wcwidth.wcswidth(text)
 #constants
-language="jp"
+language="en"
 outputType="PlainText"#either "PlainText" or "HTML"
 if outputType=="HTML":
     newLine="<BR>\n"
