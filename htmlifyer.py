@@ -4,7 +4,7 @@ import sys
 import wcwidth
 #wcwidth.wcswidth(text)
 #constants
-language="en"
+language="jp"#eitehr jp or en
 outputType="PlainText"#either "PlainText" or "HTML"
 if outputType=="HTML":
     newLine="<BR>\n"
@@ -65,7 +65,7 @@ elif language=="jp":
     constIf="if"
     constIfSimple="もし"
     constNot="not"
-    constNotSimple="でなければ"
+    constNotSimple="そうでなければ"
     constThen="then"
     constThenSimple="、次に"
     constTurtleDir="turtledirection"
