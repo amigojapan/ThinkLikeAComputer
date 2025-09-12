@@ -95,13 +95,13 @@ creating output...
 ---->---->| Function call fillThisRowWithEggs |
            ----------------------------------
            ________________________________
----->---->| Function call Trun Turtle Right |
+---->---->| Function call Turn Turtle Right |
            --------------------------------
            _________________________________
 ---->---->| Function call Turtle Move Foward |
            ---------------------------------
            ________________________________
----->---->| Function call Trun Turtle Right |
+---->---->| Function call Turn Turtle Right |
            --------------------------------
       _________
 ---->|  else:  |
@@ -110,7 +110,7 @@ creating output...
 ---->---->| Function call Turtle Move Foward parameters: H-1 |
            -------------------------------------------------
            _______________________________
----->---->| Function call Trun Turtle Left |
+---->---->| Function call Turn Turtle Left |
            -------------------------------
            __________________________________________
 ---->---->| if Turtle Direction=Facing Right    then |
@@ -125,19 +125,19 @@ creating output...
 ---->---->| Function call Turtle Move Foward |
            ---------------------------------
            _______________________________
----->---->| Function call Trun Turtle Left |
+---->---->| Function call Turn Turtle Left |
            -------------------------------
       _______________________________________
 ---->| Function call repeatThisUntilBoardFull |
       ---------------------------------------
  _______________________________
-| Function call Trun Turtle Left |
+| Function call Turn Turtle Left |
  -------------------------------
  ___________________________________
 | Function call goToBeginningOfBoard |
  -----------------------------------
  ________________________________
-| Function call Trun Turtle Right |
+| Function call Turn Turtle Right |
  --------------------------------
  __________________________________
 | Function call fillThisRowWithEggs |

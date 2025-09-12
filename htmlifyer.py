@@ -4,7 +4,7 @@ import sys
 import wcwidth
 #wcwidth.wcswidth(text)
 #constants
-language="en"#eitehr jp or en
+language="jp"#eitehr jp or en
 outputType="PlainText"#either "PlainText" or "HTML"
 if outputType=="HTML":
     newLine="<BR>\n"
@@ -18,9 +18,9 @@ if language=="en":
     constFd="fd"
     constFdSimple="Turtle Move Foward"
     constRt="rt"
-    constRtSimple="Trun Turtle Right"
+    constRtSimple="Turn Turtle Right"
     constLt="lt"
-    constLtSimple="Trun Turtle Left"
+    constLtSimple="Turn Turtle Left"
     constLayEgg="layEgg"
     constLayEggSimple="Turtle lays egg underneath itself"
     constEnd="end"
