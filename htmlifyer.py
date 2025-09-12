@@ -5,6 +5,11 @@ import wcwidth
 #wcwidth.wcswidth(text)
 #constants
 language="jp"
+outputType="PlainText"#either "PlainText" or "HTML"
+if outputType=="HTML":
+    newLine="<BR>\n"
+else:
+    newLine="\n"
 if language=="en":
     constFunctCall="Function call "
     constFunctCallFull=" Function call "
@@ -26,7 +31,22 @@ if language=="en":
     constNotSimple="not"
     constThen="then"
     constThenSimple="then"
-
+    constTurtleDir="turtledirection"
+    constTurtleDirSimplified="Turtle Direction"
+    constEQ="=="
+    constEQSimplified="="
+    constTurtleUp='"^"'
+    constTurtleUpSimplified="Facing Up"
+    constTurtleRight='">"'
+    constTurtleRightSimplified="Facing Right"
+    constTurtleLeft='"<"'
+    constTurtleLeftSimplified="Facing Left"
+    constTurtleDown='"V"'
+    constTurtleDownSimplified="Facing Down"
+    constTurtleCanProceedFoward="testIfICanProceed()"
+    constTurtleCanProceedFowardSimplified='"can Turtle proceed forward?"'
+    constFunctParams="parameters:"
+    constFunctParamsSimplified="parameters:"
 elif language=="jp":
     constFunctCall="関数を呼び出す: "
     constFunctCallFull=" 関数を呼び出す: "
@@ -61,7 +81,9 @@ elif language=="jp":
     constTurtleDown='"V"'
     constTurtleDownSimplified="下"
     constTurtleCanProceedFoward="testIfICanProceed()"
-    constTurtleCanProceedFowardSimplified="亀さんが前に進められる"
+    constTurtleCanProceedFowardSimplified="「亀さんが前に進められる」"
+    constFunctParams="parameters:"
+    constFunctParamsSimplified="引数："
 def count_lines(filepath):
     try:
         with open(filepath, 'r') as file:
@@ -131,11 +153,11 @@ def createoutput(globals):
             rest_of_string = globals.slots[currentLine].instruction[1:]
             comment = rest_of_string
             output += " "+"_" * wcwidth.wcswidth(comment)
-            output += "<BR>\n"
+            output += newLine
             output += "/"+comment+"/"
-            output += "<BR>\n"
+            output += newLine
             output += " "+"-" * wcwidth.wcswidth(comment)
-            output += "<BR>\n"
+            output += newLine
             continue 
         # Get the first three characters
         first_three_chars = globals.slots[currentLine].instruction[:3]
@@ -154,24 +176,24 @@ def createoutput(globals):
                     parameters = from_paren_onwards[1:index_of_closing_paren]
                 if not parameters == "":
                     output += " "+"_" * wcwidth.wcswidth(constFunctDefFull + functionName + " parameters: " + parameters)
-                    output += "<BR>\n"
+                    output += newLine
                     output += "| "
                     output += constFunctDef+functionName
                     output += " parameters: " + parameters
                     output += " |"
-                    output += "<BR>\n"
+                    output += newLine
                     output += " "+"-" * wcwidth.wcswidth(constFunctDefFull + functionName + " parameters: " + parameters)
-                    output += "<BR>\n"
+                    output += newLine
                     continue
                 else:
                     output += " "+"_" * wcwidth.wcswidth(constFunctDefFull + functionName)
-                    output += "<BR>\n"
+                    output += newLine
                     output += "| "
                     output += constFunctDef+functionName
                     output += " |"
-                    output += "<BR>\n"
+                    output += newLine
                     output += " "+"-" * wcwidth.wcswidth(constFunctDefFull + functionName)
-                    output += "<BR>\n"
+                    output += newLine
                     continue
             else:
                 # If no parenthesis is found, the entire string is "before_paren"
@@ -200,15 +222,15 @@ def createoutput(globals):
                 simplifiedAndTrsanlsated = simplifiedAndTrsanlsated+" "+constThenSimple                 
             output += "     " * globals.slots[currentLine].indentNumber
             output += " "+"_" * wcwidth.wcswidth(simplifiedAndTrsanlsated)
-            output += "<BR>\n"
+            output += newLine
             output += "---->" * globals.slots[currentLine].indentNumber
             output += "| "
             output += simplifiedAndTrsanlsated
             output += " |"
-            output += "<BR>\n"
+            output += newLine
             output += "     " * globals.slots[currentLine].indentNumber
             output += " "+"-" * wcwidth.wcswidth(simplifiedAndTrsanlsated)
-            output += "<BR>\n"
+            output += newLine
             continue
         if globals.slots[currentLine].instruction.endswith(")"):
             # Get the rest of the string
@@ -234,32 +256,35 @@ def createoutput(globals):
                 else:
                     index_of_closing_paren = globals.slots[currentLine].instruction.find(')')
                     parameters = globals.slots[currentLine].instruction[index_of_paren+1:index_of_closing_paren]
+                    if language=="jp":
+                        parameters = parameters.replace("H", "ボードの縦")
+                        parameters = parameters.replace("W", "ボードの横")
                 if not parameters == "":
                     output += "     " * globals.slots[currentLine].indentNumber
-                    output += " "+"_" * wcwidth.wcswidth(constFunctCallFull + functionName + " parameters: " + parameters)
-                    output += "<BR>\n"
+                    output += " "+"_" * wcwidth.wcswidth(constFunctCallFull + functionName + " "+constFunctParamsSimplified+" " + parameters)
+                    output += newLine
                     output += "---->" * globals.slots[currentLine].indentNumber
                     output += "| "
                     output += constFunctCall+functionName
-                    output += " parameters: " + parameters
+                    output += " "+constFunctParamsSimplified+" " + parameters
                     output += " |"
-                    output += "<BR>\n"
+                    output += newLine
                     output += "     " * globals.slots[currentLine].indentNumber
-                    output += " "+"-" * wcwidth.wcswidth(constFunctCallFull + functionName + " parameters: " + parameters)
-                    output += "<BR>\n"
+                    output += " "+"-" * wcwidth.wcswidth(constFunctCallFull + functionName + " "+constFunctParamsSimplified+" " + parameters)
+                    output += newLine
                     continue
                 else:
                     output += "     " * globals.slots[currentLine].indentNumber
                     output += " "+"_" * wcwidth.wcswidth(constFunctCallFull + functionName)
-                    output += "<BR>\n"
+                    output += newLine
                     output += "---->" * globals.slots[currentLine].indentNumber
                     output += "| "
                     output += constFunctCall+functionName
                     output += " |"
-                    output += "<BR>\n"
+                    output += newLine
                     output += "     " * globals.slots[currentLine].indentNumber
                     output += " "+"-" * wcwidth.wcswidth(constFunctCallFull + functionName)
-                    output += "<BR>\n"
+                    output += newLine
                     continue
     #output +='</body></output>\n'
     print(output)
