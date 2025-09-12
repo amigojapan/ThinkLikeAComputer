@@ -320,4 +320,4 @@ else:
     globals.slots = initCodeInfo(globals, fileName)
     readPythonFile(globals, fileName)
     createoutput(globals)
-#add else: and return; or just a kind of way to deal with everything else
+#(done)add else: and return; or just a kind of way to deal with everything else
