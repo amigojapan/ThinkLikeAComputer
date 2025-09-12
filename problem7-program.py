@@ -19,6 +19,7 @@ def fillThisRowWithEggs():
         TLAC.layEgg(TLAC.globals)
         TLAC.fd(TLAC.globals)
         fillThisRowWithEggs()
+        return
     else:
         TLAC.layEgg(TLAC.globals)
         return
