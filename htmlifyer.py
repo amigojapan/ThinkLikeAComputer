@@ -221,7 +221,7 @@ def createoutput(globals):
             else:
                 simplifiedAndTrsanlsated = simplifiedAndTrsanlsated+" "+constThenSimple                 
             output += "     " * globals.slots[currentLine].indentNumber
-            output += " "+"_" * wcwidth.wcswidth(simplifiedAndTrsanlsated)
+            output += " "+"_" * wcwidth.wcswidth(" "+simplifiedAndTrsanlsated+" ")
             output += newLine
             output += "---->" * globals.slots[currentLine].indentNumber
             output += "| "
@@ -229,7 +229,7 @@ def createoutput(globals):
             output += " |"
             output += newLine
             output += "     " * globals.slots[currentLine].indentNumber
-            output += " "+"-" * wcwidth.wcswidth(simplifiedAndTrsanlsated)
+            output += " "+"-" * wcwidth.wcswidth(" "+simplifiedAndTrsanlsated+" ")
             output += newLine
             continue
         if globals.slots[currentLine].instruction.endswith(")"):
@@ -286,6 +286,23 @@ def createoutput(globals):
                     output += " "+"-" * wcwidth.wcswidth(constFunctCallFull + functionName)
                     output += newLine
                     continue
+        else:#case where no known instruction is found
+            instruction = globals.slots[currentLine].instruction
+            if language=="jp":
+                instruction = instruction.replace("else:", "そうでなければ、次に")
+                instruction = instruction.replace("return", "戻る")
+            output += "     " * globals.slots[currentLine].indentNumber
+            output += " "+"_" * wcwidth.wcswidth("  "+instruction+"  ")
+            output += newLine
+            output += "---->" * globals.slots[currentLine].indentNumber
+            output += "| "
+            output += " "+instruction+" "
+            output += " |"
+            output += newLine
+            output += "     " * globals.slots[currentLine].indentNumber
+            output += " "+"-" * wcwidth.wcswidth("  "+instruction+"  ")
+            output += newLine
+            continue
     #output +='</body></output>\n'
     print(output)
 
@@ -303,3 +320,4 @@ else:
     globals.slots = initCodeInfo(globals, fileName)
     readPythonFile(globals, fileName)
     createoutput(globals)
+#add else: and return; or just a kind of way to deal with everything else
