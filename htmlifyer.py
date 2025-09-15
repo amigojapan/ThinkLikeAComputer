@@ -4,7 +4,7 @@ import sys
 import wcwidth
 #wcwidth.wcswidth(text)
 #constants
-language="jp"#eitehr jp or en
+language="en"#eitehr jp or en
 outputType="PlainText"#either "PlainText" or "HTML"
 if outputType=="HTML":
     newLine="<BR>\n"
@@ -43,8 +43,10 @@ if language=="en":
     constTurtleLeftSimplified="Facing Left"
     constTurtleDown='"V"'
     constTurtleDownSimplified="Facing Down"
-    constTurtleCanProceedFoward="testIfICanProceed()"
+    constTurtleCanProceedFoward="testIfICanProceed"
     constTurtleCanProceedFowardSimplified='"can Turtle proceed forward?"'
+    constAmILayingOnEgg="amILayingOnAnEgg()"
+    constAmILayingOnEggSimple='"is Turtle laying on an egg?"'
     constFunctParams="parameters:"
     constFunctParamsSimplified="parameters:"
 elif language=="jp":
@@ -57,9 +59,11 @@ elif language=="jp":
     constRt="rt"
     constRtSimple="亀さんが右に曲がる"
     constLt="lt"
-    constLtSimple="亀さんが右に左がる"
+    constLtSimple="亀さんが右に曲がる"
     constLayEgg="layEgg"
     constLayEggSimple="亀さんが自分の下に卵を生む"
+    constAmILayingOnEgg="amILayingOnAnEgg()"
+    constAmILayingOnEggSimple="「亀さんが卵の上に座ってる」"
     constEnd="end"
     constEndSimple="プログラム終了"
     constIf="if"
@@ -80,7 +84,7 @@ elif language=="jp":
     constTurtleLeftSimplified="左"
     constTurtleDown='"V"'
     constTurtleDownSimplified="下"
-    constTurtleCanProceedFoward="testIfICanProceed()"
+    constTurtleCanProceedFoward="testIfICanProceed"
     constTurtleCanProceedFowardSimplified="「亀さんが前に進められる」"
     constFunctParams="parameters:"
     constFunctParamsSimplified="引数："
@@ -216,6 +220,7 @@ def createoutput(globals):
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleRight, constTurtleRightSimplified)
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleDown, constTurtleDownSimplified)
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleCanProceedFoward, constTurtleCanProceedFowardSimplified)
+            simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constAmILayingOnEgg, constAmILayingOnEggSimple)
             if language=="jp":
                 simplifiedAndTrsanlsated = simplifiedAndTrsanlsated+constThenSimple
             else:
@@ -307,16 +312,17 @@ def createoutput(globals):
     print(output)
 
 def error1quit():
-    sys.exit("first parameter is the name of the python file to parse")
+    sys.exit("first parameter is the language, eihter en or jp.second parameter is the name of the python file to parse")
 
 # main
 globals = initGlobals()
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     error1quit()
 else:
     if sys.argv[1] == "--help":
         error1quit()
-    fileName = sys.argv[1]
+    language=sys.argv[1]#eitehr jp or en
+    fileName = sys.argv[2]
     globals.slots = initCodeInfo(globals, fileName)
     readPythonFile(globals, fileName)
     createoutput(globals)
