@@ -256,6 +256,7 @@ class Stack:
 
 def createoutputHTML(globals):     
     indent_stack = Stack()
+    ifStatement=False
     #print(f"Custom stack top: {indent_stack.peek()}")
     #print(f"Custom stack is empty: {indent_stack.is_empty()}")
     #print(f"Popped from custom stack: {indent_stack.pop()}")
@@ -268,7 +269,7 @@ def createoutputHTML(globals):
     output +='</head>\n'
     output +='<body style="background-color:powderblue;">\n'
     #print("creating output...")
-    for currentLine in range(1, globals.fileLineCount):
+    for currentLine in range(1, globals.fileLineCount):    
         if not globals.slots[currentLine].instruction:
             continue  # Skip empty lines
         first_character = globals.slots[currentLine].instruction[0]
@@ -277,15 +278,16 @@ def createoutputHTML(globals):
             #indent increse
             output += '<img src="TLAC_boardgame/img/HTMLstuff/blankSpacer.png">' * indent_stack.size() +'<img src="TLAC_boardgame/img/HTMLstuff/startIF.png">'
             indent_stack.push(globals.slots[currentLine].indentNumber)
-        elif indent_stack.size() > globals.slots[currentLine].indentNumber:
-            #todo pop until equal try do until the size of hte stak is equal to the indentation number
-            while True:
-                if indent_stack.size() > globals.slots[currentLine+1].indentNumber:
-                    #decrease indent
-                    indent_stack.pop()
-                if indent_stack.size() == globals.slots[currentLine+1].indentNumber:
-                    output += '<img src="TLAC_boardgame/img/HTMLstuff/blankSpacer.png">' * (indent_stack.size()-1) +'<img src="TLAC_boardgame/img/HTMLstuff/endIF.png">'
-                    break
+        if indent_stack.size() > globals.slots[currentLine].indentNumber:
+            #decrease indent
+            indent_stack.pop()
+            output += '<img src="TLAC_boardgame/img/HTMLstuff/blankSpacer.png">' * indent_stack.size() +'<img src="TLAC_boardgame/img/HTMLstuff/endIF.png">'
+        #output +='<BR>indent:'+str(globals.slots[currentLine].indentNumber)
+        if globals.slots[currentLine].indentNumber == 0 and indent_stack.size() == 1:#I think indent_stack.size()==1 only happens once per function
+            #decrease indent
+            indent_stack.pop()
+            output += '<BR><BR><img src="TLAC_boardgame/img/HTMLstuff/endIF.png">'
+
         if first_character=="#":#this instruction is a comment
             rest_of_string = globals.slots[currentLine].instruction[1:]
             comment = rest_of_string
@@ -332,6 +334,7 @@ def createoutputHTML(globals):
                 sys.exit("error while parsing python file, open parenthesis not found after function name on line: " + str(currentLine))
         first_three_chars = globals.slots[currentLine].instruction[:3]
         if first_three_chars=="if ":#this instruction is a comment
+            ifStatement=True
             #rest_of_string = globals.slots[currentLine].instruction[3:]
             simplifiedAndTrsanlsated = globals.slots[currentLine].instruction.replace(":", " then ")
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constIf, constIfSimple)
