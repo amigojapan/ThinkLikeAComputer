@@ -270,6 +270,9 @@ def createoutputHTML(globals):
     output +='<body style="background-color:powderblue;">\n'
     #print("creating output...")
     for currentLine in range(1, globals.fileLineCount):    
+        output += '<p style="background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+        output += str(currentLine)
+        output += '</p>'
         if not globals.slots[currentLine].instruction:
             continue  # Skip empty lines
         first_character = globals.slots[currentLine].instruction[0]
@@ -287,7 +290,6 @@ def createoutputHTML(globals):
             #decrease indent
             indent_stack.pop()
             output += '<BR><BR><img src="TLAC_boardgame/img/HTMLstuff/endIF.png">'
-
         if first_character=="#":#this instruction is a comment
             rest_of_string = globals.slots[currentLine].instruction[1:]
             comment = rest_of_string
