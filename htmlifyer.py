@@ -270,30 +270,50 @@ def createoutputHTML(globals):
     output +='<body style="background-color:powderblue;">\n'
     #print("creating output...")
     for currentLine in range(1, globals.fileLineCount):    
-        output += '<p style="background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
-        output += str(currentLine)
-        output += '</p>'
+ # Start a new div to keep line number and instruction together
+        # Add line number
+        #output += '<p style="background-color: blue; display: inline; border: 2px solid black; padding: 2px; margin-right: 10px;">'
         if not globals.slots[currentLine].instruction:
             continue  # Skip empty lines
         first_character = globals.slots[currentLine].instruction[0]
         #output +="indent number:"+str(globals.slots[currentLine].indentNumber)    
         if indent_stack.size() < globals.slots[currentLine].indentNumber:
             #indent increse
+            output += newLine
+            output += '<p style="visibility:hidden;background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
+            formatted_number = f"{currentLine:04d}"
+            output += str(formatted_number)
+            output += '</p>'
             output += '<img src="TLAC_boardgame/img/HTMLstuff/blankSpacer.png">' * indent_stack.size() +'<img src="TLAC_boardgame/img/HTMLstuff/startIF.png">'
             indent_stack.push(globals.slots[currentLine].indentNumber)
         if indent_stack.size() > globals.slots[currentLine].indentNumber:
             #decrease indent
             indent_stack.pop()
+            output += newLine
+            output += '<p style="visibility:hidden;background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
+            formatted_number = f"{currentLine:04d}"
+            output += str(formatted_number)
+            output += '</p>'
             output += '<img src="TLAC_boardgame/img/HTMLstuff/blankSpacer.png">' * indent_stack.size() +'<img src="TLAC_boardgame/img/HTMLstuff/endIF.png">'
         #output +='<BR>indent:'+str(globals.slots[currentLine].indentNumber)
         if globals.slots[currentLine].indentNumber == 0 and indent_stack.size() == 1:#I think indent_stack.size()==1 only happens once per function
             #decrease indent
             indent_stack.pop()
-            output += '<BR><BR><img src="TLAC_boardgame/img/HTMLstuff/endIF.png">'
+            output += '<BR><BR>'
+            output += newLine
+            output += '<p style="visibility:hidden;background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
+            formatted_number = f"{currentLine:04d}"
+            output += str(formatted_number)
+            output += '</p>'
+            output += '<img src="TLAC_boardgame/img/HTMLstuff/endIF.png">'
         if first_character=="#":#this instruction is a comment
             rest_of_string = globals.slots[currentLine].instruction[1:]
             comment = rest_of_string
             output += newLine
+            output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+            formatted_number = f"{currentLine:04d}"
+            output += str(formatted_number)
+            output += '</p>'
             output += '<p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">'
             output += comment
             output += '</p>'
@@ -316,6 +336,11 @@ def createoutputHTML(globals):
                     parameters = from_paren_onwards[1:index_of_closing_paren]
                 if not parameters == "":
                     output += newLine
+                    output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+                    output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+                    formatted_number = f"{currentLine:04d}"
+                    output += str(formatted_number)
+                    output += '</p>'
                     output += '<p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">'
                     output += constFunctDefFull+functionName
                     output += constFunctParamsSimplified + parameters
@@ -323,13 +348,14 @@ def createoutputHTML(globals):
                     output += newLine
                 else:
                     output += newLine
+                    output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+                    formatted_number = f"{currentLine:04d}"
+                    output += str(formatted_number)
+                    output += '</p>'
                     output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
                     output += constFunctDefFull+functionName
                     output += '</p>'
                     output += newLine
-                #indent increse
-                #output += '<img src="TLAC_boardgame/img/HTMLstuff/blankSpacer.png">' * indent_stack.size() +'<img src="TLAC_boardgame/img/HTMLstuff/startIF.png">'
-                #indent_stack.push(globals.slots[currentLine].indentNumber)
                 continue
             else:
                 # If no parenthesis is found, the entire string is "before_paren"
@@ -359,6 +385,10 @@ def createoutputHTML(globals):
             else:
                 simplifiedAndTrsanlsated = simplifiedAndTrsanlsated+" "+constThenSimple                 
             output += newLine
+            output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+            formatted_number = f"{currentLine:04d}"
+            output += str(formatted_number)
+            output += '</p>'
             output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
             output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
             output += simplifiedAndTrsanlsated
@@ -394,6 +424,10 @@ def createoutputHTML(globals):
                         parameters = parameters.replace("W", "ボードの横")
                 if not parameters == "":
                     output += newLine
+                    output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+                    formatted_number = f"{currentLine:04d}"
+                    output += str(formatted_number)
+                    output += '</p>'
                     output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
                     output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
                     output += constFunctCall+functionName
@@ -403,6 +437,10 @@ def createoutputHTML(globals):
                     continue
                 else:
                     output += newLine
+                    output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+                    formatted_number = f"{currentLine:04d}"
+                    output += str(formatted_number)
+                    output += '</p>'
                     output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
                     output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
                     output += constFunctCall+functionName
@@ -415,6 +453,10 @@ def createoutputHTML(globals):
                 instruction = instruction.replace("else:", "そうでなければ、次に")
                 instruction = instruction.replace("return", "戻る")
             output += newLine
+            output += '<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">'
+            formatted_number = f"{currentLine:04d}"
+            output += str(formatted_number)
+            output += '</p>'
             output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
             output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
             output += " "+instruction+" "
@@ -534,3 +576,4 @@ else:
         newLine="<BR>\n"
         createoutputHTML(globals)
 #(done)add else: and return; or just a kind of way to deal with everything else
+#start ↘  end ↙
