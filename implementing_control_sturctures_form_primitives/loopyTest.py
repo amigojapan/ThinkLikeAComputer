@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+import loopy as l
 import operator as op
 """
 this module allows us to use functions like gt 'greater than' and lt 'less than'  and such operators as passable operators into a function
@@ -10,26 +12,13 @@ the following is how ot implement a 'while loop' usinf primitive functions
 python has its own while structure, but it is good to know how ot implement yoru own, here is how I implemented it
 a while loop will repeat something until a condition is true
 """
-def loop_body(n):
-    print(n)
-def conditional(operand1, op_func, operand2):
-        return op_func(operand1, operand2)
-def condition(n1,n2):
-     return conditional(n1, op.le, n2)
-     
-def recursive_countdown(n,countDownBy,lb):
-    # Base case: Stop when n becomes 0 or less
-    if condition(n,0):#op.le means less than or equal to, simillar to <= but in a function that can be sent as a parameter in this case it is like writing n <= 0
-        print("Blast off!")
-        return
-    # "Loop" body: Print the current number
-    lb(n)
-    # Recursive call: Call the function with a decremented n
-    recursive_countdown(n - countDownBy,countDownBy,lb)
 # Example usage
-lb=loop_body
-recursive_countdown(5,1,lb)
-recursive_countdown(10,2,lb)
+def condition(n1,n2):
+     return l.conditional(n1, op.le, n2)
+l.recursive_countdown(5,1)
+print("Blast off!")
+l.recursive_countdown(10,2)
+print("Blast off!")
 """
 the output of these tow funciton calls is:
 5
@@ -57,19 +46,13 @@ while True:
         break
 
 but we want to do if functionally which is done in the follwing way:
+in loopy itis done the following way:
+l.do_while(minimum,maximum,step)
 """
+#example
 def condition(n1,n2):#this will rewire over hte past condition
-     return conditional(n1, op.gt, n2)
-
-def do_while(n,countDownBy,lb):
-    #put the bopdy of the do while loop here:
-    lb(n)
-    if condition(n,5):#op.gt means greater than or equal to, simillar to > but in a function that can be sent as a parameter in this case it is like writing not n > 0
-        print("n is more than 5")
-        return
-    # Recursive call: Call the function with a decremented n
-    do_while(n - countDownBy,countDownBy,lb)
-do_while(1,-1,lb)
+     return l.conditional(n1, op.gt, n2)
+l.do_while(1,5,-1)
 """
 the output of the last function is:
 1
@@ -87,15 +70,10 @@ forloop(initialvalue, maximum,condition, step,loopbody)
 again python has it's own kind of for loops but we are going to implement a more standard kind of for loops but functional as follows:
 """
 def condition(n1,n2):#this will rewire over hte past condition
-     return conditional(n1, op.eq, n2)#eq is for equal
-def forloop(counter, max,c, step,lb):
-    lb(counter)
-    if c(counter,max):
-         return
-    forloop(counter+step,max, c, step,lb)
-forloop(10, 15,condition, 1,lb)
+     return l.conditional(n1, op.eq, n2)#eq is for equal
+l.forloop(10, 15, 1)
 print("counted form 10 to 15")
-forloop(25, 20, condition, -1,lb)
+l.forloop(25, 20,  -1)
 print("counted form 25 to 20")
 """
 the output of this is:
@@ -117,16 +95,25 @@ counted form 25 to 20
 """
 foreach is a kind of loop that loops over the items of a list
 """
-def foreach(data, func):
-    if not data:
-        return
-    func(data[0])
-    foreach(data[1:], func)
 my_list = ['apple', 'banana', 'cherry']
-foreach(my_list, lb)
+loop_body=l.loop_body
+l.foreach(my_list, loop_body)
 """
 the output of this is:
 apple
 banana
 cherry
 """
+
+"""
+with these functions you can basically just chnage the
+condition and the loopbody to do almost anything
+"""
+"""
+now lets see how to change the loop body.
+we will revisit l.recursive_countdown for this
+"""
+def loop_body(n):
+     print("seconds until lift-off:"+str(n))
+l.loop_body=loop_body
+l.recursive_countdown(5,1)
