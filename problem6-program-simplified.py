@@ -1,11 +1,10 @@
-#proram
+#problem 6
 def goToBeginningOfBoard():
     if testIfICanProceed():
         fd()
         goToBeginningOfBoard()
     else:
         return
-
 def fillThisRowWithEggs():
     if testIfICanProceed():
         layEgg()
@@ -14,7 +13,6 @@ def fillThisRowWithEggs():
     else:
         layEgg()
         return
-    
 def repeatThisUntilBoardFull():
     fillThisRowWithEggs()
     if turtledirection=="^" :
@@ -29,7 +27,6 @@ def repeatThisUntilBoardFull():
         fd()
         lt()
     repeatThisUntilBoardFull()
-
 lt()
 goToBeginningOfBoard()
 rt()

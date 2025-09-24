@@ -6,14 +6,13 @@ TLAC.teleportTurtleTo(4,9)
 print("initial board:")
 TLAC.printBoard(TLAC.globals)
 
-#proram
+#problem 6
 def goToBeginningOfBoard():
     if TLAC.testIfICanProceed(TLAC.globals):
         TLAC.fd(TLAC.globals)
         goToBeginningOfBoard()
     else:
         return
-
 def fillThisRowWithEggs():
     if TLAC.testIfICanProceed(TLAC.globals):
         TLAC.layEgg(TLAC.globals)
@@ -22,7 +21,6 @@ def fillThisRowWithEggs():
     else:
         TLAC.layEgg(TLAC.globals)
         return
-    
 def repeatThisUntilBoardFull():
     fillThisRowWithEggs()
     if TLAC.globals.turtle.direction=="^" :
@@ -37,7 +35,6 @@ def repeatThisUntilBoardFull():
         TLAC.fd(TLAC.globals)
         TLAC.lt(TLAC.globals)
     repeatThisUntilBoardFull()
-
 TLAC.lt(TLAC.globals)
 goToBeginningOfBoard()
 TLAC.rt(TLAC.globals)

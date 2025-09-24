@@ -7,7 +7,7 @@ TLAC.teleportTurtleTo(4,9)
 print("initial board:")
 TLAC.printBoard(TLAC.globals)
 
-#program
+#problem 3
 TLAC.fd(TLAC.globals)
 TLAC.rt(TLAC.globals)
 TLAC.fd(TLAC.globals,2)

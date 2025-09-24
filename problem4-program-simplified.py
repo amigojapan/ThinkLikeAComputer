@@ -1,4 +1,4 @@
-#program
+#problem 4
 def P():
     if amILayingOnAnEgg():
         end()
@@ -7,6 +7,5 @@ def P():
     layEgg()
     fd()
     P()
-
 lt()
 P()

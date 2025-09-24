@@ -1,7 +1,13 @@
 #!/usr/bin/bash
 
-./htmlifyer.py en problem3-program-simplified.py > problem3-programchart.txt
-./htmlifyer.py en problem4-program-simplified.py > problem4-programchart.txt
-./htmlifyer.py en problem5-program-simplified.py > problem5-programchart.txt
-./htmlifyer.py en problem6-program-simplified.py > problem6-programchart.txt
-./htmlifyer.py en problem7-program-simplified.py > problem7-programchart.txt
+./htmlifyer.py en HTML problem3-program-simplified.py > problem3-programchartEN.html
+./htmlifyer.py en HTML problem4-program-simplified.py > problem4-programchartEN.html
+./htmlifyer.py en HTML problem5-program-simplified.py > problem5-programchartEN.html
+./htmlifyer.py en HTML problem6-program-simplified.py > problem6-programchartEN.html
+./htmlifyer.py en HTML problem7-program-simplified.py > problem7-programchartEN.html
+
+./htmlifyer.py jp HTML problem3-program-simplified.py > problem3-programchartJP.html
+./htmlifyer.py jp HTML problem4-program-simplified.py > problem4-programchartJP.html
+./htmlifyer.py jp HTML problem5-program-simplified.py > problem5-programchartJP.html
+./htmlifyer.py jp HTML problem6-program-simplified.py > problem6-programchartJP.html
+./htmlifyer.py jp HTML problem7-program-simplified.py > problem7-programchartJP.html

@@ -1,4 +1,4 @@
-#proram
+#problem 5
 def P():
     if amILayingOnAnEgg():
         end()
@@ -7,6 +7,5 @@ def P():
     layEgg()
     fd(2)
     P()
-    
 lt()
 P()
