@@ -1,0 +1,48 @@
+import operator as op_
+
+def op(operator):
+    if operator == "==":
+        return op_.eq
+    elif operator == ">":
+        return op_.gt
+    elif operator == "<":
+        return op_.lt
+    elif operator == "<=" or operator == "=<":
+        return op_.le
+    elif operator == ">=" or operator == "=>":
+        return op_.ge  # Fixed from op_.me to op_.ge
+
+# Rest of the functions (loop_body, conditional, countdown, do_while, forloop, foreach) remain as provided
+def loop_body(n):
+    print(n)  # Default loop body
+
+def conditional(operand1, op_func, operand2):
+    return op_func(operand1, operand2)
+
+def countdown(n, countDownBy):
+    if condition(n, 0):  # Uses l.condition
+        return
+    loop_body(n)
+    countdown(n - countDownBy, countDownBy)
+
+def condition(n1, n2):
+    return conditional(n1, op(">"), n2)  # Default condition for do_while
+
+def do_while(n1, n2, countDownBy):
+    loop_body(n1)
+    if condition(n1, n2):
+        print("n1 exceeds threshold")  # Clarified message
+        return
+    do_while(n1 - countDownBy, n2, countDownBy)
+
+def forloop(counter, max, step):
+    loop_body(counter)
+    if condition(counter, max):
+        return
+    forloop(counter + step, max, step)
+
+def foreach(data, func):
+    if not data:
+        return
+    func(data[0])
+    foreach(data[1:], func)
