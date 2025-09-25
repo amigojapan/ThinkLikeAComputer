@@ -61,8 +61,7 @@ the output of the last function is:
 3
 4
 5
-6
-n is more than 5
+n1 exceeds threshold
 """
 
 """
