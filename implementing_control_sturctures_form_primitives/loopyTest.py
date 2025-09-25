@@ -39,7 +39,7 @@ l.globls.loop_body = loop_body
 l.countdown(5, 1)
 print("Blast off!")
 
-# Christmas tree function (using state stack)
+# The following makes a pyramid, it is an example of how to use several loopbodies for a forloop in the code
 class initGlobals:
     def __init__(self):
         self.output = ""
