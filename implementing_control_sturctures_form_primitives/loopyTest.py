@@ -3,7 +3,7 @@ import loopy as l
 
 # Example usage for countdown
 def condition(n1, n2):
-    return l.conditional(n1, l.op("<="), n2)
+    return l.conditional(n1, l.op("<"), n2)
 l.globls.condition = condition
 def loop_body(n):
     print(n)
@@ -18,7 +18,7 @@ def condition(n1, n2):
     return l.conditional(n1, l.op(">"), n2)
 l.globls.condition = condition
 l.do_while(1, 5, -1)
-
+print("n1 exceeds threshold")
 # forloop example
 def condition(n1, n2):
     return l.conditional(n1, l.op("=="), n2)

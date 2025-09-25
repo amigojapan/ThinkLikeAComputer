@@ -48,8 +48,7 @@ def countdown(n, countDownBy):
 
 def do_while(n1, n2, countDownBy):
     globls.loop_body(n1)
-    if globls.condition(n1, n2):
-        print("n1 exceeds threshold")
+    if globls.condition(n1, n2-1):
         return
     do_while(n1 - countDownBy, n2, countDownBy)
 
