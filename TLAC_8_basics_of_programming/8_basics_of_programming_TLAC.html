@@ -1,0 +1,938 @@
+<!DOCTYPE html><output lang="jp">
+  <html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="syntax.css">
+    </head>
+    <body style="background-color:powderblue;">
+  <br>8 Basics Concepts of Programming in TLAC(Think like a computer)
+  <br>
+  <br>Author:Usmar A. Padow (amigojapan), <a href=http://amigojapan.github.io/>amigojapan's homepage</a>
+  <br>
+  <br>Note: this document is aimed at programming super beginners.
+  <br>
+  <br>0. Sequentiality
+  <br>1. Variables
+  <br>2. Statements
+  <br>3. Conditionals/blocks 
+  <br>4. Functions/Types 
+  <br>5. Input/output
+  <br>6. Loops 
+  <br>7. Arrays/lists 
+  <br>
+  <br>0.	Sequentiality/Following instructions in order
+  <br>The first thing we need to learn in order to become a programmer is 
+  that instructions always follow a regular order, usually from top
+  to bottom.
+  For example:
+  <BR><BR><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call BrushMyTeeth</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call CombMyHair</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call GoToWork</p><BR>
+  <BR><BR><BR>    
+  I will never go to or work before I brush my teeth and comb my hair...
+  <BR><BR><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call BrushMyTeeth</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call GoToWork</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call CombMyHair</p><BR>    
+  <BR><BR><BR>
+  Well, the answer is that I would first brush my teeth, but I would get 
+  to work unkempt, which would cause trouble. That is why the order of 
+  the instructions in a program is so important… also because "computers 
+  are stupid” (I recommend watching <a href="https://www.youtube.com/watch?v=EKWGGDXe5MA" target="_blank">this video</a>)
+   Which is another thing to keep in mind, with the
+    previous program I just wrote, the computer will not intelligently know
+   I should comb my hair before going to work. Computers are just
+     not capable of such decision making at this level of programming.
+  If you make a large program, and shuffle its instructions around, the 
+  program will surely not do what it was originally intended to do.
+  
+  <br>
+  <br>1.Variables
+  <br>A variable is a place in the computer memory where some kind of 
+  value sometimes a string (some letters), sometimes a number is stored.
+  Like the value 5 or the string "hello”.  A variable can have a simple 
+  name like just the letter x or any combination of letters like
+    last_name or social_security_number, but not spaces, last name is 
+  not a valid variable name.
+  If we have a variable called social_security_number we could assign it 
+  the value 123458789 as a sample social security number.
+  Variables as their name implied can vary, which seems to be different to
+   the mathematical view on variables, in math if you
+   say x=5 then x is always equal to 5,  but in programming we can say 
+  x=3 and then x=5 and the value would first be set to 3 and
+    then change to 5(These are called assignments in programming).
+  In the case of a string, the value between the double quotes will be 
+  assigned to the variable, for example if we had last_name we could
+   assign "Einstein” to it easily as follows: last_name= "Einstein”. 
+  <br>
+  <br>2.	Statements 
+  <br>this may be the most difficult part to explain of programming,
+  almost everything you see in a computer program is a statement, 
+   but can also appear as
+   keywords such as while().
+  Lets talk about assignment statements.
+  For example, lets take the following program
+  <BR><BR><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> x=3 </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> x=5 </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> x=x+1 </p><BR>
+  <BR><BR><BR>
+  What will be the result of such a program…
+  Well, the first statement, x=3 will set x to 3, then the next statement
+   x=5 will (maybe counter-intuitively to some)
+   set x to 5, then the final statement  x=x+1 we need to break down into
+   its  parts.
+  We have the x on the left of the equal sign called an "lvalue” 
+  (the variable to the left of the equal sign)
+  which is the same as the first x=3, where the x is what stores the value,
+  then we have x+1, the value of x at this point of the
+  program is 5 because it comes after
+  x=5 so when we do x+1 it is the same as doing 5+1, and then
+  finally we assign that to the lvalue, so at the end of the program, x 
+  will contain 6 which is 5+1.
+  Other kinds of statements we will look at later in this text are things 
+  like function calls, return statements, conditional statements
+   and boolean statements.
+  <br>
+  <br>3. Conditionals/block of code 
+  <br>A conditional statement is a statement which give usually two different 
+  flow controls depending on wether the statement it is evaluation
+  is true or false, for example:
+  In order to explain conditional statements I am also forced to explain what
+  blocks of code are.
+  Firstly, here is an example in TLAC:
+  take the initial state of the board as:
+  <BR><BR><BR>
+  <center><img src=https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/program7-start-state.jpg width=300 height=300></center>
+  <BR><BR><BR>
+  In this example, the turtle is at X=5 as you can see the turtle being on hte fifth slot fromt he leftmost slot on the board.
+  Note: I will be introducing TALC specific statements from now on, when it is  a TALC specific insturction I will let you know.
+  TLAC fd() function(will explain functions later, but lets just say this is one for now), this function makes the turle move foward 
+  (in the direction the turtle is pointing) by one slot.
+<BR><BR><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">green lines like these are called 'comments'</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">and do not affect the execution of the program</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">but I want you to read them for now</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if X>3   then</p><BR>
+    <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">since X is more than 3,</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">this block(the block surrounded by the</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">pink rectangle) of code will be executed</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    </div><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if X<3   then</p><BR>
+    <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">since X is not less than,</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">this block of code won't be executed</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    </div><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> X=2 </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">this assignment statement teleports</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the turtle to X slot 2(two slots</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">from the left of the board)</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if X<3   then</p><BR>
+    <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">now after the last assignment statement</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">X is less than 3, so the following block</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">of code gets executed.</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    </div>
+<BR><BR><BR>
+    <style id="css-style">pre { line-height: 125%; }
+    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    .demo-highlight .hll { background-color: #ffffcc }
+    .demo-highlight { background: #f8f8f8; }
+    .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+    .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
+    .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
+    .demo-highlight .o { color: #666666 } /* Operator */
+    .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+    .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+    .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
+    .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+    .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+    .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+    .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
+    .demo-highlight .ge { font-style: italic } /* Generic.Emph */
+    .demo-highlight .gr { color: #E40000 } /* Generic.Error */
+    .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
+    .demo-highlight .go { color: #717171 } /* Generic.Output */
+    .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
+    .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
+    .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+    .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+    .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+    .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
+    .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+    .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
+    .demo-highlight .m { color: #666666 } /* Literal.Number */
+    .demo-highlight .s { color: #BA2121 } /* Literal.String */
+    .demo-highlight .na { color: #687822 } /* Name.Attribute */
+    .demo-highlight .nb { color: #008000 } /* Name.Builtin */
+    .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+    .demo-highlight .no { color: #880000 } /* Name.Constant */
+    .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
+    .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+    .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+    .demo-highlight .nf { color: #0000FF } /* Name.Function */
+    .demo-highlight .nl { color: #767600 } /* Name.Label */
+    .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+    .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+    .demo-highlight .nv { color: #19177C } /* Name.Variable */
+    .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+    .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
+    .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
+    .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
+    .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
+    .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
+    .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+    .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+    .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
+    .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+    .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+    .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+    .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+    .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+    .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+    .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
+    .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+    .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+    .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
+    .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+    .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
+    .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
+    .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
+    .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
+    .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
+    .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+  
+  <br>
+  Lets go thru that program line by line.
+  First lines 001 to 003 explain what comments are
+  then line 004  checks if X of the turtle is more than 3, 
+  since it is,(from now on we will skip all comment lines) 
+  it will go into the following "block of code"(marked in pink)
+  which starts when you see a "pipe icon"
+  entering our "Function call Turtle Move Foward" on line 008
+  at this point, you, the person playing the TLAC game, needs to move the
+  turtle one space in the direction of the turtle
+  (twords where it's head is pointing), 
+  and since x>3 is true, the turtle is mored foward by one slot as in the following
+  picture indicates:
+  <BR><BR><BR>
+  <center><img src=https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/program7-start-state.jpg width=300 height=300></center>
+  <BR><BR><BR>
+  then we reach "if X&lt3 then" on line 0009 and as the comments say,
+  the following "Function call Turtle Move Foward" on line 0012 will be skipped:
+  so the turtle does not move at all
+  then we "reach X=2" on line 0013, which will change the value of X to two,
+  you should move the turtle to its X position 2, which means puttin the turtle in the follwoing position:
+  <BR><BR><BR>
+  <center><img src=https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/program7-start-state.jpg width=300 height=300></center>
+  <BR><BR><BR>  
+  then we reach "if X&lt3 then" on line 0017 and as the comments say,
+  the following "Function call Turtle Move Foward" on line 0021 will be excecuted:
+  so the turtle neetds to be moved foward one space,
+  making the board as follows:
+  <BR><BR><BR>
+  <center><img src=https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/program7-start-state.jpg width=300 height=300></center>
+  <BR><BR><BR>  
+  
+  </code></pre>
+  <br>
+  <br>4. Procedures/functions 
+  <br>Now functions need to be broken down into 2 separate parts, the easy
+  part which is a function call and the hard part which is a function declaration.
+  In the beginning of this paper I used three function calls to say what I was
+  telling the computer to do:
+  <BR>
+  BrushMyTeeth()
+  CombMyHair()
+  GoToWork()
+  </code></pre>
+  <br>
+  Take the following program:
+  
+  <div class="demo-highlight">
+  <BR><span></span><span class="k">def</span> <span class="nf">calculate_tax</span><span class="p">(</span><span class="n">tax_type</span><span class="p">,</span> <span class="n">ammount</span><span class="p">):</span>
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="n">tax_type</span><span class="o">==</span><span class="s2">"luxury"</span><span class="p">:</span>
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">ammount</span> <span class="o">*</span> <span class="mf">0.10</span>
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">else</span><span class="p">:</span>
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">ammount</span> <span class="o">*</span> <span class="mf">0.08</span>
+  <BR>
+  <BR><span class="n">purse_tax</span><span class="o">=</span><span class="n">calculate_tax</span><span class="p">(</span><span class="s2">"non-luxury"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+  <BR><span class="n">restaurant_tax</span><span class="o">=</span><span class="n">calculate_tax</span><span class="p">(</span><span class="s2">"luxury"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+  <BR><span class="nb">print</span><span class="p">(</span><span class="s2">"purse_tax is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">purse_tax</span><span class="p">))</span>
+  <BR><span class="nb">print</span><span class="p">(</span><span class="s2">"restaurant_tax is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">restaurant_tax</span><span class="p">))</span>
+  </div>
+  <style id="css-style">pre { line-height: 125%; }
+  td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+  span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+  td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+  span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+  .demo-highlight .hll { background-color: #ffffcc }
+  .demo-highlight { background: #f8f8f8; }
+  .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+  .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
+  .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
+  .demo-highlight .o { color: #666666 } /* Operator */
+  .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+  .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+  .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
+  .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+  .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+  .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+  .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
+  .demo-highlight .ge { font-style: italic } /* Generic.Emph */
+  .demo-highlight .gr { color: #E40000 } /* Generic.Error */
+  .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+  .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
+  .demo-highlight .go { color: #717171 } /* Generic.Output */
+  .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+  .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
+  .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+  .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
+  .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+  .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+  .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+  .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
+  .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+  .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
+  .demo-highlight .m { color: #666666 } /* Literal.Number */
+  .demo-highlight .s { color: #BA2121 } /* Literal.String */
+  .demo-highlight .na { color: #687822 } /* Name.Attribute */
+  .demo-highlight .nb { color: #008000 } /* Name.Builtin */
+  .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+  .demo-highlight .no { color: #880000 } /* Name.Constant */
+  .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
+  .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+  .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+  .demo-highlight .nf { color: #0000FF } /* Name.Function */
+  .demo-highlight .nl { color: #767600 } /* Name.Label */
+  .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+  .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+  .demo-highlight .nv { color: #19177C } /* Name.Variable */
+  .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+  .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
+  .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
+  .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
+  .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
+  .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
+  .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
+  .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+  .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+  .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
+  .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+  .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+  .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+  .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+  .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+  .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+  .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
+  .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+  .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+  .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
+  .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+  .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
+  .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
+  .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
+  .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
+  .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
+  .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+  <br>
+  <a href="taxes.py">download taxes.py</a>
+  <br>
+  <br>
+  The output of this program should be this:
+  <br>
+  <pre><code>
+    purse_tax is 8.0
+    restaurant_tax is 10.0
+  </code></pre>
+  <br>
+  Function calls help us so we don't have to write the same
+  code many times, for example, in this program we defined the way to
+  calculate tax only once, but we did two function calls.
+  The to calculate_tax function call, saving us from typing the same
+  thing over and over, we could do 100 function calls to the same 
+  function and it would not increase the size of the program by much...
+  <br>
+  <br>Now I will explain how a function is defined.
+  First the keyword def is used, followed by the function name, function names
+  follow the same rule as variable names, in this case our function name is
+  calculate_tax.then an open parenthesis (then the "parameters", which
+  are the things that change from function call
+  to function call. They come in the form of variable names, in this case our
+  parameters are tax_type and ammount.
+  Then comes the function body, which in python is just a block of indented stuff
+  as you can see this function body has the capability to give an 8 pecent tax
+  for a non luxury item and a 10 percent tax to a luxury item. 
+  In our function calls we send the parameters to the function, and they get stored
+  as variables of the name of the parameters.
+  Finally there is the return statement. Which tells the program "send this back
+  to the function call as the result". (Also note that return terminates the flow of
+  the fucntion, no mroe operations occur after return, and the flow of the
+  program goes back to the function call)
+  in this program, after return is called,  it sets the lvalues of purse_tax and
+  restaurant_tax.
+  Finally this program prints out the values. These values are numbers so they need to
+  be converted to strings before they can be printed using the print() statement.
+  This is accomplished by surrounding the values with str().
+  
+  
+  <br>
+  <br>5.Input/output
+  <br>
+  <br>Now, here is the most simple program every programmer starts out with
+  <br>
+  <div class="demo-highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="err">"</span><span class="n">hello</span> <span class="n">world</span><span class="err">”</span><span class="p">)</span>
+  </pre></div>
+  <style id="css-style">pre { line-height: 125%; }
+  td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+  span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+  td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+  span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+  .demo-highlight .hll { background-color: #ffffcc }
+  .demo-highlight { background: #f8f8f8; }
+  .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+  .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
+  .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
+  .demo-highlight .o { color: #666666 } /* Operator */
+  .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+  .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+  .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
+  .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+  .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+  .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+  .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
+  .demo-highlight .ge { font-style: italic } /* Generic.Emph */
+  .demo-highlight .gr { color: #E40000 } /* Generic.Error */
+  .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+  .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
+  .demo-highlight .go { color: #717171 } /* Generic.Output */
+  .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+  .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
+  .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+  .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
+  .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+  .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+  .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+  .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
+  .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+  .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
+  .demo-highlight .m { color: #666666 } /* Literal.Number */
+  .demo-highlight .s { color: #BA2121 } /* Literal.String */
+  .demo-highlight .na { color: #687822 } /* Name.Attribute */
+  .demo-highlight .nb { color: #008000 } /* Name.Builtin */
+  .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+  .demo-highlight .no { color: #880000 } /* Name.Constant */
+  .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
+  .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+  .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+  .demo-highlight .nf { color: #0000FF } /* Name.Function */
+  .demo-highlight .nl { color: #767600 } /* Name.Label */
+  .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+  .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+  .demo-highlight .nv { color: #19177C } /* Name.Variable */
+  .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+  .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
+  .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
+  .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
+  .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
+  .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
+  .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
+  .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+  .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+  .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
+  .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+  .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+  .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+  .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+  .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+  .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+  .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
+  .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+  .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+  .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
+  .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+  .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
+  .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
+  .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
+  .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
+  .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
+  .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><br>
+  <br>
+  <a href="hw.py">download hw.py</a>
+  <br>
+  <br>
+  This is a simple example of "output"
+  <br>Now lets try some input:
+  <br>
+<div class="demo-highlight">
+<BR><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"enter your name:"</span><span class="p">)</span>
+<BR><span class="n">name</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<BR><span class="nb">print</span><span class="p">(</span><span class="s2">"enter your last name:"</span><span class="p">)</span>
+<BR><span class="n">lname</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<BR><span class="nb">print</span><span class="p">(</span><span class="s2">"welcome to our program "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">lname</span> <span class="o">+</span> <span class="s2">"!</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</div>
+  <style id="css-style">pre { line-height: 125%; }
+    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    .demo-highlight .hll { background-color: #ffffcc }
+    .demo-highlight { background: #f8f8f8; }
+    .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+    .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
+    .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
+    .demo-highlight .o { color: #666666 } /* Operator */
+    .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+    .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+    .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
+    .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+    .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+    .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+    .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
+    .demo-highlight .ge { font-style: italic } /* Generic.Emph */
+    .demo-highlight .gr { color: #E40000 } /* Generic.Error */
+    .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
+    .demo-highlight .go { color: #717171 } /* Generic.Output */
+    .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
+    .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
+    .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+    .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+    .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+    .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
+    .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+    .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
+    .demo-highlight .m { color: #666666 } /* Literal.Number */
+    .demo-highlight .s { color: #BA2121 } /* Literal.String */
+    .demo-highlight .na { color: #687822 } /* Name.Attribute */
+    .demo-highlight .nb { color: #008000 } /* Name.Builtin */
+    .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+    .demo-highlight .no { color: #880000 } /* Name.Constant */
+    .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
+    .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+    .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+    .demo-highlight .nf { color: #0000FF } /* Name.Function */
+    .demo-highlight .nl { color: #767600 } /* Name.Label */
+    .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+    .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+    .demo-highlight .nv { color: #19177C } /* Name.Variable */
+    .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+    .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
+    .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
+    .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
+    .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
+    .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
+    .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+    .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+    .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
+    .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+    .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+    .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+    .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+    .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+    .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+    .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
+    .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+    .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+    .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
+    .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+    .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
+    .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
+    .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
+    .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
+    .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
+    .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+    <br>
+    <a href="greet.py">download greet.py</a>
+  <br>
+  <br>
+  The output in my case after entering my name is as follows:
+  <br>
+  <pre><code>
+  enter your name:
+  Usmar
+  enter your last name:
+  Padow
+  welcome to our program Usmar Padow!
+  </code></pre>
+  <br>
+  <br>6. Loops 
+  <br>
+  while Loops
+  <br>
+  <br>
+  A while loop is a loop that executed while a condition is true, and ends when 
+  the condition is false.
+  Now let's get some example code:
+  <br>
+<div class="demo-highlight">
+<BR><span></span><span class="n">cont</span><span class="o">=</span><span class="kc">True</span>
+<BR><span class="k">while</span> <span class="n">cont</span><span class="o">==</span><span class="kc">True</span><span class="p">:</span>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">print</span><span class="p">(</span><span class="s2">"continue? 1)Yes 2)No:"</span><span class="p">)</span>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">user_input</span><span class="o">=</span><span class="nb">input</span><span class="p">()</span>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="n">user_input</span><span class="o">==</span><span class="s2">"2"</span><span class="p">:</span>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">cont</span><span class="o">=</span><span class="kc">False</span>
+</div>
+  <style id="css-style">pre { line-height: 125%; }
+    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    .demo-highlight .hll { background-color: #ffffcc }
+    .demo-highlight { background: #f8f8f8; }
+    .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+    .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
+    .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
+    .demo-highlight .o { color: #666666 } /* Operator */
+    .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+    .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+    .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
+    .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+    .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+    .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+    .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
+    .demo-highlight .ge { font-style: italic } /* Generic.Emph */
+    .demo-highlight .gr { color: #E40000 } /* Generic.Error */
+    .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
+    .demo-highlight .go { color: #717171 } /* Generic.Output */
+    .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
+    .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
+    .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+    .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+    .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+    .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
+    .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+    .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
+    .demo-highlight .m { color: #666666 } /* Literal.Number */
+    .demo-highlight .s { color: #BA2121 } /* Literal.String */
+    .demo-highlight .na { color: #687822 } /* Name.Attribute */
+    .demo-highlight .nb { color: #008000 } /* Name.Builtin */
+    .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+    .demo-highlight .no { color: #880000 } /* Name.Constant */
+    .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
+    .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+    .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+    .demo-highlight .nf { color: #0000FF } /* Name.Function */
+    .demo-highlight .nl { color: #767600 } /* Name.Label */
+    .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+    .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+    .demo-highlight .nv { color: #19177C } /* Name.Variable */
+    .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+    .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
+    .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
+    .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
+    .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
+    .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
+    .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+    .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+    .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
+    .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+    .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+    .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+    .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+    .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+    .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+    .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
+    .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+    .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+    .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
+    .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+    .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
+    .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
+    .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
+    .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
+    .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
+    .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+    <br>
+    <a href="cont.py">downlad cont.py</a>
+    <br>
+  <br>
+  Here is some sample output for this code:
+  <br>
+  <pre><code>
+  continue? 1)Yes 2)No:
+  1
+  continue? 1)Yes 2)No:
+  1
+  continue? 1)Yes 2)No:
+  2
+  </code></pre>
+  <br>
+  <br>
+  for loops.
+  for loops are one of the most common kind of loops in programming.
+  Here is some sample code:
+  <br>
+  <div class="demo-highlight">
+  <BR><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+  <BR><span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">sum</span> <span class="o">+=</span> <span class="n">counter</span>
+  <BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">print</span> <span class="p">(</span><span class="s2">"counter is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" and sum is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">))</span>
+  </div>
+  <style id="css-style">pre { line-height: 125%; }
+    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    .demo-highlight .hll { background-color: #ffffcc }
+    .demo-highlight { background: #f8f8f8; }
+    .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+    .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
+    .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
+    .demo-highlight .o { color: #666666 } /* Operator */
+    .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+    .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+    .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
+    .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+    .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+    .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+    .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
+    .demo-highlight .ge { font-style: italic } /* Generic.Emph */
+    .demo-highlight .gr { color: #E40000 } /* Generic.Error */
+    .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
+    .demo-highlight .go { color: #717171 } /* Generic.Output */
+    .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
+    .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
+    .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+    .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+    .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+    .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
+    .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+    .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
+    .demo-highlight .m { color: #666666 } /* Literal.Number */
+    .demo-highlight .s { color: #BA2121 } /* Literal.String */
+    .demo-highlight .na { color: #687822 } /* Name.Attribute */
+    .demo-highlight .nb { color: #008000 } /* Name.Builtin */
+    .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+    .demo-highlight .no { color: #880000 } /* Name.Constant */
+    .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
+    .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+    .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+    .demo-highlight .nf { color: #0000FF } /* Name.Function */
+    .demo-highlight .nl { color: #767600 } /* Name.Label */
+    .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+    .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+    .demo-highlight .nv { color: #19177C } /* Name.Variable */
+    .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+    .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
+    .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
+    .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
+    .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
+    .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
+    .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+    .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+    .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
+    .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+    .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+    .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+    .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+    .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+    .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+    .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
+    .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+    .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+    .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
+    .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+    .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
+    .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
+    .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
+    .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
+    .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
+    .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+    <br>
+    <a href="for.py">dowload for.py</a>
+    <br>
+  <br>
+  <br>The output of all of these programs is:
+  <br>
+  <pre><code>
+    counter is 1 and sum is 1
+    counter is 2 and sum is 3
+    counter is 3 and sum is 6
+    counter is 4 and sum is 10
+  </code></pre>
+  The for loop looks at the range given in range 1,10, it loops around setting
+  the counter variable form 1 to 4(warning:even tho your range says 5 it will
+  end at one less than the final number)
+  <br>
+  <br>7. lists
+<br>A list is a data structure to hold data in order, 
+  This code contains comments, where anything
+  after a # sign is a comment, and won't do anything in the program.
+  Examine the comments on each line which has one to undertsand what
+  the program does.
+  <br>
+<div class="demo-highlight">
+<BR><span></span><span class="n">fruits</span><span class="o">=</span><span class="p">[</span><span class="s2">"banana"</span><span class="p">,</span><span class="s2">"apple"</span><span class="p">,</span><span class="s2">"peach"</span><span class="p">,</span><span class="s2">"pear"</span><span class="p">]</span> <span class="c1"># create a list</span>
+<BR><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># print first element of list</span>
+<BR><span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># print last element</span>
+<BR><span class="nb">print</span><span class="p">(</span><span class="s2">"now reprinting all fruits"</span><span class="p">)</span>
+<BR><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span> <span class="c1"># loops thru the fruits list and assigns each values to the fruit variable</span>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span> <span class="c1"># prints current "iteration" of the fruit</span>
+<BR><span class="nb">print</span><span class="p">(</span><span class="s2">"now reprinting all fruits in reverse"</span><span class="p">)</span>
+<BR><span class="n">fruits</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># reverses the list</span>
+<BR><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+<BR><span class="nb">print</span><span class="p">(</span><span class="s2">"now printing fruits in alphabetical order"</span><span class="p">)</span>
+<BR><span class="n">fruits</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># sorts the list in alphabetical order</span>
+<BR><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</div>
+  <style id="css-style">pre { line-height: 125%; }
+    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    .demo-highlight .hll { background-color: #ffffcc }
+    .demo-highlight { background: #f8f8f8; }
+    .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+    .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
+    .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
+    .demo-highlight .o { color: #666666 } /* Operator */
+    .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+    .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+    .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
+    .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+    .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+    .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+    .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
+    .demo-highlight .ge { font-style: italic } /* Generic.Emph */
+    .demo-highlight .gr { color: #E40000 } /* Generic.Error */
+    .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
+    .demo-highlight .go { color: #717171 } /* Generic.Output */
+    .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
+    .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
+    .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+    .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+    .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+    .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
+    .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+    .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
+    .demo-highlight .m { color: #666666 } /* Literal.Number */
+    .demo-highlight .s { color: #BA2121 } /* Literal.String */
+    .demo-highlight .na { color: #687822 } /* Name.Attribute */
+    .demo-highlight .nb { color: #008000 } /* Name.Builtin */
+    .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+    .demo-highlight .no { color: #880000 } /* Name.Constant */
+    .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
+    .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+    .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+    .demo-highlight .nf { color: #0000FF } /* Name.Function */
+    .demo-highlight .nl { color: #767600 } /* Name.Label */
+    .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+    .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+    .demo-highlight .nv { color: #19177C } /* Name.Variable */
+    .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+    .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
+    .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
+    .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
+    .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
+    .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
+    .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+    .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+    .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
+    .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+    .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+    .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+    .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+    .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+    .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+    .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
+    .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+    .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+    .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
+    .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+    .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
+    .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
+    .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
+    .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
+    .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
+    .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+    <br>
+    <a href="fruits.py">download fruits.py</a>
+  <br>
+  The output for this code will look like this:
+  <br>
+  <pre><code>
+  banana
+  pear
+  now reprinting all fruits
+  banana
+  apple
+  peach
+  pear
+  now reprinting all fruits in reverse
+  pear
+  peach
+  apple
+  banana
+  now printing fruits in alphabetical order
+  apple
+  banana
+  peach
+  pear
+  </code></pre>
+  
+  An  "index" in programming list is a number that points to the element of the
+  list that we want to retreieve.
+  One thing I want to point out is that fruits[0] points to "banana" cause
+  lists in python are "zero indexed" which means the list starts at 0, not
+  at 1(just like the index of this tutorial).
+  
+  Ok, I think if you grasped this you have grasped the very basics of python,
+  you should now be able to go on to taking the tutorials at the python pages
+  or other sites. <a href=https://docs.python.org/3/tutorial/>Here</a> is the link to the python official tutorial. 
+  <br>
+  <br>This document was originally written in 2017 for python2 and C. Modified in 2022 to be python3 only.
+  </body>
+  </html>  

@@ -10,7 +10,7 @@ outputType="PT"#either "PT" for plain text or "HTML"
 def count_lines(filepath):
     try:
         with open(filepath, 'r') as file:
-            return sum(1 for line in file) + 2  # +2 to avoid EOF issues
+            return sum(1 for line in file) + 1  # +2 to avoid EOF issues
     except FileNotFoundError:
         print(f"Error: The file '{filepath}' was not found.")
         return -1
@@ -308,6 +308,11 @@ def createoutputHTML(globals):
     output += '<output lang="jp">\n'
     output += '<head>\n'
     output += '    <meta charset="UTF-8">\n'
+    output += '<style>'
+    output += 'p {'
+    output += '  font-family: monospace;'
+    output += '}'
+    output += '</style>'
     output += '</head>\n'
     output += '<body style="background-color:powderblue;">\n'
 
@@ -332,6 +337,7 @@ def createoutputHTML(globals):
             # Handle comment
             rest_of_string = globals.slots[currentLine].instruction[1:]
             comment = rest_of_string
+            output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
             output += '<p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">'
             output += comment
             output += '</p>'
@@ -406,15 +412,20 @@ def createoutputHTML(globals):
                     functionName = constLayEggSimple
                 elif functionName == constEnd:
                     functionName = constEndSimple
-                from_paren_onwards = rest_of_string[index_of_paren:]
+                index_of_paren = globals.slots[currentLine].instruction.find('(')
+                from_paren_onwards = globals.slots[currentLine].instruction[index_of_paren:]
+                #print("from_paren_onwards;"+from_paren_onwards)
                 index_of_closing_paren = from_paren_onwards.find(')')
                 if index_of_closing_paren == -1:
                     sys.exit("Uneven parentheses on line: " + str(currentLine))                
                 else:
-                    parameters = globals.slots[currentLine].instruction[index_of_paren + 1:index_of_closing_paren]
+                    #print("here123g index1:"+str(index_of_paren) +" index2:"+str(index_of_closing_paren))
+                    parameters = from_paren_onwards[index_of_paren-1 :index_of_closing_paren]
+                    #print("***parameters;"+parameters)
                     if language == "jp":
                         parameters = parameters.replace("H", "ボードの縦")
                         parameters = parameters.replace("W", "ボードの横")
+                #print("hereABC"+parameters)
                 output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
                 output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
                 output += constFunctCall + functionName
@@ -512,7 +523,7 @@ else:
             constRt="rt"
             constRtSimple="亀さんが右に曲がる"
             constLt="lt"
-            constLtSimple="亀さんが右に曲がる"
+            constLtSimple="亀さんが左に曲がる"
             constLayEgg="layEgg"
             constLayEggSimple="亀さんが自分の下に卵を生む"
             constAmILayingOnEgg="amILayingOnAnEgg()"
@@ -555,6 +566,7 @@ else:
         createoutputHTML(globals)
 #(done)add else: and return; or just a kind of way to deal with everything else
 #(dont settled for divs)try start ↘  end ↙
+#bug parameters dont appear after fd(2) command
 #generate graphica boards form programs instead of just text
 #monospace font
 """

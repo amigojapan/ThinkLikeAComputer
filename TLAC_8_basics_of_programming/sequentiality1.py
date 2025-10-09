@@ -1,0 +1,3 @@
+BrushMyTeeth()
+CombMyHair()
+GoToWork()

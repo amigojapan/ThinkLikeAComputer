@@ -52,18 +52,18 @@ def do_while(n1, n2, countDownBy):
         return
     do_while(n1 - countDownBy, n2, countDownBy)
 
-def forloop(counter, max_val, step, is_root=True):
+def forloop(min_val, max_val, step, is_root=True):
     if is_root:
         push_state(globls)
     
-    globls.loop_body_stack[-1](counter)#get last item on list
+    globls.loop_body_stack[-1](min_val)#get last item on list
     
-    if globls.condition(counter, max_val):
+    if globls.condition(min_val, max_val):
         if is_root:
             pop_state()
         return
     
-    forloop(counter + step, max_val, step, False)
+    forloop(min_val + step, max_val, step, False)
     
     if is_root:
         pop_state()
