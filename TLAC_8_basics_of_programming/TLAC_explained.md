@@ -24,7 +24,7 @@ H is the heigh of the board
 if you preffer look at [the original program](https://github.com/amigojapan/ThinkLikeAComputer/blob/main/problem7-program.py)
 
 
-this is hte output of [the python program](https://github.com/amigojapan/ThinkLikeAComputer/blob/main/problem7-output.txt)
+this is [the output of python program](https://github.com/amigojapan/ThinkLikeAComputer/blob/main/problem7-output.txt)
 
 
 
