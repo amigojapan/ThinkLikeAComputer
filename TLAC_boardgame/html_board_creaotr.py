@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 def main(level):
     header = """
@@ -37,3 +38,5 @@ if '__main__' == __name__:
     separator = ", "
     result_string = separator.join(sys.stdin)
     main(result_string)
+
+#maybe change backround color of turtle to same as groud
