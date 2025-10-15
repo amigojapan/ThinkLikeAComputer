@@ -49,6 +49,6 @@ How many players do you need to play TLAC?
 
 -make puzzles, we need many puzzles for the game
 
--make the documentation for TLAC, a kind of tutorial or manual (I particularly need help with this) [here](https://amjp.psy-k.org/TLAC/8_basics_of_programming_TLAC.html) is a sample of what I have written up to now
+-make the documentation for TLAC, a kind of tutorial or manual (I particularly need help with this) [here](https://amjp.psy-k.org/TLAC/TLAC_8_basics_of_programming/8_basics_of_programming_TLAC.html) is a sample of what I have written up to now
 
 -(done)make a tool to convert the generated outputof programs into board states in graphics in HTML
