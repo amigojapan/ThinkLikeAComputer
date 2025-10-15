@@ -5,6 +5,9 @@
 ./htmlifyer.py en HTML problem5-program-simplified.py > problem5-programchartEN.html
 ./htmlifyer.py en HTML problem6-program-simplified.py > problem6-programchartEN.html
 ./htmlifyer.py en HTML problem7-program-simplified.py > problem7-programchartEN.html
+#docs
+./htmlifyer.py en HTML docs_functionsEN-simplified.py > docs_functionsEN.html
+
 
 ./htmlifyer.py jp HTML problem3-program-simplified.py > problem3-programchartJP.html
 ./htmlifyer.py jp HTML problem4-program-simplified.py > problem4-programchartJP.html

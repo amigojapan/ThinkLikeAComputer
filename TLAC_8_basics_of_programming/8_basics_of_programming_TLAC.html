@@ -285,7 +285,10 @@
   the following "Function call Turtle Move Foward" on line 0012 will be skipped:
   so the turtle does not move at all
   then we "reach X=2" on line 0013, which will change the value of X to two,
-  you should move the turtle to its X position 2, which means puttin the turtle in the follwoing position:
+  now I need to explain that values in TLAC are "indexed on 0", which only means
+  "we count from 0"(kind of like hte joke I made at the beginning of this text
+  calling sequenciality "chapter 0"),you should move the turtle to its X position 2
+  (which is the third slot counting form 0), which means puttin the turtle in the follwoing position:
   <BR><BR><BR>
     <BR>
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
@@ -333,19 +336,66 @@
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call GoToWork</p><BR>
   <BR><BR><BR>    
   Take the following program:
-  
-  <div class="demo-highlight">
-  <BR><span></span><span class="k">def</span> <span class="nf">calculate_tax</span><span class="p">(</span><span class="n">tax_type</span><span class="p">,</span> <span class="n">ammount</span><span class="p">):</span>
-  <BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="n">tax_type</span><span class="o">==</span><span class="s2">"luxury"</span><span class="p">:</span>
-  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">ammount</span> <span class="o">*</span> <span class="mf">0.10</span>
-  <BR>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">else</span><span class="p">:</span>
-  <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">ammount</span> <span class="o">*</span> <span class="mf">0.08</span>
+  <BR><BR><BR>
   <BR>
-  <BR><span class="n">purse_tax</span><span class="o">=</span><span class="n">calculate_tax</span><span class="p">(</span><span class="s2">"non-luxury"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-  <BR><span class="n">restaurant_tax</span><span class="o">=</span><span class="n">calculate_tax</span><span class="p">(</span><span class="s2">"luxury"</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-  <BR><span class="nb">print</span><span class="p">(</span><span class="s2">"purse_tax is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">purse_tax</span><span class="p">))</span>
-  <BR><span class="nb">print</span><span class="p">(</span><span class="s2">"restaurant_tax is "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">restaurant_tax</span><span class="p">))</span>
-  </div>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">functions example</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the following is a function definition:</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  Lay_Four_Eggs_In_Square_Pattern</p><BR>
+    <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the following two turns are</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">to assure the turtle ends up in</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the up pusition</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    </div><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=0 </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: inting board after teleport X"</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Lay_Four_Eggs_In_Square_Pattern</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=5 </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: inting board after teleport X"</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Lay_Four_Eggs_In_Square_Pattern</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=8 </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: inting board after teleport X"</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Lay_Four_Eggs_In_Square_Pattern</p><BR>
+  <BR><BR><BR>
   <style id="css-style">pre { line-height: 125%; }
   td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
   span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -424,12 +474,7 @@
   <a href="taxes.py">download taxes.py</a>
   <br>
   <br>
-  The output of this program should be this:
-  <br>
-  <pre><code>
-    purse_tax is 8.0
-    restaurant_tax is 10.0
-  </code></pre>
+  <a href=docs_functionsEN-ouput.html>Click here</a>to see are all the states of the board after executing this program:
   <br>
   Function calls help us so we don't have to write the same
   code many times, for example, in this program we defined the way to
