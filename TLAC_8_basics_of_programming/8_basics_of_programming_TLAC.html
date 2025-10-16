@@ -470,6 +470,20 @@
   .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
   .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
   .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+  Fist I think i need to introduce you to two more TLAC internal functions:
+  the "Turtle lays egg underneath itself", as the name imlies, you should
+  take an egg and put it inder the turtle.
+  and then the "Turn Turtle Right" function, which means you should take
+  the turtle piece and turn it 90 degrees tot he right.
+  As you can see in the final state of the board in the followinf chart,
+  the turtle lays 4 eggs in a square pattern, it does it 3 times
+  it does it three times because there are three fucntion calls to the
+  "Lay_Four_Eggs_In_Square_Pattern" function, which is not a TLAC function,
+  but it is a user defined function, when you see a call to that function, 
+  you should execute all the instructions inside the user defined function.
+  as you can see, this saved a lot of space in the program, because withought
+  this function we woudl have had to repeat all the contents of the code inside
+  the function 3 times over. 
   <br>
   <br>
   <a href=docs_functionsEN-ouput.html>Click here</a>to see are all the states of the board after executing this program:
@@ -487,27 +501,30 @@
   <br>Now I will explain how a function is defined.
   First we have the fuction definition, followed by the function name, function names
   follow the same rule as variable names, in this case our function name is
-  Lay_Four_Eggs_In_Square_Pattern.then they word parameters: or an open parenthesis 
+  Lay_Four_Eggs_In_Square_Pattern, then they word parameters: or an open parenthesis 
   (then the "parameters", which
   are the things that change from function call
-  to function call. They come in the form of variable names, in this case our
-  parameters are tax_type and ammount.
-  Then comes the function body, which in python is just a block of indented stuff
-  as you can see this function body has the capability to give an 8 pecent tax
-  for a non luxury item and a 10 percent tax to a luxury item. 
-  In our function calls we send the parameters to the function, and they get stored
-  as variables of the name of the parameters.
-  Finally there is the return statement. Which tells the program "send this back
+  to function call. They can come in the form of variable names or just values,
+  in this case our for example the "Turtle Move Foward" can take a parameter 
+  of how far you want the turtle to move in one move, if we have the following
+  "Turtle Move Foward, parameters: 5", then the turtle should jump 5 spaces forward
+  we will see examples using it like this in the future.
+  you can also see the "print parameters: inting board after teleport X", you don't really
+  need to worry about this function call in this example, but we added it cause
+  we actually executed the program to generate the board states of the board and it made it
+  easier to generate the documentation this way, since it adds the title "inting board after teleport X"
+  in the specific place before the "printBoard" function is called. the writer of this document
+  had to add those two functions in order to generate the state of the board properly and decided to
+  leave them in in this example. the reason for the "printBoard" function to be
+  added is because assignments like " turtleX=5" are not TALC internal functions and cannot generate the state of
+  the board automatically like the other functions do, but since the turtle moves with those, the author thought
+  it was a good idea to add it to the printout of the states of hte board.
+
+  Finally there is something called a "return statement". Which tells the program to "send this back
   to the function call as the result". (Also note that return terminates the flow of
-  the fucntion, no mroe operations occur after return, and the flow of the
+  the fucntion, no more operations occur after return, and the flow of the
   program goes back to the function call)
-  in this program, after return is called,  it sets the lvalues of purse_tax and
-  restaurant_tax.
-  Finally this program prints out the values. These values are numbers so they need to
-  be converted to strings before they can be printed using the print() statement.
-  This is accomplished by surrounding the values with str().
-  
-  
+  in this program we omitted the return statement, but we will see examples of this later on.
   <br>
   <br>5.Input/output
   <br>
