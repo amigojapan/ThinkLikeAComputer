@@ -20,10 +20,12 @@ print("printing board after teleport X")
 printBoard()
 Lay_Four_Eggs_In_Square_Pattern()
 turtleX=5
+
 print("printing board after teleport X")
 printBoard()
 Lay_Four_Eggs_In_Square_Pattern()
 turtleX=8
+
 print("printing board after teleport X")
 printBoard()
 Lay_Four_Eggs_In_Square_Pattern()

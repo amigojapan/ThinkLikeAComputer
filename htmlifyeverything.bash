@@ -7,6 +7,7 @@
 ./htmlifyer.py en HTML problem7-program-simplified.py > problem7-programchartEN.html
 #docs
 ./htmlifyer.py en HTML docs_functionsEN-simplified.py > docs_functionsEN.html
+./htmlifyer.py en HTML docs_very_basic_program-simplified.py > docs_very_basic_programEN.html
 
 
 ./htmlifyer.py jp HTML problem3-program-simplified.py > problem3-programchartJP.html
