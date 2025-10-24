@@ -360,7 +360,7 @@ def createoutputHTML(globals):
                 output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
                 output += constFunctDefFull + functionName
                 if parameters:
-                    output += constFunctParamsSimplified + parameters
+                    output += " " + constFunctParamsSimplified + " " + parameters
                 output += '</p>'
                 output += newLine
                 continue
@@ -415,13 +415,16 @@ def createoutputHTML(globals):
                 index_of_paren = globals.slots[currentLine].instruction.find('(')
                 from_paren_onwards = globals.slots[currentLine].instruction[index_of_paren:]
                 #print("from_paren_onwards;"+from_paren_onwards)
-                index_of_closing_paren = from_paren_onwards.find(')')
-                if index_of_closing_paren == -1:
+                last_character = globals.slots[currentLine].instruction[-1] #get last character
+                #index_of_closing_paren = globals.slots[currentLine].instruction.find(')')
+                #if index_of_closing_paren == -1:
+                if last_character != ")":
                     sys.exit("Uneven parentheses on line: " + str(currentLine))                
                 else:
+                    index_of_closing_paren=len(globals.slots[currentLine].instruction)-1
                     #print("here123g index1:"+str(index_of_paren) +" index2:"+str(index_of_closing_paren))
-                    parameters = from_paren_onwards[index_of_paren-1 :index_of_closing_paren]
-                    #print("***parameters;"+parameters)
+                    parameters = globals.slots[currentLine].instruction[index_of_paren+1 :index_of_closing_paren]
+                    #print("--***parameters:"+parameters)
                     if language == "jp":
                         parameters = parameters.replace("H", "ボードの縦")
                         parameters = parameters.replace("W", "ボードの横")

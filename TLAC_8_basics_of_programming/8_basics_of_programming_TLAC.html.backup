@@ -577,30 +577,29 @@
   <br>Now lets try some input, in TALC doing input is a bit hard to explain, well, mostly cause "input" will usually take the form of an action of the user, this can be achieved with the 'oderUser: parameters "prompt"' function
   this is quite different from other TALC functions, cause it means we will actually be asking the user to do something.:
 
-  the following is an example of a program that uses input:
+  the folloing is an example of a program that uses input:
 <BR><BR><BR>
-  <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">user input example</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">user input example</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">initialize turtle position</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters: ,4,9</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters: 4,9</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call orderUser parameters: ,"put turtle at top left of the board"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call orderUser parameters: "put turtle at top left of the board"</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call simulateUserInputTeleportTurtleTo parameters: ,0,0</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call simulateUserInputTeleportTurtleTo parameters: 0,0</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> savedX=turtleX </p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> savedX= turtleX </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> savedY=turtleY </p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> savedY= turtleY </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call orderUser parameters: ,"put turtle at top bottom right of the board"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call orderUser parameters: "put turtle at top bottom left of the board"</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call simulateUserInputTeleportTurtleTo parameters: ,9,9</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call simulateUserInputTeleportTurtleTo parameters: 9,9</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters: , savedX, savedY</p><BR>    
-  <BR><BR><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters:  savedX, savedY</p><BR>
+    <BR><BR><BR>
   <style id="css-style">pre { line-height: 125%; }
     td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
     span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -676,30 +675,7 @@
     .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
     .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   <br>
-  <BR>
-    so lets see what thiis does, first of all empty lines like line 0002 can be ingored.
-    first we teleport the turtle to 4,9, which puts it in the normal initial position.
-    then we order the user to do "put turtle at top left of the board".
-    a user should obey the instructions, but remember that users may not be obedient or
-    they can also make mistakes.
-    next in line 0006 we have a function call used moslt to generate this documentation,
-    it is the same as teleport to 0,0 but this is just used to make the turtle follow the
-    instructions of the user, you can ignore this istruction too.
-    next up we save the turtle x position to savedX by issuing savedX= turtleX 
-    then we do the same for the Y position.
-    this should (if the user did hit thing well) with the dariable savedX and savedY being 0,0 (the top left of the board).
-    next we tell the user to move the turtle to the bottom right of the board.
-    you can ignore the insturction at 0010.
-    then we have "Function call teleportTurtleTo parameters: savedX, savedY" and since savedX, savedY are 0,0, the turtle should
-    teleport to the top left of the board.
-    this can get interesting in games where the user gets to decide where to put the turtle.
-    for example if th4e user initially put the turtle in another porition,
-    the turtle would have teleported back there.
-    so it is interesting for making like two player games, where the user interacts wit the pieces.
-  
-  <BR><BR><BR>
   <a href=docs_user_input_example-outputEN.html>This is the output</a>  after following the instructions.
-  <BR><BR><BR>
   <br>
   <br>6. Loops 
   <br>

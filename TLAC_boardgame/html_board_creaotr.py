@@ -40,4 +40,4 @@ if '__main__' == __name__:
     result_string = separator.join(sys.stdin)
     main(result_string)
 
-#maybe change backround color of turtle to same as groud
+#(done, changed all the backrounds of every piece) maybe change backround color of turtle to same as groud

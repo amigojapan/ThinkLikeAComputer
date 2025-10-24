@@ -10,6 +10,11 @@ class initGlobals:
         self.slots=None
         self.turtle=None
 
+# Initialize globals at module level
+globals = initGlobals()
+globals.W = 10
+globals.H = 10
+
 class Cell:
     def __init__(self):
         self.containsEgg = False # Instance attribute
@@ -30,7 +35,7 @@ def initSlots(globals):
             slots.append(cell)
     return slots
 
-def printBoard(globals):
+def initBoard(globals):
     globals.board = ""
     for y in range(0, globals.H):  # row
         for x in range(0, globals.W):  # column
@@ -49,7 +54,11 @@ def printBoard(globals):
                     continue
                 globals.board += "[ ]"
         globals.board += "\n"
-    print(globals.board)
+    #print(globals.board)
+
+globals.slots = initSlots(globals)
+globals.turtle = initTurtle()
+initBoard(globals)
 
 def readBoaedFromFile(globals,boardFilename):
     index=0
@@ -78,20 +87,61 @@ def readBoaedFromFile(globals,boardFilename):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-def executeMove(globals):
+def exitIfTurtleOutOfBounds(globals):
     if(globals.turtle.X>globals.W or globals.turtle.X<0 or globals.turtle.Y>globals.H or globals.turtle.Y<0):
         sys.exit("Error, turtle went outside of board, program terminated.")
+def printBoard(globals):
+    print(globals.board)
+
+def updateBoard(globals):
+    initBoard(globals)
+    exitIfTurtleOutOfBounds(globals)
+    "Updating board"
+    #print("Move Number:"+str(globals.MoveNumber))
+    #printBoard(globals)
+
+def executeMove(globals):
+    updateBoard(globals)
+    exitIfTurtleOutOfBounds(globals)
     print("Move Number:"+str(globals.MoveNumber))
     printBoard(globals)
 
-def teleportTurtleTo(x,y):
-    globals.turtle.X=4
-    globals.turtle.Y=9
+def executeMoveDontPrintBoard(globals):
+    updateBoard(globals)
+    exitIfTurtleOutOfBounds(globals)
+    print("Move Number:"+str(globals.MoveNumber))
+
+
+def teleportTurtleTo(globals,_x,_y):
+    globals.MoveNumber=globals.MoveNumber+1
+    print("Teleporting to X:"+str(_x)+" Y:"+str(_y))
+    globals.turtle.X=_x
+    globals.turtle.Y=_y
+    executeMove(globals)
+
+def setInitialTurtlePositionTo(globals,_x,_y):
+    print("setting initial turtle position to X:"+str(_x)+" Y:"+str(_y))
+    globals.turtle.X=_x
+    globals.turtle.Y=_y
+    updateBoard(globals)
+    #executeMove(globals)
+
+def simulateUserInputTeleportTurtleTo(globals,_x,_y):
+    #globals.MoveNumber=globals.MoveNumber+1
+    print("Simulating user move Teleporting to X:"+str(_x)+" Y:"+str(_y))
+    globals.turtle.X=_x
+    globals.turtle.Y=_y
+    executeMove(globals)
+
+def promptUserToWriteDownOnPaper(globals,prompt):
+    globals.MoveNumber=globals.MoveNumber+1
+    executeMoveDontPrintBoard(globals)
+    print("USER!, WRITE DOWN THE FOLLOWING ON PAPER!:\n\""+prompt+"\"")
 
 #move functions
 def fd(globals,slots=1):
     print("moved foward "+str(slots)+" slots")
-    globals.MoveNumber=globals.MoveNumber+1
+    globals.MoveNumber+=1
     if globals.turtle.direction == "^":   # up
         globals.turtle.Y -= slots
     elif globals.turtle.direction == "V": # down
@@ -176,11 +226,18 @@ def end(gloabls):
     printBoard(globals)
     sys.exit()
 
-globals=initGlobals()
-globals.W=10
-globals.H=10
-globals.slots=initSlots(globals)
-globals.turtle=initTurtle()
+def orderUser(gloabls,prompt):
+    print("USER DO THIS!:"+prompt)
+    globals.MoveNumber=globals.MoveNumber+1
+    #executeMove(globals)
+
+if __name__ == "__main__":
+    globals=initGlobals()
+    globals.W=10
+    globals.H=10
+    globals.slots=initSlots(globals)
+    globals.turtle=initTurtle()
+    initBoard(globals)
 #-(done)add a function to read a board form a text file
 #   should be easier to design boards this way
 #-add collision detection for walls and diamonds, including stuff like fd(5)
