@@ -9,71 +9,87 @@
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> import TLACloopyLib as l </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> The following makes a pyramid, it is an example of how to use several loopbodies for a forloop in the code</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> class initGlobals: </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Global container used by the loop bodies</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> class TableGlobals: </p><BR>
 <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  __init__ parameters: self</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  __init__ parameters: self</p><BR>
 <div style="background-color: #4B0082; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> self.output = "" </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> self.i = 0          # current outer-loop value </p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> self.ch = "*" </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> self.j = 0          # current inner-loop value </p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p></div></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call globals = initGlobals</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> self.line = ""      # accumulated text for one row </p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body1 parameters: n</p><BR>
-<div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output = output + ' ' </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p></div></div><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call globals = TableGlobals</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body2 parameters: n</p><BR>
-<div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output = output + ch </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  condition_eq parameters: n1, n2</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Helper: equality condition (used by both loops)</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  eq parameters: n1, n2</p><BR>
 <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call return l.conditional parameters: n1, l.op("=="), n2</p><BR>
 </div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.condition=condition_eq </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.condition = eq                   # termination condition </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  print_many_christmas parameters: ch, times, triangle_width</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Inner-loop body – compute i*j and append to the current line</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  inner_body parameters: j</p><BR>
 <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output = '' </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> product = i * j </p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> ch = ch </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call line += "\t" + str parameters: i) + " * " + str(j) + " = " + str(product</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> repeat_end = triangle_width - times </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p></div><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Save outer loop state and set inner loop state for spaces</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0030</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Outer-loop body – run the *inner* loop and then print the line</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body=loop_body1 </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0031</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.forloop parameters: 0, repeat_end, 1</p><BR>
-<BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Set inner loop state for stars</p><BR>
-<BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0030</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> repeat_end2 = times * 2 - 2 </p><BR>
-<BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0031</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body=loop_body2 </p><BR>
-<BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0032</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.forloop parameters: 0, repeat_end2, 1</p><BR>
-<BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0033</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: output</p><BR>
-<BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0034</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0035</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body3 parameters: triangle_width</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0032</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  outer_body parameters: i</p><BR>
 <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0036</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print_many_christmas parameters: '*', triangle_width, 5</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0033</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> i = i </p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0037</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0038</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.condition = condition_eq </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0034</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> line = "" </p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0039</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = loop_body3 </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0035</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0036</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ---- inner loop (j from 1 to 3) --------------------------------</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0040</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.forloop parameters: 1, 5, 1</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0037</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = inner_body       # body that fills the line </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0038</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.forloop(1, 3, 1)                     # 1 … 3                         # restore outer state </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0039</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ----------------------------------------------------------------</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0040</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0041</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> print(line)                    # row finished </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0042</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> print()                                # newline after row </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0043</p></div><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0044</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0045</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Run the outer loop (i from 1 to 3)</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0046</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0047</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = outer_body           # body that runs inner loop </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0048</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.forloop(1, 3, 1)                         # 1 … 3 </p><BR>
 </body></output>
 

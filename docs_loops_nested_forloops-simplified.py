@@ -1,40 +1,48 @@
 #loopy library import, name it l
 import TLACloopyLib as l
 
-# The following makes a pyramid, it is an example of how to use several loopbodies for a forloop in the code
-class initGlobals:
+# ------------------------------------------------------------------
+# Global container used by the loop bodies
+# ------------------------------------------------------------------
+class TableGlobals:
     def __init__(self):
-        self.output = ""
-        self.ch = "*"
+        self.i = 0          # current outer-loop value
+        self.j = 0          # current inner-loop value
+        self.line = ""      # accumulated text for one row
 
-globals = initGlobals()
+globals = TableGlobals()
 
-def loop_body1(n):
-    output = output + ' '
-
-def loop_body2(n):
-    output = output + ch
-
-def condition_eq(n1, n2):
+# ------------------------------------------------------------------
+# Helper: equality condition (used by both loops)
+# ------------------------------------------------------------------
+def eq(n1, n2):
     return l.conditional(n1, l.op("=="), n2)
-l.condition=condition_eq
+l.condition = eq                   # termination condition
 
-def print_many_christmas(ch, times, triangle_width):
-    output = ''
-    ch = ch
-    repeat_end = triangle_width - times
-    # Save outer loop state and set inner loop state for spaces
-    l.loop_body=loop_body1
-    l.forloop(0, repeat_end, 1)
-    # Set inner loop state for stars
-    repeat_end2 = times * 2 - 2
-    l.loop_body=loop_body2
-    l.forloop(0, repeat_end2, 1)
-    print(output)
+# ------------------------------------------------------------------
+# Inner-loop body – compute i*j and append to the current line
+# ------------------------------------------------------------------
+def inner_body(j):
+    product = i * j
+    line += "\t" + str(i) + " * " + str(j) + " = " + str(product)
 
-def loop_body3(triangle_width):
-    print_many_christmas('*', triangle_width, 5)
+# ------------------------------------------------------------------
+# Outer-loop body – run the *inner* loop and then print the line
+# ------------------------------------------------------------------
+def outer_body(i):
+    i = i
+    line = ""
 
-l.condition = condition_eq
-l.loop_body = loop_body3
-l.forloop(1, 5, 1)
+    # ---- inner loop (j from 1 to 3) --------------------------------
+    l.loop_body = inner_body       # body that fills the line
+    l.forloop(1, 3, 1)                     # 1 … 3                         # restore outer state
+    # ----------------------------------------------------------------
+
+    print(line)                    # row finished
+    print()                                # newline after row
+
+# ------------------------------------------------------------------
+# Run the outer loop (i from 1 to 3)
+# ------------------------------------------------------------------
+l.loop_body = outer_body           # body that runs inner loop
+l.forloop(1, 3, 1)                         # 1 … 3

@@ -7,7 +7,11 @@ def main(level):
         <title>HTML output</title>
     </head>
     <style>
+    body {
+            font-family: "Courier New", Courier, monospace;
+        }
     .cell-div {
+      font-family: Courier;
       display: inline;
       width: 300px;
     }
@@ -26,7 +30,13 @@ def main(level):
     level=level.replace("[*]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/star.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("[o]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/egg.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("\n", "<BR>\n")
-    
+    #make spaces into HTML spaces
+    level=level.replace(" ", "&nbsp")    
+    #set HTML elements back to normal
+    level=level.replace("<div&nbspclass='cell-div'>", "<div class='cell-div'>")    
+    level=level.replace("<img&nbspsrc=", "<img src=")    
+    level=level.replace("'&nbsp&nbspwidth=", "'  width=")    
+    level=level.replace("&nbspheight=", " height=")    
     body=level
     footer = """
     </body>

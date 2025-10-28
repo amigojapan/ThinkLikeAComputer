@@ -7,6 +7,7 @@ TLAC.setInitialTurtlePositionTo(TLAC.globals,4,9)
 print("initial board:")
 TLAC.printBoard(TLAC.globals)
 
+#countdown example
 #loopy library import, name it l
 import TLACloopyLib as l
 

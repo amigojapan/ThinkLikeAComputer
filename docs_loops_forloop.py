@@ -10,7 +10,7 @@ TLAC.printBoard(TLAC.globals)
 #loopy library import, name it l
 import TLACloopyLib as l
 
-# do_while example
+#for loop example
 def loop_body(n):
     TLAC.teleportTurtleTo(TLAC.globals,n,n)
 l.globals.loop_body = loop_body

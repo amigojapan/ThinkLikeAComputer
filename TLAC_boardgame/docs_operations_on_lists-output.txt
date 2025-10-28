@@ -1,0 +1,51 @@
+Move Number:1
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"banana"
+Move Number:2
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"pear"
+Move Number:3
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"now re-writing all fruits:"
+Move Number:4
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"banana"
+Move Number:5
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"apple"
+Move Number:6
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"peach"
+Move Number:7
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"pear"
+Move Number:8
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"now re-writing all fruits in reverse:"
+Move Number:9
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"pear"
+Move Number:10
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"peach"
+Move Number:11
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"apple"
+Move Number:12
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"banana"
+Move Number:13
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"now writing fruits in alphabetical order:"
+Move Number:14
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"apple"
+Move Number:15
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"banana"
+Move Number:16
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"peach"
+Move Number:17
+USER!, WRITE DOWN THE FOLLOWING ON PAPER!:
+"pear"

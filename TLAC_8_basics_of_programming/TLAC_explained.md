@@ -37,7 +37,7 @@ Do you have a class youre teaching?
 
 -I used to teach programming to kids, but no, I am just doing this, my job is allowing me to develop the boardgame during work time
 
-Why a board game and not a viddeogame?
+Why a board game and not a videogame?
 
 -I think this can be used in like countries where computers are not easy to access,just by owning the board game
 

@@ -33,7 +33,7 @@ l.globals.condition = eq                   # termination condition
 # ------------------------------------------------------------------
 def inner_body(j):
     product = globals.i * j
-    globals.line += "\t" + str(globals.i) + " * " + str(j) + " = " + str(product)
+    globals.line += "    " + str(globals.i) + " * " + str(j) + " = " + str(product)
 
 # ------------------------------------------------------------------
 # Outer-loop body – run the *inner* loop and then print the line
