@@ -357,6 +357,7 @@ def createoutputHTML(globals):
                     sys.exit("Uneven parentheses on line: " + str(currentLine))                
                 else:
                     parameters = from_paren_onwards[1:index_of_closing_paren]
+                output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
                 output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
                 output += constFunctDefFull + functionName
                 if parameters:

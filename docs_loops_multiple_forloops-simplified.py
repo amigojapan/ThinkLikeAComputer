@@ -7,21 +7,21 @@ class initGlobals:
         self.output = ""
         self.ch = "*"
 
-globals = initGlobals()
+g = initGlobals()
 
 def loop_body1(n):
-    output = output + ' '
+    g.output = g.output + ' '
 
 def loop_body2(n):
-    output = output + ch
+    g.output = g.output + g.ch
 
 def condition_eq(n1, n2):
     return l.conditional(n1, l.op("=="), n2)
 l.condition=condition_eq
 
 def print_many_christmas(ch, times, triangle_width):
-    output = ''
-    ch = ch
+    g.output = ''
+    g.ch = ch
     repeat_end = triangle_width - times
     # Save outer loop state and set inner loop state for spaces
     l.loop_body=loop_body1
@@ -30,7 +30,7 @@ def print_many_christmas(ch, times, triangle_width):
     repeat_end2 = times * 2 - 2
     l.loop_body=loop_body2
     l.forloop(0, repeat_end2, 1)
-    print(output)
+    print(g.output)
 
 def loop_body3(triangle_width):
     print_many_christmas('*', triangle_width, 5)

@@ -24,7 +24,7 @@ l.condition = eq                   # termination condition
 # ------------------------------------------------------------------
 def inner_body(j):
     product = i * j
-    line += "\t" + str(i) + " * " + str(j) + " = " + str(product)
+    line += "    " + str(i) + " * " + str(j) + " = " + str(product)
 
 # ------------------------------------------------------------------
 # Outer-loop body – run the *inner* loop and then print the line
