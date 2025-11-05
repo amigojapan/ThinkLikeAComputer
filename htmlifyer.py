@@ -139,7 +139,7 @@ def createoutputPT(globals):
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleLeft, constTurtleLeftSimplified)
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleRight, constTurtleRightSimplified)
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleDown, constTurtleDownSimplified)
-            simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleCanProceedFoward, constTurtleCanProceedFowardSimplified)
+            simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constTurtleCanProceedForward, constTurtleCanProceedForwardSimplified)
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constAmILayingOnEgg, constAmILayingOnEggSimple)
             if language=="jp":
                 simplifiedAndTrsanlsated = simplifiedAndTrsanlsated+constThenSimple
@@ -384,7 +384,7 @@ def createoutputHTML(globals):
             simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleLeft, constTurtleLeftSimplified)
             simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleRight, constTurtleRightSimplified)
             simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleDown, constTurtleDownSimplified)
-            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleCanProceedFoward, constTurtleCanProceedFowardSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleCanProceedForward, constTurtleCanProceedForwardSimplified)
             simplifiedAndTranslated = simplifiedAndTranslated.replace(constAmILayingOnEgg, constAmILayingOnEggSimple)
             if language == "jp":
                 simplifiedAndTranslated += constThenSimple
@@ -484,7 +484,7 @@ else:
             constFunctDef="Function definition"
             constFunctDefFull=" Function definition "
             constFd="fd"
-            constFdSimple="Turtle Move Foward"
+            constFdSimple="Turtle Move Forward"
             constRt="rt"
             constRtSimple="Turn Turtle Right"
             constLt="lt"
@@ -511,8 +511,8 @@ else:
             constTurtleLeftSimplified="Facing Left"
             constTurtleDown='"V"'
             constTurtleDownSimplified="Facing Down"
-            constTurtleCanProceedFoward="testIfICanProceed"
-            constTurtleCanProceedFowardSimplified='"can Turtle proceed forward?"'
+            constTurtleCanProceedForward="testIfICanProceed"
+            constTurtleCanProceedForwardSimplified='"can Turtle proceed forward?"'
             constAmILayingOnEgg="amILayingOnAnEgg()"
             constAmILayingOnEggSimple='"is Turtle laying on an egg?"'
             constFunctParams="parameters:"
@@ -552,8 +552,8 @@ else:
             constTurtleLeftSimplified="左"
             constTurtleDown='"V"'
             constTurtleDownSimplified="下"
-            constTurtleCanProceedFoward="testIfICanProceed"
-            constTurtleCanProceedFowardSimplified="「亀さんが前に進められる」"
+            constTurtleCanProceedForward="testIfICanProceed"
+            constTurtleCanProceedForwardSimplified="「亀さんが前に進められる」"
             constFunctParams="parameters:"
             constFunctParamsSimplified="引数："
     outputType=sys.argv[2]#either "PT" for plain text or "HTML"

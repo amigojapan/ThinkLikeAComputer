@@ -20,3 +20,10 @@ promptUserToWriteDownOnPaper( "now writing fruits in alphabetical order:")
 # sorts the list in alphabetical order
 fruits.sort()
 l.foreach(fruits, l.loop_body)
+fruits.append("appricot")
+# Inserts 'blueberry' at index 2
+fruits.insert(2, "blueberry")
+#deletes the third item of the list
+del fruits[3]
+promptUserToWriteDownOnPaper( "now writing fruits in final order:")
+l.foreach(fruits, l.loop_body)

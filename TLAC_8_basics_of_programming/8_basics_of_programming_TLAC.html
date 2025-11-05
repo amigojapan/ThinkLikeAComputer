@@ -11,27 +11,27 @@
         </style>      
     </head>
     <body style="background-color:powderblue;">
-  <br>8 Basics Concepts of Programming in TLAC(Think like a computer)
+  <br><H1>8 Basics Concepts of Programming in TLAC(Think like a computer)</H1>
   <br>
   <br>Author:Usmar A. Padow (amigojapan), <a href=http://amigojapan.github.io/>amigojapan's homepage</a>
   <br>
-  <br>Note: This document aims to teach super beginners how to  program.
+  <br>Note: This document aimed to teach complete novices how to program.
   <br>
-  <br>0. Sequentiality
-  <br>1. Variables
-  <br>2. Statements
-  <br>3. Conditionals/blocks 
-  <br>4. Functions/Types 
-  <br>5. Input/output
-  <br>6. Loops 
-  <br>7. Arrays/lists 
+  <br><a href="#0">0. Sequentiality</a>
+  <br><a href="#1">1. Variables</a>
+  <br><a href="#2">2. Statements</a>
+  <br><a href="#3">3. Conditionals/blocks</a> 
+  <br><a href="#4">4. Functions</a>
+  <br><a href="#5">5. Input/output</a>
+  <br><a href="#6">6. Loops</a>
+  <br><a href="#7">7. Arrays/lists</a> 
   <br>
-  <br>0.	Sequentiality/Following instructions in order
+  <br><div id="0"><h2>0.	Sequentiality/Following instructions in order</h2></div>
   <br>The first thing we need to learn in order to become a programmer is 
   that instructions always follow a regular order, usually from top
   to bottom.
-  <BR><H1>tips</H1>
-  <BR>for using TLCA use a small coin to keep the current instruction. 
+  <BR><H3>Tips for playing TLAC</H3>
+  <BR>Use a small coin to keep the current instruction, instructions are marked by line numbers like 0001. 
   (assuming you are using the printed version of the board game)   
   <BR>
   <BR>For example:
@@ -53,44 +53,45 @@
   <BR><BR><BR>
   Well, the answer is that I would first brush my teeth, but I would get 
   to work unkempt, which would cause trouble. That is why the order of 
-  the instructions in a program is so important… also because "computers 
-  are stupid” (I recommend watching <a href="https://www.youtube.com/watch?v=EKWGGDXe5MA" target="_blank">this video</a>)
+  the instructions in a program is so important... also because as Richard Feynman said
+  in <a href="https://www.youtube.com/watch?v=EKWGGDXe5MA" target="_blank">this lecture</a> "computers are stupid”.
    Which is another thing to keep in mind, with the
     previous program I just wrote, the computer will not intelligently know
    I should comb my hair before going to work. Computers are just
      not capable of such decision making at this level of programming.
   If you make a large program, and shuffle its instructions around, the 
   program will surely not do what it was originally intended to do.
-  <BR><H1>tips</H1>
+  <BR><H3>Tips for playing TLAC</H3>
   <BR>Write variable values down on a separate piece of paper to remember
     the current value of the variables (assuming you are using the printed
     version of the board game).    
   <BR>    
   <br>
-  <br>1.Variables
-  <br>A variable is a place in the computer memory where some kind of 
-  value sometimes a string (some letters), sometimes a number is stored.
+  <br>
+  <br><div id="1"><h2>1. Variables</h2></div>
+  <br>A variable is a place in the computer's memory where some kind of 
+  value sometimes a string (some letters), sometimes a number are stored.
   Like the value 5 or the string "hello”.  A variable can have a simple 
   name like just the letter x or any combination of letters like
-    last_name or social_security_number, but not spaces, last name is 
+  last_name or social_security_number, but not spaces, last name is 
   not a valid variable name.
   If we have a variable called social_security_number we could assign it 
-  the value 123458789 as a sample social security number.
+  the value 123456789 as a sample social security number. if you wanted to
+  dashes maybe you would want to use a string like "123-45-6789".
+  Strings are surrounded by double quotes, numbers are just written bare.
   Variables as their name implied can vary, which seems to be different to
-   the mathematical view on variables, in math if you
-   say x=5 then x is always equal to 5,  but in programming we can say 
+  the mathematical view on variables, in math if you
+  say x=5 then x is always equal to 5,  but in programming we can say 
   x=3 and then x=5 and the value would first be set to 3 and
-    then change to 5(These are called assignments in programming).
+  then change to 5(These are called assignments in programming).
   In the case of a string, the value between the double quotes will be 
   assigned to the variable, for example if we had last_name we could
-   assign "Einstein” to it easily as follows: last_name= "Einstein”. 
-   
+  assign "Einstein” to it easily as follows: last_name = "Einstein”. 
   <br>
-  <br>2.	Statements 
+  <br> 
+  <br><div id="2"><h2>2. Statements</h2></div>
   <br>this may be the most difficult part to explain of programming,
-  almost everything you see in a computer program is a statement, 
-   but can also appear as
-   keywords such as while().
+  almost everything you see in a computer program is a statement.
   Lets talk about assignment statements.
   For example, lets take the following program
   <BR><BR><BR>
@@ -103,9 +104,9 @@
   <BR><BR><BR>
   What will be the result of such a program…
   Well, the first statement, x=3 will set x to 3, then the next statement
-   x=5 will (maybe counter-intuitively to some)
-   set x to 5, then the final statement  x=x+1 we need to break down into
-   its  parts.
+  x=5 will (maybe counter-intuitively to some)
+  set x to 5, then the final statement  x=x+1, we need to break down into
+  its  parts.
   We have the x on the left of the equal sign called an "lvalue” 
   (the variable to the left of the equal sign)
   which is the same as the first x=3, where the x is what stores the value,
@@ -115,17 +116,17 @@
   finally we assign that to the lvalue, so at the end of the program, x 
   will contain 6 which is 5+1.
   Other kinds of statements we will look at later in this text are things 
-  like function calls, return statements, conditional statements
-   and boolean statements.
+  like function calls, return statements and conditional statements.
   <br>
-  <br>3. Conditionals/block of code 
-  <br>A conditional statement is a statement which give usually two different 
-  flow controls depending on wether the statement it is evaluation
+  <br>
+  <br><div id="3"><h2>3. Conditionals/block of code</h2></div>
+  <br>A conditional statement is a statement which gives two different 
+  flow controls depending on wether the statement it is evaluating
   is true or false, for example:
   In order to explain conditional statements I am also forced to explain what
   blocks of code are.
   Firstly, here is an example in TLAC:
-  take the initial state of the board as:
+  <BR>take the initial state of the board as:
   <BR><BR><BR>
     <BR>
     <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
@@ -140,10 +141,11 @@
     <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/turtule_up.png' width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
     <BR>
   <BR><BR><BR>
-  In this example, the turtle is at X=5 as you can see the turtle being on hte fifth slot from the leftmost slot on the board.
+  In this example, the turtle is at X=4(X holds the value of the slot on the board from left to right) as you can see the turtle being on the fifth slot
+  from the left most slot on the board.(the left most slot ins slot 0)
   Note: I will be introducing TALC specific statements from now on, when it is  a TALC specific instruction I will let you know.
-  TLAC fd() function(will explain functions later, but lets just say this is one for now), this function makes the turtle move forward. 
-  (in the direction the turtle is pointing) by one slot.
+  TLAC "Function call Turtle Move Forward" function (I will explain functions later, but lets just say this is one for now), this function makes the turtle move forward. 
+  (in the direction the turtle's head is poinitializing) by one slot.
 <BR><BR><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">green lines like these are called 'comments'</p><BR>
@@ -160,7 +162,7 @@
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">pink rectangle) of code will be executed</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
     </div><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if X<3   then</p><BR>
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
@@ -168,7 +170,7 @@
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">this block of code won't be executed</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
     </div><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> X=2 </p><BR>
     <BR>
@@ -186,95 +188,20 @@
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">of code gets executed.</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
     </div>
 <BR><BR><BR>
-    <style id="css-style">pre { line-height: 125%; }
-    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-    .demo-highlight .hll { background-color: #ffffcc }
-    .demo-highlight { background: #f8f8f8; }
-    .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
-    .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
-    .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
-    .demo-highlight .o { color: #666666 } /* Operator */
-    .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
-    .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
-    .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
-    .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
-    .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
-    .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
-    .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
-    .demo-highlight .ge { font-style: italic } /* Generic.Emph */
-    .demo-highlight .gr { color: #E40000 } /* Generic.Error */
-    .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-    .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
-    .demo-highlight .go { color: #717171 } /* Generic.Output */
-    .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-    .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
-    .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-    .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
-    .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-    .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-    .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-    .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
-    .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-    .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
-    .demo-highlight .m { color: #666666 } /* Literal.Number */
-    .demo-highlight .s { color: #BA2121 } /* Literal.String */
-    .demo-highlight .na { color: #687822 } /* Name.Attribute */
-    .demo-highlight .nb { color: #008000 } /* Name.Builtin */
-    .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-    .demo-highlight .no { color: #880000 } /* Name.Constant */
-    .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
-    .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
-    .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
-    .demo-highlight .nf { color: #0000FF } /* Name.Function */
-    .demo-highlight .nl { color: #767600 } /* Name.Label */
-    .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-    .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-    .demo-highlight .nv { color: #19177C } /* Name.Variable */
-    .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-    .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
-    .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
-    .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
-    .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
-    .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
-    .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
-    .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-    .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-    .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
-    .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-    .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-    .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-    .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
-    .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-    .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
-    .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
-    .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
-    .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-    .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
-    .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-    .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
-    .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
-    .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
-    .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
-    .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
-    .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-  
   <br>
   Lets go thru that program line by line.
   First lines 001 to 003 explain what comments are
   then line 004  checks if X of the turtle is more than 3, 
   since it is,(from now on we will skip all comment lines) 
   it will go into the following "block of code"(marked in pink(in this case))
-  which starts when you see a "pipe icon"
-  entering our "Function call Turtle Move Froward" on line 008
+  which starts when you see a "pipe icon".
+  Entering our "Function call Turtle Move Froward" on line 008
   at this point, you, the person playing the TLAC game, needs to move the
-  turtle one space in the direction of the turtle is pointing towards.
-  (towards where it's head is pointing), 
+  turtle one space in the direction of the turtle is poinitializing towards.
+  (towards where it's head is poinitializing), 
   and since x>3 is true, the turtle is moved froward by one slot as in the following
   picture indicates:
   <BR><BR><BR>
@@ -292,11 +219,11 @@
       <BR>
       <BR><BR><BR>
   then we reach "if X&lt3 then" on line 0009 and as the comments say,
-  the following "Function call Turtle Move Foward" on line 0012 will be skipped:
+  the following "Function call Turtle Move Forward" on line 0012 will be skipped:
   so the turtle does not move at all
   then we "reach X=2" on line 0013, which will change the value of X to two,
   now I need to explain that values in TLAC are "indexed on 0", which only means
-  "we count from 0"(kind of like hte joke I made at the beginning of this text
+  "we count from 0"(kind of like the joke I made at the beginning of this text
   calling sequentiality "chapter 0"),you should move the turtle to its X position 2
   (which is the third slot counting form 0), which means putting the turtle in the following position:
   <BR><BR><BR>
@@ -314,7 +241,7 @@
       <BR>
   <BR><BR><BR>  
   then we reach "if X&lt3 then" on line 0017 and as the comments say,
-  the following "Function call Turtle Move Foward" on line 0021 will be executed:
+  the following "Function call Turtle Move Forward" on line 0021 will be executed:
   so the turtle needs to be moved forward one space,
   making the board as follows:
   <BR><BR><BR>
@@ -330,12 +257,11 @@
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div>   
   <BR><BR><BR>  
-  
-  </code></pre>
   <br>
-  <br>4. Procedures/functions 
+  <br>
+  <br><div id="4"><h2>4. Procedures/functions</h2></div>
   <br>Now functions need to be broken down into 2 separate parts, the easy
-  part which is a function call and the hard part which is a function declaration.
+  part which is a function call and the hard part which is a function definition.
   In the beginning of this paper I used three function calls to say what I was
   telling the computer to do:
   <BR><BR><BR>
@@ -356,19 +282,19 @@
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
     <BR>
@@ -384,7 +310,7 @@
     </div><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=0 </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: inting board after teleport X"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: initializing board after teleport X"</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
     <BR>
@@ -392,7 +318,7 @@
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=5 </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: inting board after teleport X"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: initializing board after teleport X"</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
     <BR>
@@ -400,87 +326,13 @@
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=8 </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: inting board after teleport X"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: initializing board after teleport X"</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Lay_Four_Eggs_In_Square_Pattern</p><BR>
   <BR><BR><BR>
-  <style id="css-style">pre { line-height: 125%; }
-  td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-  span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-  td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-  span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-  .demo-highlight .hll { background-color: #ffffcc }
-  .demo-highlight { background: #f8f8f8; }
-  .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
-  .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
-  .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
-  .demo-highlight .o { color: #666666 } /* Operator */
-  .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
-  .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
-  .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
-  .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
-  .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
-  .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
-  .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
-  .demo-highlight .ge { font-style: italic } /* Generic.Emph */
-  .demo-highlight .gr { color: #E40000 } /* Generic.Error */
-  .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-  .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
-  .demo-highlight .go { color: #717171 } /* Generic.Output */
-  .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-  .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
-  .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-  .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
-  .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-  .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-  .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-  .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
-  .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-  .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
-  .demo-highlight .m { color: #666666 } /* Literal.Number */
-  .demo-highlight .s { color: #BA2121 } /* Literal.String */
-  .demo-highlight .na { color: #687822 } /* Name.Attribute */
-  .demo-highlight .nb { color: #008000 } /* Name.Builtin */
-  .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-  .demo-highlight .no { color: #880000 } /* Name.Constant */
-  .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
-  .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
-  .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
-  .demo-highlight .nf { color: #0000FF } /* Name.Function */
-  .demo-highlight .nl { color: #767600 } /* Name.Label */
-  .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-  .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-  .demo-highlight .nv { color: #19177C } /* Name.Variable */
-  .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-  .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
-  .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
-  .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
-  .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
-  .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
-  .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
-  .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-  .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-  .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
-  .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-  .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-  .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-  .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
-  .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-  .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
-  .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
-  .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
-  .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-  .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
-  .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-  .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
-  .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
-  .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
-  .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
-  .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
-  .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-  Fist I think i need to introduce you to two more TLAC internal functions:
+  Fist I think i need to introduce two more TLAC internal functions:
   the "Turtle lays egg underneath itself", as the name implies, you should
   take an egg and put it inder the turtle.
   and then the "Turn Turtle Right" function, which means you should take
@@ -496,7 +348,7 @@
   the function 3 times over. 
   <br>
   <br>
-  <a href=docs_functionsEN-ouput.html>Click here</a> to see are all the states of the board after executing this program:
+  <a hreprefinitionref=docs_functionsEN-ouput.html>Click here</a> to see are all the states of the board after executing this program:
   <br>
   <BR>
   Function calls help us so we don't have to write the same
@@ -508,43 +360,45 @@
   It also increases readability of the program if we don't repeat the
   same code over and over.
   <br>
-  <br>Now I will explain how a function is defined.
+  <br>
+  Now I will explain how a function is defined.
   First we have the function definition, followed by the function name, function names
   follow the same rule as variable names, in this case our function name is
   Lay_Four_Eggs_In_Square_Pattern, then they word parameters: or an open parenthesis 
   (then the "parameters", which
   are the things that change from function call
   to function call. They can come in the form of variable names or just values,
-  in this case our for example the "Turtle Move Foward" can take a parameter 
+  in our case, for example, the "Turtle Move Forward" can take a parameter 
   of how far you want the turtle to move in one move, if we have the following
-  "Turtle Move Foward, parameters: 5", then the turtle should jump 5 spaces forward
+  "Turtle Move Forward, parameters: 5", then the turtle should jump 5 spaces forward
   we will see examples using it like this in the future.
-  you can also see the "print parameters: **whats this?**inting board after teleport X", you don't really
+  you can also see the on line 0019 Function call print parameters: initializing board after teleport X" , you don't really
   need to worry about this function call in this example, but we added it cause
-  we actually executed the program to generate the board states of the board and it made it
-  easier to generate the documentation this way, since it adds the title "inting board after teleport X"
+  we actually executed the program to generate the initial board state and it made it
+  easier to generate the documentation this way, since it adds the title "initializing board after teleport X"
   in the specific place before the "printBoard" function is called. the writer of this document
   had to add those two functions in order to generate the state of the board properly and decided to
-  leave them in in this example. the reason for the "printBoard" function to be
+  leave them in in this example. the reason for the "printBoard" function was
   added is because assignments like " turtleX=5" are not TALC internal functions and cannot generate the state of
   the board automatically like the other functions do, but since the turtle moves with those, the author thought
-  it was a good idea to add it to the printout of the states of hte board.
+  it was a good idea to add it to the printout of the states of the board output(which you will see later on).
 
   Finally there is something called a "return statement". Which tells the program to "send this back
   to the function call as the result". (Also note that return terminates the flow of
-  the function, no more operations occur after return, and the flow of the
-  program goes back to the function call)
+  the function and the block of code, no more operations occur after return, and the flow of the
+  program goes back to the function call).
   in this program we omitted the return statement, but we will see examples of this later on.
   <br>
-  <br>5.Input/output
   <br>
+  <br><div id="5"><h2>5. Input/output</h2></div>
+  <br>
+  <h3>output (some change in the board or paper writing)</h3>
   <br>Now, here is the most simple program every programmer starts out with
   <br>
-
   <BR><BR><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">very basic program example</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward parameters: 5</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: 5</p><BR>
   <BR><BR><BR>    
   <br>
   This is a simple example of a program that produces "output"
@@ -576,11 +430,11 @@
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div> 
 <BR><BR><BR>
-
-  <br>Now lets try some input, in TALC doing input is a bit hard to explain, well, mostly cause "input" will usually take the form of an action of the user, this can be achieved with the 'oderUser: parameters "prompt"' function
+  <h3>input</h3>
+  <br>Now lets try some input, in TALC doing input is a bit hard to explain, well, mostly cause "input" will usually take the form of an action by the user(in TLAC), this can be achieved with the 'oderUser: parameters "prompt"' function
   this is quite different from other TALC functions, cause it means we will actually be asking the user to do something.:
-
-  the following is an example of a program that uses input:
+  <BR>
+  <BR>the following is an example of a program that uses input:
 <BR><BR><BR>
   <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">user input example</p><BR>
@@ -680,39 +534,40 @@
     .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   <br>
   <BR>
-    so lets see what this does, first of all empty lines like line 0002 can be ignored.
+    so lets see what this does, first of all empty lines like line 0002 can be ignored(because it is empty).
     first we teleport the turtle to 4,9, which puts it in the normal initial position.
-    then we order the user to do "put turtle at top left of the board".
+    then on line 0005 we order the user to do "put turtle at top left of the board".
     a user should obey the instructions, but remember that users may not be obedient or
     they can also make mistakes.
     next in line 0006 we have a function call used mostly to generate this documentation,
     it is the same as teleport to 0,0 but this is just used to make the turtle follow the
     instructions of the user, you can ignore this instruction too.
-    next up we save the turtle x position to savedX by issuing savedX= turtleX 
+    next up in lines 0007 and 0008 we save the turtle x position to savedX by issuing savedX= turtleX 
     then we do the same for the Y position.
-    this should (if the user did hit thing well) with the variable savedX and savedY being 0,0 (the top left of the board).
+    this should (if the user did what he was instructed well) end up with the variable savedX and savedY being 0,0 (the top left of the board).
     next we tell the user to move the turtle to the bottom right of the board.
-    you can ignore the instruction at 0010.
+    then at line 0010 "Function call simulateUserInputTeleportTurtleTo parameters: ,9,9" should move hte turtle to the bottom right of the board.
     then we have "Function call teleportTurtleTo parameters: savedX, savedY" and since savedX, savedY are 0,0, the turtle should
     teleport to the top left of the board.
     this can get interesting in games where the user gets to decide where to put the turtle.
-    for example if th4e user initially put the turtle in another portion,
+    for example if the user initially put the turtle in another portion,
     the turtle would have teleported back there.
-    so it is interesting for making like two player games, where the user interacts wit the pieces.
-  
+    so it is interesting for making like two player games, where the user interacts wit the pieces and the other person acts like the computer. 
   <BR><BR><BR>
   <a href=docs_user_input_example-outputEN.html>This is the output</a>  after following the instructions.
   <BR><BR><BR>
   <br>
-  <br>6. Loops 
   <br>
-  countdown loop
+  <br><div id="6"><h2>6. Loops</h2></div> 
+  <br>
+  <h3>countdown loop</h3>
   The countdown loop is perfect for making like a rocket launch
   program, for example if you have "Function call l.countdown parameters: 10, 1"
   the first parameter means count from 10 to 0, and the second parameter means
-  count down one by one. this will pass a parameter to the loop_body function called
-  n, and inside there you can have the user write down the numbers form 10 to
-  0 for example. here is an example of the use of the countdown loop together with TLAC:
+  count down one by one. this will pass a parameter n to the loop_body function,
+  and inside there you can have the user write down the numbers form 10 to  0.
+  <BR>
+  <BR>Here is an example of the use of the countdown loop together with TLAC:
   <BR><BR><BR>
   <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">countdown example</p><BR>
@@ -724,7 +579,7 @@
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body parameters: n</p><BR>
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward parameters: n</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: n</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p></div><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = loop_body </p><BR>
@@ -733,25 +588,27 @@
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.countdown parameters: 3, 1</p><BR>
 <BR><BR><BR>
   <a href="TLAC_boardgame/docs_loops_countdown-output.html">Here is the output to this program</a><BR>
-  First all all take a look at line 0003 "import TLACloopyLib as l".
-  this brings in the "TLAC loopy library" and assigns it to variable l.
-  then we have the loop_body function definition. a "loop body" is a normal funciton which will be called each time
+<BR><BR><BR>
+  First all take a look at line 0003 "import TLACloopyLib as l".
+  this brings in the "TLAC loopy library" (a library is a program that can be used inside the program)
+  and assigns it to variable l.
+  then we have the loop_body function definition. a "loop body" is a normal function which will be called each time
   the loop repeats itself. It is called with a parameter which means usually the number the loop is counting.
   Then we have 
   0008 "l.loop_body = loop_body" this assigns the loop body of the TLAC loopy library to the user defined
-  loop_body we just created(hte user defined loop_body could have a different name)
+  loop_body we just created (the user defined loop_body could have a different name)
   then finally we have 0010 "Function call l.countdown parameters: 3, 1" which starts the looping
   the first parameter means count form 3 to 0, the second parameter means to count down one by one.
   Since the countdown starts at 3, the n parameter to the loop_body function starts at 3 at the first "iteration"(an iteration
-  is one time around a loop) so when "Function call Turtle Move Foward parameters: n" gets called, n has the value of 3
+  is one time around a loop) so when "Function call Turtle Move Forward parameters: n" gets called, n has the value of 3
   so the first move the turtle moves forward 3 slots.
   then the loop starts over again, but the n has the value of 2,
-  countdown loops so when "Function call Turtle Move Foward parameters: n" gets called, n has the value of 2
+  countdown loops so when "Function call Turtle Move Forward parameters: n" gets called, n has the value of 2
   so the second move the turtle moves forward 2 slots. then it counts down by one
-  so when "Function call Turtle Move Foward parameters: n" gets called, n has the value of 1
+  so when "Function call Turtle Move Forward parameters: n" gets called, n has the value of 1
   so the third move the turtle moves forward 1 slots.
   <BR>
-    do_while
+    <h3>do_while</h3>
   <BR><BR><BR>
     <BR>
       <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">loopy library import, name it l</p><BR>
@@ -763,7 +620,7 @@
       <BR>
       <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body parameters: n</p><BR>
       <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward parameters: n</p><BR>
+      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: n</p><BR>
       </div><BR>
       <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = loop_body </p><BR>
       <BR>
@@ -790,15 +647,15 @@
   saying, count up until n1 is more than n2
   then end the loop.
   So this is what it does, Since the countup starts at 1, the n1 parameter
-  to the loop_body function starts at 1 at the first itteration so when
-  "Function call Turtle Move Foward parameters: n" gets called, n has the
+  to the loop_body function starts at 1 at the first iteration so when
+  "Function call Turtle Move Forward parameters: n" gets called, n has the
   value of 1(same as n1) so the first move the turtle moves forward 1 slot. 
   then the loop starts over again, but the n1 has the value of 2,
-  do while loops so when "Function call Turtle Move Foward parameters: n"
+  do while loops so when "Function call Turtle Move Forward parameters: n"
   gets called, n has the value of 2 so the second move the turtle moves
   forward 2 slots.
   then it counts up to one so when
-  "Function call Turtle Move Foward parameters: n"
+  "Function call Turtle Move Forward parameters: n"
   gets called, n has the value of 1 so the third
   move the turtle moves forward 1 slots.
   and at the very end the 
@@ -837,16 +694,16 @@
   <a href="TLAC_boardgame/docs_loops_forloop-output.html">Here is the output</a>
   <BR><BR><BR>
     The beginning of the program is pretty much the same as the last one.
-    Only difference is we are changing the loopy lirbary condition to n1 == n2
+    Only difference is we are changing the loopy library condition to n1 == n2
     then finally we have 0013 "Function call l.forloop parameters: 5, 9, 1"
-    what whese two things mean together are "count up from 5 to 9 by one.", 
-    so it keeps on increasing n1 which startes which starts as 5, until it
+    what these two things mean together are "count up from 5 to 9 by one.", 
+    so it keeps on increasing n1 which starts as 5, until it
     reaches the value fo 9(which is n2)
-    so that is why we set the contition to "==" which is "equal to" basically
+    so that is why we set the condition to "==" which is "equal to" basically
     saying, count up until n1 is equal to than n2
     then end the loop.
     So this is what it does, Since the countup starts at 5, the n1 parameter
-    to the loop_body function starts at 5 at the first itteration so when
+    to the loop_body function starts at 5 at the first iteration so when
     "Function call teleportTurtleTo parameters: n,n" gets called, n has the
     value of 5(same as n1) , this will teleport the turtle to X,Y 5,5.
     Then the loop starts over again, but the n1 has the value of 6,
@@ -996,13 +853,13 @@
 <BR>def loop_body3(triangle_width):
 <BR>This defines the outer loop body. Note: The parameter is called triangle_width, but it's actually the row number (1 to 5) passed from the outer forloop.
 <BR>print_many_christmas('', triangle_width, 5)
-<BR>Calls the row-printing function with '', the current row number (triangle_width), and fixed width 5.
+<BR>Calls the row-prinitializing function with '', the current row number (triangle_width), and fixed width 5.
 <BR>l.globals.condition = condition_eq
 <BR>Sets the condition again (redundant, but ensures == is used).
 <BR>l.globals.loop_body = loop_body3
 <BR>Sets the loop body for the outer loop to loop_body3, which prints one row.
 <BR>l.forloop(1, 5, 1)
-<BR>Runs the outer "for loop" from 1 to 5 (inclusive). For each value (1,2,3,4,5), it calls loop_body3 with that value, printing one row per call. This builds the full pyramid:
+<BR>Runs the outer "for loop" from 1 to 5 (inclusive). For each value (1,2,3,4,5), it calls loop_body3 with that value, prinitializing one row per call. This builds the full pyramid:
 <BR>
 <BR>Row 1: 5 spaces + 1 '*'
 <BR>Row 2: 4 spaces + 3 '*'
@@ -1016,7 +873,7 @@
 <BR><BR><BR>
   <BR><BR><BR>
   
-    Nested for loops
+    <h3>Nested for loops</h3>
       <BR><BR><BR>
         <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">loopy library import, name it l</p><BR>
@@ -1032,7 +889,7 @@
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> class TableGlobals: </p><BR>
           <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  __init__ parameters: self</p><BR>
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  __init__ parameters: self</p><BR>
           <div style="background-color: #4B0082; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> self.i = 0          # current outer-loop value </p><BR>
           <BR>
@@ -1041,7 +898,7 @@
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> self.line = ""      # accumulated text for one row </p><BR>
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p></div></div><BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call globals = TableGlobals</p><BR>
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call g = TableGlobals</p><BR>
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
@@ -1065,9 +922,9 @@
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  inner_body parameters: j</p><BR>
           <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> product = i * j </p><BR>
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> product = g.i * j </p><BR>
           <BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call line += "\t" + str parameters: i) + " * " + str(j) + " = " + str(product</p><BR>
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call g.line += "    " + str parameters: g.i) + " * " + str(j) + " = " + str(product</p><BR>
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p></div><BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ------------------------------------------------------------------</p><BR>
@@ -1078,9 +935,9 @@
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0032</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  outer_body parameters: i</p><BR>
           <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0033</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> i = i </p><BR>
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0033</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> g.i = i </p><BR>
           <BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0034</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> line = "" </p><BR>
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0034</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> g.line = "" </p><BR>
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0035</p><BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0036</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ---- inner loop (j from 1 to 3) --------------------------------</p><BR>
@@ -1092,7 +949,7 @@
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0039</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ----------------------------------------------------------------</p><BR>
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0040</p><BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0041</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> print(line)                    # row finished </p><BR>
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0041</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> print(g.line)                    # row finished </p><BR>
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0042</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> print()                                # newline after row </p><BR>
           <BR>
@@ -1105,20 +962,86 @@
           <BR>
           <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0047</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = outer_body           # body that runs inner loop </p><BR>
           <BR>
-          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0048</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.forloop(1, 3, 1)                         # 1 … 3 </p><BR>        
+          <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0048</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.forloop(1, 3, 1)                         # 1 … 3 </p><BR>          
       <BR><BR><BR>
   
     <a href="TLAC_boardgame/docs_loops_nested_forloops-output.html">Here is the output</a>
     <BR><BR><BR>
- 
-    
-  <br>7. Arrays lists<BR> 
-  <BR>Lists are a kind of variable that can hold miltiple values, or lists of values.
+      <BR>this program generates some multiplications tables using two nested for loops:
+      <BR>
+      <BR>Outer loop: i from 1 to 3
+      <BR>Inner loop: j from 1 to 3
+      <BR>For each pair (i,j), print i * j = result
+
+
+      <BR><BR><BR>
+  <br>
+  <BR>  lines 007 thru 0012 Create a class to hold shared variables used inside loops:
   <BR>
-  <BR>foreach
-  <BR>foreach i a kind of loop that repeats an operation looping around the contents of a list
-  foreach example
-  <BR><BR><BR>
+  <BR>  i: current row number (1, 2, 3)
+  <BR>  j: current column number (1, 2, 3)
+  <BR>  line: builds up one full row of text like "1*1=1    1*2=2..."
+  <BR>"Function call g = TableGlobals" makes g, an instance of the TableGlobals class which will contain the properties (variables) for our program.
+  <BR>
+  <BR>"Function definition eq parameters: n1, n2"
+  <BR>----"Function call return l.conditional parameters: n1, l.op("=="), n2"
+  <BR>
+  <BR>These two lines define the equality function for the for loops used later. making n1 == n2 as the condition.
+  <BR>the return means it will return either true or false depending on the values given to n1 or n2, true if they are equal
+  <BR>and false if they are not.
+  <BR>
+  <BR>"l.condition = eq"
+  <BR>sets the termination condition.
+  <BR>
+  <BR>the function form lines 0025 to 0027
+  <BR>runs once for each j (1, 2, 3).
+  <BR>
+  <BR>Takes current column j
+  <BR>Multiplies by current row globals.i
+  <BR>Adds text like "    2 * 3 = 6" to the current line
+  <BR>
+  <BR> note, adding one text(string) to another string, like a="ABC"+"DEF"
+  <BR> is called a concatenation and a will result in a string containing "ABCDEF".
+  <BR>we use this method to make the final strings that will be written out on paper.
+  <BR>
+  <BR>In the function from lines 0032 to 0043,
+  <BR>This is the outer loop body — runs once per row (i = 1, 2, 3).
+  <BR>line 0033 Save current row number (i) so inner loop can use it.
+  <BR>line 0034 Start with empty string for this row.
+  <BR>line 0035 Temporarily tell the loop system:
+  <BR>“When you run a loop, use inner_body as the thing to do each time.”  
+  <BR>line 0036:
+  <BR>Run a  for-loop:
+  <BR>
+  <BR>Start at 1
+  <BR>Go up to (but not including) 3.  It stops when eq(current, 3) is true Step by 1
+  <BR>So it runs inner_body(1), inner_body(2) → builds the full row
+  <BR>
+  <BR>After this, globals.line has something like:
+  <BR>"    1 * 1 = 1    1 * 2 = 2    1 * 3 = 3"
+  <BR>
+  <BR>"print(g.line)"
+  <BR>print or "write this on paper", this being  g.line
+  <BR>print()
+  <BR>
+  <BR>this prints out an empty line
+  <BR>0047 "l.loop_body = outer_body"
+  <BR>Set the loop body to outer_body
+  <BR>
+  <BR>0048 l.forloop(1, 3, 1) # 1 … 3
+  <BR>Run from 1 to 3
+  <BR>→ Calls outer_body(1), outer_body(2), outer_body(3)
+  <BR>
+  <br><div id="7"><h2>7. Arrays/lists</h2></div> 
+  <BR>
+  <BR>Lists are a kind of variable that can hold multiple values, or lists of values.
+  <BR>
+  <BR>
+  <h3>foreach</h3>
+  <BR>
+  <BR>foreach i a kind of Nested for loopsloop that repeats an operation looping around the contents of a list sending each item as a parameter to the loop body function.
+  
+    <BR><BR><BR>
     <BR>
       <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">loopy library import, name it l</p><BR>
       <BR>
@@ -1131,7 +1054,7 @@
       <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
       <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if command = "fd"   then</p><BR>
       <div style="background-color: #4B0082; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Foward parameters: globals</p><BR>
+      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: globals</p><BR>
       </div><BR>
       <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if command = "rt"   then</p><BR>
       <div style="background-color: #4B0082; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
@@ -1150,9 +1073,22 @@
   <BR><BR><BR>
     <a href="TLAC_boardgame/docs_loops_foreachLoop-output.html">Here is the output</a>
   <BR><BR><BR>
+  <BR>
+   on line 0014 "my_commands_list = ['fd', 'fd', 'rt','fd', 'fd','lt', 'fd', 'fd']"
+   we are creating a list with words like fd (forward) rt (right turn) and lt (left turn)
+   this list will be used as a program which our program will "execute"  in the oder of the
+   instructions provided.
 
-  -Operations on lists
-<br>Here are a few kkhdsfjkjfds  examples of operations you can do on lists:
+   then the line 0015 "Function call l.foreach parameters: my_commands_list, l.loop_body"
+   loops thru the list, sending each item on the list to the loop_body function, with each
+   one at a time being the parameter "command" to that function.
+   then if you look at the loop_body function, you will see it determines which command you
+   have passed and runs that.
+  <BR>
+  <BR>
+   
+  extra:<h3>Operations on lists</h3>
+<br>Here are a few examples of operations you can do on lists:
   <br>
   <BR><BR><BR>
     <BR>
@@ -1296,13 +1232,14 @@
 <BR>writes down every element in the list    
 <BR><BR><BR>
   An  "index" in programming list is a number that points to the element of the
-  list that we want to retreieve.
+  list that we want to retrieve.
   One thing I want to point out is that fruits[0] points to "banana" cause
   lists in TLAC are "zero indexed" which means the list starts at 0, not
   at 1(just like the index of this tutorial).
   
   Ok, I think if you grasped this you have grasped the very basics of programming,
   <br>
-  <br>This document was originally written in 2017 for python2 and C. Modified in 2022 to be python3 only finally modified for TLAC in 2025.
+  <br>This document was originally written in 2017 for python2 and C. Modified in 2022 to be python3, 
+  finally modified for TLAC in 2025.
   </body>
   </html>  

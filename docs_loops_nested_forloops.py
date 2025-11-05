@@ -19,7 +19,7 @@ class TableGlobals:
         self.j = 0          # current inner-loop value
         self.line = ""      # accumulated text for one row
 
-globals = TableGlobals()
+g = TableGlobals()
 
 # ------------------------------------------------------------------
 # Helper: equality condition (used by both loops)
@@ -32,22 +32,22 @@ l.globals.condition = eq                   # termination condition
 # Inner-loop body – compute i*j and append to the current line
 # ------------------------------------------------------------------
 def inner_body(j):
-    product = globals.i * j
-    globals.line += "    " + str(globals.i) + " * " + str(j) + " = " + str(product)
+    product = g.i * j
+    g.line += "    " + str(g.i) + " * " + str(j) + " = " + str(product)
 
 # ------------------------------------------------------------------
 # Outer-loop body – run the *inner* loop and then print the line
 # ------------------------------------------------------------------
 def outer_body(i):
-    globals.i = i
-    globals.line = ""
+    g.i = i
+    g.line = ""
 
     # ---- inner loop (j from 1 to 3) --------------------------------
     l.globals.loop_body = inner_body       # body that fills the line
     l.forloop(1, 3, 1)                     # 1 … 3                         # restore outer state
     # ----------------------------------------------------------------
 
-    print(globals.line)                    # row finished
+    print(g.line)                    # row finished
     print()                                # newline after row
 
 # ------------------------------------------------------------------
