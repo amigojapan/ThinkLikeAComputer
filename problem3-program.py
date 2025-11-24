@@ -2,7 +2,7 @@
 import TLACsimulator as TLAC
 
 #board setup
-TLAC.readBoaedFromFile(TLAC.globals,"problem3-board.txt")
+TLAC.readBoardFromFile(TLAC.globals,"problem3-board.txt")
 TLAC.teleportTurtleTo(4,9)
 print("initial board:")
 TLAC.printBoard(TLAC.globals)

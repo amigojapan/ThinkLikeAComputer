@@ -11,7 +11,7 @@
         </style>      
     </head>
     <body style="background-color:powderblue;">
-  <br><H1>8 Basics Concepts of Programming in TLAC(Think like a computer)</H1>
+  <br><H1>8 Basic Concepts of Programming in TLAC(Think Like A Computer)</H1>
   <br>
   <br>Author:Usmar A. Padow (amigojapan), <a href=http://amigojapan.github.io/>amigojapan's homepage</a>
   <br>
@@ -30,8 +30,9 @@
   <br>The first thing we need to learn in order to become a programmer is 
   that instructions always follow a regular order, usually from top
   to bottom.
+  <BR>
   <BR><H3>Tips for playing TLAC</H3>
-  <BR>Use a small coin to keep the current instruction, instructions are marked by line numbers like 0001. 
+  Use a small coin to keep the current instruction, instructions are marked by line numbers like 0001. 
   (assuming you are using the printed version of the board game)   
   <BR>
   <BR>For example:
@@ -43,7 +44,7 @@
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call GoToWork</p><BR>
   <BR><BR><BR>
   <BR>
-  I will never go to or work before I brush my teeth and comb my hair...
+  I will never go to work before I brush my teeth and comb my hair...
   <BR><BR><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call BrushMyTeeth</p><BR>
     <BR>
@@ -61,8 +62,9 @@
      not capable of such decision making at this level of programming.
   If you make a large program, and shuffle its instructions around, the 
   program will surely not do what it was originally intended to do.
+  <BR>
   <BR><H3>Tips for playing TLAC</H3>
-  <BR>Write variable values down on a separate piece of paper to remember
+  Write variable values down on a separate piece of paper to remember
     the current value of the variables (assuming you are using the printed
     version of the board game).    
   <BR>    
@@ -795,71 +797,42 @@
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0040</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.forloop parameters: 1, 5, 1</p><BR>
     <BR><BR><BR>
-<BR>The following makes a pyramid, it is an example of how to use several loopbodies for a forloop in the code
-<BR>Comment explaining the purpose: This code builds a pyramid shape using asterisks (*), demonstrating how to use multiple "loop bodies" (functions that run inside loops) with the loopy library's forloop function.
-<BR>class initGlobals:
-<BR>----def init(self):
-<BR>--------self.output = ""
-<BR>--------self.ch = "*"
-<BR>This defines a class(a cookie cutter or variables called objects) to initialize global variables. It sets "output" to an empty string (used to build each row of the pyramid) and "ch" to "*" (the character for the pyramid, like stars in a Christmas tree).
+<BR>The following makes a pyramid, it is an example of how to use several loop bodies for a forloop in the code
+<BR>lines 0005-0009:
+<BR>This defines a class(something like a cookie cutter for variables called "objects") to initialize global variables. It sets "output" to an empty string (used to build each row of the pyramid) and "ch" to "*" (the character for the pyramid, like stars in a Christmas tree).
 <BR>In a class def init(self) is called a "constructor" and it is a function when you cut a cookie(create an object) form the cookie cutter.
-<BR>globals = initGlobals()
-<BR>This creates an "instance of the class" (a cookie cut out of the  cookie cutter) and assigns it to "globals", making output and ch accessible throughout the script.
-<BR>def loop_body1(n):
-<BR>globals.output = globals.output + ' '
+<BR>line 0010 "Function call g = initGlobals"
+<BR>This creates an "instance of the class" (a cookie cut out of the  cookie cutter) and assigns it to the g variable, making output and ch accessible throughout the script as g.output and g.ch
+<BR>lines 0012 to 0014:
 <BR>This defines a function (loop_body1) that adds a single space (' ') to the global output string. The parameter "n" is ignored—it's just a placeholder because the loopy lib's forloop passes a value to the body. This is used to add leading spaces for indenting each row of the pyramid.
-<BR>def loop_body2(n):
-<BR>----globals.output = globals.output + globals.ch
+<BR>lines 0015 to 0017
 <BR>Similar to above, but adds the current character (globals.ch, which is '*') to the output. Again, "n" is ignored. This builds the asterisk part of each row.
-<BR>def condition_eq(n1, n2):
-<BR>----return l.conditional(n1, l.op("=="), n2)
-<BR>This defines a condition function that checks if n1 equals n2 using the loopy lib's conditional and op functions. This will be used as the stopping condition for the forloops (stop when the loop variable equals the max value).
-<BR>l.globals.condition=condition_eq
+<BR>lined 0018 to 0019
+<BR>This defines a condition function that checks if n1 equals n2 using the loopy lib's conditional and op functions. This will be used as the stopping condition for the for loops (stop when the loop variable equals the max value).
+<BR>line 0020:
 <BR>This sets the global condition in the loopy lib to the equality check (==). By default, the lib might use >, but here we change it to == so the loop includes the max value and stops when it hits it.
-<BR>def print_many_christmas(ch, times, triangle_width):
+<BR>lines 0022-0034:
 <BR>This defines the function that prints one row of the pyramid. Parameters:
-<BR>
-<BR>
 <BR>ch: The character to use (e.g., '*').
-<BR>
-
 <BR>times: The row number (1 to 5), which controls how many asterisks to print.
-<BR>
-
-<BR>triangle_width: Fixed at 5 here, controls the overall size.
-<BR>globals.output = ''
+<BR>triangle_width: Fixed at 5 here, controls the overall size of the pyramid.
+<BR>line 0023:
 <BR>Resets the output string for a new row.
-<BR>globals.ch = ch
-<BR>Sets the character for this row (though it's always '*' in this script).
-<BR>repeat_end = triangle_width - times
-<BR>Calculates how many spaces to add at the start of the row. For row 1 (times=1), it's 4; for row 5, it's 0. But due to how the loop works, it adds one extra.
+<BR>0024:Sets the character for this row (though it's always '*' in this script. makes it easy to change it to something else).
+<BR>0025:Calculates how many spaces to add at the start of the row. For row 1 (times=1), it's 4; for row 5, it's 0. But due to how the loop works, it adds one extra.
 <BR>Save outer loop state and set inner loop state for spaces
-<BR>
-
-<BR>Comment explaining the next part: We're using the loopy lib's forloop for inner loops, changing the loop body temporarily.
-<BR>l.globals.loop_body=loop_body1
-<BR>Sets the current loop body to the one that adds spaces.
-<BR>l.forloop(0, repeat_end, 1)
-<BR>Runs a "for loop" from 0 to repeat_end (inclusive, because condition is ==). For each iteration, it calls loop_body1, adding a space each time. For repeat_end=4, it adds 5 spaces (iterations: 0,1,2,3,4).
-<BR>Set inner loop state for stars
-<BR>repeat_end2 = times * 2 - 2
+<BR>0027:Sets the current loop body to the one that adds spaces.
+<BR>0028:Runs a "for loop" from 0 to repeat_end (inclusive, because condition is ==). For each iteration, it calls loop_body1, adding a space each time. For repeat_end=4, it adds 5 spaces (iterations: 0,1,2,3,4).
+<BR>0030:repeat_end2 = times * 2 - 2
 <BR>Calculates the end for asterisks. For times=1, it's 0 (1 asterisk total); for times=5, it's 8 (9 asterisks).
-<BR>l.globals.loop_body=loop_body2
-<BR>Switches the loop body to the one that adds '*'.
-<BR>l.forloop(0, repeat_end2, 1)
-<BR>Runs another "for loop" from 0 to repeat_end2 (inclusive), adding '' each time. For repeat_end2=0, 1 ''; for 8, 9 '*'.
-<BR>print(globals.output)
-<BR>Prints the completed row (spaces + asterisks).
-<BR>def loop_body3(triangle_width):
-<BR>This defines the outer loop body. Note: The parameter is called triangle_width, but it's actually the row number (1 to 5) passed from the outer forloop.
-<BR>print_many_christmas('', triangle_width, 5)
-<BR>Calls the row-prinitializing function with '', the current row number (triangle_width), and fixed width 5.
-<BR>l.globals.condition = condition_eq
-<BR>Sets the condition again (redundant, but ensures == is used).
-<BR>l.globals.loop_body = loop_body3
-<BR>Sets the loop body for the outer loop to loop_body3, which prints one row.
-<BR>l.forloop(1, 5, 1)
-<BR>Runs the outer "for loop" from 1 to 5 (inclusive). For each value (1,2,3,4,5), it calls loop_body3 with that value, prinitializing one row per call. This builds the full pyramid:
+<BR>0031:Switches the loop body to the one that adds '*'.
+<BR>0032:Runs another "for loop" from 0 to repeat_end2 (inclusive), adding '' each time. For repeat_end2=0, 1 ''; for 8, 9 '*'.
+<BR>0033:Prints the completed row (spaces + asterisks)(write it to paper)
+<BR>0035 to 0037:This defines the outer loop body function. Note: The parameter is called triangle_width, but it's actually the row number (1 to 5) passed from the outer forloop.
+<BR>0036:Calls the row-prinitializing function with '', the current row number (triangle_width), and fixed width 5.
+<BR>0038:Sets the condition again (redundant, but ensures == is used).
+<BR>0039:Sets the loop body for the outer loop to loop_body3, which prints one row.
+<BR>0040:Runs the outer "for loop" from 1 to 5 (inclusive). For each value (1,2,3,4,5), it calls loop_body3 with that value, prinitializing one row per call. This builds the full pyramid:
 <BR>
 <BR>Row 1: 5 spaces + 1 '*'
 <BR>Row 2: 4 spaces + 3 '*'
@@ -972,8 +945,6 @@
       <BR>Outer loop: i from 1 to 3
       <BR>Inner loop: j from 1 to 3
       <BR>For each pair (i,j), print i * j = result
-
-
       <BR><BR><BR>
   <br>
   <BR>  lines 007 thru 0012 Create a class to hold shared variables used inside loops:
@@ -981,16 +952,14 @@
   <BR>  i: current row number (1, 2, 3)
   <BR>  j: current column number (1, 2, 3)
   <BR>  line: builds up one full row of text like "1*1=1    1*2=2..."
-  <BR>"Function call g = TableGlobals" makes g, an instance of the TableGlobals class which will contain the properties (variables) for our program.
+  <BR> line 0013 "Function call g = TableGlobals" makes g, an instance of the TableGlobals class which will contain the properties (variables) for our program.
   <BR>
-  <BR>"Function definition eq parameters: n1, n2"
-  <BR>----"Function call return l.conditional parameters: n1, l.op("=="), n2"
-  <BR>
+  <BR> lines 0018 thru 0019 
   <BR>These two lines define the equality function for the for loops used later. making n1 == n2 as the condition.
   <BR>the return means it will return either true or false depending on the values given to n1 or n2, true if they are equal
   <BR>and false if they are not.
   <BR>
-  <BR>"l.condition = eq"
+  <BR>line 0020 "l.condition = eq"
   <BR>sets the termination condition.
   <BR>
   <BR>the function form lines 0025 to 0027
@@ -1010,8 +979,7 @@
   <BR>line 0034 Start with empty string for this row.
   <BR>line 0035 Temporarily tell the loop system:
   <BR>“When you run a loop, use inner_body as the thing to do each time.”  
-  <BR>line 0036:
-  <BR>Run a  for-loop:
+  <BR>line 0036: Run for-loop.
   <BR>
   <BR>Start at 1
   <BR>Go up to (but not including) 3.  It stops when eq(current, 3) is true Step by 1
@@ -1020,10 +988,9 @@
   <BR>After this, globals.line has something like:
   <BR>"    1 * 1 = 1    1 * 2 = 2    1 * 3 = 3"
   <BR>
-  <BR>"print(g.line)"
+  <BR>0041 "print(g.line)"
   <BR>print or "write this on paper", this being  g.line
-  <BR>print()
-  <BR>
+  <BR>0042 "print()"
   <BR>this prints out an empty line
   <BR>0047 "l.loop_body = outer_body"
   <BR>Set the loop body to outer_body
@@ -1034,12 +1001,12 @@
   <BR>
   <br><div id="7"><h2>7. Arrays/lists</h2></div> 
   <BR>
-  <BR>Lists are a kind of variable that can hold multiple values, or lists of values.
+  <BR><h3>Lists</h3> are a kind of variable that can hold multiple values, or lists of values.
   <BR>
   <BR>
   <h3>foreach</h3>
   <BR>
-  <BR>foreach i a kind of Nested for loopsloop that repeats an operation looping around the contents of a list sending each item as a parameter to the loop body function.
+  <BR>foreach i a kind of for loop that repeats an operation looping around the contents of a list sending each item as a parameter to the loop_body function.
   
     <BR><BR><BR>
     <BR>

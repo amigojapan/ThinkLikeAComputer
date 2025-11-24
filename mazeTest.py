@@ -1,0 +1,47 @@
+#!/usr/bin/python3
+import TLACsimulator as TLAC
+
+#board setup
+TLAC.readBoardFromFile(TLAC.globals,"complexMaze2.txt")
+TLAC.teleportTurtleTo(TLAC.globals,4,9)
+print("initial board:")
+TLAC.printBoard(TLAC.globals)
+
+#maze Test 1
+import TLACloopyLib as l
+
+def notDone():
+    return not TLAC.amILayingOnTheGoalFlag(TLAC.globals)
+def isPathForward():
+    return TLAC.testIfICanProceed(TLAC.globals)
+def isPathLeft():
+    TLAC.lt(TLAC.globals)
+    result=isPathForward()
+    TLAC.rt(TLAC.globals)
+    return result
+def turnLeft():
+    TLAC.lt(TLAC.globals)
+def turnRight():
+    TLAC.rt(TLAC.globals)
+def moveForward():
+    TLAC.fd(TLAC.globals)
+
+def loop_body(current):
+    if isPathLeft():
+        turnLeft()
+    elif not isPathForward():
+        turnRight()
+    if isPathForward():
+        moveForward()
+
+def loop_condition(current, unused):
+    if notDone():
+        # continue
+        return False
+    else:
+        # stop
+        return True
+
+l.globals.loop_body = loop_body
+l.globals.condition = loop_condition
+l.do_while(0, 0, 1)

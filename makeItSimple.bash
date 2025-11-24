@@ -16,3 +16,6 @@ sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_nested_forloops.py > docs_loops_nested_forloops-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_operations_on_lists.py > docs_operations_on_lists-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_multiple_forloops.py > docs_loops_multiple_forloops-simplified.py
+#algorythms
+sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' algorythm-insertionSortNew.py  > algorythm-insertionSortNew-simplified.py
+sed -e 's/TLAC\.globals)/)/g;s/TLAC.globals,//g;s/TLAC\.//g;s/TLAC\.globals\./,/g;s/ globals,//g;s/ ,//g;s/globals\.//g;s/globals,//g;s/\.turtle\./turtle/g;1,9d' mazeTest.py > mazeTest-simplified.py

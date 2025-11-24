@@ -26,7 +26,7 @@ def main(level):
     level=level.replace("[<]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/turtule_left.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("[>]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/turtule_right.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("[ ]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width="+width_and_height+" height="+width_and_height+"></div>")
-    level=level.replace("[X]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/goal.png' width="+width_and_height+" height="+width_and_height+"></div>")
+    level=level.replace("[G]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/goal.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("[*]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/star.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("[o]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/egg.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("\n", "<BR>\n")

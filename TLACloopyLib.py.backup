@@ -42,7 +42,7 @@ def conditional(operand1, op_func, operand2):
     return op_func(operand1, operand2)
 
 def countdown(n, countDownBy):
-    if globals.condition(n, 0):
+    if (n < 0):
         return
     globals.loop_body(n)
     countdown(n - countDownBy, countDownBy)

@@ -15,6 +15,7 @@ globals.loop_body=default_loop_body
 
 def default_condition(n1, n2):
     return conditional(n1, op(">"), n2)  # Default for do_while
+globals.condition = default_condition
 
 def push_state(g):
     """Push current condition and loop_body to stack and set new ones."""
@@ -23,8 +24,17 @@ def push_state(g):
 
 def pop_state():
     """Restore previous condition and loop_body from stack."""
-    globals.condition = globals.condition_stack.pop() if globals.condition_stack else default_condition
-    globals.loop_body = globals.loop_body_stack.pop() if globals.loop_body_stack else default_loop_body
+    if globals.condition_stack:
+        _ = globals.condition_stack.pop()
+        globals.condition = globals.condition_stack[-1] if globals.condition_stack else default_condition
+    else:
+        globals.condition = default_condition
+    
+    if globals.loop_body_stack:
+        _ = globals.loop_body_stack.pop()
+        globals.loop_body = globals.loop_body_stack[-1] if globals.loop_body_stack else default_loop_body
+    else:
+        globals.loop_body = default_loop_body
 
 def op(operator):
     if operator == "==":
@@ -47,12 +57,18 @@ def countdown(n, countDownBy):
     globals.loop_body(n)
     countdown(n - countDownBy, countDownBy)
 
-def do_while(n1, n2, countDownBy):
-    globals.loop_body(n1)
+def do_while(n1, n2, countDownBy, is_root=True):
+    if is_root:
+        push_state(globals)
+    globals.loop_body_stack[-1](n1)
     if globals.condition(n1, n2-1):
+        if is_root:
+            pop_state()
         return
-    do_while(n1 - countDownBy, n2, countDownBy)
-
+    do_while(n1 - countDownBy, n2, countDownBy, False)
+    if is_root:
+        pop_state()
+    
 def forloop(min_val, max_val, step, is_root=True):
     if is_root:
         push_state(globals)

@@ -22,3 +22,7 @@
 ./htmlifyer.py jp HTML problem5-program-simplified.py > problem5-programchartJP.html
 ./htmlifyer.py jp HTML problem6-program-simplified.py > problem6-programchartJP.html
 ./htmlifyer.py jp HTML problem7-program-simplified.py > problem7-programchartJP.html
+
+#ALGORYTHIMS
+./htmlifyer.py en HTML algorythm-insertionSortNew-simplified.py > algorythm-insertionSortNewEN.html
+./htmlifyer.py en HTML mazeTest-simplified.py > mazeTestEN.html
