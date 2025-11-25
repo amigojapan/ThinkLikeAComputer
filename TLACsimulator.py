@@ -18,10 +18,12 @@ globals.H = 10
 
 class Cell:
     def __init__(self):
-        self.containsEgg = False # Instance attribute
-        self.diamond = False # Instance attribute
-        self.wall = False # Instance attribute
+        # Instance attributes
+        self.containsEgg = False 
+        self.diamond = False
+        self.wall = False
         self.goal = False
+        self.pyramidSize = False
 class initTurtle:
     def __init__(self):
         self.X = 0 # Instance attribute
@@ -44,6 +46,7 @@ def initBoard(globals):
                 globals.board += "[" + globals.turtle.direction + "]"
             else:
                 index = y * globals.W + x
+                #print("globals.slots[index].containsEgg"+str(globals.slots[index].containsEgg))
                 if globals.slots[index].containsEgg:
                     globals.board += "[o]"
                     continue
@@ -56,13 +59,30 @@ def initBoard(globals):
                 elif globals.slots[index].goal:
                     globals.board += "[G]"
                     continue
+                elif (globals.slots[index].pyramidSize == 1):
+                    #print("appending pyramid 1")
+                    globals.board += "[1]"
+                    continue
+                elif globals.slots[index].pyramidSize == 2:
+                    globals.board += "[2]"
+                    continue
+                elif globals.slots[index].pyramidSize == 3:
+                    globals.board += "[3]"
+                    continue
+                elif globals.slots[index].pyramidSize == 4:
+                    globals.board += "[4]"
+                    continue
+                elif globals.slots[index].pyramidSize == 5:
+                    globals.board += "[5]"
+                    continue
+                #print(str(globals.slots[index].pyramidSize))
                 globals.board += "[ ]"
         globals.board += "\n"
     #print(globals.board)
 
 globals.slots = initSlots(globals)
 globals.turtle = initTurtle()
-initBoard(globals)
+#initBoard(globals)
 
 def readBoardFromFile(globals,boardFilename):
     index=0
@@ -85,6 +105,21 @@ def readBoardFromFile(globals,boardFilename):
                     globals.slots[index].diamond = True
                 elif char=="#":
                     globals.slots[index].wall = True
+                elif char=="1":
+                    print("pyramid 1 found")
+                    globals.slots[index].pyramidSize = 1
+                elif char=="2":
+                    print("pyramid 2 found")
+                    globals.slots[index].pyramidSize = 2
+                elif char=="3":
+                    print("pyramid 3 found")
+                    globals.slots[index].pyramidSize = 3
+                elif char=="4":
+                    print("pyramid 4 found")
+                    globals.slots[index].pyramidSize = 4
+                elif char=="5":
+                    print("pyramid 5 found")
+                    globals.slots[index].pyramidSize = 5
                 elif char=="G":
                     globals.slots[index].goal = True
                 index=index+1
@@ -96,6 +131,7 @@ def readBoardFromFile(globals,boardFilename):
 def exitIfTurtleOutOfBounds(globals):
     if(globals.turtle.X>globals.W or globals.turtle.X<0 or globals.turtle.Y>globals.H or globals.turtle.Y<0):
         sys.exit("Error, turtle went outside of board, program terminated.")
+
 def printBoard(globals):
     print(globals.board)
 
@@ -103,6 +139,7 @@ def updateBoard(globals):
     initBoard(globals)
     exitIfTurtleOutOfBounds(globals)
     "Updating board"
+    #print("globals.slots[index].containsEgg:"+str(globals.slots[1].containsEgg))
     #print("Move Number:"+str(globals.MoveNumber))
     #printBoard(globals)
 
@@ -139,11 +176,47 @@ def simulateUserInputTeleportTurtleTo(globals,_x,_y):
     globals.turtle.Y=_y
     executeMove(globals)
 
-def promptUserToWriteDownOnPaper(globals,prompt):
-    globals.MoveNumber=globals.MoveNumber+1
-    executeMoveDontPrintBoard(globals)
-    print("USER!, WRITE DOWN THE FOLLOWING ON PAPER!:\n\""+prompt+"\"")
 
+def clearPyramidNumber(globals,pyramidNumber):
+    #print("len(globals.slots):"+str(len(globals.slots)))
+    pyramidFound=False
+    for index in range(0,len(globals.slots)-1):
+        if globals.slots[index].pyramidSize==pyramidNumber:
+            globals.slots[index].pyramidSize = False
+            pyramidFound=True
+            break
+    if pyramidFound==False:
+        sys.exit("Error, tried to clear pyramid number " + str(pyramidNumber) + " but it does not exist on this board")
+    
+def simulateUserInputTeleportPyramidTo(globals,pyramidNumber,_x,_y):
+    #globals.MoveNumber=globals.MoveNumber+1
+    print("Simulating user move Pyramid "+str(pyramidNumber)+" to X:"+str(_x-1)+" Y:"+str(_y-1))
+    clearPyramidNumber(globals,pyramidNumber)    
+    #set pyramid on index
+    X = _x
+    Y = _y
+    W = globals.W
+    H = globals.H
+    index = (Y) * W + (X)
+    globals.slots[index].pyramidSize = pyramidNumber
+    executeMove(globals)
+
+def peekPyramidThere(globals,_x,_y):
+    #globals.MoveNumber=globals.MoveNumber+1
+    print("is X:"+str(_x)+" Y:"+str(_y)+" a pyramid?")
+    #set pyramid on index
+    X = _x+1
+    Y = _y+1
+    W = globals.W
+    H = globals.H
+    index = (Y-1) * W + (X-1)
+    if globals.slots[index].pyramidSize:
+        print(" Yes, it is pyramid size:"+str(globals.slots[index].pyramidSize))
+        return globals.slots[index].pyramidSize, X-1, Y-1
+    else:
+        print("No, it is not")
+        return "not found", X-1, Y-1
+    executeMove(globals)
 #move functions
 def fd(globals,slots=1):
     print("moved foward "+str(slots)+" slots")

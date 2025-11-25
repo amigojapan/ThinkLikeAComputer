@@ -1,6 +1,7 @@
 #Think Like a Computer - simulator copyright 2025 Usmar A Padow
 import sys
-
+#increase recursion depth for the maze programs
+sys.setrecursionlimit(5000)
 class initGlobals:
     def __init__(self):
         self.MoveNumber = 0 # Instruction Pointer
@@ -212,51 +213,55 @@ def amILayingOnAnEgg(gloabls):
         executeMove(globals)
         return False
 
-def testIfICanProceed(gloabls,slots=1):
-    if globals.turtle.direction=="^":
-        X=globals.turtle.X
-        Y=globals.turtle.Y
-        W=globals.W
+def testIfICanProceed(globals, slots=1):
+    X = globals.turtle.X
+    Y = globals.turtle.Y
+    W = globals.W
+    H = globals.H
+
+    # Calculate target position
+    if globals.turtle.direction == "^":
+        if Y - slots < 0:  # Check boundary first
+            print("2Can I pass?: No (out of bounds)")
+            executeMove(globals)
+            return False
         index = (Y - slots) * W + X
-        if globals.slots[index].wall==True:#check wall collision
-            print("1Can I pass?: No")
+    elif globals.turtle.direction == "<":
+        if X - slots < 0:
+            print("4Can I pass?: No (out of bounds)")
             executeMove(globals)
             return False
-        if globals.turtle.Y-slots<0:#checks border collision
-            print("2Can I pass?: No")
+        index = Y * W + (X - slots)
+    elif globals.turtle.direction == "V":
+        if Y + slots > H - 1:
+            print("6Can I pass?: No (out of bounds)")
             executeMove(globals)
             return False
-    elif globals.turtle.direction=="<":
-        index = globals.turtle.Y * globals.W + globals.turtle.X-slots
-        if globals.slots[index].wall==True:#check wall collision
-            print("3Can I pass?: No")
+        index = (Y + slots) * W + X
+    elif globals.turtle.direction == ">":
+        if X + slots > W - 1:
+            print("8Can I pass?: No (out of bounds)")
             executeMove(globals)
             return False
-        if globals.turtle.X-slots<0:
-            print("4Can I pass?: No")
-            executeMove(globals)
-            return False
-    elif globals.turtle.direction=="V":
-        index = globals.turtle.Y+slots * globals.W + globals.turtle.X
-        if globals.slots[index].wall==True:#check wall collision
-            print("5Can I pass?: No")
-            executeMove(globals)
-            return False
-        if globals.turtle.Y+slots>globals.H-1:
-            print("6Can I pass?: No")
-            executeMove(globals)
-            return False
-    elif globals.turtle.direction==">":
-        index = globals.turtle.Y * globals.W + globals.turtle.X+slots
-        if globals.slots[index].wall==True:#check wall collision
-            print("7Can I pass?: No")
-            executeMove(globals)
-            return False
-        if globals.turtle.X+slots>globals.W-1:
-            print("8Can I pass?: No")
-            executeMove(globals)
-            return False
-    print("9Can I pass?: Yes")
+        index = Y * W + (X + slots)
+    else:
+        print("Invalid direction")
+        executeMove(globals)
+        return False
+
+    # Ensure index is within slots range
+    if index < 0 or index >= W * H:
+        print(f"Can I pass?: No (invalid index {index})")
+        executeMove(globals)
+        return False
+
+    # Check for wall
+    if globals.slots[index].wall:
+        print(f"Can I pass?: No (wall at index {index})")
+        executeMove(globals)
+        return False
+
+    print("Can I pass?: Yes")
     executeMove(globals)
     return True
 
