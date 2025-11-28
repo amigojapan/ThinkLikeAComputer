@@ -30,6 +30,12 @@ def main(level):
     level=level.replace("[*]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/star.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("[o]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/egg.png' width="+width_and_height+" height="+width_and_height+"></div>")
     level=level.replace("\n", "<BR>\n")
+    #pyramids
+    level=level.replace("[1]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width="+width_and_height+" height="+width_and_height+"></div>")
+    level=level.replace("[2]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/goal.png' width="+width_and_height+" height="+width_and_height+"></div>")
+    level=level.replace("[3]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/star.png' width="+width_and_height+" height="+width_and_height+"></div>")
+    level=level.replace("[4]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/egg.png' width="+width_and_height+" height="+width_and_height+"></div>")
+    level=level.replace("[5]", "<div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/egg.png' width="+width_and_height+" height="+width_and_height+"></div>")
     #make spaces into HTML spaces
     level=level.replace(" ", "&nbsp")    
     #set HTML elements back to normal
