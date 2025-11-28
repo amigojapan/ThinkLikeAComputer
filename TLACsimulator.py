@@ -190,7 +190,7 @@ def clearPyramidNumber(globals,pyramidNumber):
     
 def simulateUserInputTeleportPyramidTo(globals,pyramidNumber,_x,_y):
     #globals.MoveNumber=globals.MoveNumber+1
-    print("Simulating user move Pyramid "+str(pyramidNumber)+" to X:"+str(_x-1)+" Y:"+str(_y-1))
+    print("Simulating user move Pyramid "+str(pyramidNumber)+" to X:"+str(_x)+" Y:"+str(_y))
     clearPyramidNumber(globals,pyramidNumber)    
     #set pyramid on index
     X = _x

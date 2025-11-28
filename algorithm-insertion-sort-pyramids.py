@@ -32,18 +32,35 @@ def findNextBottom(globals):
         if value!="not found":
             return  value, _x, _y
     return None
-for col in range(0,5):#the number of pyramids
-    print("columb"+str(col))
+for col in range(0, 5):  # the number of pyramids
+    print("column " + str(col))
     pyramidNumber, x, y = findNextElement(TLAC.globals)
-    #lower next elemen
-    print("HERE pyr "+str(pyramidNumber))
-    TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals,pyramidNumber,x,y+1)
-    TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals,pyramidNumber,col,4)
-    pyramidNumberBottom, x, y = findNextBottom(TLAC.globals)
-    #    if pyramidNumberBottom<pyramidNumber:
-    #        pass
-            #SWAP pyramids
-            #TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals,pyramidNumber,9,4)
-            #TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals,pyramidNumber,0,3)
-            #TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals,pyramidNumber,x2,4)
- 
+    print("HERE pyr " + str(pyramidNumber))
+    # No need for temp move to y+1; teleport directly to end of sorted prefix
+    TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals, pyramidNumber, col, 4)
+    
+    # Now bubble the new pyramid left until the prefix (0 to col) is sorted
+    current = col
+    while current > 0:
+        # Peek left neighbor and current
+        left_value, left_x, left_y = TLAC.peekPyramidThere(TLAC.globals, current - 1, 4)
+        current_value, current_x, current_y = TLAC.peekPyramidThere(TLAC.globals, current, 4)
+        
+        if left_value == "not found" or current_value == "not found":
+            print("Error: Missing pyramid during bubble")
+            break
+        
+        if left_value <= current_value:
+            break  # Sorted position found
+        
+        # Swap left and current using temp (0,0)
+        print("SWAP pyramids " + str(left_value) + " and " + str(current_value))
+        TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals, current_value, 0, 0)  # Temp move current
+        TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals, left_value, current, 4)  # Move left to current pos
+        TLAC.simulateUserInputTeleportPyramidTo(TLAC.globals, current_value, current - 1, 4)  # Move temp to left pos
+        
+        current -= 1
+
+# Optional: Print final board after sorting
+print("Final sorted board:")
+TLAC.printBoard(TLAC.globals)
