@@ -26,3 +26,4 @@
 #ALGORYTHIMS
 ./htmlifyer.py en HTML algorythm-insertionSortNew-simplified.py > algorythm-insertionSortNewEN.html
 ./htmlifyer.py en HTML mazeTest-simplified.py > mazeTestEN.html
+./htmlifyer.py en HTML algorithm-insertion-sort-pyramids-simplified.py > algorithm-insertion-sort-pyramids.html

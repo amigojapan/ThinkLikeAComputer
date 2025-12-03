@@ -84,8 +84,8 @@ def createoutputPT(globals):
             output += newLine
             continue 
         # Get the first three characters
-        first_three_chars = globals.slots[currentLine].instruction[:3]
-        if first_three_chars=="def":#this instruction is a comment
+        first_few_chars = globals.slots[currentLine].instruction[:3]
+        if first_few_chars=="def":#this instruction is a comment
             # Get the rest of the string
             rest_of_string = globals.slots[currentLine].instruction[3:]
             index_of_paren = rest_of_string.find('(')
@@ -122,8 +122,8 @@ def createoutputPT(globals):
             else:
                 # If no parenthesis is found, the entire string is "before_paren"
                 sys.exit("error while parsing python file, open parenthesis not found after function name on line: " + str(currentLine))
-        first_three_chars = globals.slots[currentLine].instruction[:3]
-        if first_three_chars=="if ":#this instruction is a comment
+        first_few_chars = globals.slots[currentLine].instruction[:3]
+        if first_few_chars=="if ":#this instruction is a comment
             #rest_of_string = globals.slots[currentLine].instruction[3:]
             simplifiedAndTrsanlsated = globals.slots[currentLine].instruction.replace(":", " then ")
             simplifiedAndTrsanlsated = simplifiedAndTrsanlsated.replace(constIf, constIfSimple)
@@ -345,8 +345,8 @@ def createoutputHTML(globals):
             continue 
 
         # Handle function definitions
-        first_three_chars = globals.slots[currentLine].instruction[:3]
-        if first_three_chars == "def":
+        first_few_chars = globals.slots[currentLine].instruction[:3]
+        if first_few_chars == "def":
             rest_of_string = globals.slots[currentLine].instruction[3:]
             index_of_paren = rest_of_string.find('(')
             if index_of_paren != -1:
@@ -369,7 +369,36 @@ def createoutputHTML(globals):
                 sys.exit("Error while parsing python file, open parenthesis not found after function name on line: " + str(currentLine))
 
         # Handle if statements
-        if first_three_chars == "if ":
+        if first_few_chars == "if ":
+            simplifiedAndTranslated = globals.slots[currentLine].instruction.replace(":", " then ")
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constIf, constIfSimple)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constThen, "")
+            if language == "jp":
+                if constNot in simplifiedAndTranslated:
+                    simplifiedAndTranslated = simplifiedAndTranslated.replace(constNot, "")
+                    simplifiedAndTranslated = simplifiedAndTranslated + constNotSimple
+                    simplifiedAndTranslated = simplifiedAndTranslated.replace(constThen, constThenSimple)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleDir, constTurtleDirSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constEQ, constEQSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleUp, constTurtleUpSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleLeft, constTurtleLeftSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleRight, constTurtleRightSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleDown, constTurtleDownSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleCanProceedForward, constTurtleCanProceedForwardSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constAmILayingOnEgg, constAmILayingOnEggSimple)
+            if language == "jp":
+                simplifiedAndTranslated += constThenSimple
+            else:
+                simplifiedAndTranslated += " " + constThenSimple                 
+            output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
+            output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
+            output += simplifiedAndTranslated
+            output += "</p>"
+            output += newLine
+            continue
+        # Handle while statements
+        first_few_chars = globals.slots[currentLine].instruction[:6] #get 6 characters
+        if first_few_chars == "while ":
             simplifiedAndTranslated = globals.slots[currentLine].instruction.replace(":", " then ")
             simplifiedAndTranslated = simplifiedAndTranslated.replace(constIf, constIfSimple)
             simplifiedAndTranslated = simplifiedAndTranslated.replace(constThen, "")
@@ -397,6 +426,37 @@ def createoutputHTML(globals):
             output += newLine
             continue
 
+        # Handle for statements
+        first_few_chars = globals.slots[currentLine].instruction[:4] #get 4 characters
+        if first_few_chars == "for ":
+            #output +="debugged"
+            simplifiedAndTranslated = globals.slots[currentLine].instruction.replace(":", " then ")
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constIf, constIfSimple)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constThen, "")
+            if language == "jp":
+                if constNot in simplifiedAndTranslated:
+                    simplifiedAndTranslated = simplifiedAndTranslated.replace(constNot, "")
+                    simplifiedAndTranslated = simplifiedAndTranslated + constNotSimple
+                    simplifiedAndTranslated = simplifiedAndTranslated.replace(constThen, constThenSimple)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleDir, constTurtleDirSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constEQ, constEQSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleUp, constTurtleUpSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleLeft, constTurtleLeftSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleRight, constTurtleRightSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleDown, constTurtleDownSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constTurtleCanProceedForward, constTurtleCanProceedForwardSimplified)
+            simplifiedAndTranslated = simplifiedAndTranslated.replace(constAmILayingOnEgg, constAmILayingOnEggSimple)
+            if language == "jp":
+                simplifiedAndTranslated += constThenSimple
+            else:
+                simplifiedAndTranslated += " " + constThenSimple                 
+            output += '<img src="TLAC_boardgame/img/HTMLstuff/block.png">' * globals.slots[currentLine].indentNumber
+            output += '<p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">'
+            output += simplifiedAndTranslated
+            output += "</p>"
+            output += newLine
+            continue
+ 
         # Handle function calls
         if globals.slots[currentLine].instruction.endswith(")"):
             rest_of_string = globals.slots[currentLine].instruction
