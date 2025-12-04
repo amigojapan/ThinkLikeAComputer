@@ -62,11 +62,22 @@ def readPythonFile(globals, boardFilename):
 
 def createoutputPT(globals): 
     output =""
-    #output +='<output lang="jp">\n'
-    #output +='<head>\n'
-    #output +='    <meta charset="UTF-8">\n'
-    #output +='</head>\n'
-    #output +='<body style="background-color:powderblue;">\n'
+    output +='<output lang="jp">\n'
+    output +='<head>\n'
+    output +='    <meta charset="UTF-8">\n'
+    output +='    <style>'
+    output +='      body {'
+    output +='        font-family: Arial, Helvetica, sans-serif; /* Sets a font stack for the entire body */'
+    output +='      }'
+    #output +='      div {'
+    #output +='        border-radius: 15px; /* Applies a 15px radius to all four corners of all divs */'
+    #output +='        border: 1px solid black; /* Example: adds a visible border */'
+    #output +='        padding: 10px; /* Example: adds some internal spacing */'
+    #output +='        margin: 5px; /* Example: adds spacing between divs */'
+    #output +='      }'
+    output +='      </style>'
+    output +='</head>\n'
+    output +='<body style="background-color:powderblue;">\n'
     #print("creating output...")
     for currentLine in range(1, globals.fileLineCount):
         if not globals.slots[currentLine].instruction:
@@ -228,7 +239,7 @@ def createoutputPT(globals):
             output += " "+"-" * wcwidth.wcswidth("  "+instruction+"  ")
             output += newLine
             continue
-    #output +='</body></output>\n'
+    output +='</body></output>\n'
     print(output)
 
 class Stack:
@@ -278,6 +289,21 @@ def addLineNumber(currentLine,newLine):
 
 def addOpenBlock(stackSize):
     colorNumber=stackSize % 7
+    if colorNumber==6:
+        color="#C0C0C0" # Light gray
+    elif colorNumber==5: 
+        color="#D2B48C" # Sandy tan
+    elif colorNumber==4: 
+        color="#F5F5DC" # Off-white
+    elif colorNumber==3: 
+        color="#A9A9A9" # Medium-dark gray
+    elif colorNumber==2: 
+        color="#B0C4DE" # Misty blue
+    elif colorNumber==1: 
+        color="#808080" # Medium gray
+    elif colorNumber==0: 
+        color="#DDA0DD" # Muted lavender
+    """
     if colorNumber==6: 
         color="#FF0000"
     elif colorNumber==5: 
@@ -292,9 +318,10 @@ def addOpenBlock(stackSize):
         color="#4B0082"
     elif colorNumber==0: 
         color="#EE82EE"
+    """
     output=""
     #output += '<img src="TLAC_boardgame/img/HTMLstuff/blankSpacer.png">' * stackSize + '<div style="background-color: '+color+'; display: inline-block; border: 2px solid black; padding: 2px;">'
-    output += '<div style="background-color: '+color+'; display: inline-block; border: 2px solid black; padding: 2px;">'
+    output += '<div style="background-color: '+color+'; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;">'
     return output
 
 def addCloseBlock():
@@ -304,14 +331,25 @@ def addCloseBlock():
 
 def createoutputHTML(globals):     
     indent_stack = Stack()
+    #this is the real HTML
     output = "<!DOCTYPE html>"
     output += '<output lang="jp">\n'
     output += '<head>\n'
     output += '    <meta charset="UTF-8">\n'
     output += '<style>'
     output += 'p {'
-    output += '  font-family: monospace;'
+    output += '  font-family: Arial, Helvetica, sans-serif; /* Sets a font stack for the entire body font-family: monospace; */'
     output += '}'
+    output +='      div {'
+    output +='          border-radius: 15px; /* Applies a 15px radius to all four corners of all divs */'
+    output +='          border: 1px solid black; /* Example: adds a visible border */'
+    output +='          padding: 10px; /* Example: adds some internal spacing */'
+    output +='          margin: 5px; /* Example: adds spacing between divs */'
+    output +=''
+    output +='          border-style: solid; /* A border-style is mandatory for the border to appear */'
+    output +='          border-width: 1px;  /* Set the border width */'
+    output +='          border-color: #FF000; /*#e0e0e0;  Use a light color value (this is a light gray) */'
+    output +='      }'
     output += '</style>'
     output += '</head>\n'
     output += '<body style="background-color:powderblue;">\n'
@@ -672,3 +710,10 @@ amigojapan> GeDaMo: I think the turtle library for python may be useful too,  bu
 next few chapters
 go back from HTML program charts to text program charts and then to real python code. do the same stuff
 """
+#so instead of picking '#0000ff', pick '#0000e0'
+#'contrast, repetition, alignment, proximity'
+#wog103> if you use borders, make them less harsh
+#6:41 AM <wog103> lighter than your background
+#6:42 AM <wog103> maybe a little border-radius of a few px
+#sands-serif
+#use lighter colors for borders

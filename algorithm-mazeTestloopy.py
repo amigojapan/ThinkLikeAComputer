@@ -22,7 +22,7 @@ def isPathLeft():
 def turnLeft():
     TLAC.lt(TLAC.globals)
 def turnRight():
-    TLAC.lr(TLAC.globals)
+    TLAC.rt(TLAC.globals)
 def moveForward():
     TLAC.fd(TLAC.globals)
 
