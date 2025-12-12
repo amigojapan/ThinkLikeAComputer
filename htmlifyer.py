@@ -717,3 +717,7 @@ go back from HTML program charts to text program charts and then to real python 
 #6:42 AM <wog103> maybe a little border-radius of a few px
 #sands-serif
 #use lighter colors for borders
+#wog103> amigojapan: the pipe are still misaligned, padding is missing, green is still saturated
+#3:43 PM <amigojapan> ok wog103 writting that down
+#3:43 PM <wog103> even worse: the pipe cannot be aligned with vertical-align
+#<link href="my-awesome.css" rel="stylesheet">
