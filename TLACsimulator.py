@@ -201,6 +201,9 @@ def simulateUserInputTeleportPyramidTo(globals,pyramidNumber,_x,_y):
     globals.slots[index].pyramidSize = pyramidNumber
     executeMove(globals)
 
+def promptUserToWriteDownOnPaper(globals, parameter):
+    print("USER!, WRITE DOWN THE FOLLOWING ON PAPER!\n"+parameter+"\n")
+
 def peekPyramidThere(globals,_x,_y):
     #globals.MoveNumber=globals.MoveNumber+1
     print("is X:"+str(_x)+" Y:"+str(_y)+" a pyramid?")

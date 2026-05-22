@@ -9,8 +9,8 @@
 ./htmlifyer.py en HTML docs_functionsEN-simplified.py > docs_functionsEN.html
 ./htmlifyer.py en HTML docs_very_basic_program-simplified.py > docs_very_basic_programEN.html
 ./htmlifyer.py en HTML docs_user_input_example-simplified.py > docs_user_input_exampleEN.html
-./htmlifyer.py en HTML docs_loops_countdown-simplified.py > docs_loops_countdownEN.html
-./htmlifyer.py en HTML docs_loops_do_while-simplified.py > docs_loops_do_whileEN.html
+./htmlifyer.py en HTML docs_loops_countdown_new-simplified.py > docs_loops_countdown_newEN.html
+./htmlifyer.py en HTML docs_loops_do_while_new-simplified.py > docs_loops_do_while_newEN.html
 ./htmlifyer.py en HTML docs_loops_forloop-simplified.py > docs_loops_forloopEN.html
 ./htmlifyer.py en HTML docs_loops_foreachLoop-simplified.py > docs_loops_foreachLoopEN.html
 ./htmlifyer.py en HTML docs_loops_nested_forloops-simplified.py > docs_loops_nested_forloopsEN.html

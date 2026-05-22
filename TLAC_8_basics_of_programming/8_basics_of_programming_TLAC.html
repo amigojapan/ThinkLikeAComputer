@@ -564,107 +564,85 @@
   <br>
   <h3>countdown loop</h3>
   The countdown loop is perfect for making like a rocket launch
-  program, for example if you have "Function call l.countdown parameters: 10, 1"
-  the first parameter means count from 10 to 0, and the second parameter means
-  count down one by one. this will pass a parameter n to the loop_body function,
-  and inside there you can have the user write down the numbers form 10 to  0.
+  program.
   <BR>
   <BR>Here is an example of the use of the countdown loop together with TLAC:
   <BR><BR><BR>
   <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">countdown example</p><BR>
-    <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">loopy library import, name it l</p><BR>
-    <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> import TLACloopyLib as l </p><BR>
-    <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body parameters: n</p><BR>
-    <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: n</p><BR>
-    <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p></div><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = loop_body </p><BR>
-    <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.countdown parameters: 3, 1</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">Counting down  loop from 3 to 0</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for i in range(3, -1, -1)   then</p><BR>
+  <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: i</p><BR>
+  </div>
 <BR><BR><BR>
   <a href="TLAC_boardgame/docs_loops_countdown-output.html">Here is the output to this program</a><BR>
 <BR><BR><BR>
-  First all take a look at line 0003 "import TLACloopyLib as l".
-  this brings in the "TLAC loopy library" (a library is a program that can be used inside the program)
-  and assigns it to variable l.
-  then we have the loop_body function definition. a "loop body" is a normal function which will be called each time
-  the loop repeats itself. It is called with a parameter which means usually the number the loop is counting.
-  Then we have 
-  0008 "l.loop_body = loop_body" this assigns the loop body of the TLAC loopy library to the user defined
-  loop_body we just created (the user defined loop_body could have a different name)
-  then finally we have 0010 "Function call l.countdown parameters: 3, 1" which starts the looping
-  the first parameter means count form 3 to 0, the second parameter means to count down one by one.
-  Since the countdown starts at 3, the n parameter to the loop_body function starts at 3 at the first "iteration"(an iteration
-  is one time around a loop) so when "Function call Turtle Move Forward parameters: n" gets called, n has the value of 3
+ First of all we have line 0002 with  for i in range(3, -1, -1) hte for look will take the values in the range function, and loop an
+ appropriate number of times. in this case th4e 3 represents the number we start with 3, and it will count down till one more htna -1 tho 0.
+ so it will count down form 3 to 0. th4e final parameter -1, tell it to count down, and not up.
+ "Function call Turtle Move Forward parameters: i" gets called, i has the value of 3
   so the first move the turtle moves forward 3 slots.
-  then the loop starts over again, but the n has the value of 2,
-  countdown loops so when "Function call Turtle Move Forward parameters: n" gets called, n has the value of 2
+  then the loop starts over again, but the i has the value of 2,
+  countdown loops so when "Function call Turtle Move Forward parameters: i" gets called, i has the value of 2
   so the second move the turtle moves forward 2 slots. then it counts down by one
-  so when "Function call Turtle Move Forward parameters: n" gets called, n has the value of 1
+  so when "Function call Turtle Move Forward parameters: i" gets called, i has the value of 1
   so the third move the turtle moves forward 1 slots.
-  <BR>
-    <h3>do_while</h3>
+  <BR><BR><BR>
+  <h3>do_while</h3>
   <BR><BR><BR>
     <BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">loopy library import, name it l</p><BR>
-      <BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> import TLACloopyLib as l </p><BR>
-      <BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> do_while example</p><BR>
-      <BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body parameters: n</p><BR>
-      <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: n</p><BR>
-      </div><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = loop_body </p><BR>
-      <BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  condition parameters: n1, n2</p><BR>
-      <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call return l.conditional parameters: n1, l.op(">"), n2</p><BR>
-      </div><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.condition = condition </p><BR>
-      <BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.do_while parameters: 1, 3, -1</p><BR>
-      <BR>
-      <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters: "n1 exceeds threshold"</p><BR>      
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> do_while example using standard Python</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> n1 = 1 </p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> n2 = 3 </p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> step = 1 </p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Python's equivalent of a do...while loop</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">while True   then</p><BR>
+  <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "value of  n1 is "+str(n1)</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 1. Execute the loop body</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters:  n1</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 2. Apply the step decrement</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> n1 += step </p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 3. Check the condition (Continue WHILE n1 > n2)</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> If the condition is False, break out of the loop</p><BR>
+  <BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if (n1 > n2)   then</p><BR>
+  <div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> break </p><BR>
+  </div></div><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "n1 exceeds threshold"</p><BR>
 <BR><BR><BR>
   do_while loops.<BR>
-  The beginning of the program is pretty much the same as the last one.
-  Only difference is we are changing the loopy library condition.
-  then finally we have 0013 "Function call l.do_while parameters: 1, 3, -1"
-  what these two things mean together are "count up from 1 to 3 by one.", 
-  so it keeps on increasing n1 which starts as 1, until it
-  reaches the value fo 3(which is n2)
-  so that is why we set the condition to ">" which is "more than" basically
-  saying, count up until n1 is more than n2
-  then end the loop.
-  So this is what it does, Since the countup starts at 1, the n1 parameter
-  to the loop_body function starts at 1 at the first iteration so when
-  "Function call Turtle Move Forward parameters: n" gets called, n has the
-  value of 1(same as n1) so the first move the turtle moves forward 1 slot. 
-  then the loop starts over again, but the n1 has the value of 2,
-  do while loops so when "Function call Turtle Move Forward parameters: n"
-  gets called, n has the value of 2 so the second move the turtle moves
-  forward 2 slots.
-  then it counts up to one so when
-  "Function call Turtle Move Forward parameters: n"
-  gets called, n has the value of 1 so the third
-  move the turtle moves forward 1 slots.
-  and at the very end the 
-  'Function call promptUserToWriteDownOnPaper parameters: "n1 exceeds threshold"'
-  which tells the user to write that down on paper.
+  do while loops are a construct of other programming languages,
+ it does something while a condition is true.
+  on lines 0002 ro 0004 we set up some variables.
+  then the body of the loop begins in line 0007 to line 0018.
+  first on line 0008 we have Function call promptUserToWriteDownOnPaper parameters: "value of n1 is "+str(n1)
+  which tells hte user to write down the value of n1.
+  then on line 0013 we have n1 += step which adds the value of step to the current value of n1  
+  then on line 0017 we have hte condition if (n1 > n2) then, which checks if n1 is more than n2.
+  if it is then line 0018 break , breaks the continuation of hte loop, if it does not, we start at the beginning of the loop again.
+  once hte loop is broken, we reach 0019
+
+Function call promptUserToWriteDownOnPaper parameters: "n1 exceeds threshold" which should be self explanatory.
 <BR><BR><BR>
- <a href="TLAC_boardgame/docs_loops_do_while-output.html">Here is the output</a>
+ <a href="TLAC_boardgame/docs_loops_do_while_new-output.html">Here is the output</a>
 <BR><BR><BR>for loops
 <BR><BR><BR>
   <BR>
@@ -678,7 +656,31 @@
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body parameters: n</p><BR>
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters: n,n</p><BR>
+    </div><BR><p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">loopy library import, name it l</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> import TLACloopyLib as l </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">for loop example</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  loop_body parameters: n</p><BR>
+    <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters: n,n</p><BR>
     </div><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = loop_body </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  condition parameters: n1, n2</p><BR>
+    <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call return l.conditional parameters: n1, l.op("=="), n2</p><BR>
+    </div><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.condition = condition </p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call l.forloop parameters: 5, 9, 1</p><BR>
+    <BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters: "counted form 5 to 9"</p><BR>
+
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> l.loop_body = loop_body </p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><BR>

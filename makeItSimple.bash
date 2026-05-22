@@ -10,7 +10,8 @@ sed -e 's/,//g; s/TALC\.globals//g; s/globals//g; s/\.//g;s/TLAC//g; s/globals\.
 sed -e 's/,//g; s/TALC\.globals//g; s/globals//g; s/\.//g;s/TLAC//g; s/globals\.//g; 1,8d' docs_very_basic_program.py > docs_very_basic_program-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals/,/g; s/globals//g; s/ ,//g; s/\.turtle\./turtle/g; s/^ //g; 1,8d' docs_user_input_example.py > docs_user_input_example-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_countdown.py > docs_loops_countdown-simplified.py
-sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_do_while.py > docs_loops_do_while-simplified.py
+sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_countdown_new.py > docs_loops_countdown_new-simplified.py
+sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_do_while_new.py > docs_loops_do_while_new-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_forloop.py > docs_loops_forloop-simplified.py 
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_foreachLoop.py > docs_loops_foreachLoop-simplified.py 
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_nested_forloops.py > docs_loops_nested_forloops-simplified.py
