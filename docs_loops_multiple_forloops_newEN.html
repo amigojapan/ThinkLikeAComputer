@@ -1,0 +1,48 @@
+<!DOCTYPE html><output lang="jp">
+<head>
+    <meta charset="UTF-8">
+<style>p {  font-family: Arial, Helvetica, sans-serif; /* Sets a font stack for the entire body font-family: monospace; */}      div {          border-radius: 15px; /* Applies a 15px radius to all four corners of all divs */          border: 1px solid black; /* Example: adds a visible border */          padding: 10px; /* Example: adds some internal spacing */          margin: 5px; /* Example: adds spacing between divs */          border-style: solid; /* A border-style is mandatory for the border to appear */          border-width: 1px;  /* Set the border width */          border-color: #FF000; /*#e0e0e0;  Use a light color value (this is a light gray) */      }</style></head>
+<body style="background-color:powderblue;">
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> The following makes a pyramid, it is an example of how to use</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> several for loops (outer and inner) in the same program.</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  print_many_christmas parameters: ch, times, triangle_width</p><BR>
+<div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output = "" </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 1. First inner loop: Add the spaces</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> loopy's forloop was inclusive, so we add +1 to the range stop condition</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> repeat_end = triangle_width - times </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for _ in range(0, repeat_end + 1)   then</p><BR>
+<div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output += " " </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p></div><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 2. Second inner loop: Add the characters (stars)</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> repeat_end2 = times * 2 - 2 </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for _ in range(0, repeat_end2 + 1)   then</p><BR>
+<div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output += ch </p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p></div><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: output</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p></div><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 3. Outer loop: Run the pyramid builder for rows 1 through 5</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> range(1, 6) counts exactly 1, 2, 3, 4, 5</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for i in range(1, 6)   then</p><BR>
+<div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print_many_christmas parameters: '*', i, 5</p><BR>
+</div></body></output>
+
