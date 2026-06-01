@@ -12,9 +12,9 @@
 ./htmlifyer.py en HTML docs_loops_countdown_new-simplified.py > docs_loops_countdown_newEN.html
 ./htmlifyer.py en HTML docs_loops_do_while_new-simplified.py > docs_loops_do_while_newEN.html
 ./htmlifyer.py en HTML docs_loops_forloop_new-simplified.py > docs_loops_forloop_newEN.html
-./htmlifyer.py en HTML docs_loops_foreachLoop-simplified.py > docs_loops_foreachLoopEN.html
+./htmlifyer.py en HTML docs_loops_foreachLoop_new-simplified.py > docs_loops_foreachLoop_newEN.html
 ./htmlifyer.py en HTML docs_loops_nested_forloops_new-simplified.py > docs_loops_nested_forloops_newEN.html
-./htmlifyer.py en HTML docs_operations_on_lists-simplified.py > docs_operations_on_listsEN.html
+./htmlifyer.py en HTML docs_operations_on_lists_new-simplified.py > docs_operations_on_listsEN_new.html
 ./htmlifyer.py en HTML docs_loops_multiple_forloops_new-simplified.py > docs_loops_multiple_forloops_newEN.html
 
 ./htmlifyer.py jp HTML problem3-program-simplified.py > problem3-programchartJP.html

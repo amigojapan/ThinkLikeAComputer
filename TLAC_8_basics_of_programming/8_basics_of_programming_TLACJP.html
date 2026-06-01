@@ -11,91 +11,61 @@
         </style>      
     </head>
     <body style="background-color:powderblue;">
-  <br><H1>8 Basic Concepts of Programming in TLAC(Think Like A Computer)</H1>
+      <br><H1>TLAC（Think Like A Computer）におけるプログラミングの8つの基本概念</H1>
   <br>
-  <br>Author:Usmar A. Padow (amigojapan), <a href=http://amigojapan.github.io/>amigojapan's homepage</a>
+  <br>著者: Usmar A. Padow (amigojapan)、amigojapan ホームページ <a href=http://amigojapan.github.io/>amigojapan's homepage</a>
   <br>
-  <br>Note: This document aimed to teach complete novices how to program.
+  <br>注: このドキュメントは、プログラミングの完全な初心者にプログラミングの方法を教えることを目的としていました。
   <br>
-  <br><a href="#0">0. Sequentiality</a>
-  <br><a href="#1">1. Variables</a>
-  <br><a href="#2">2. Statements</a>
-  <br><a href="#3">3. Conditionals/blocks</a> 
-  <br><a href="#4">4. Functions</a>
-  <br><a href="#5">5. Input/output</a>
-  <br><a href="#6">6. Loops</a>
-  <br><a href="#7">7. Arrays/lists</a> 
+  <br><a href="#0">0. シーケンシャル性</a>
+  <br><a href="#1">1. 変数</a>
+  <br><a href="#2">2. ステートメント</a>
+  <br><a href="#3">3. 条件分岐・ブロック</a> 
+  <br><a href="#4">4. 関数</a>
+  <br><a href="#5">5. 入力・出力</a>
+  <br><a href="#6">6. ループ</a>
+  <br><a href="#7">7. 配列・リスト</a> 
   <br>
-  <br><div id="0"><h2>0.	Sequentiality/Following instructions in order</h2></div>
-  <br>The first thing we need to learn in order to become a programmer is 
-  that instructions always follow a regular order, usually from top
-  to bottom.
+  <br><div id="0"><h2>0.	シーケンシャル性</h2></div>
+  <br>プログラマーになるためにまず学ぶべきことは、命令は常に一定の順序で、通常は上から下へと進むということだ。
   <BR>
-  <BR><H3>Tips for playing TLAC</H3>
-  Use a small coin to keep the current instruction, instructions are marked by line numbers like 0001. 
-  (assuming you are using the printed version of the board game)   
+  <BR><H3>TLACをプレイするためのヒント</H3>
+  小さなコインを使って現在の指示を保管してください。指示は0001のような行番号で示されています。（ボードゲームの印刷版を使用している場合）
   <BR>
-  <BR>For example:
+  <BR>例：
   <BR><BR><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call BrushMyTeeth</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">「歯を磨く」の関数呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call CombMyHair</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">「髪を整える」の関数呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call GoToWork</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">「仕事に行く」の関数呼び出し</p><BR>
   <BR><BR><BR>
   <BR>
-  I will never go to work before I brush my teeth and comb my hair...
+  歯を磨く、櫛を入れる前に、消して仕事に行く事はないです…
   <BR><BR><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call BrushMyTeeth</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">「歯を磨く」の関数呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call GoToWork</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">「仕事に行く」の関数呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call CombMyHair</p><BR>    
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">「髪を整える」の関数呼び出し</p><BR>    
   <BR><BR><BR>
-  Well, the answer is that I would first brush my teeth, but I would get 
-  to work unkempt, which would cause trouble. That is why the order of 
-  the instructions in a program is so important... also because as Richard Feynman said
-  in <a href="https://www.youtube.com/watch?v=EKWGGDXe5MA" target="_blank">this lecture</a> "computers are stupid”.
-   Which is another thing to keep in mind, with the
-    previous program I just wrote, the computer will not intelligently know
-   I should comb my hair before going to work. Computers are just
-     not capable of such decision making at this level of programming.
-  If you make a large program, and shuffle its instructions around, the 
-  program will surely not do what it was originally intended to do.
+ 
+   さて、答えは、まず歯を磨くけれど、身なりを整えずに仕事に行くことになり、それでは問題が生じる、ということです。だからこそ、プログラムの命令の順序が非常に重要なのです…また、リチャード・ファインマンが<a href="https://www.youtube.com/watch?v=EKWGGDXe5MA" target="_blank">この講義</a>で言ったように、「コンピュータは馬鹿だ」からです。これも覚えておくべき点ですが、先ほど書いたプログラムでは、コンピュータは私が仕事に行く前に髪をとかすべきだと賢く判断することはできません。コンピュータは、このレベルのプログラミングでは、そのような意思決定を行う能力を持っていません。大きなプログラムを作成し、その命令を並べ替えると、プログラムは本来意図したとおりに動作しなくなるのは確実です。
+
   <BR>
-  <BR><H3>Tips for playing TLAC</H3>
-  Write variable values down on a separate piece of paper to remember
-    the current value of the variables (assuming you are using the printed
-    version of the board game).    
-  <BR>    
+  <BR><H3>TLACをプレイするためのヒント</H3>
+  変数の現在の値を覚えておくために、変数の値を別の紙に書き留めておきましょう（ボードゲームの印刷版を使用している場合）。
+  <BR>
   <br>
   <br>
-  <br><div id="1"><h2>1. Variables</h2></div>
-  <br>A variable is a place in the computer's memory where some kind of 
-  value sometimes a string (some letters), sometimes a number are stored.
-  Like the value 5 or the string "hello”.  A variable can have a simple 
-  name like just the letter x or any combination of letters like
-  last_name or social_security_number, but not spaces, last name is 
-  not a valid variable name.
-  If we have a variable called social_security_number we could assign it 
-  the value 123456789 as a sample social security number. if you wanted to
-  dashes maybe you would want to use a string like "123-45-6789".
-  Strings are surrounded by double quotes, numbers are just written bare.
-  Variables as their name implied can vary, which seems to be different to
-  the mathematical view on variables, in math if you
-  say x=5 then x is always equal to 5,  but in programming we can say 
-  x=3 and then x=5 and the value would first be set to 3 and
-  then change to 5(These are called assignments in programming).
-  In the case of a string, the value between the double quotes will be 
-  assigned to the variable, for example if we had last_name we could
-  assign "Einstein” to it easily as follows: last_name = "Einstein”. 
+  <br><div id="1"><h2>1. 変数</h2></div>
+  <br>
+  変数とは、コンピュータのメモリ内の場所であり、何らかの値（文字列（文字の羅列）や数値など）が格納される場所です。値5や文字列「hello」のように。変数には、文字xのような単純な名前、または名字やマイナンバーのような任意の文字の組み合わせを付けることができますが、スペースは使用できません。名字は有効な変数名ではありません。マイナンバーという変数がある場合、サンプル社会保障番号として123456789という値を代入できます。ハイフンを使用したい場合は、「123-45-6789」のような文字列を使用するかもしれません。文字列は二重引用符で囲まれ、数値はそのまま記述します。変数は名前が示すように変化する可能性があり、これは数学における変数の見方とは異なります。数学では、x=5と言えばxは常に5になりますが、プログラミングではx=3と言い、次にx=5と言えば、値は最初に3に設定され、次に5に変わります（これらはプログラミングでは代入と呼ばれます）。文字列の場合、二重引用符の間の値が変数に代入されます。たとえば、名字という変数がある場合、値を代入できます。 「アインシュタイン」を次のように簡単に変更できます: 名字 = "アインシュタイン"。
   <br>
   <br> 
-  <br><div id="2"><h2>2. Statements</h2></div>
-  <br>this may be the most difficult part to explain of programming,
-  almost everything you see in a computer program is a statement.
-  Lets talk about assignment statements.
-  For example, lets take the following program
+  <br><div id="2"><h2>2. ステートメント</h2></div>
+  <br>
+  これはプログラミングの説明で最も難しい部分かもしれません。コンピュータプログラムで目にするもののほとんどすべてがステートメントです。代入ステートメントについて説明しましょう。例えば、次のプログラムを見てみましょう。
   <BR><BR><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> x=3 </p><BR>
@@ -104,31 +74,18 @@
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> x=x+1 </p><BR>
   <BR><BR><BR>
-  What will be the result of such a program…
-  Well, the first statement, x=3 will set x to 3, then the next statement
-  x=5 will (maybe counter-intuitively to some)
-  set x to 5, then the final statement  x=x+1, we need to break down into
-  its  parts.
-  We have the x on the left of the equal sign called an "lvalue” 
-  (the variable to the left of the equal sign)
-  which is the same as the first x=3, where the x is what stores the value,
-  then we have x+1, the value of x at this point of the
-  program is 5 because it comes after
-  x=5 so when we do x+1 it is the same as doing 5+1, and then
-  finally we assign that to the lvalue, so at the end of the program, x 
-  will contain 6 which is 5+1.
-  Other kinds of statements we will look at later in this text are things 
-  like function calls, return statements and conditional statements.
+  このようなプログラムを実行すると、どのような結果になるでしょうか。まず、最初のステートメント x=3 では x に 3 が設定されます。次に、次のステートメント x=5 では (直感に反するかもしれませんが) x に 5 が設定されます。最後に、最後のステートメント x=x+1 を分解する必要があります。等号の左側にある x は「lvalue」（等号の左側の変数）と呼ばれ、最初の x=3 と同じです。ここで、x は値を格納するものです。次に x+1 があり、プログラムのこの時点での x の値は 5 です。これは x=5 の後に来るため、x+1 を実行すると 5+1 を実行するのと同じです。最後に、それを lvalue に代入します。したがって、プログラムの最後には、x には 5+1 である 6 が格納されます。このテキストの後半で見ていく他の種類のステートメントには、関数呼び出し、return ステートメント、条件ステートメントなどがあります。
+
+
+
+
   <br>
   <br>
-  <br><div id="3"><h2>3. Conditionals/block of code</h2></div>
-  <br>A conditional statement is a statement which gives two different 
-  flow controls depending on wether the statement it is evaluating
-  is true or false, for example:
-  In order to explain conditional statements I am also forced to explain what
-  blocks of code are.
-  Firstly, here is an example in TLAC:
-  <BR>take the initial state of the board as:
+  <br><div id="3"><h2>3. 条件分岐/コードブロック</h2></div>
+  <br>条件文とは、評価対象の文が真か偽かによって、2つの異なるフロー制御を与える文です。例えば、次のようになります。条件文を説明するために、コードブロックとは何かについても説明する必要があります。まず、TLAC の例を示します。
+
+
+  <BR>ボードの初期状態を次のようにします。
   <BR><BR><BR>
     <BR>
     <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
@@ -143,69 +100,56 @@
     <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/turtule_up.png' width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
     <BR>
   <BR><BR><BR>
-  In this example, the turtle is at X=4(X holds the value of the slot on the board from left to right) as you can see the turtle being on the fifth slot
-  from the left most slot on the board.(the left most slot ins slot 0)
-  Note: I will be introducing TALC specific statements from now on, when it is  a TALC specific instruction I will let you know.
-  TLAC "Function call Turtle Move Forward" function (I will explain functions later, but lets just say this is one for now), this function makes the turtle move forward. 
-  (in the direction the turtle's head is poinitializing) by one slot.
+この例では、タートルは X=4 にあります (X はボードの左から右へのスロットの値を保持します)。ご覧のとおり、タートルはボードの左端のスロットから 5 番目のスロットにあります (左端のスロットはスロット 0 です)。注: 今後は TALC 固有のステートメントを紹介します。TALC 固有の命令の場合はお知らせします。TLAC "関数呼び出し 亀さんがひと升前に進む" 関数 (関数については後で説明しますが、とりあえずこれは 1 つとします)、この関数はタートルを (タートルの頭が指している方向に) 1 スロット分前進させます。
+
+関数呼び出し：カメが前進する
 <BR><BR><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">green lines like these are called 'comments'</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">このような緑色の線は「コメント」と呼ばれます。</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">and do not affect the execution of the program</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">プログラムの実行には影響を与えません</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">but I want you to read them for now</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">でも今は読んでほしい</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if X>3   then</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">もしX>3の場合</p><BR>
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">since X is more than 3,</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">Xは３より大きいので、</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">this block(the block surrounded by the</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">この ブロック(ピンクの資格に</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">pink rectangle) of code will be executed</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">囲んでるブロック)が実行される</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを前に動かしますの関数を呼びます</p><BR>
     </div><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if X<3   then</p><BR>
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">since X is not less than,</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">Xは３未満ではないので、</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">this block of code won't be executed</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">この ブロック(ピンクの資格に</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを前に動かしますの関数を呼びます</p><BR>
     </div><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> X=2 </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">this assignment statement teleports</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">このステートメントはテレポートします</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the turtle to X slot 2(two slots</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">亀さんをXスロット2にテレポートします(ボードの左端から2番目のスロット)</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">from the left of the board)</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">ボードの左端から2番目のスロット)</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if X<3   then</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">もしX<3の場合   then</p><BR>
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">now after the last assignment statement</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">前のステートメントの後に</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">X is less than 3, so the following block</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">Xが３よりも小さい場合、次のブロックが</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">of code gets executed.</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">実行されます。</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんが前に動く関数呼び出し</p><BR>
     </div>
 <BR><BR><BR>
   <br>
-  Lets go thru that program line by line.
-  First lines 001 to 003 explain what comments are
-  then line 004  checks if X of the turtle is more than 3, 
-  since it is,(from now on we will skip all comment lines) 
-  it will go into the following "block of code"(marked in pink(in this case))
-  which starts when you see a "pipe icon".
-  Entering our "Function call Turtle Move Froward" on line 008
-  at this point, you, the person playing the TLAC game, needs to move the
-  turtle one space in the direction of the turtle is poinitializing towards.
-  (towards where it's head is poinitializing), 
-  and since x>3 is true, the turtle is moved froward by one slot as in the following
-  picture indicates:
+プログラムを一行ずつ見ていきましょう。最初の行001から003ではコメントについて説明しています。次に、行004ではタートルのXが3より大きいかどうかをチェックします。Xは3より大きいので、（ここからはすべてのコメント行をスキップします）次の「コードブロック」（この場合はピンクでマークされています）に入ります。これは「パイプアイコン」が表示されたときに始まります。この時点で、行008で「関数呼び出し 亀さんがひと升前に進む」に入ります。TLACゲームをプレイしているあなたは、タートルが初期位置を指している方向（頭が初期位置を指している方向）にタートルを1マス移動させる必要があります。x>3が真なので、次の図に示すように、タートルは1マス前方に移動します。
   <BR><BR><BR>
     <BR>
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
@@ -220,14 +164,7 @@
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
       <BR>
       <BR><BR><BR>
-  then we reach "if X&lt3 then" on line 0009 and as the comments say,
-  the following "Function call Turtle Move Forward" on line 0012 will be skipped:
-  so the turtle does not move at all
-  then we "reach X=2" on line 0013, which will change the value of X to two,
-  now I need to explain that values in TLAC are "indexed on 0", which only means
-  "we count from 0"(kind of like the joke I made at the beginning of this text
-  calling sequentiality "chapter 0"),you should move the turtle to its X position 2
-  (which is the third slot counting form 0), which means putting the turtle in the following position:
+        次に、行 0009 の「if X&lt3 then」に到達し、コメントにあるように、行 0012 の次の「亀さんがひと升前に進む」はスキップされます。そのため、タートルは全く動きません。次に、行 0013 の「Rate X=2」に到達し、X の値が 2 に変更されます。ここで、TLAC の値は「0 からインデックス付けされている」ことを説明する必要があり、これは単に「0 から数える」ことを意味します (このテキストの冒頭で私がした、シーケンシャル性を「第 0 章」と呼ぶジョークのようなものです)。タートルを X 位置 2 (0 から数えて 3 番目のスロット) に移動する必要があります。これは、タートルを次の位置に置くことを意味します。
   <BR><BR><BR>
     <BR>
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
@@ -242,10 +179,7 @@
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
       <BR>
   <BR><BR><BR>  
-  then we reach "if X&lt3 then" on line 0017 and as the comments say,
-  the following "Function call Turtle Move Forward" on line 0021 will be executed:
-  so the turtle needs to be moved forward one space,
-  making the board as follows:
+  次に、0017行目の「if X&lt3 then」に到達し、コメントにあるように、0021行目の「亀さんがひと升前に進む」が実行されます。したがって、タートルを1マス前進させる必要があり、ボードは次のようになります。
   <BR><BR><BR>
     <BR>
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
@@ -261,151 +195,104 @@
   <BR><BR><BR>  
   <br>
   <br>
-  <br><div id="4"><h2>4. Procedures/functions</h2></div>
-  <br>Now functions need to be broken down into 2 separate parts, the easy
-  part which is a function call and the hard part which is a function definition.
-  In the beginning of this paper I used three function calls to say what I was
-  telling the computer to do:
+  <br><div id="4"><h2>4. 関数</h2></div>
+  <br>
+  関数は、関数呼び出しという簡単な部分と、関数定義という難しい部分の2つの部分に分解する必要があります。この論文の冒頭では、コンピュータに何をさせるかを伝えるために3つの関数呼び出しを使用しました。
   <BR><BR><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call BrushMyTeeth</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">葉を磨くの関数を呼び出す歯を磨くの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call CombMyHair</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">櫛を入れるの関数を呼び出す</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call GoToWork</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">仕事に行くの関数を呼び出す</p><BR>
   <BR><BR><BR>    
-  Take the following program:
+  
+  次のプログラムを例に挙げます：
+
   <BR><BR><BR>
   <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">functions example</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">変数例</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the following is a function definition:</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">次は変数の定義です：</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  Lay_Four_Eggs_In_Square_Pattern</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">　変数定義、たまごを四つ四角のパターンで生む。</p><BR>
     <div style="background-color: #EE82EE; display: inline-block; border: 2px solid black; padding: 2px;"><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんの下にたまごを生むの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんをひと升を前に進むの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんの下にたまごを生むの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんが右に曲がるの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんをひと升を前に進むの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんの下にたまごを生むの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんが右に曲がるの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんをひと升を前に進むの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle lays egg underneath itself</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんの下にたまごを生むの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the following two turns are</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">最後の２つの曲がる関数呼び出しは</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">to assure the turtle ends up in</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">亀さんが上の配置で</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">the up pusition</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">終わるを確かにするためです。</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを右に曲がるの関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを右に曲がるの関数を呼び出し</p><BR>
     </div><BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=0 </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: initializing board after teleport X"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">関数呼び出しの出力パラメータ: テレポート X 後にボードを初期化しています</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ボードを表示の関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Lay_Four_Eggs_In_Square_Pattern</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">たまごを四つ四角のパターンで生むの関数を呼び出し</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=5 </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: initializing board after teleport X"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">関数呼び出しの出力パラメータ: テレポート X 後にボードを初期化しています</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ボードを表示の関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Lay_Four_Eggs_In_Square_Pattern</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">たまごを四つ四角のパターンで生むの関数を呼び出し</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> turtleX=8 </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: initializing board after teleport X"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">関数呼び出しの出力パラメータ: テレポート X 後にボードを初期化しています</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call printBoard</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ボードを表示の関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Lay_Four_Eggs_In_Square_Pattern</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">たまごを四つ四角のパターンで生むの関数を呼び出し</p><BR>
   <BR><BR><BR>
-  Fist I think i need to introduce two more TLAC internal functions:
-  the "Turtle lays egg underneath itself", as the name implies, you should
-  take an egg and put it inder the turtle.
-  and then the "Turn Turtle Right" function, which means you should take
-  the turtle piece and turn it 90 degrees tot he right.
-  As you can see in the final state of the board in the following chart,
-  the turtle lays 4 eggs in a square pattern, it does it 3 times
-  it does it three times because there are three function calls to the
-  "Lay_Four_Eggs_In_Square_Pattern" function, which is not a TLAC function,
-  but it is a user defined function, when you see a call to that function, 
-  you should execute all the instructions inside the user defined function.
-  as you can see, this saved a lot of space in the program, because without
-  this function we would have had to repeat all the contents of the code inside
-  the function 3 times over. 
+ まず、TLAC の内部関数を 2 つ紹介する必要があると思います。「カメが自分の下に卵を産む」関数は、名前が示すとおり、卵を取ってカメの下に置きます。次に、「カメを右に回転させる」関数は、カメの駒を取って 90 度右に回転させます。次のチャートのボードの最終状態を見るとわかるように、カメは 4 つの卵を正方形のパターンで産みます。これを 3 回繰り返します。これは、「亀さんが四角のパターンでたまごを生む」関数への関数呼び出しが 3 回あるためです。これは TLAC 関数ではなく、ユーザー定義関数です。この関数への呼び出しが見つかったら、ユーザー定義関数内のすべての命令を実行する必要があります。ご覧のとおり、この関数がなければ関数内のコードの内容をすべて 3 回繰り返す必要があったため、プログラム内のスペースを大幅に節約できました。
   <br>
   <br>
-  <a hreprefinitionref=docs_functionsEN-ouput.html>Click here</a> to see are all the states of the board after executing this program:
+  <a hreprefinitionref=docs_functionsEN-ouput.html>ここをクリックする</a>と、このプログラムを実行した後のボードのすべての状態が表示されます：
+
   <br>
   <BR>
-  Function calls help us so we don't have to write the same
-  code many times, for example, in this program we defined the way to
-  make a square of eggs only once, but we did three function calls.
-  The to Lay_Four_Eggs_In_Square_Pattern function call, saving us from typing the same
-  thing over and over, we could do 100 function calls to the same 
-  function and it would not increase the size of the program by much...
-  It also increases readability of the program if we don't repeat the
-  same code over and over.
-  <br>
-  <br>
-  Now I will explain how a function is defined.
-  First we have the function definition, followed by the function name, function names
-  follow the same rule as variable names, in this case our function name is
-  Lay_Four_Eggs_In_Square_Pattern, then they word parameters: or an open parenthesis 
-  (then the "parameters", which
-  are the things that change from function call
-  to function call. They can come in the form of variable names or just values,
-  in our case, for example, the "Turtle Move Forward" can take a parameter 
-  of how far you want the turtle to move in one move, if we have the following
-  "Turtle Move Forward, parameters: 5", then the turtle should jump 5 spaces forward
-  we will see examples using it like this in the future.
-  you can also see the on line 0019 Function call print parameters: initializing board after teleport X" , you don't really
-  need to worry about this function call in this example, but we added it cause
-  we actually executed the program to generate the initial board state and it made it
-  easier to generate the documentation this way, since it adds the title "initializing board after teleport X"
-  in the specific place before the "printBoard" function is called. the writer of this document
-  had to add those two functions in order to generate the state of the board properly and decided to
-  leave them in in this example. the reason for the "printBoard" function was
-  added is because assignments like " turtleX=5" are not TALC internal functions and cannot generate the state of
-  the board automatically like the other functions do, but since the turtle moves with those, the author thought
-  it was a good idea to add it to the printout of the states of the board output(which you will see later on).
+ 
+関数呼び出しは、同じコードを何度も書く必要がないようにするのに役立ちます。たとえば、このプログラムでは、卵を正方形にする方法を一度だけ定義しましたが、3 つの関数呼び出しを行いました。Lay_Four_Eggs_In_Square_Pattern 関数呼び出しは、同じことを何度も入力する手間を省き、同じ関数を 100 回呼び出しても、プログラムのサイズはそれほど増えません... また、同じコードを何度も繰り返さないことで、プログラムの可読性も向上します。
 
-  Finally there is something called a "return statement". Which tells the program to "send this back
-  to the function call as the result". (Also note that return terminates the flow of
-  the function and the block of code, no more operations occur after return, and the flow of the
-  program goes back to the function call).
-  in this program we omitted the return statement, but we will see examples of this later on.
+それでは、関数がどのように定義されるかを説明します。まず関数定義があり、続いて関数名があります。関数名は変数名と同じ規則に従います。この場合、関数名は Lay_Four_Eggs_In_Square_Pattern です。次に パラメーター: または開き括弧 () が続きます。そして、関数呼び出しごとに変化する「パラメータ」が続きます。パラメータは変数名または値の形式で指定できます。たとえば、この例では、「亀さんがひと升前に進む」関数は、タートルを1回の移動でどれだけ移動させるかというパラメータを受け取ることができます。「亀さんがひと升前に進む, パラメーター: 5」のように指定すると、タートルは5マス前方にジャンプします。今後、このような使用例を見ていきます。また、0019行目の プリント パラメーター: initializing board after teleport X" も確認できます。この例ではこの関数呼び出しについて心配する必要はありませんが、初期ボード状態を生成するために実際にプログラムを実行したため、ドキュメントの生成が容易になるため追加しました。 「printBoard」関数が呼び出される直前の特定の場所に「テレポート X 後にボードを初期化します」というタイトルがあります。このドキュメントの著者は、ボードの状態を正しく生成するために、これら 2 つの関数を追加する必要があり、この例に残すことにしました。「printBoard」関数が追加された理由は、「turtleX=5」のような代入は TALC の内部関数ではなく、他の関数のようにボードの状態を自動的に生成できないためですが、タートルはそれらで移動するため、著者はボード出力の状態のプリントアウトに追加するのが適切だと考えました (これは後で見ることができます)。最後に、「return ステートメント」と呼ばれるものがあります。これは、プログラムに「これを関数呼び出しに結果として返す」ように指示します。(また、return は関数とコードブロックの流れを終了させ、return の後にはそれ以上の操作は発生せず、プログラムの流れは関数呼び出しに戻ることに注意してください)。このプログラムでは return ステートメントを省略しましたが、後でその例を見ます。
   <br>
   <br>
-  <br><div id="5"><h2>5. Input/output</h2></div>
+  <br><div id="5"><h2>5. 入力・出力</h2></div>
   <br>
-  <h3>output (some change in the board or paper writing)</h3>
-  <br>Now, here is the most simple program every programmer starts out with
+  <h3>出力 (ボードのコマの変化、もしくは紙に何かを書く)</h3>
+  <br>次には、この出力のプログラムを見ましょう：
   <br>
   <BR><BR><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">very basic program example</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">基本的な例</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: 5</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを５コマ前に進むの関数を呼び出し</p><BR>
   <BR><BR><BR>    
   <br>
-  This is a simple example of a program that produces "output"
-  the following is the output, in  TLAC usually the output is in the shape of
-  moves on a board:
+  これがTLCAの基本的な出力の例です。出力はほとんどコマの動きで表示されます:
   <BR><BR><BR>
     initial board:<BR>
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><BR>
@@ -433,189 +320,85 @@
       <div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div><div class='cell-div'><img src='https://raw.githubusercontent.com/amigojapan/ThinkLikeAComputer/refs/heads/main/TLAC_boardgame/img/board_empty_slot.png'  width=32 height=32></div> 
 <BR><BR><BR>
   <h3>input</h3>
-  <br>Now lets try some input, in TALC doing input is a bit hard to explain, well, mostly cause "input" will usually take the form of an action by the user(in TLAC), this can be achieved with the 'oderUser: parameters "prompt"' function
-  this is quite different from other TALC functions, cause it means we will actually be asking the user to do something.:
+  <br>今度は入力をしてみましょう。TLCAでは入力がもうちょっと説明が難しいです。入力がユーザーによって行う事です。(TLACでは), これが'ユーザーに命令： パラメーター"プロンプト"'の関数で表せます。
+  これが、他のTLCA命令と結構ちかいます、なぜかというと、ユーザーに何かをする事をお願いしますから:
   <BR>
-  <BR>the following is an example of a program that uses input:
+  <BR>次は入力の例です：
 <BR><BR><BR>
   <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">user input example</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">ユーザー入力例</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">initialize turtle position</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">亀さんの最初の場所を決めましょう</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters: ,4,9</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを次の枡に瞬間移動、パラメーター: ,4,9</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call orderUser parameters: ,"put turtle at top left of the board"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーに命令、パラメーター："亀さんを一番左上の枡に動かせ！"</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call simulateUserInputTeleportTurtleTo parameters: ,0,0</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザー命令瞬間移動シミュレーションパラメーター: ,0,0の関数を呼び出し</p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> savedX=turtleX </p><BR>
     <BR>
     <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> savedY=turtleY </p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call orderUser parameters: ,"put turtle at top bottom right of the board"</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーに命令、パラメーター："亀さんを一番右下の枡に動かせ！"</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call simulateUserInputTeleportTurtleTo parameters: ,9,9</p><BR>
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザー命令瞬間移動シミュレーションパラメーター: ,9,9の関数を呼び出し</p><BR>
     <BR>
-    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters: , savedX, savedY</p><BR>    
+    <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんの瞬間移動、パラメーター: , savedX, savedYの関数を呼び出し</p><BR>    
   <BR><BR><BR>
-  <style id="css-style">pre { line-height: 125%; }
-    td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-    span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-    td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-    span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-    .demo-highlight .hll { background-color: #ffffcc }
-    .demo-highlight { background: #f8f8f8; }
-    .demo-highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
-    .demo-highlight .err { border: 1px solid #FF0000 } /* Error */
-    .demo-highlight .k { color: #008000; font-weight: bold } /* Keyword */
-    .demo-highlight .o { color: #666666 } /* Operator */
-    .demo-highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
-    .demo-highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
-    .demo-highlight .cp { color: #9C6500 } /* Comment.Preproc */
-    .demo-highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
-    .demo-highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
-    .demo-highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
-    .demo-highlight .gd { color: #A00000 } /* Generic.Deleted */
-    .demo-highlight .ge { font-style: italic } /* Generic.Emph */
-    .demo-highlight .gr { color: #E40000 } /* Generic.Error */
-    .demo-highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-    .demo-highlight .gi { color: #008400 } /* Generic.Inserted */
-    .demo-highlight .go { color: #717171 } /* Generic.Output */
-    .demo-highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-    .demo-highlight .gs { font-weight: bold } /* Generic.Strong */
-    .demo-highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-    .demo-highlight .gt { color: #0044DD } /* Generic.Traceback */
-    .demo-highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-    .demo-highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-    .demo-highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-    .demo-highlight .kp { color: #008000 } /* Keyword.Pseudo */
-    .demo-highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-    .demo-highlight .kt { color: #B00040 } /* Keyword.Type */
-    .demo-highlight .m { color: #666666 } /* Literal.Number */
-    .demo-highlight .s { color: #BA2121 } /* Literal.String */
-    .demo-highlight .na { color: #687822 } /* Name.Attribute */
-    .demo-highlight .nb { color: #008000 } /* Name.Builtin */
-    .demo-highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-    .demo-highlight .no { color: #880000 } /* Name.Constant */
-    .demo-highlight .nd { color: #AA22FF } /* Name.Decorator */
-    .demo-highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
-    .demo-highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
-    .demo-highlight .nf { color: #0000FF } /* Name.Function */
-    .demo-highlight .nl { color: #767600 } /* Name.Label */
-    .demo-highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-    .demo-highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-    .demo-highlight .nv { color: #19177C } /* Name.Variable */
-    .demo-highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-    .demo-highlight .w { color: #bbbbbb } /* Text.Whitespace */
-    .demo-highlight .mb { color: #666666 } /* Literal.Number.Bin */
-    .demo-highlight .mf { color: #666666 } /* Literal.Number.Float */
-    .demo-highlight .mh { color: #666666 } /* Literal.Number.Hex */
-    .demo-highlight .mi { color: #666666 } /* Literal.Number.Integer */
-    .demo-highlight .mo { color: #666666 } /* Literal.Number.Oct */
-    .demo-highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-    .demo-highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-    .demo-highlight .sc { color: #BA2121 } /* Literal.String.Char */
-    .demo-highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-    .demo-highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-    .demo-highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-    .demo-highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
-    .demo-highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-    .demo-highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
-    .demo-highlight .sx { color: #008000 } /* Literal.String.Other */
-    .demo-highlight .sr { color: #A45A77 } /* Literal.String.Regex */
-    .demo-highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-    .demo-highlight .ss { color: #19177C } /* Literal.String.Symbol */
-    .demo-highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-    .demo-highlight .fm { color: #0000FF } /* Name.Function.Magic */
-    .demo-highlight .vc { color: #19177C } /* Name.Variable.Class */
-    .demo-highlight .vg { color: #19177C } /* Name.Variable.Global */
-    .demo-highlight .vi { color: #19177C } /* Name.Variable.Instance */
-    .demo-highlight .vm { color: #19177C } /* Name.Variable.Magic */
-    .demo-highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   <br>
   <BR>
-    so lets see what this does, first of all empty lines like line 0002 can be ignored(because it is empty).
-    first we teleport the turtle to 4,9, which puts it in the normal initial position.
-    then on line 0005 we order the user to do "put turtle at top left of the board".
-    a user should obey the instructions, but remember that users may not be obedient or
-    they can also make mistakes.
-    next in line 0006 we have a function call used mostly to generate this documentation,
-    it is the same as teleport to 0,0 but this is just used to make the turtle follow the
-    instructions of the user, you can ignore this instruction too.
-    next up in lines 0007 and 0008 we save the turtle x position to savedX by issuing savedX= turtleX 
-    then we do the same for the Y position.
-    this should (if the user did what he was instructed well) end up with the variable savedX and savedY being 0,0 (the top left of the board).
-    next we tell the user to move the turtle to the bottom right of the board.
-    then at line 0010 "Function call simulateUserInputTeleportTurtleTo parameters: ,9,9" should move hte turtle to the bottom right of the board.
-    then we have "Function call teleportTurtleTo parameters: savedX, savedY" and since savedX, savedY are 0,0, the turtle should
-    teleport to the top left of the board.
-    this can get interesting in games where the user gets to decide where to put the turtle.
-    for example if the user initially put the turtle in another portion,
-    the turtle would have teleported back there.
-    so it is interesting for making like two player games, where the user interacts wit the pieces and the other person acts like the computer. 
-  <BR><BR><BR>
-  <a href=docs_user_input_example-outputEN.html>This is the output</a>  after following the instructions.
+ 
+それでは、これが何をするのか見ていきましょう。まず、行 0002 のような空の行は無視できます (空なので)。最初に、タートルを 4,9 にテレポートします。これにより、タートルは通常の初期位置に配置されます。次に、行 0005 で、ユーザーに「ボードの左上にタートルを置く」ように指示します。ユーザーは指示に従う必要がありますが、ユーザーは従わない場合や、間違いを犯す場合もあることを覚えておいてください。次に、行 0006 では、主にこのドキュメントを生成するために使用される関数呼び出しがあります。これは、0,0 にテレポートするのと同じですが、これはタートルがユーザーの指示に従うようにするために使用されるだけなので、この指示も無視できます。次に、行 0007 と 0008 では、savedX= turtleX を発行してタートルの x 位置を savedX に保存し、次に Y 位置についても同じことを行います。ユーザーが指示通りに操作すれば、最終的に変数 savedX と savedY は 0,0 (ボードの左上) になります。次に、ユーザーにタートルをボードの右下に移動するように指示します。次に、0010 行目の "ユーザー瞬間移動シミュレーションパラメーター: ,9,9の関数を呼び出し" でタートルをボードの右下に移動させます。次に "亀さんを瞬間移動パラメーター: savedX, savedYの関数を呼び出し" があり、savedX、savedY が 0,0 なので、タートルはボードの左上にテレポートします。これは、ユーザーがタートルをどこに置くかを決定できるゲームでは興味深いものになります。たとえば、ユーザーが最初にタートルを別の場所に置いた場合、タートルはそこに戻ってテレポートします。そのため、ユーザーが駒を操作し、もう 1 人がコンピュータのように動作する 2 人用ゲームを作成するのに興味深いものです。これは、指示に従った後の
+ <BR><BR><BR>
+  <a href=docs_user_input_example-outputEN.html>これがこのプログラムの出力です。</a>  after following the instructions.
   <BR><BR><BR>
   <br>
   <br>
-  <br><div id="6"><h2>6. Loops</h2></div> 
-<BR><BR><BR>for loops
+  <br><div id="6"><h2>6. ループ</h2></div> 
+<BR><BR><BR>for（フォアー） ループ
 <BR><BR><BR>
   <BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">For loop counting from 5 to 9 (inclusive)</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">For ループが 5 から 9 まで 数える</p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for i in range(5, 10)   then</p><BR>
   <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call teleportTurtleTo parameters:  i, i</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを瞬間移動パラメーター:  i, iの関数を呼び出し</p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p></div><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "counted form 5 to 9"</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙にこれを書け、パラメーター:  "５から９まで数えた！"</p><BR>
   <BR><BR><BR>
-    in line 0002 we have the for loop, with a range form 5 to 10,
-    but remember that since that since python is 0 indexed,
-    it will only count up to 9... (You can omit the step argument 1 since Python defaults to stepping by 1).
-    0003 adn 0004 are the body of hte loop, in this case, it passes the value of i(which contains the current value of the loop) to
-    both parameters of the teleport command.
-    this will result in the following:
+   
+
+0002行目にはforループがあり、範囲は5から10ですが、Pythonは0から始まるインデックスなので、9までしかカウントされないことに注意してください（Pythonはデフォルトで1ずつステップするので、step引数1は省略できます）。0003行目と0004行目はループ本体で、この場合、iの値（ループの現在の値を含む）をteleportコマンドの両方のパラメータに渡します。その結果、次のようになります：
   <BR><BR><BR>
-  <a href="TLAC_boardgame/docs_loops_forloop-output.html">Here is the output</a>
+  <a href="TLAC_boardgame/docs_loops_forloop-output.html">これが英文の出力です。</a>
  
 
   <br>
-  <h3>countdown loop</h3>
-  The countdown loop is perfect for making like a rocket launch
-  program.
+  <h3>カウントダウンループ</h3>
+  カウントダウンループはロケットの打ち上げプログラムなどを作るのに最適です。
   <BR>
-  <BR>Here is an example of the use of the countdown loop together with TLAC:
+  <BR>次はカウントダウンループの例です：
   <BR><BR><BR>
   <BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">Counting down  loop from 3 to 0</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">３から０まで数えろカウントダウンループ</p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for i in range(3, -1, -1)   then</p><BR>
   <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: i</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんをひと升前に進むパラメーター: i</p><BR>
   </div>
 <BR><BR><BR>
-  <a href="TLAC_boardgame/docs_loops_countdown-output.html">Here is the output to this program</a><BR>
+  <a href="TLAC_boardgame/docs_loops_countdown-output.html">これがこのプログラムの出力です。</a><BR>
 <BR><BR><BR>
- First of all we have line 0002 with  for i in range(3, -1, -1) hte for look will take the values in the range function, and loop an
- appropriate number of times. in this case th4e 3 represents the number we start with 3, and it will count down till one more htna -1 tho 0.
- so it will count down form 3 to 0. th4e final parameter -1, tell it to count down, and not up.
- "Function call Turtle Move Forward parameters: i" gets called, i has the value of 3
-  so the first move the turtle moves forward 3 slots.
-  then the loop starts over again, but the i has the value of 2,
-  countdown loops so when "Function call Turtle Move Forward parameters: i" gets called, i has the value of 2
-  so the second move the turtle moves forward 2 slots. then it counts down by one
-  so when "Function call Turtle Move Forward parameters: i" gets called, i has the value of 1
-  so the third move the turtle moves forward 1 slots.
+ まず、0002 行目に for i in range(3, -1, -1) があります。for look は range 関数の値を取得し、適切な回数だけループします。この場合、3 は開始する数を表し、1 つ増えるまでカウントダウンします。-1 から 0 までカウントダウンします。つまり、3 から 0 までカウントダウンします。最後のパラメータ -1 は、カウントダウンするように指示し、カウントアップしないように指示します。「亀さんがひと升前に進む パラメーター: i」が呼び出され、i の値は 3 なので、最初の移動でタートルは 3 スロット前進します。次に、ループが再び開始されますが、i の値は 2 なので、カウントダウンがループします。「亀さんがひと升前に進む パラメーター: i」が呼び出されると、i の値は 2 なので、2 番目の移動でタートルは 2 スロット前進します。次に、1ずつカウントダウンするので、「関数呼び出し 亀さんがひと升前に進む パラメータ: i」が呼び出されたときには、i の値は 1 になります。そのため、3 回目の移動でタートルは 1 スロット前進します。
   <BR><BR><BR>
   <h3>do_while</h3>
   <BR><BR><BR>
     <BR>
   <BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> do_while example using standard Python</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> do_whileの例</p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> n1 = 1 </p><BR>
   <BR>
@@ -624,51 +407,42 @@
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> step = 1 </p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Python's equivalent of a do...while loop</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> パイソン語ではこういうふうにdo...whileループをします。</p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">while True   then</p><BR>
   <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "value of  n1 is "+str(n1)</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書け、パラメーター:  "n1は "+str(n1)</p><BR>
   <BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 1. Execute the loop body</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 1. ループのボディ</p><BR>
   <BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters:  n1</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんを次の数の枡を前に進むパラメーター:  n1</p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 2. Apply the step decrement</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 2. そして数を足しましょう。</p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> n1 += step </p><BR>
   <BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 3. Check the condition (Continue WHILE n1 > n2)</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 3.　次のコンディションが本当の時続きましょう。</p><BR>
   <BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> If the condition is False, break out of the loop</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 本当じゃない場合ループから出ます。</p><BR>
   <BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if (n1 > n2)   then</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">もし(n1 > n2)なら、</p><BR>
   <div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
   <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> break </p><BR>
   </div></div><BR>
-  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "n1 exceeds threshold"</p><BR>
+  <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書け、パラメーター:  "n1 exceeds threshold(n1がリミットを過ぎた)"</p><BR>
 <BR><BR><BR>
-  do_while loops.<BR>
-  do while loops are a construct of other programming languages,
- it does something while a condition is true.
-  on lines 0002 ro 0004 we set up some variables.
-  then the body of the loop begins in line 0007 to line 0018.
-  first on line 0008 we have Function call promptUserToWriteDownOnPaper parameters: "value of n1 is "+str(n1)
-  which tells hte user to write down the value of n1.
-  then on line 0013 we have n1 += step which adds the value of step to the current value of n1  
-  then on line 0017 we have hte condition if (n1 > n2) then, which checks if n1 is more than n2.
-  if it is then line 0018 break , breaks the continuation of hte loop, if it does not, we start at the beginning of the loop again.
-  once hte loop is broken, we reach 0019
-
-Function call promptUserToWriteDownOnPaper parameters: "n1 exceeds threshold" which should be self explanatory.
+  do_whileループ。<BR>
+  do
+while ループは他のプログラミング言語の構造であり、条件が真である間何かを実行します。0002 行目から 0004 行目でいくつかの変数を設定します。次に、ループの本体が 0007 行目から 0018 行目から始まります。まず、0008 行目には ユーザーよ、紙に書け、パラメーター: "n1は "+str(n1) があり、ユーザーに n1 の値を書き留めるように指示します。次に、0013 行目に n1 += step があり、step の値を現在の n1 の値に追加します。次に、0017 行目には条件 if (n1 > n2) then があり、n1 が n2 より大きいかどうかをチェックします。大きい場合は、0018 行目の break でループの継続を中断します。そうでない場合は、ループの最初からやり直します。ループが終了すると、0019 関数呼び出し promptUserToWriteDownOnPaper パラメータ: "n1 がしきい値を超えています" に到達します。これは説明不要でしょう。
+ユーザーよ、紙に書け、パラメーター: "n1 exceeds threshold" 「n1がリミットを超えました」。
 <BR><BR><BR>
- <a href="TLAC_boardgame/docs_loops_do_while_new-output.html">Here is the output</a>
+ <a href="TLAC_boardgame/docs_loops_do_while_new-output.html">これが英文の出力です。</a>
  <BR><BR><BR>  
   <BR><BR><BR>
   
-    <h3>Nested for loops</h3>
+    <h3>多重ループ</h3>
       <BR><BR><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for i in range(1, 4)   then</p><BR>
@@ -676,50 +450,50 @@ Function call promptUserToWriteDownOnPaper parameters: "n1 exceeds threshold" wh
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output = "" </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Inner loop controls the second number (1 through 3)</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 中のツープが (1から3まで)数える</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for j in range(1, 4)   then</p><BR>
 <div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Append each equation to the row with spacing</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 次の掛け算を表示します。</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output += f"    {i} * {j} = {i * j}" </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Print the completed row</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 行全体を表示します</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: output</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">プリントパラメーター: outputの関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Print a couple of blank lines to match your requested formatting</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 空の行を表示します</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: "\n"</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">プリントパラメーター: "\n"の関数を呼び出し</p><BR>
 </div>
       <BR><BR><BR>
-      <BR>this program generates some multiplications tables using two nested for loops:
+      <BR>このプログラムが掛け算のテーブルを表示します、次の２つのループを使います：
       <BR>
-      <BR>Outer loop: i from 1 to 3
-      <BR>Inner loop: j from 1 to 3
-      <BR>For each pair (i,j), print i * j = result
+      <BR>外ループ: i 1 から 3　まで数える
+      <BR>中ループ: i 1 から 3　まで数える
+      <BR>そして i * j = 結果を表示します。
       <BR><BR><BR>
   
-    <a href="TLAC_boardgame/docs_loops_nested_forloops-output.html">Here is the output</a>
+    <a href="TLAC_boardgame/docs_loops_nested_forloops-output.html">これが</a>
     <BR><BR><BR>
-  Make a pyramid using for multiple for loops
+  forループをいくつか使って、ピラミッドを作りましょう：
 <BR><BR><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> The following makes a pyramid, it is an example of how to use</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> ピラミッド</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> several for loops (outer and inner) in the same program.</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 外ループとなかループを使いましょう。</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> Function definition  print_many_christmas parameters: ch, times, triangle_width</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> 関数定義print_many_christmas パラメーター: ch, times, triangle_width</p><BR>
 <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output = "" </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 1. First inner loop: Add the spaces</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 1. まず、中ループ: 空白を追加</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> add +1 to the range stop condition</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 次の計算をしましょう：</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> repeat_end = triangle_width - times </p><BR>
 <BR>
@@ -728,7 +502,7 @@ Function call promptUserToWriteDownOnPaper parameters: "n1 exceeds threshold" wh
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output += " " </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 2. Second inner loop: Add the characters (stars)</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 2. 中の中のループが星を教示します</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> repeat_end2 = times * 2 - 2 </p><BR>
 <BR>
@@ -737,170 +511,151 @@ Function call promptUserToWriteDownOnPaper parameters: "n1 exceeds threshold" wh
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> output += ch </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print parameters: output</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">プリントパラメーター: outputの関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 3. Outer loop: Run the pyramid builder for rows 1 through 5</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 3. そして、外ループで行を作ります。 行1から5まで</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> range(1, 6) counts exactly 1, 2, 3, 4, 5</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> range(1, 6)が 1, 2, 3, 4, 5を数えます</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for i in range(1, 6)   then</p><BR>
 <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call print_many_christmas parameters: '*', i, 5</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">print_many_christmasパラメーター: '*', i, 5の関数を呼び出し</p><BR>
 </div>
     <BR><BR><BR>
- This was a more complex program, we are using the print function now, which means you shoudl wirte down the appropriate character where told in the program.
- <BR>Row 1: 5 spaces + 1 '*'
-<BR>Row 2: 4 spaces + 3 '*'
-<BR>Row 3: 3 spaces + 5 '*'
-<BR>Row 4: 2 spaces + 7 '*'
-<BR>Row 5: 1 space  + 9 '*'
+ 
+<BR>これはより複雑なプログラムで、プリント関数を使用しています。つまり、プログラムで指示された場所に適切な文字を書き込む必要があります。
+<BR>1行目: 5つのスペース + 1つの「*」
+<BR>2行目: 4つのスペース + 3つの「*」
+<BR>3行目: 3つのスペース + 5つの「*」
+<BR>4行目: 2つのスペース + 7つの「*」
+<BR>5行目: 1つのスペース + 9つの「*」
 <BR>
-<BR>The result looks like a pyramid (or half Christmas tree) on paper:
+<BR>結果は紙の上にピラミッド（または半分のクリスマスツリー）のように見えます。
 <BR><BR><BR>
-  <a href="TLAC_boardgame/docs_loops_multiple_forloops-output.html">Here is the output</a>
+  <a href="TLAC_boardgame/docs_loops_multiple_forloops-output.html">これが出力です。</a>
 <BR><BR><BR>
 
   <BR>
-  <br><div id="7"><h2>7. Arrays/lists</h2></div> 
+  <br><div id="7"><h2>7. 配列・リスト</h2></div> 
   <BR>
-  <BR><h3>Lists</h3> are a kind of variable that can hold multiple values, or lists of values.
-  <BR>
+  <BR><h3>リスト</h3>は変数の一種類です。この変数が沢山の数字や文字を保持できます。
   <BR>
   <h3>foreach</h3>
   <BR>
-  <BR>foreach is a kind of for loop that repeats an operation looping around the contents of a list sending each item as a parameter to the loop_body function.
-  
+  <BR>foreachは各数字や文字を処理するためのループです。これはリストの内容を繰り返し処理し、各項目をループボディ関数のパラメータとして送信します。
     <BR><BR><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Standard Python iteration (foreach)</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;">foreachの例：</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> my_commands_list = ['fd', 'fd', 'rt', 'fd', 'fd', 'lt', 'fd', 'fd'] </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Loop directly through each command in the list</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 各文字の列をループしましょう：</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for command in my_commands_list   then</p><BR>
 <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">if command = "fd"   then</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">もしcommand = "fd"なら：</p><BR>
 <div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turtle Move Forward parameters: globals</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんが前にひと升進むの関数を呼び出し</p><BR>
 </div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> elif command == "rt": </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> もしcommand == "rt"なら： </p><BR>
 <div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Right parameters: globals</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんが右に曲がりますの関数を呼び出し</p><BR>
 </div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> elif command == "lt": </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> もしcommand == "lt"なら： </p><BR>
 <div style="background-color: #808080; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call Turn Turtle Left parameters: globals</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">亀さんが左に曲がりますの関数を呼び出し</p><BR>
 </div></div>  <BR><BR><BR>
-    <a href="TLAC_boardgame/docs_loops_foreachLoop-output.html">Here is the output</a>
+    <a href="TLAC_boardgame/docs_loops_foreachLoop-output.html">これがこのプログラムの出力です。</a>
   <BR><BR><BR>
   <BR>
-   on line 0014 "my_commands_list = ['fd', 'fd', 'rt','fd', 'fd','lt', 'fd', 'fd']"
-   we are creating a list with words like fd (forward) rt (right turn) and lt (left turn)
-   this list will be used as a program which our program will "execute"  in the oder of the
-   instructions provided.
-
-   then the line 0015 "Function call l.foreach parameters: my_commands_list, l.loop_body"
-   loops thru the list, sending each item on the list to the loop_body function, with each
-   one at a time being the parameter "command" to that function.
-   then if you look at the loop_body function, you will see it determines which command you
-   have passed and runs that.
+    my_commands_list = ['fd', 'fd', 'rt','fd', 'fd','lt', 'fd', 'fd']」ここでは、fd（前進）、rt（右折）、lt（左折）などの単語を含むリストを作成しています。これがインターペターのれいです、インターペターはプログラムを実行できるプログラムです。
   <BR>
   <BR>
    
-  extra:<h3>Operations on lists</h3>
-<br>Here are a few examples of operations you can do on lists:
+  おまけ:<h3>リストにできるいろいろな処理</h3>
+<br>
   <br>
   <BR><BR><BR>
-<BR><p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><BR>
+<BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0001</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0002</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">fruits=["banana","apple","peach","pear"]</p><BR>
 <BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  fruits[3]</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0003</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書けパラメーター:  fruits[3]の関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0004</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "now re-writing all fruits:"</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0005</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書けパラメーター:  "now re-writing all fruits:"の関数を呼び出し</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Standard Python loop</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0006</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> フォアーループ</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0007</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for fruit in fruits   then</p><BR>
 <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  fruit</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0008</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書けパラメーター： fruitの関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0009</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "now re-writing all fruits in reverse:"</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0010</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書けパラメーター： "now re-writing all fruits in reverse:"の関数を呼び出し</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> reverses the list</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0011</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> リストを逆アルファベット順にします</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call fruits.reverse</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0012</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">fruits.reverseの関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0013</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for fruit in fruits   then</p><BR>
 <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  fruit</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0014</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書け、パラメーター：  fruitの関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0015</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "now writing fruits in alphabetical order:"</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0016</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書けパラメーター： "now writing fruits in alphabetical order:"の関数を呼び出し</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> sorts the list in alphabetical order</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0017</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> リストをアルファベット順にします</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call fruits.sort</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0018</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">fruits.sortの関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0019</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for fruit in fruits   then</p><BR>
 <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  fruit</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0020</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書け:  fruitの関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0021</p></div><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call fruits.append parameters: "appricot"</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0022</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">fruits.append、パラメーター: "appricot"の関数を呼び出し</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> Inserts 'blueberry' at index 2</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0023</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> 次はブルーベリーを二番に追加します</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call fruits.insert parameters: 2, "blueberry"</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0024</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">fruits.insert、パラメーター: 2, "blueberry"の関数を呼び出し</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> deletes the third item of the list</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0025</p><p style="background-color: green; display: inline; border: 2px solid black; padding: 2px;"> リストの三番目の項目を削除します</p><BR>
 <BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> del fruits[3] </p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0026</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;"> del fruits[3の関数を呼び出し </p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0027</p><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  "now writing fruits in final order:"</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0028</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書け、  "now writing fruits in final order:"の関数を呼び出し</p><BR>
 <BR>
 <p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0029</p><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">for fruit in fruits   then</p><BR>
 <div style="background-color: #DDA0DD; display: inline-block; border: 2px solid black;border-color: #e0e0e0; padding: 2px;"><BR>
-<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0030</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">Function call promptUserToWriteDownOnPaper parameters:  fruit</p><BR>
+<p style="color:yellow;background-color: blue; display: inline; border: 2px solid black; padding: 2px;">0030</p><img src="TLAC_boardgame/img/HTMLstuff/block.png"><p style="background-color: yellow; display: inline; border: 2px solid black; padding: 2px;">ユーザーよ、紙に書け、パラメーター：  fruitの関数を呼び出し</p><BR>
 </div>
 <BR><BR><BR>
   <br>
-  The output for this code will look like this:
-  <br>
-  <a href="TLAC_boardgame/docs_operations_on_lists-output.html">Here is the output</a>
+  <a href="TLAC_boardgame/docs_operations_on_lists-output.html">このプログラムの出力です。</a>
   <BR><BR><BR>
 <BR>0002 fruits=["banana","apple","peach","pear"]
-<BR>this line makes the fruits list
-<BR>0010 Function call promptUserToWriteDownOnPaper parameters: fruits[0]
-<BR>writes down first element of list    
-<BR>0012Function call promptUserToWriteDownOnPaper parameters: fruits[3]
-<BR>writes down the last element last element        
-<BR>0014 Function call l.foreach parameters: fruits, l.loop_body
-<BR>0017Function call fruits.reverse
-<BR> reverses the list
-<BR>0018Function call l.foreach parameters: fruits, l.loop_body
-<BR>writes down every element in the list    
-<BR>0021Function call fruits.sort
-<BR>sorts the list in alphabetical order
-<BR>0022Function call l.foreach parameters: fruits, l.loop_body
-<BR>writes down every element in the list    
-<BR><BR><BR>
-  An  "index" in programming list is a number that points to the element of the
-  list that we want to retrieve.
-  One thing I want to point out is that fruits[0] points to "banana" cause
-  lists in TLAC are "zero indexed" which means the list starts at 0, not
-  at 1(just like the index of this tutorial).
-  
-  Ok, I think if you grasped this you have grasped the very basics of programming,
-  <br>
-  <br>This document was originally written in 2017 for python2 and C. Modified in 2022 to be python3, 
-  finally modified for TLAC in 2025.
-  </body>
-  </html>  
+<BR>この行は fruits リストを作成します。
+<BR>0010 関数呼び出し promptUserToWriteDownOnPaper パラメータ: fruits[0]
+<BR>リストの最初の要素を書き込みます。
+<BR>0012 関数呼び出し promptUserToWriteDownOnPaper パラメータ: fruits[3]
+<BR>最後の要素を書き込みます。 最後の要素
+<BR>0014 関数呼び出し l.foreach パラメータ: fruits、l.loop_body
+<BR>0017 関数呼び出し fruits.reverse
+<BR>リストを反転します。
+<BR>0018 関数呼び出し l.foreach パラメータ: fruits、l.loop_body
+<BR>リストのすべての要素を書き込みます。
+<BR>0021 関数呼び出し fruits.sort
+<BR>リストをアルファベット順にソートします。
+<BR>0022 関数呼び出し l.foreach パラメータ: fruits、l.loop_body
+<BR>リストのすべての要素を書き込みます。
+
+
+プログラミングのリストにおける「インデックス」とは、リストの目的の要素を指す数値のことです。取得するには。ここで指摘しておきたいのは、fruits[0] が「banana」を指しているということです。TLAC のリストは「ゼロインデックス」なので、リストは 1 ではなく 0 から始まります (このチュートリアルのインデックスと同じです)。さて、これを理解できたなら、プログラミングの基本を理解したことになると思います。
+
+このドキュメントは元々 2017 年に python2 と C 用に書かれました。2022 年に python3 用に修正され、最終的に 2026 年に TLAC 用に修正されました。

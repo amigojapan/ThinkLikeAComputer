@@ -13,9 +13,9 @@ sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_countdown_new.py > docs_loops_countdown_new-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_do_while_new.py > docs_loops_do_while_new-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_forloop_new.py > docs_loops_forloop_new-simplified.py 
-sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_foreachLoop.py > docs_loops_foreachLoop-simplified.py 
+sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_foreachLoop_new.py > docs_loops_foreachLoop_new-simplified.py 
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g;1,1d' docs_loops_nested_forloops_new.py > docs_loops_nested_forloops_new-simplified.py
-sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_operations_on_lists.py > docs_operations_on_lists-simplified.py
+sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_operations_on_lists_new.py > docs_operations_on_lists_new-simplified.py
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' docs_loops_multiple_forloops_new.py > docs_loops_multiple_forloops_new-simplified.py
 #algorythms
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' algorythm-insertionSortNew.py  > algorythm-insertionSortNew-simplified.py
