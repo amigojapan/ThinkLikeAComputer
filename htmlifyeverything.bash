@@ -1,10 +1,17 @@
 #!/usr/bin/bash
-
 ./htmlifyer.py en HTML problem3-program-simplified.py > problem3-programchartEN.html
 ./htmlifyer.py en HTML problem4-program-simplified.py > problem4-programchartEN.html
 ./htmlifyer.py en HTML problem5-program-simplified.py > problem5-programchartEN.html
 ./htmlifyer.py en HTML problem6-program-simplified.py > problem6-programchartEN.html
 ./htmlifyer.py en HTML problem7-program-simplified.py > problem7-programchartEN.html
+./htmlifyer.py en HTML problem8-program-simplified.py > problem8-programchartEN.html
+#non recursive puzzles
+./htmlifyer.py en HTML problem4-program-non-recursive-simplified.py > problem4-programchartEN.html
+./htmlifyer.py en HTML problem5-program-non-recursive-simplified.py > problem5-programchartEN.html
+./htmlifyer.py en HTML problem6-program-non-recursive-simplified.py > problem6-programchartEN.html
+./htmlifyer.py en HTML problem7-program-non-recursive-simplified.py > problem7-programchartEN.html
+./htmlifyer.py en HTML problem8-program-non-recursive-simplified.py > problem8-programchartEN.html
+
 #docs
 ./htmlifyer.py en HTML docs_functionsEN-simplified.py > docs_functionsEN.html
 ./htmlifyer.py en HTML docs_very_basic_program-simplified.py > docs_very_basic_programEN.html

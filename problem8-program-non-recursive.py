@@ -6,28 +6,32 @@ TLAC.teleportTurtleTo(TLAC.globals, 4, 9)
 print("initial board:")
 TLAC.printBoard(TLAC.globals)
 
-# 1. Moves turtle to the wall it's facing
-def goToBeginningOfBoard():
-    if TLAC.testIfICanProceed(TLAC.globals):
-        TLAC.fd(TLAC.globals)
-        goToBeginningOfBoard()
-    else:
-        return
+# --- Main Execution Sequence ---
 
-# 2. Lays an egg and jumps 2 spaces recursively 
-def fillThisColumnWithEggs():
-    if TLAC.testIfICanProceed(TLAC.globals, 2):
+# Step A: Move to the far left wall (Column 0)
+TLAC.lt(TLAC.globals)
+while TLAC.testIfICanProceed(TLAC.globals):
+    TLAC.fd(TLAC.globals)
+
+# Step B: Face UP and move to the very top wall (Row 0)
+TLAC.rt(TLAC.globals)
+while TLAC.testIfICanProceed(TLAC.globals):
+    TLAC.fd(TLAC.globals)
+
+# Step C: Turn completely around to face DOWN, and step down 1 space to Row 1
+TLAC.rt(TLAC.globals)
+TLAC.rt(TLAC.globals)
+TLAC.fd(TLAC.globals)
+
+# Step D: Begin the iterative snaking loop!
+while True:
+    # 1. Inline logic replacing fillThisColumnWithEggs()
+    while TLAC.testIfICanProceed(TLAC.globals, 2):
         TLAC.layEgg(TLAC.globals)
         TLAC.fd(TLAC.globals, 2)
-        fillThisColumnWithEggs()
-    else:
-        TLAC.layEgg(TLAC.globals)
-        return
-
-# 3. Turns the turtle, jumps 2 columns, and repeats
-def repeatThisUntilBoardFull():
-    fillThisColumnWithEggs()
+    TLAC.layEgg(TLAC.globals) # Lays the final egg in the column
     
+    # 2. Inline logic replacing repeatThisUntilBoardFull()
     # If the turtle is at the top of the board facing UP (^)
     if TLAC.globals.turtle.direction == "^":
         TLAC.rt(TLAC.globals)
@@ -37,7 +41,7 @@ def repeatThisUntilBoardFull():
                 TLAC.fd(TLAC.globals)
                 TLAC.rt(TLAC.globals)
             TLAC.end(TLAC.globals)
-            return
+            break  # Break out of the loop to safely end the script
             
         TLAC.fd(TLAC.globals, 2)
         TLAC.rt(TLAC.globals)
@@ -52,29 +56,7 @@ def repeatThisUntilBoardFull():
                 TLAC.fd(TLAC.globals)
                 TLAC.rt(TLAC.globals) 
             TLAC.end(TLAC.globals)
-            return
+            break  # Break out of the loop to safely end the script
             
         TLAC.fd(TLAC.globals, 2)
         TLAC.lt(TLAC.globals)
-        
-    # Recursively repeat for the newly positioned column
-    repeatThisUntilBoardFull()
-
-
-# --- Main Execution Sequence ---
-
-# Step A: Move to the far left wall (Column 0)
-TLAC.lt(TLAC.globals)
-goToBeginningOfBoard()
-
-# Step B: Face UP and move to the very top wall (Row 0)
-TLAC.rt(TLAC.globals)
-goToBeginningOfBoard()
-
-# Step C: Turn completely around to face DOWN, and step down 1 space to Row 1
-TLAC.rt(TLAC.globals)
-TLAC.rt(TLAC.globals)
-TLAC.fd(TLAC.globals)
-
-# Step D: Begin the recursive snaking!
-repeatThisUntilBoardFull()
