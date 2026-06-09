@@ -24,11 +24,24 @@ class Cell:
         self.wall = False
         self.goal = False
         self.pyramidSize = False
+
 class initTurtle:
     def __init__(self):
         self.X = 0 # Instance attribute
         self.Y = 0 # Instance attribute
         self.direction = "^" #UP Instance attribute
+
+class Ghost:
+    def __init__(self, display_char):
+        self.X = 0
+        self.Y = 0
+        self.char = display_char
+
+def addGhost(globals, display_char, x, y):
+    new_ghost = Ghost(display_char)
+    new_ghost.X = x
+    new_ghost.Y = y
+    globals.ghosts.append(new_ghost)
 
 def initSlots(globals):
     slots=[]
@@ -42,46 +55,43 @@ def initBoard(globals):
     globals.board = ""
     for y in range(0, globals.H):  # row
         for x in range(0, globals.W):  # column
+            index = y * globals.W + x
+            
+            # 1. Check if the Player Turtle is here
             if x == globals.turtle.X and y == globals.turtle.Y:
                 globals.board += "[" + globals.turtle.direction + "]"
-            else:
-                index = y * globals.W + x
-                #print("globals.slots[index].containsEgg"+str(globals.slots[index].containsEgg))
-                if globals.slots[index].containsEgg:
-                    globals.board += "[o]"
-                    continue
-                elif globals.slots[index].diamond:
-                    globals.board += "[X]"
-                    continue
-                elif globals.slots[index].wall:
-                    globals.board += "[#]"
-                    continue
-                elif globals.slots[index].goal:
-                    globals.board += "[G]"
-                    continue
-                elif (globals.slots[index].pyramidSize == 1):
-                    #print("appending pyramid 1")
-                    globals.board += "[1]"
-                    continue
-                elif globals.slots[index].pyramidSize == 2:
-                    globals.board += "[2]"
-                    continue
-                elif globals.slots[index].pyramidSize == 3:
-                    globals.board += "[3]"
-                    continue
-                elif globals.slots[index].pyramidSize == 4:
-                    globals.board += "[4]"
-                    continue
-                elif globals.slots[index].pyramidSize == 5:
-                    globals.board += "[5]"
-                    continue
-                #print(str(globals.slots[index].pyramidSize))
-                globals.board += "[ ]"
-        globals.board += "\n"
-    #print(globals.board)
+                continue
+                
+            # 2. Check if ANY Ghost is here
+            ghost_found = False
+            for ghost in globals.ghosts:
+                if x == ghost.X and y == ghost.Y:
+                    globals.board += "[" + ghost.char + "]"
+                    ghost_found = True
+                    break # Stop looking through ghosts if we found one here
+            
+            if ghost_found:
+                continue
 
+            # 3. Draw the background items (Walls, Goals, Diamonds, Eggs, or Space)
+            if globals.slots[index].wall:
+                globals.board += "[#]"
+            elif globals.slots[index].goal:
+                globals.board += "[G]"
+            elif globals.slots[index].diamond:
+                globals.board += "[X]"
+            elif globals.slots[index].containsEgg:
+                globals.board += "[o]"
+            else:
+                globals.board += "[ ]"
+                
+        globals.board += "\n"  # New line at the end of each row
+    
+    print(globals.board)
+    
 globals.slots = initSlots(globals)
 globals.turtle = initTurtle()
+globals.ghosts = []
 #initBoard(globals)
 
 def readBoardFromFile(globals,boardFilename):
@@ -266,7 +276,32 @@ def layEgg(gloabls):
     globals.slots[index].containsEgg=True
     executeMove(globals)
 
+def checkForEggsLeft(globals):
+    print("checking for eggs left")
+    for slot in globals.slots:
+        if slot.containsEgg:
+            print("Eggs left!")
+            executeMove(globals)
+            return True
+    print("No eggs left!")
+    executeMove(globals)
+    return False
 
+def eatEgg(globals):
+    print("ate egg, remove from board")
+    index = globals.turtle.Y * globals.W + globals.turtle.X
+    globals.slots[index].containsEgg = False
+    executeMove(globals)
+
+def amILayingOnADiamond(globals):
+    index = globals.turtle.Y * globals.W + globals.turtle.X
+    return globals.slots[index].diamond
+
+def eatDiamond(globals):
+    print("ate diamond, remove from board")
+    index = globals.turtle.Y * globals.W + globals.turtle.X
+    globals.slots[index].diamond = False
+    
 def amILayingOnTheGoalFlag(gloabls):
     index = globals.turtle.Y * globals.W + globals.turtle.X
     if globals.slots[index].goal==True:

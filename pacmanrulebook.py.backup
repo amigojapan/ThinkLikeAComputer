@@ -1,0 +1,452 @@
+#!/usr/bin/python3
+import TLACsimulator as TLAC
+
+# 1. Update the grid dimensions!
+TLAC.globals.W = 19
+TLAC.globals.H = 14
+
+# 2. REBUILD THE MEMORY SLOTS FOR THE NEW SIZE
+TLAC.globals.slots = TLAC.initSlots(TLAC.globals)
+
+# 3. Read the new 19x14 board
+TLAC.readBoardFromFile(TLAC.globals, "pacman-board1.txt")
+
+# 4. Teleport Turtle to the new Start (X=1, Y=1)
+TLAC.teleportTurtleTo(TLAC.globals, 1, 1)
+
+# 5. Spawn the Ghosts
+TLAC.addGhost(TLAC.globals, "M", 1, 10) 
+TLAC.addGhost(TLAC.globals, "W", 1, 12) 
+
+print("initial board:")
+TLAC.printBoard(TLAC.globals)
+import random
+
+# Helper function: Finds open paths (UP, DOWN, LEFT, RIGHT) for a ghost
+def getValidGhostMoves(globals, ghost):
+    valid_moves = []
+    X = ghost.X
+    Y = ghost.Y
+    W = globals.W
+    H = globals.H
+
+    if Y - 1 >= 0 and not globals.slots[(Y - 1) * W + X].wall:
+        valid_moves.append(("UP", X, Y - 1))
+    if Y + 1 < H and not globals.slots[(Y + 1) * W + X].wall:
+        valid_moves.append(("DOWN", X, Y + 1))
+    if X - 1 >= 0 and not globals.slots[Y * W + (X - 1)].wall:
+        valid_moves.append(("LEFT", X - 1, Y))
+    if X + 1 < W and not globals.slots[Y * W + (X + 1)].wall:
+        valid_moves.append(("RIGHT", X + 1, Y))
+    
+    return valid_moves
+
+def areThereCollectiblesLeft(globals):
+    for slot in globals.slots:
+        # Returns True if it finds EITHER an egg or a diamond
+        if slot.containsEgg or slot.diamond:
+            return True
+    return False
+
+def runGhostPlayerTurn(globals):
+    # ==========================================
+    # GHOST M (WANDERER) - Random valid move
+    # ==========================================
+    TLAC.orderUser(globals, "--- GHOST M (WANDERER) TURN ---")
+    TLAC.orderUser(globals, "Ghost Player Rule: Roll a die to pick a direction. Reroll if it hits a wall.")
+    
+    for ghost in globals.ghosts:
+        if ghost.char == "M":
+            valid_moves = getValidGhostMoves(globals, ghost)
+            if len(valid_moves) > 0:
+                chosen_move = random.choice(valid_moves)
+                ghost.X = chosen_move[1]
+                ghost.Y = chosen_move[2]
+                TLAC.orderUser(globals, f"Simulation Executed: Move the M token 1 space {chosen_move[0]}")
+            break
+
+    # ==========================================
+    # GHOST W (TRACKER) - Shortest distance move
+    # ==========================================
+    TLAC.orderUser(globals, "--- GHOST W (TRACKER) TURN ---")
+    TLAC.orderUser(globals, "Ghost Player Rule: Count squares to the Player. Move into the open square with the lowest count.")
+
+    for ghost in globals.ghosts:
+        if ghost.char == "W":
+            valid_moves = getValidGhostMoves(globals, ghost)
+            if len(valid_moves) > 0:
+                best_move = None
+                shortest_distance = 9999
+                
+                for move in valid_moves:
+                    direction, move_x, move_y = move
+                    distance = abs(move_x - globals.turtle.X) + abs(move_y - globals.turtle.Y)
+                    
+                    if distance < shortest_distance:
+                        shortest_distance = distance
+                        best_move = move
+                
+                if best_move:
+                    ghost.X = best_move[1]
+                    ghost.Y = best_move[2]
+                    TLAC.orderUser(globals, f"Simulation Executed: Move the W token 1 space {best_move[0]}")
+            break
+
+    # ==========================================
+    # COLLISION DETECTION (Ghost Turn)
+    # ==========================================
+    TLAC.orderUser(globals, "--- COLLISION CHECK ---")
+    TLAC.orderUser(globals, "Rule: If a Ghost is on the same square as the Player, Player loses 1 Life and resets.")
+    
+    collision = False
+    for ghost in globals.ghosts:
+        if ghost.X == globals.turtle.X and ghost.Y == globals.turtle.Y:
+            collision = True
+            
+    if collision:
+        TLAC.orderUser(globals, "Simulation Executed: COLLISION! Resetting player to start.")
+        TLAC.teleportTurtleTo(globals, 1, 1) # FIXED: Reset coordinates to new start position
+
+def executePlayerInput(globals):
+    valid_move = False
+    while not valid_move:
+        # Prompt the user for input in the terminal using WASD
+        move = input("Enter move (W=Up, S=Down, A=Left, D=Right): ").strip().upper()
+        
+        # Change the turtle's facing direction based on input
+        if move == 'W':
+            globals.turtle.direction = "^"
+        elif move == 'S':
+            globals.turtle.direction = "V"
+        elif move == 'A':
+            globals.turtle.direction = "<"
+        elif move == 'D':
+            globals.turtle.direction = ">"
+        else:
+            print("Invalid input! Please use W, A, S, or D.")
+            continue # Restart the loop
+            
+        # Test if the path is clear
+        if TLAC.testIfICanProceed(globals, 1):
+            TLAC.fd(globals, 1) # Move the turtle
+            valid_move = True   # Break the loop
+            TLAC.orderUser(globals, f"Simulation Executed: Player moved {move}")
+        else:
+            print("BONK! There is a wall there. Try a different direction.")
+def playPacManInteractive(globals):
+    # 1. INITIALIZE SCORE ONCE BEFORE THE LOOP STARTS
+    globals.score = 0  
+    
+    TLAC.orderUser(globals, "Game Start! Player has 3 Lives.")
+    
+    while areThereCollectiblesLeft(globals):
+        # Print a massive score banner so it doesn't get lost in the terminal spam
+        print("\n" + "="*30)
+        print(f"      CURRENT SCORE: {globals.score}")
+        print("="*30)
+        TLAC.printBoard(globals)
+
+        # 1. PLAYER TURN
+        TLAC.orderUser(globals, "--- PLAYER TURN ---")
+        
+        # The interactive Python function
+        executePlayerInput(globals)
+        
+        # Check for eating dots after player moves
+        if TLAC.amILayingOnAnEgg(globals):
+            TLAC.eatEgg(globals) 
+            globals.score += 10
+            TLAC.orderUser(globals, f"Cross out the Egg! Player scores 10 points.")
+            
+        if TLAC.amILayingOnADiamond(globals):
+            TLAC.eatDiamond(globals)
+            globals.score += 50
+            TLAC.orderUser(globals, "Cross out the Diamond! Player scores 50 points.")
+            
+        # 2. GHOST TURN 
+        runGhostPlayerTurn(globals)
+        
+    # Final Win State
+    print("\n" + "="*30)
+    print(f"      FINAL SCORE: {globals.score}")
+    print("="*30)
+    TLAC.orderUser(globals, "All pellets eaten! PROGRAM ENDS - PLAYER WINS!")
+# Start the game!
+playPacManInteractive(TLAC.globals)
+
+TLAC.globals.score = 0  # Initialize score to 0 
+def solveMazeAuto(globals):
+    # Loop runs until both eggs and diamonds are cleared
+    while areThereCollectiblesLeft(globals):
+        # Step 1: Always try to turn right and move forward
+        TLAC.rt(globals)
+        if TLAC.testIfICanProceed(globals, 1):
+            TLAC.fd(globals, 1)
+        else:
+            # Step 2: Right is blocked. Turn back forward. Can we go straight?
+            TLAC.lt(globals)
+            if TLAC.testIfICanProceed(globals, 1):
+                TLAC.fd(globals, 1)
+            else:
+                # Step 3: Straight is blocked. Turn left. Can we go left?
+                TLAC.lt(globals)
+                if TLAC.testIfICanProceed(globals, 1):
+                    TLAC.fd(globals, 1)
+                else:
+                    # Step 4: Dead end! Turn left one more time to face backward.
+                    TLAC.lt(globals)
+                    if TLAC.testIfICanProceed(globals, 1):
+                        TLAC.fd(globals, 1)
+        
+        # Step 5: Check for Pac-Dots (Eggs)
+        if TLAC.amILayingOnAnEgg(globals):
+            TLAC.eatEgg(globals) 
+            TLAC.globals.score += 10
+            TLAC.orderUser(globals, f"Player scores 10 points! Total: {TLAC.globals.score}")
+            
+        # Step 6: NEW - Check for Power Pellets (Diamonds)
+        if TLAC.amILayingOnADiamond(globals):
+            TLAC.eatDiamond(globals)
+            TLAC.globals.score += 50
+    #!/usr/bin/python3
+import TLACsimulator as TLAC
+
+# 1. Update the grid dimensions!
+TLAC.globals.W = 19
+TLAC.globals.H = 14
+
+# 2. REBUILD THE MEMORY SLOTS FOR THE NEW SIZE
+TLAC.globals.slots = TLAC.initSlots(TLAC.globals)
+
+# 3. Read the new 19x14 board
+TLAC.readBoardFromFile(TLAC.globals, "pacman-board1.txt")
+
+# 4. Teleport Turtle to the new Start (X=1, Y=1)
+TLAC.teleportTurtleTo(TLAC.globals, 1, 1)
+
+# 5. Spawn the Ghosts
+TLAC.addGhost(TLAC.globals, "M", 1, 10) 
+TLAC.addGhost(TLAC.globals, "W", 1, 12) 
+
+print("initial board:")
+TLAC.printBoard(TLAC.globals)
+import random
+
+# Helper function: Finds open paths (UP, DOWN, LEFT, RIGHT) for a ghost
+def getValidGhostMoves(globals, ghost):
+    valid_moves = []
+    X = ghost.X
+    Y = ghost.Y
+    W = globals.W
+    H = globals.H
+
+    if Y - 1 >= 0 and not globals.slots[(Y - 1) * W + X].wall:
+        valid_moves.append(("UP", X, Y - 1))
+    if Y + 1 < H and not globals.slots[(Y + 1) * W + X].wall:
+        valid_moves.append(("DOWN", X, Y + 1))
+    if X - 1 >= 0 and not globals.slots[Y * W + (X - 1)].wall:
+        valid_moves.append(("LEFT", X - 1, Y))
+    if X + 1 < W and not globals.slots[Y * W + (X + 1)].wall:
+        valid_moves.append(("RIGHT", X + 1, Y))
+    
+    return valid_moves
+
+def areThereCollectiblesLeft(globals):
+    for slot in globals.slots:
+        # Returns True if it finds EITHER an egg or a diamond
+        if slot.containsEgg or slot.diamond:
+            return True
+    return False
+
+def runGhostPlayerTurn(globals):
+    # ==========================================
+    # GHOST M (WANDERER) - Random valid move
+    # ==========================================
+    TLAC.orderUser(globals, "--- GHOST M (WANDERER) TURN ---")
+    TLAC.orderUser(globals, "Ghost Player Rule: Roll a die to pick a direction. Reroll if it hits a wall.")
+    
+    for ghost in globals.ghosts:
+        if ghost.char == "M":
+            valid_moves = getValidGhostMoves(globals, ghost)
+            if len(valid_moves) > 0:
+                chosen_move = random.choice(valid_moves)
+                ghost.X = chosen_move[1]
+                ghost.Y = chosen_move[2]
+                TLAC.orderUser(globals, f"Simulation Executed: Move the M token 1 space {chosen_move[0]}")
+            break
+
+    # ==========================================
+    # GHOST W (TRACKER) - Shortest distance move
+    # ==========================================
+    TLAC.orderUser(globals, "--- GHOST W (TRACKER) TURN ---")
+    TLAC.orderUser(globals, "Ghost Player Rule: Count squares to the Player. Move into the open square with the lowest count.")
+
+    for ghost in globals.ghosts:
+        if ghost.char == "W":
+            valid_moves = getValidGhostMoves(globals, ghost)
+            if len(valid_moves) > 0:
+                best_move = None
+                shortest_distance = 9999
+                
+                for move in valid_moves:
+                    direction, move_x, move_y = move
+                    distance = abs(move_x - globals.turtle.X) + abs(move_y - globals.turtle.Y)
+                    
+                    if distance < shortest_distance:
+                        shortest_distance = distance
+                        best_move = move
+                
+                if best_move:
+                    ghost.X = best_move[1]
+                    ghost.Y = best_move[2]
+                    TLAC.orderUser(globals, f"Simulation Executed: Move the W token 1 space {best_move[0]}")
+            break
+
+    # ==========================================
+    # COLLISION DETECTION (Ghost Turn)
+    # ==========================================
+    TLAC.orderUser(globals, "--- COLLISION CHECK ---")
+    TLAC.orderUser(globals, "Rule: If a Ghost is on the same square as the Player, Player loses 1 Life and resets.")
+    
+    collision = False
+    for ghost in globals.ghosts:
+        if ghost.X == globals.turtle.X and ghost.Y == globals.turtle.Y:
+            collision = True
+            
+    if collision:
+        globals.lives -= 1  # <--- SUBTRACT A LIFE
+        TLAC.orderUser(globals, f"Simulation Executed: COLLISION! Lives left: {globals.lives}. Resetting player.")
+        TLAC.teleportTurtleTo(globals, 1, 1)
+
+def executePlayerInput(globals):
+    valid_move = False
+    while not valid_move:
+        # Prompt the user for input in the terminal using WASD
+        move = input("Enter move (W=Up, S=Down, A=Left, D=Right): ").strip().upper()
+        
+        # Change the turtle's facing direction based on input
+        if move == 'W':
+            globals.turtle.direction = "^"
+        elif move == 'S':
+            globals.turtle.direction = "V"
+        elif move == 'A':
+            globals.turtle.direction = "<"
+        elif move == 'D':
+            globals.turtle.direction = ">"
+        else:
+            print("Invalid input! Please use W, A, S, or D.")
+            continue # Restart the loop
+            
+        # Test if the path is clear
+        if TLAC.testIfICanProceed(globals, 1):
+            TLAC.fd(globals, 1) # Move the turtle
+            valid_move = True   # Break the loop
+            TLAC.orderUser(globals, f"Simulation Executed: Player moved {move}")
+        else:
+            print("BONK! There is a wall there. Try a different direction.")
+def playPacManInteractive(globals):
+    # 1. INITIALIZE SCORE AND LIVES
+    globals.score = 0  
+    globals.lives = 3  
+    
+    TLAC.orderUser(globals, f"Game Start! Player has {globals.lives} Lives.")
+    
+    # 2. LOOP CONDITION: Check both pellets AND lives!
+    while areThereCollectiblesLeft(globals) and globals.lives > 0:
+        
+        # Print a massive banner with Score and Lives
+        print("\n" + "="*30)
+        print(f"   SCORE: {globals.score}  |  LIVES: {globals.lives}")
+        print("="*30)
+        TLAC.printBoard(globals)
+
+        # 1. PLAYER TURN
+        TLAC.orderUser(globals, "--- PLAYER TURN ---")
+        executePlayerInput(globals)
+        
+        # Check collision IMMEDIATELY after Player moves
+        collision = False
+        for ghost in globals.ghosts:
+            if ghost.X == globals.turtle.X and ghost.Y == globals.turtle.Y:
+                collision = True
+                
+        if collision:
+            globals.lives -= 1 # <--- SUBTRACT A LIFE
+            TLAC.orderUser(globals, f"Simulation Executed: PLAYER RAN INTO GHOST! Lives left: {globals.lives}. Resetting.")
+            TLAC.teleportTurtleTo(globals, 1, 1)
+            continue # Skip the rest of the turn and loop back!
+
+# Check for eating dots after player moves
+        if TLAC.amILayingOnAnEgg(globals):
+            TLAC.eatEgg(globals) 
+            globals.score += 10
+            TLAC.orderUser(globals, "Cross out the Egg! Player scores 10 points.")
+            
+        # Check for Power Pellets (Diamonds)
+        if TLAC.amILayingOnADiamond(globals):
+            TLAC.eatDiamond(globals)
+            globals.score += 50
+            TLAC.orderUser(globals, "Cross out the Diamond! Player scores 50 points.")            
+
+        # 2. GHOST TURN 
+        runGhostPlayerTurn(globals)
+        
+    # Final Win/Loss State
+    print("\n" + "="*30)
+    print(f"      FINAL SCORE: {globals.score}")
+    print("="*30)
+    
+    # Check why the loop ended
+    if globals.lives <= 0:
+        TLAC.orderUser(globals, "GAME OVER! You ran out of lives.")
+    else:
+        TLAC.orderUser(globals, "All pellets eaten! PROGRAM ENDS - PLAYER WINS!")
+
+# Start the game!
+playPacManInteractive(TLAC.globals)
+
+TLAC.globals.score = 0  # Initialize score to 0 
+def solveMazeAuto(globals):
+    # Loop runs until both eggs and diamonds are cleared
+    while areThereCollectiblesLeft(globals):
+        # Step 1: Always try to turn right and move forward
+        TLAC.rt(globals)
+        if TLAC.testIfICanProceed(globals, 1):
+            TLAC.fd(globals, 1)
+        else:
+            # Step 2: Right is blocked. Turn back forward. Can we go straight?
+            TLAC.lt(globals)
+            if TLAC.testIfICanProceed(globals, 1):
+                TLAC.fd(globals, 1)
+            else:
+                # Step 3: Straight is blocked. Turn left. Can we go left?
+                TLAC.lt(globals)
+                if TLAC.testIfICanProceed(globals, 1):
+                    TLAC.fd(globals, 1)
+                else:
+                    # Step 4: Dead end! Turn left one more time to face backward.
+                    TLAC.lt(globals)
+                    if TLAC.testIfICanProceed(globals, 1):
+                        TLAC.fd(globals, 1)
+        
+        # Step 5: Check for Pac-Dots (Eggs)
+        if TLAC.amILayingOnAnEgg(globals):
+            TLAC.eatEgg(globals) 
+            TLAC.globals.score += 10
+            TLAC.orderUser(globals, f"Player scores 10 points! Total: {TLAC.globals.score}")
+            
+        # Step 6: NEW - Check for Power Pellets (Diamonds)
+        if TLAC.amILayingOnADiamond(globals):
+            TLAC.eatDiamond(globals)
+            TLAC.globals.score += 50
+            TLAC.orderUser(globals, "Player scores 50 points! POWER UP!")
+            
+    # Step 7: The loop finishes when areThereCollectiblesLeft becomes False
+    TLAC.orderUser(globals, f"All pellets eaten! -  PLAYER WINS! score: {TLAC.globals.score}")
+
+#solveMazeAuto(TLAC.globals)        TLAC.orderUser(globals, "Player scores 50 points! POWER UP!")
+            
+    # Step 7: The loop finishes when areThereCollectiblesLeft becomes False
+    TLAC.orderUser(globals, f"All pellets eaten! -  PLAYER WINS! score: {TLAC.globals.score}")
+
+solveMazeAuto(TLAC.globals)

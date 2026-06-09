@@ -589,6 +589,10 @@ else:
             constLtSimple="Turn Turtle Left"
             constLayEgg="layEgg"
             constLayEggSimple="Turtle lays egg underneath itself"
+
+            constEatEgg = "eatEgg"
+            constEatEggSimple = "Turtle eats the egg underneath itself"
+            
             constEnd="end"
             constEndSimple="End Program"
             constIf="if"
@@ -628,6 +632,8 @@ else:
             constLtSimple="亀さんが左に曲がる"
             constLayEgg="layEgg"
             constLayEggSimple="亀さんが自分の下に卵を生む"
+            constEatEgg = "eatEgg"
+            constEatEggSimple = "亀さんが下にある卵を食べる"
             constAmILayingOnEgg="amILayingOnAnEgg()"
             constAmILayingOnEggSimple="「亀さんが卵の上に座ってる」"
             constEnd="end"
