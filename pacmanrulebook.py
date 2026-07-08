@@ -20,6 +20,7 @@ TLAC.addGhost(TLAC.globals, "W", 1, 12) # Tracker
 
 # 4. Helper Functions
 def areThereCollectiblesLeft(globals):
+    print("Checking for remaining pellets, if not, return false...")
     for slot in globals.slots:
         if slot.containsEgg or slot.diamond: return True
     return False
@@ -42,7 +43,8 @@ def executePlayerInput(globals):
         elif move == 'A': globals.turtle.direction = "<"
         elif move == 'D': globals.turtle.direction = ">"
         else: continue
-        
+        print(f"Player input: {move}")
+
         if TLAC.testIfICanProceed(globals, 1):
             TLAC.fd(globals, 1)
             valid_move = True
@@ -76,10 +78,16 @@ def runGhostPlayerTurn(globals):
         
         # Decide direction: Frightened (Escape) vs Attack
         if globals.powerModeCounter > 0:
+            print(f"Ghost {ghost.char} is frightened and will try to escape!")
             best_move = max(valid_moves, key=lambda m: abs(m[1]-globals.turtle.X) + abs(m[2]-globals.turtle.Y))
         else:
-            best_move = random.choice(valid_moves) if ghost.char == "M" else \
-                        min(valid_moves, key=lambda m: abs(m[1]-globals.turtle.X) + abs(m[2]-globals.turtle.Y))
+            print(f"Ghost {ghost.char} is in ATTACK mode and will chase the player!")
+            best_move = random.choice(valid_moves)
+            if ghost.char == "M":
+                print(f"Move M Ghost randomly")
+            else:
+                min(valid_moves, key=lambda m: abs(m[1]-globals.turtle.X) + abs(m[2]-globals.turtle.Y))
+                print(f"Move W Ghost to closest block to player")
         
         ghost.X, ghost.Y = best_move[1], best_move[2]
 
@@ -95,9 +103,11 @@ def playPacManInteractive(globals):
         
         # Check collectibles
         if TLAC.amILayingOnAnEgg(globals):
+            print("Ate an egg! +10 points,remove egg form board")
             TLAC.eatEgg(globals)
             globals.score += 10
         if TLAC.amILayingOnADiamond(globals):
+            print("Ate a diamond! +50 points,activate power mode")
             TLAC.eatDiamond(globals)
             globals.score += 50
             globals.powerModeCounter = 10
