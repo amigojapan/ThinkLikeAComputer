@@ -1,0 +1,1722 @@
+{
+  "charts": {
+    "sequence-good": [
+      {
+        "number": 1,
+        "text": "Function call BrushMyTeeth",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 2,
+        "text": "Function call CombMyHair",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "Function call GoToWork",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "sequence-bad": [
+      {
+        "number": 1,
+        "text": "Function call BrushMyTeeth",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 2,
+        "text": "Function call GoToWork",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "Function call CombMyHair",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "assignment": [
+      {
+        "number": 1,
+        "text": "x=3",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 2,
+        "text": "x=5",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "x=x+1",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "conditionals": [
+      {
+        "number": 1,
+        "text": "green lines like these are called 'comments'",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "and do not affect the execution of the program",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 3,
+        "text": "but I want you to read them for now",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 4,
+        "text": "if X>3 then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 5,
+        "text": "since X is more than 3,",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 6,
+        "text": "this block(the block surrounded by the",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 7,
+        "text": "pink rectangle) of code will be executed",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 8,
+        "text": "Function call Turtle Move Forward",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 9,
+        "text": "if X<3 then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 10,
+        "text": "since X is not less than,",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 11,
+        "text": "this block of code won't be executed",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 12,
+        "text": "Function call Turtle Move Forward",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 13,
+        "text": "X=2",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 14,
+        "text": "this assignment statement teleports",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 15,
+        "text": "the turtle to X slot 2(two slots",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 16,
+        "text": "from the left of the board)",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 17,
+        "text": "if X<3 then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 18,
+        "text": "now after the last assignment statement",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 19,
+        "text": "X is less than 3, so the following block",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 20,
+        "text": "of code gets executed.",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 21,
+        "text": "Function call Turtle Move Forward",
+        "depth": 1,
+        "comment": false
+      }
+    ],
+    "sequence-functions": [
+      {
+        "number": 1,
+        "text": "Function call BrushMyTeeth",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 2,
+        "text": "Function call CombMyHair",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "Function call GoToWork",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "functions": [
+      {
+        "number": 1,
+        "text": "functions example",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "the following is a function definition:",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 3,
+        "text": "Function definition Lay_Four_Eggs_In_Square_Pattern",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 4,
+        "text": "Function call Turtle lays egg underneath itself",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 5,
+        "text": "Function call Turtle Move Forward",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 6,
+        "text": "Function call Turtle lays egg underneath itself",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 7,
+        "text": "Function call Turn Turtle Right",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 8,
+        "text": "Function call Turtle Move Forward",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 9,
+        "text": "Function call Turtle lays egg underneath itself",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 10,
+        "text": "Function call Turn Turtle Right",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 11,
+        "text": "Function call Turtle Move Forward",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 12,
+        "text": "Function call Turtle lays egg underneath itself",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 13,
+        "text": "the following two turns are",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 14,
+        "text": "to assure the turtle ends up in",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 15,
+        "text": "the up pusition",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 16,
+        "text": "Function call Turn Turtle Right",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 17,
+        "text": "Function call Turn Turtle Right",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 18,
+        "text": "turtleX=0",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 19,
+        "text": "Function call print parameters: initializing board after teleport X\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 20,
+        "text": "Function call printBoard",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 21,
+        "text": "Function call Lay_Four_Eggs_In_Square_Pattern",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 22,
+        "text": "turtleX=5",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 23,
+        "text": "Function call print parameters: initializing board after teleport X\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 24,
+        "text": "Function call printBoard",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 25,
+        "text": "Function call Lay_Four_Eggs_In_Square_Pattern",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 26,
+        "text": "turtleX=8",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 27,
+        "text": "Function call print parameters: initializing board after teleport X\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 28,
+        "text": "Function call printBoard",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 29,
+        "text": "Function call Lay_Four_Eggs_In_Square_Pattern",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "output": [
+      {
+        "number": 1,
+        "text": "very basic program example",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "Function call Turtle Move Forward parameters: 5",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "input": [
+      {
+        "number": 1,
+        "text": "user input example",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "initialize turtle position",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 4,
+        "text": "Function call teleportTurtleTo parameters: ,4,9",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 5,
+        "text": "Function call orderUser parameters: ,\"put turtle at top left of the board\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 6,
+        "text": "Function call simulateUserInputTeleportTurtleTo parameters: ,0,0",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 7,
+        "text": "savedX=turtleX",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 8,
+        "text": "savedY=turtleY",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 9,
+        "text": "Function call orderUser parameters: ,\"put turtle at top bottom right of the board\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 10,
+        "text": "Function call simulateUserInputTeleportTurtleTo parameters: ,9,9",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 11,
+        "text": "Function call teleportTurtleTo parameters: , savedX, savedY",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "for": [
+      {
+        "number": 1,
+        "text": "For loop counting from 5 to 9 (inclusive)",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "for i in range(5, 10) then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "Function call teleportTurtleTo parameters: i, i",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 4,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 5,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: \"counted form 5 to 9\"",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "countdown": [
+      {
+        "number": 1,
+        "text": "Counting down loop from 3 to 0",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "for i in range(3, -1, -1) then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "Function call Turtle Move Forward parameters: i",
+        "depth": 1,
+        "comment": false
+      }
+    ],
+    "do-while": [
+      {
+        "number": 1,
+        "text": "do_while example using standard Python",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "n1 = 1",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "n2 = 3",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 4,
+        "text": "step = 1",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 5,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 6,
+        "text": "Python's equivalent of a do...while loop",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 7,
+        "text": "while True then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 8,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: \"value of n1 is \"+str(n1)",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 9,
+        "text": "1. Execute the loop body",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 10,
+        "text": "Function call Turtle Move Forward parameters: n1",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 11,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 12,
+        "text": "2. Apply the step decrement",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 13,
+        "text": "n1 += step",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 14,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 15,
+        "text": "3. Check the condition (Continue WHILE n1 > n2)",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 16,
+        "text": "If the condition is False, break out of the loop",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 17,
+        "text": "if (n1 > n2) then",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 18,
+        "text": "break",
+        "depth": 2,
+        "comment": false
+      },
+      {
+        "number": 19,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: \"n1 exceeds threshold\"",
+        "depth": 0,
+        "comment": false
+      }
+    ],
+    "nested": [
+      {
+        "number": 1,
+        "text": "for i in range(1, 4) then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 2,
+        "text": "output = \"\"",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 4,
+        "text": "Inner loop controls the second number (1 through 3)",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 5,
+        "text": "for j in range(1, 4) then",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 6,
+        "text": "Append each equation to the row with spacing",
+        "depth": 2,
+        "comment": true
+      },
+      {
+        "number": 7,
+        "text": "output += f\" {i} * {j} = {i * j}\"",
+        "depth": 2,
+        "comment": false
+      },
+      {
+        "number": 8,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 9,
+        "text": "Print the completed row",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 10,
+        "text": "Function call print parameters: output",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 11,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 12,
+        "text": "Print a couple of blank lines to match your requested formatting",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 13,
+        "text": "Function call print parameters: \"\\n\"",
+        "depth": 1,
+        "comment": false
+      }
+    ],
+    "pyramid": [
+      {
+        "number": 1,
+        "text": "The following makes a pyramid, it is an example of how to use",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "several for loops (outer and inner) in the same program.",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 3,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 4,
+        "text": "Function definition print_many_christmas parameters: ch, times, triangle_width",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 5,
+        "text": "output = \"\"",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 6,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 7,
+        "text": "1. First inner loop: Add the spaces",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 8,
+        "text": "add +1 to the range stop condition",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 9,
+        "text": "repeat_end = triangle_width - times",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 10,
+        "text": "for _ in range(0, repeat_end + 1) then",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 11,
+        "text": "output += \" \"",
+        "depth": 2,
+        "comment": false
+      },
+      {
+        "number": 12,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 13,
+        "text": "2. Second inner loop: Add the characters (stars)",
+        "depth": 1,
+        "comment": true
+      },
+      {
+        "number": 14,
+        "text": "repeat_end2 = times * 2 - 2",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 15,
+        "text": "for _ in range(0, repeat_end2 + 1) then",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 16,
+        "text": "output += ch",
+        "depth": 2,
+        "comment": false
+      },
+      {
+        "number": 17,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 18,
+        "text": "Function call print parameters: output",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 19,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 20,
+        "text": "3. Outer loop: Run the pyramid builder for rows 1 through 5",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 21,
+        "text": "range(1, 6) counts exactly 1, 2, 3, 4, 5",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 22,
+        "text": "for i in range(1, 6) then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 23,
+        "text": "Function call print_many_christmas parameters: '*', i, 5",
+        "depth": 1,
+        "comment": false
+      }
+    ],
+    "foreach": [
+      {
+        "number": 1,
+        "text": "Standard Python iteration (foreach)",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 2,
+        "text": "my_commands_list = ['fd', 'fd', 'rt', 'fd', 'fd', 'lt', 'fd', 'fd']",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 4,
+        "text": "Loop directly through each command in the list",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 5,
+        "text": "for command in my_commands_list then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 6,
+        "text": "if command = \"fd\" then",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 7,
+        "text": "Function call Turtle Move Forward parameters: globals",
+        "depth": 2,
+        "comment": false
+      },
+      {
+        "number": 8,
+        "text": "elif command == \"rt\":",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 9,
+        "text": "Function call Turn Turtle Right parameters: globals",
+        "depth": 2,
+        "comment": false
+      },
+      {
+        "number": 10,
+        "text": "elif command == \"lt\":",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 11,
+        "text": "Function call Turn Turtle Left parameters: globals",
+        "depth": 2,
+        "comment": false
+      }
+    ],
+    "lists": [
+      {
+        "number": 1,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 2,
+        "text": "fruits=[\"banana\",\"apple\",\"peach\",\"pear\"]",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 3,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: fruits[3]",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 4,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 5,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: \"now re-writing all fruits:\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 6,
+        "text": "Standard Python loop",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 7,
+        "text": "for fruit in fruits then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 8,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: fruit",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 9,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 10,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: \"now re-writing all fruits in reverse:\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 11,
+        "text": "reverses the list",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 12,
+        "text": "Function call fruits.reverse",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 13,
+        "text": "for fruit in fruits then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 14,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: fruit",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 15,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 16,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: \"now writing fruits in alphabetical order:\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 17,
+        "text": "sorts the list in alphabetical order",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 18,
+        "text": "Function call fruits.sort",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 19,
+        "text": "for fruit in fruits then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 20,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: fruit",
+        "depth": 1,
+        "comment": false
+      },
+      {
+        "number": 21,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 22,
+        "text": "Function call fruits.append parameters: \"appricot\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 23,
+        "text": "Inserts 'blueberry' at index 2",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 24,
+        "text": "Function call fruits.insert parameters: 2, \"blueberry\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 25,
+        "text": "deletes the third item of the list",
+        "depth": 0,
+        "comment": true
+      },
+      {
+        "number": 26,
+        "text": "del fruits[3]",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 27,
+        "text": "",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 28,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: \"now writing fruits in final order:\"",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 29,
+        "text": "for fruit in fruits then",
+        "depth": 0,
+        "comment": false
+      },
+      {
+        "number": 30,
+        "text": "Function call promptUserToWriteDownOnPaper parameters: fruit",
+        "depth": 1,
+        "comment": false
+      }
+    ]
+  },
+  "boards": [
+    [
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "turtule_up.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png"
+    ],
+    [
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "turtule_up.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png"
+    ],
+    [
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "turtule_up.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png"
+    ],
+    [
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "turtule_up.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png"
+    ],
+    [
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "turtule_up.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png"
+    ],
+    [
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "turtule_up.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png",
+      "board_empty_slot.png"
+    ]
+  ]
+}

@@ -1,0 +1,4 @@
+Generated with the built-in image_gen tool, then resized to exactly 500 × 300 pixels.
+
+Prompt:
+Create a 500 × 300 pixel landscape illustration representing TLAC (Think Like A Computer), a beginner programming board game. Retro 1980s computer-game box art with crisp pixel art, a friendly green turtle on a square board, eggs, brick walls, blue pyramids, a checkered goal flag, and a short sequence of arrow instruction cards showing how to move the turtle. Bold readable title “TLAC” and smaller text “THINK LIKE A COMPUTER”. Warm cream, teal, dark navy, green, and orange palette; playful educational mood; balanced uncluttered composition that remains legible at 500 × 300. Entire illustration fills a 5:3 frame, no mockup, no watermark. Exact final dimensions: 500 pixels wide and 300 pixels tall.

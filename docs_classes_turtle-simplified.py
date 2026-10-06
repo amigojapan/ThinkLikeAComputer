@@ -1,0 +1,5 @@
+aki = Turtle("Aki", 1, 4)
+aki.mark_and_move()
+aki.mark_and_move()
+aki.right()
+aki.mark_and_move()

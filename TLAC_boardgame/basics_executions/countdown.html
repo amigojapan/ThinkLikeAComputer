@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TLAC execution</title><style>
+* { box-sizing: border-box; } body { margin: 0; background: powderblue; color: #102f40; font: 17px/1.6 Arial, sans-serif; }
+main { max-width: 1050px; margin: auto; padding: 20px; } h1 { line-height: 1.3; } a { color: #064e79; }
+button, select, input { font: inherit; } button, select { padding: 7px 12px; margin: 4px; border: 1px solid #355267; border-radius: 5px; background: white; color: #102f40; }
+button { cursor: pointer; } button:disabled { opacity: .45; cursor: default; } :focus-visible { outline: 3px solid #a94700; outline-offset: 3px; }
+.controls, .card { background: #edf8fb; padding: 20px; border: 1px solid #7197a5; border-radius: 8px; margin: 20px 0; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; } .step-title { font-weight: bold; overflow-wrap: anywhere; }
+input[type=range] { width: 100%; } #range-label { display: block; margin-top: 8px; } details { margin: 28px 0; } summary { cursor: pointer; font-weight: bold; }
+.state { white-space: pre-line; } .all-steps .card { break-inside: avoid; } [hidden] { display: none !important; }
+.watch-values, .text-output { white-space: pre-wrap; overflow-wrap: anywhere; background: #fff; border: 1px solid #7197a5; border-radius: 5px; padding: 12px; font: 15px/1.6 monospace; }
+.debug-heading { font-size: 1.1rem; margin: 18px 0 8px; }
+.text-only { display: block; }
+.program-list { padding: 8px; list-style: none; max-height: 22rem; overflow-y: auto; background: #edf8fb; border: 1px solid #7197a5; }
+.program-line { padding: 8px; margin: 4px 0; border: 2px solid transparent; overflow-wrap: anywhere; }
+.program-line .number { background: #173d8c; color: #fff7a3; padding: 2px 5px; margin-right: 8px; font-variant-numeric: tabular-nums; }
+.program-line.comment { color: #24633b; }
+.program-line[aria-current="step"] { background: #fff19a; border-color: #8a6200; }
+@media (max-width: 650px) { .layout { grid-template-columns: 1fr; } main { padding: 12px; } .card, .controls { padding: 14px; } }
+@media print { .controls, .toolbar { display: none; } body { background: white; } }
+
+.board { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); width: min(100%, calc(var(--columns) * 32px)); background: #eef4d9; border: 2px solid #355267; }
+.board img { width: 100%; height: auto; aspect-ratio: 1; display: block; }
+.board-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.board-pair figure { padding: 12px; background: #edf8fb; }
+.board-pair figcaption { margin: -12px -12px 12px; }
+@media (max-width: 600px) { .board-pair { grid-template-columns: 1fr; } }
+</style></head><body><main>
+<div class="toolbar"><label id="language-label" for="language">Language / Idioma / 言語</label> <select id="language"><option value="en">English</option><option value="es">Español</option><option value="ja">日本語</option></select></div>
+<p><a id="back" href="../../TLAC_8_basics_of_programming/8_basics_of_programming_TLAC.html">Back to the tutorial</a></p><h1 id="title">Count down from 3 through 0</h1>
+<p id="note"></p><noscript>Enable JavaScript to navigate every recorded step. / Activa JavaScript para ver todos los pasos. / すべてのステップを見るにはJavaScriptを有効にしてください。</noscript>
+<div class="controls"><button id="first" type="button">Start</button><button id="prev" type="button">Previous</button><button id="next" type="button">Next</button><button id="last" type="button">Finish</button><label id="range-label" for="step-range">Step</label><input id="step-range" type="range" min="0" value="0"><output id="progress" aria-live="polite"></output></div>
+<section class="card"><p id="step-title" class="step-title" aria-live="polite"></p><div id="snapshot-layout" class="layout"><div id="current-board"><div class="board" role="img" aria-label="Initial board" style="--columns:10"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/turtule_up.png" alt="^"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"><img src="../img/board_empty_slot.png" alt="·"></div></div><div><p id="location"></p><p id="state" class="state"></p><p id="egg-count"></p><div id="variables-panel" hidden><h2 id="variables-label" class="debug-heading"></h2><pre id="variables" class="watch-values"></pre></div></div></div><div id="output-panel" hidden><h2 id="output-label" class="debug-heading"></h2><pre id="text-output" class="text-output"></pre></div></section>
+<details id="program-panel" hidden open><summary id="program-label"></summary><ol id="program-list" class="program-list"></ol></details>
+<details id="all"><summary id="all-label">Show every step and its board</summary><div id="all-steps" class="all-steps"></div></details>
+</main><script>
+const run = {"source":"\u003cTLAC basics: countdown>","title":{"en":"Count down from 3 through 0","es":"Contar del 3 al 0","ja":"3から0まで逆に数える"},"anchor":"program-countdown","tutorial":"../../TLAC_8_basics_of_programming/8_basics_of_programming_TLAC.html","has_board":true,"width":10,"height":10,"steps":[{"label":{"en":"Start: before the first instruction","es":"Inicio: antes de la primera instrucción","ja":"開始：最初の命令を実行する前"},"line":0,"depth":0,"cells":"                                                                                              ^     ","turtles":[{"name":"Turtle","x":4,"y":9,"direction":"^"}],"eggs":[],"variables":[],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: For each i in 3, 2, 1, 0, repeat","es":"Antes: Para cada i en 3, 2, 1, 0, repetir","ja":"実行前: iを3、2、1、0にして繰り返す"},"line":2,"depth":0,"cells":"                                                                                              ^     ","turtles":[{"name":"Turtle","x":4,"y":9,"direction":"^"}],"eggs":[],"variables":[],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: Function call: Move forward i squares","es":"Antes: Llamar a la función: Avanzar i casillas","ja":"実行前: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                                                                              ^     ","turtles":[{"name":"Turtle","x":4,"y":9,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":3}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"After: Function call: Move forward i squares","es":"Después: Llamar a la función: Avanzar i casillas","ja":"実行後: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                                                ^                                   ","turtles":[{"name":"Turtle","x":4,"y":6,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":3}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: For each i in 3, 2, 1, 0, repeat","es":"Antes: Para cada i en 3, 2, 1, 0, repetir","ja":"実行前: iを3、2、1、0にして繰り返す"},"line":2,"depth":0,"cells":"                                                                ^                                   ","turtles":[{"name":"Turtle","x":4,"y":6,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":3}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: Function call: Move forward i squares","es":"Antes: Llamar a la función: Avanzar i casillas","ja":"実行前: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                                                ^                                   ","turtles":[{"name":"Turtle","x":4,"y":6,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":2}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"After: Function call: Move forward i squares","es":"Después: Llamar a la función: Avanzar i casillas","ja":"実行後: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                            ^                                                       ","turtles":[{"name":"Turtle","x":4,"y":4,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":2}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: For each i in 3, 2, 1, 0, repeat","es":"Antes: Para cada i en 3, 2, 1, 0, repetir","ja":"実行前: iを3、2、1、0にして繰り返す"},"line":2,"depth":0,"cells":"                                            ^                                                       ","turtles":[{"name":"Turtle","x":4,"y":4,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":2}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: Function call: Move forward i squares","es":"Antes: Llamar a la función: Avanzar i casillas","ja":"実行前: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                            ^                                                       ","turtles":[{"name":"Turtle","x":4,"y":4,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":1}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"After: Function call: Move forward i squares","es":"Después: Llamar a la función: Avanzar i casillas","ja":"実行後: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                  ^                                                                 ","turtles":[{"name":"Turtle","x":4,"y":3,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":1}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: For each i in 3, 2, 1, 0, repeat","es":"Antes: Para cada i en 3, 2, 1, 0, repetir","ja":"実行前: iを3、2、1、0にして繰り返す"},"line":2,"depth":0,"cells":"                                  ^                                                                 ","turtles":[{"name":"Turtle","x":4,"y":3,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":1}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: Function call: Move forward i squares","es":"Antes: Llamar a la función: Avanzar i casillas","ja":"実行前: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                  ^                                                                 ","turtles":[{"name":"Turtle","x":4,"y":3,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":0}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"After: Function call: Move forward i squares","es":"Después: Llamar a la función: Avanzar i casillas","ja":"実行後: 関数を呼び出す：iマス前に進む"},"line":3,"depth":0,"cells":"                                  ^                                                                 ","turtles":[{"name":"Turtle","x":4,"y":3,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":0}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Before: For each i in 3, 2, 1, 0, repeat","es":"Antes: Para cada i en 3, 2, 1, 0, repetir","ja":"実行前: iを3、2、1、0にして繰り返す"},"line":2,"depth":0,"cells":"                                  ^                                                                 ","turtles":[{"name":"Turtle","x":4,"y":3,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":0}],"output":{"en":"","es":"","ja":""}},{"label":{"en":"Finished: final state and output","es":"Terminado: estado y salida finales","ja":"終了：最後の状態と出力"},"line":2,"depth":0,"cells":"                                  ^                                                                 ","turtles":[{"name":"Turtle","x":4,"y":3,"direction":"^"}],"eggs":[],"variables":[{"scope":"global","name":"i","value":0}],"output":{"en":"","es":"","ja":""}}],"instructions":[{"number":1,"depth":0,"comment":true,"label":{"en":"Count down from 3 through 0","es":"Cuenta atrás del 3 al 0","ja":"3から0まで逆に数える"}},{"number":2,"depth":0,"comment":false,"label":{"en":"For each i in 3, 2, 1, 0, repeat","es":"Para cada i en 3, 2, 1, 0, repetir","ja":"iを3、2、1、0にして繰り返す"}},{"number":3,"depth":1,"comment":false,"label":{"en":"Function call: Move forward i squares","es":"Llamar a la función: Avanzar i casillas","ja":"関数を呼び出す：iマス前に進む"}}],"note":{"en":"Use Next and Previous to follow the recorded execution. “Before” shows the state just before the highlighted instruction; “After” shows the result of an action or output. Watch variables and output change as you step. Input examples replay the player responses shown in the lesson.","es":"Usa Siguiente y Anterior para seguir la ejecución grabada. «Antes» muestra el estado justo antes de la instrucción resaltada; «Después» muestra el resultado de una acción o salida. Observa cómo cambian las variables y la salida. Los ejemplos de entrada reproducen las respuestas del jugador de la lección.","ja":"「次へ」「前へ」で記録した実行を追えます。「実行前」は強調した命令の直前、「実行後」は動作や出力の結果です。変数や出力が変わる様子を確認しましょう。入力の例は教材にあるプレイヤーの操作を再現します。"},"all_label":{"en":"Show every step, state, and output","es":"Mostrar cada paso, estado y salida","ja":"すべてのステップ、状態、出力を表示"}};
+const words = {"en": {"title": "Execution", "language": "Language / Idioma / 言語", "back": "Back to the tutorial", "first": "Start", "prev": "Previous", "next": "Next", "last": "Finish", "step": "Step", "of": "of", "all": "Show every step and its board", "line": "Instruction", "depth": "Function call depth", "state": "Turtle states", "eggs": "Eggs on the board", "direction": "Direction", "note": "Before = the instruction is about to run. After = a turtle action or check has just finished. Returning ends only one function call. Coordinates start at 0 in the top-left corner. An egg under a turtle is hidden by its picture but is still counted.", "nojs": "Enable JavaScript to navigate every recorded step.", "initial": "Initial board", "final": "Final board", "variables": "Variables", "output": "Output so far", "program": "Program instructions", "global": "Main program", "local": "Current function", "empty": "No variables yet", "emptyOutput": "No output yet"}, "es": {"title": "Ejecución", "language": "Idioma / Language / 言語", "back": "Volver al tutorial", "first": "Inicio", "prev": "Anterior", "next": "Siguiente", "last": "Final", "step": "Paso", "of": "de", "all": "Mostrar cada paso y su tablero", "line": "Instrucción", "depth": "Profundidad de llamadas", "state": "Estados de las tortugas", "eggs": "Huevos en el tablero", "direction": "Dirección", "note": "Antes = la instrucción está a punto de ejecutarse. Después = acaba de terminar una acción o comprobación. Volver termina solo una llamada. Las coordenadas empiezan en 0 en la esquina superior izquierda. La imagen de la tortuga oculta el huevo que tiene debajo, pero este sigue contando.", "nojs": "Activa JavaScript para recorrer todos los pasos registrados.", "initial": "Tablero inicial", "final": "Tablero final", "variables": "Variables", "output": "Salida hasta este paso", "program": "Instrucciones del programa", "global": "Programa principal", "local": "Función actual", "empty": "Todavía no hay variables", "emptyOutput": "Todavía no hay salida"}, "ja": {"title": "実行結果", "language": "言語 / Language / Idioma", "back": "教材に戻る", "first": "最初", "prev": "前へ", "next": "次へ", "last": "最後", "step": "ステップ", "of": "/", "all": "すべてのステップと盤面を表示", "line": "命令", "depth": "関数呼び出しの深さ", "state": "亀の状態", "eggs": "盤面の卵の数", "direction": "向き", "note": "「実行前」は次に実行する命令を、「実行後」は亀の動作や確認が終わったことを示します。「戻る」は1回の関数呼び出しだけを終えます。座標は左上の0から始まります。亀の下にある卵は絵では隠れますが、卵の数には含まれます。", "nojs": "すべてのステップを見るにはJavaScriptを有効にしてください。", "initial": "最初の盤面", "final": "最後の盤面", "variables": "変数", "output": "ここまでの出力", "program": "プログラムの命令", "global": "メインのプログラム", "local": "現在の関数", "empty": "まだ変数はありません", "emptyOutput": "まだ出力はありません"}};
+const tiles = {" ": "board_empty_slot.png", "o": "egg.png", "#": "wall.png", "^": "turtule_up.png", "V": "turtule_down.png", "<": "turtule_left.png", ">": "turtule_right.png"};
+let lang = new URLSearchParams(location.search).get('lang') || 'en';
+if (!words[lang]) lang = 'en';
+let index = 0;
+const $ = id => document.getElementById(id);
+const directions = {en:{'^':'up',V:'down','<':'left','>':'right'},es:{'^':'arriba',V:'abajo','<':'izquierda','>':'derecha'},ja:{'^':'上',V:'下','<':'左','>':'右'}};
+function board(step) {
+  const el = document.createElement('div'); el.className = 'board'; el.style.setProperty('--columns', run.width);
+  el.setAttribute('role','img'); el.setAttribute('aria-label', words[lang].step + ' ' + (run.steps.indexOf(step)+1));
+  for (const cell of step.cells) { const img = document.createElement('img'); img.src = '../img/' + tiles[cell]; img.alt = cell.trim() || '·'; el.append(img); }
+  return el;
+}
+function stateText(step) {
+  return words[lang].state + ':\n' + step.turtles.map(t => t.name + ': X=' + t.x + ', Y=' + t.y + ' · ' + words[lang].direction + ': ' + directions[lang][t.direction]).join('\n');
+}
+function variablesText(step) {
+  return (step.variables || []).map(v=>words[lang][v.scope]+': '+v.name+' = '+JSON.stringify(v.value)).join('\n') || words[lang].empty;
+}
+function highlightInstruction(line) {
+  for(const row of $('program-list').children) {
+    if(Number(row.dataset.line) === line) row.setAttribute('aria-current','step');
+    else row.removeAttribute('aria-current');
+  }
+  const active=$('program-list').querySelector('[aria-current="step"]');
+  if(active) {
+    const top=active.getBoundingClientRect().top-$('program-list').getBoundingClientRect().top;
+    if(top<0 || top+active.offsetHeight>$('program-list').clientHeight) $('program-list').scrollTop+=top;
+  }
+}
+function populateProgram() {
+  $('program-panel').hidden=!run.instructions;
+  $('program-list').replaceChildren();
+  for(const instruction of run.instructions || []) {
+    const row=document.createElement('li'); row.className='program-line'+(instruction.comment ? ' comment' : ''); row.dataset.line=instruction.number;
+    row.style.paddingLeft=(8+instruction.depth*14)+'px';
+    const number=document.createElement('span');number.className='number';number.textContent=String(instruction.number).padStart(4,'0');
+    row.append(number,document.createTextNode(instruction.label[lang]));$('program-list').append(row);
+  }
+}
+function show(value, updateHash = true) {
+  index = Math.max(0, Math.min(run.steps.length - 1, Number(value) || 0));
+  const step = run.steps[index], w = words[lang];
+  $('step-range').value = index;
+  $('progress').textContent = w.step + ' ' + (index + 1) + ' ' + w.of + ' ' + run.steps.length;
+  $('step-title').textContent = step.label[lang];
+  $('location').textContent = (step.line ? w.line + ' ' + String(step.line).padStart(4,'0') + ' · ' : '') + w.depth + ': ' + step.depth;
+  const hasBoard=run.has_board !== false;
+  $('current-board').hidden=$('state').hidden=$('egg-count').hidden=!hasBoard;
+  $('snapshot-layout').classList.toggle('text-only',!hasBoard);
+  if(hasBoard) $('current-board').replaceChildren(board(step)); $('state').textContent = stateText(step);
+  $('egg-count').textContent = w.eggs + ': ' + step.eggs.length;
+  $('variables-panel').hidden=!step.variables; $('variables').textContent=variablesText(step);
+  $('output-panel').hidden=!step.output; $('text-output').textContent=step.output?.[lang] || w.emptyOutput;
+  highlightInstruction(step.line);
+  $('first').disabled = $('prev').disabled = index === 0;
+  $('last').disabled = $('next').disabled = index === run.steps.length-1;
+  if (updateHash) { try { history.replaceState(null,'', '?lang='+lang+'#step-'+index); } catch (_) {} }
+}
+function showAll() {
+  $('all-steps').replaceChildren();
+  if (!$('all').open) return;
+  const fragment = document.createDocumentFragment();
+  run.steps.forEach((step, i) => {
+    const card = document.createElement('section'); card.className = 'card';
+    const heading = document.createElement('h2'); heading.textContent = words[lang].step+' '+(i+1)+': '+step.label[lang];
+    heading.style.fontSize='1.1rem';
+    const location = document.createElement('p');
+    location.textContent=(step.line ? words[lang].line+' '+String(step.line).padStart(4,'0')+' · ' : '')+words[lang].depth+': '+step.depth;
+    const state = document.createElement('p'); state.className='state'; state.textContent=stateText(step)+'\n'+words[lang].eggs+': '+step.eggs.length;
+    card.append(heading,location);
+    if(run.has_board !== false) card.append(board(step),state);
+    if(step.variables) { const variables=document.createElement('pre');variables.className='watch-values';variables.textContent=words[lang].variables+'\n'+variablesText(step);card.append(variables); }
+    if(step.output) { const output=document.createElement('pre');output.className='text-output';output.textContent=words[lang].output+'\n'+(step.output[lang] || words[lang].emptyOutput);card.append(output); }
+    fragment.append(card);
+  });
+  $('all-steps').append(fragment);
+}
+function translate() {
+  const w=words[lang]; document.documentElement.lang=lang; $('language').value=lang;
+  $('language-label').textContent=w.language; $('title').textContent=w.title+' · '+run.title[lang]; document.title=$('title').textContent;
+  $('back').textContent=w.back; $('back').href=(run.tutorial || '../../TLAC_advanced_concepts.html')+'?lang='+lang+'#'+run.anchor+'-'+lang;
+  $('note').textContent=run.note?.[lang] || w.note; $('all-label').textContent=run.all_label?.[lang] || w.all; $('range-label').textContent=w.step;
+  $('variables-label').textContent=w.variables; $('output-label').textContent=w.output; $('program-label').textContent=w.program;
+  for(const id of ['first','prev','next','last']) $(id).textContent=w[id];
+  populateProgram();
+  show(index); showAll();
+}
+$('language').addEventListener('change',()=>{lang=$('language').value;translate();});
+$('step-range').max=run.steps.length-1; $('step-range').addEventListener('input',event=>show(event.target.value));
+$('first').onclick=()=>show(0); $('prev').onclick=()=>show(index-1); $('next').onclick=()=>show(index+1); $('last').onclick=()=>show(run.steps.length-1);
+$('all').addEventListener('toggle',showAll);
+function fromHash() { const match=location.hash.match(/^#step-(\d+)$/); if(match) show(match[1],false); }
+window.addEventListener('hashchange',fromHash); fromHash(); translate();
+</script></body></html>

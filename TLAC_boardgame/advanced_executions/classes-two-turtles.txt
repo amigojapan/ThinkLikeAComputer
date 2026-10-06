@@ -1,0 +1,135 @@
+Step 1: Start: before the first instruction (instruction 0, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 2: Before: Create turtle Aki at X=1, Y=4, facing up (instruction 1, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 3: Created turtle: Aki (X=1, Y=4) (instruction 1, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 4: Before: Create turtle Sol at X=4, Y=4, facing up (instruction 2, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 5: Created turtle: Sol (X=4, Y=4) (instruction 2, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 6: Before: Ask Aki: mark this square and move forward (instruction 3, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 7: After: Aki: Place an egg (instruction 3, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 8: After: Aki: Move forward (1) (instruction 3, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 9: Before: Ask Aki: mark this square and move forward (instruction 4, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 10: After: Aki: Place an egg (instruction 4, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 11: After: Aki: Move forward (1) (instruction 4, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][ ][ ]
+[ ][o][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 12: Before: Ask Sol: turn right (instruction 5, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][ ][ ]
+[ ][o][ ][ ][^][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 13: After: Sol: Turn right (instruction 5, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][ ][ ]
+[ ][o][ ][ ][>][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 14: Before: Ask Sol: mark this square and move forward (instruction 6, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][ ][ ]
+[ ][o][ ][ ][>][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 15: After: Sol: Place an egg (instruction 6, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][ ][ ]
+[ ][o][ ][ ][>][ ]
+[ ][ ][ ][ ][ ][ ]
+
+Step 16: After: Sol: Move forward (1) (instruction 6, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][ ][ ]
+[ ][o][ ][ ][o][>]
+[ ][ ][ ][ ][ ][ ]
+
+Step 17: Finished: final board (instruction 6, depth 0)
+[ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ]
+[ ][^][ ][ ][ ][ ]
+[ ][o][ ][ ][ ][ ]
+[ ][o][ ][ ][o][>]
+[ ][ ][ ][ ][ ][ ]

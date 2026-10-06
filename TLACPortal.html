@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn programming with Think Like A Computer. Tutorials and printable turtle board game materials in English, Spanish, and Japanese.">
+  <title>TLAC — Learn and play</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root { color-scheme: light; }
+    body { margin: 0; background: powderblue; color: #102f40; font: 17px/1.65 Arial, Helvetica, sans-serif; }
+    .toolbar { background: #e8f7fa; border-bottom: 2px solid #6697a6; padding: 14px max(20px, calc((100% - 1080px)/2)); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    label { font-weight: bold; }
+    select { font: inherit; border: 1px solid #315b6e; border-radius: 5px; padding: 7px 12px; background: white; color: #102f40; max-width: 100%; }
+    :focus-visible { outline: 3px solid #a94700; outline-offset: 4px; }
+    main { max-width: 1120px; margin: auto; padding: 30px 20px 64px; }
+    h1 { font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.18; margin: 12px 0; }
+    h2 { border-bottom: 2px solid #527e8e; padding-bottom: 10px; margin: 36px 0 20px; font-size: 1.6rem; }
+    h3 { font-size: 1.25rem; line-height: 1.4; margin: 8px 0 12px; }
+    p { margin: 0 0 16px; }
+    .eyebrow { font-weight: bold; letter-spacing: .06em; margin-bottom: 8px; }
+    .subtitle { font-size: 1.2rem; max-width: 780px; margin-top: 18px; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .card { background: #edf8fb; border: 1px solid #739dab; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; }
+    .tag { font-size: .85rem; font-weight: bold; color: #376176; margin: 0; }
+    a { color: #064e79; text-underline-offset: 3px; }
+    a:hover { color: #802f00; }
+    .card a { margin-top: auto; font-weight: bold; align-self: flex-start; }
+    .note { border-left: 5px solid #376b84; background: #edf8fb; padding: 16px 20px; margin-top: 20px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      main { padding: 24px 16px 40px; }
+      .toolbar { padding: 12px 16px; }
+      .cards { grid-template-columns: 1fr; gap: 14px; }
+      .card { padding: 20px; }
+    }
+    @media print {
+      body { background: white; }
+      .toolbar { display: none; }
+      main { padding: 0; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <label id="language-label" for="language">Language / Idioma / 言語</label>
+    <select id="language">
+      <option value="en" lang="en">English</option>
+      <option value="es" lang="es">Español</option>
+      <option value="ja" lang="ja">日本語</option>
+    </select>
+  </div>
+  <noscript>
+    <style>article[hidden] { display: block !important; } .toolbar { display: none; } article + article { margin-top: 60px; }</style>
+    <p>JavaScript is off: all three languages appear below. / JavaScript está desactivado: se muestran los tres idiomas. / JavaScriptが無効のため、3言語を順に表示します。</p>
+  </noscript>
+  <main>
+    <article lang="en" data-language="en">
+      <header>
+        <p class="eyebrow">TLAC · Think Like A Computer</p>
+        <h1>Learn and play</h1>
+        <p class="subtitle">Discover programming one instruction at a time. Follow the turtle, explore the tutorials, and print your own board game.</p>
+      </header>
+      <section aria-labelledby="learn-en">
+        <h2 id="learn-en">Learn programming</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="tag">START HERE</p>
+            <h3>8 basics of programming</h3>
+            <p>Learn about instruction order, variables, conditions, functions, input and output, loops, and lists. Follow each example step by step.</p>
+            <a href="TLAC_8_basics_of_programming/8_basics_of_programming_TLAC.html?lang=en">Open the basics tutorial →</a>
+          </div>
+          <div class="card">
+            <p class="tag">KEEP LEARNING</p>
+            <h3>Advanced concepts</h3>
+            <p>Explore recursion and classes through simple turtle examples. Compare loops with recursion and watch each program run.</p>
+            <a href="TLAC_advanced_concepts.html?lang=en">Open the advanced tutorial →</a>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="print-en">
+        <h2 id="print-en">Print and play</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="tag">PRINTABLE PDF · A4</p>
+            <h3>Board and turtle</h3>
+            <p>Print the board and cut out the turtle to follow the instructions away from the screen.</p>
+            <a href="TLAC_boardgame/printables/boardAndTurtle.pdf">Open the board and turtle PDF →</a>
+          </div>
+          <div class="card">
+            <p class="tag">PRINTABLE PDF · A4</p>
+            <h3>All object cutouts</h3>
+            <p>99 pieces: pyramids in five sizes, goal flags, turtles, eggs, walls, stars, diamonds, and custom markers.</p>
+            <a href="TLAC_boardgame/printables/all_objects.pdf">Open the object cutouts PDF →</a>
+          </div>
+        </div>
+        <p class="note">Print both PDFs on A4 paper at 100% scale so the pieces fit the board. Cut along the dashed lines on the object sheet.</p>
+      </section>
+    </article>
+    <article lang="es" data-language="es" hidden>
+      <header>
+        <p class="eyebrow">TLAC · Think Like A Computer</p>
+        <h1>Aprende y juega</h1>
+        <p class="subtitle">Descubre la programación, una instrucción a la vez. Sigue a la tortuga, explora los tutoriales e imprime tu propio juego de mesa.</p>
+      </header>
+      <section aria-labelledby="learn-es">
+        <h2 id="learn-es">Aprende a programar</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="tag">EMPIEZA AQUÍ</p>
+            <h3>8 fundamentos de programación</h3>
+            <p>Aprende sobre el orden de las instrucciones, variables, condiciones, funciones, entrada y salida, bucles y listas. Sigue cada ejemplo paso a paso.</p>
+            <a href="TLAC_8_basics_of_programming/8_basics_of_programming_TLAC.html?lang=es">Abrir el tutorial de fundamentos →</a>
+          </div>
+          <div class="card">
+            <p class="tag">SIGUE APRENDIENDO</p>
+            <h3>Conceptos avanzados</h3>
+            <p>Explora la recursión y las clases con ejemplos sencillos de tortugas. Compara los bucles con la recursión y observa la ejecución de cada programa.</p>
+            <a href="TLAC_advanced_concepts.html?lang=es">Abrir el tutorial avanzado →</a>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="print-es">
+        <h2 id="print-es">Imprime y juega</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="tag">PDF PARA IMPRIMIR · A4</p>
+            <h3>Tablero y tortuga</h3>
+            <p>Imprime el tablero y recorta la tortuga para seguir las instrucciones sin necesidad de una pantalla.</p>
+            <a href="TLAC_boardgame/printables/boardAndTurtle.pdf">Abrir el PDF del tablero y la tortuga →</a>
+          </div>
+          <div class="card">
+            <p class="tag">PDF PARA IMPRIMIR · A4</p>
+            <h3>Todas las piezas recortables</h3>
+            <p>99 piezas: pirámides de cinco tamaños, banderas de meta, tortugas, huevos, muros, estrellas, diamantes y marcadores personalizables.</p>
+            <a href="TLAC_boardgame/printables/all_objects.pdf">Abrir el PDF de las piezas →</a>
+          </div>
+        </div>
+        <p class="note">Imprime ambos PDF en papel A4 al 100% para que las piezas encajen en el tablero. Recorta por las líneas discontinuas de la hoja de piezas.</p>
+      </section>
+    </article>
+    <article lang="ja" data-language="ja" hidden>
+      <header>
+        <p class="eyebrow">TLAC · Think Like A Computer</p>
+        <h1>遊びながら学ぼう</h1>
+        <p class="subtitle">命令を1つずつ追いながら、プログラミングを学びましょう。亀を動かして教材を読み、ボードゲームを印刷して遊べます。</p>
+      </header>
+      <section aria-labelledby="learn-ja">
+        <h2 id="learn-ja">プログラミングを学ぶ</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="tag">まずはここから</p>
+            <h3>プログラミングの8つの基本</h3>
+            <p>命令の順番、変数、条件分岐、関数、入出力、繰り返し、リストなどを学びます。例を1ステップずつ追ってみましょう。</p>
+            <a href="TLAC_8_basics_of_programming/8_basics_of_programming_TLAC.html?lang=ja">基本の教材を開く →</a>
+          </div>
+          <div class="card">
+            <p class="tag">もっと学ぼう</p>
+            <h3>応用編：再帰とクラス</h3>
+            <p>亀を使った簡単な例で、再帰とクラスを学びます。繰り返しと再帰を比べながら、プログラムの動きを確認できます。</p>
+            <a href="TLAC_advanced_concepts.html?lang=ja">応用編の教材を開く →</a>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="print-ja">
+        <h2 id="print-ja">印刷して遊ぶ</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="tag">印刷用PDF・A4</p>
+            <h3>盤面と亀</h3>
+            <p>盤面を印刷して亀を切り抜けば、画面を使わずに命令を追って遊べます。</p>
+            <a href="TLAC_boardgame/printables/boardAndTurtle.pdf">盤面と亀のPDFを開く →</a>
+          </div>
+          <div class="card">
+            <p class="tag">印刷用PDF・A4</p>
+            <h3>すべての切り抜きコマ</h3>
+            <p>5サイズのピラミッド、ゴールの旗、亀、卵、壁、星、ダイヤ、自由に使えるコマの計99枚です。</p>
+            <a href="TLAC_boardgame/printables/all_objects.pdf">切り抜きコマのPDFを開く →</a>
+          </div>
+        </div>
+        <p class="note">コマが盤面に合うように、両方のPDFをA4用紙に倍率100%で印刷してください。コマのシートは点線に沿って切り抜きます。</p>
+      </section>
+    </article>
+  </main>
+  <script>
+    (() => {
+      'use strict';
+      const languages = ['en', 'es', 'ja'];
+      const selector = document.getElementById('language');
+      function chooseLanguage(lang, remember = true) {
+        if (!languages.includes(lang)) lang = 'en';
+        for (const article of document.querySelectorAll('article[data-language]')) {
+          article.hidden = article.dataset.language !== lang;
+        }
+        selector.value = lang;
+        document.documentElement.lang = lang;
+        document.title = 'TLAC — ' + document.querySelector(`article[lang="${lang}"] h1`).textContent;
+        document.getElementById('language-label').textContent = {
+          en: 'Language / Idioma / 言語', es: 'Idioma / Language / 言語', ja: '言語 / Language / Idioma'
+        }[lang];
+        try {
+          const url = new URL(location.href);
+          url.searchParams.set('lang', lang);
+          history.replaceState(null, '', url);
+        } catch (_) { /* Some local-file viewers restrict history changes. */ }
+        if (remember) {
+          try { localStorage.setItem('tlac-portal-language', lang); } catch (_) { /* Storage is optional. */ }
+        }
+      }
+      let saved;
+      try { saved = localStorage.getItem('tlac-portal-language'); } catch (_) { /* Storage is optional. */ }
+      const query = new URLSearchParams(location.search).get('lang');
+      chooseLanguage(languages.includes(query) ? query : saved || 'en', false);
+      selector.addEventListener('change', () => chooseLanguage(selector.value));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210mm" height="297mm" viewBox="0 0 210 297">
+<title>TLAC: all printable objects</title>
+<desc>A4 sheet of 99 square cutouts, each 18 mm: two sets of pyramids 1–5, eight goal flags, four turtles, five custom markers, 27 eggs, 27 walls, nine stars, and nine diamonds.</desc>
+<defs><image id="turtle-art" width="14" height="14" xlink:href="data:image/png;base64,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"/></defs>
+<rect width="210" height="297" fill="white"/>
+<g font-family="DejaVu Sans, Noto Sans CJK JP, sans-serif" fill="#171717">
+<text x="16" y="14" font-size="6" font-weight="bold">TLAC / All object cutouts</text>
+<text x="16" y="21" font-size="3.6" >Todas las piezas recortables / すべての切り抜きコマ</text>
+<text x="16" y="30" font-size="3" >1–5 Pyramids · G Goals · Turtles · M/W/custom markers</text>
+<text x="16" y="35" font-size="3" >1–5 Pirámides · G Metas · Tortugas · M/W/marcadores libres</text>
+<text x="16" y="40" font-size="3" >1–5 ピラミッド・G ゴール・亀・M/W/自由に書けるコマ</text>
+<text x="16" y="45" font-size="2.45" >o Eggs / Huevos / 卵    # Walls / Muros / 壁    * Stars / Estrellas / 星    X Diamonds / Diamantes / ダイヤ</text>
+<g id="pyramid1-1" transform="translate(16 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 9 11.5 13H6.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">1</text>
+</g>
+<g id="pyramid2-1" transform="translate(36 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 7 12.5 13H5.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">2</text>
+</g>
+<g id="pyramid3-1" transform="translate(56 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 5 13.5 13H4.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">3</text>
+</g>
+<g id="pyramid4-1" transform="translate(76 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 3 14.5 13H3.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">4</text>
+</g>
+<g id="pyramid5-1" transform="translate(96 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1 15.5 13H2.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">5</text>
+</g>
+<g id="goal-1" transform="translate(116 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="goal-2" transform="translate(136 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="goal-3" transform="translate(156 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="goal-4" transform="translate(176 49)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="pyramid1-2" transform="translate(16 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 9 11.5 13H6.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">1</text>
+</g>
+<g id="pyramid2-2" transform="translate(36 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 7 12.5 13H5.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">2</text>
+</g>
+<g id="pyramid3-2" transform="translate(56 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 5 13.5 13H4.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">3</text>
+</g>
+<g id="pyramid4-2" transform="translate(76 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 3 14.5 13H3.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">4</text>
+</g>
+<g id="pyramid5-2" transform="translate(96 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1 15.5 13H2.5Z" fill="#6267de" stroke="#292929" stroke-width=".35"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">5</text>
+</g>
+<g id="goal-5" transform="translate(116 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="goal-6" transform="translate(136 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="goal-7" transform="translate(156 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="goal-8" transform="translate(176 69)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M4 14V2H15V9H4" fill="white" stroke="#171717" stroke-width=".5"/><rect x="4.0" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="2.0" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="3.75" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="4.0" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="7.666666666666666" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="11.333333333333332" y="5.5" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="5.833333333333333" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="9.5" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/><rect x="13.166666666666666" y="7.25" width="1.8333333333333333" height="1.75" fill="#171717"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">G</text>
+</g>
+<g id="turtle-1" transform="translate(16 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<use xlink:href="#turtle-art" x="2" y=".5" width="14" height="14"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">A</text>
+</g>
+<g id="turtle-2" transform="translate(36 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<use xlink:href="#turtle-art" x="2" y=".5" width="14" height="14"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">B</text>
+</g>
+<g id="turtle-3" transform="translate(56 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<use xlink:href="#turtle-art" x="2" y=".5" width="14" height="14"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">C</text>
+</g>
+<g id="turtle-4" transform="translate(76 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<use xlink:href="#turtle-art" x="2" y=".5" width="14" height="14"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">D</text>
+</g>
+<g id="marker-1" transform="translate(96 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<circle cx="9" cy="7.5" r="5.5" fill="white" stroke="#777" stroke-width=".3" stroke-dasharray=".8 .8"/>
+<text x="9" y="9.6" font-size="5.8" text-anchor="middle" font-weight="bold">M</text>
+</g>
+<g id="marker-2" transform="translate(116 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<circle cx="9" cy="7.5" r="5.5" fill="white" stroke="#777" stroke-width=".3" stroke-dasharray=".8 .8"/>
+<text x="9" y="9.6" font-size="5.8" text-anchor="middle" font-weight="bold">W</text>
+</g>
+<g id="marker-3" transform="translate(136 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<circle cx="9" cy="7.5" r="5.5" fill="white" stroke="#777" stroke-width=".3" stroke-dasharray=".8 .8"/>
+<text x="9" y="9.6" font-size="5.8" text-anchor="middle" font-weight="bold"></text>
+</g>
+<g id="marker-4" transform="translate(156 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<circle cx="9" cy="7.5" r="5.5" fill="white" stroke="#777" stroke-width=".3" stroke-dasharray=".8 .8"/>
+<text x="9" y="9.6" font-size="5.8" text-anchor="middle" font-weight="bold"></text>
+</g>
+<g id="marker-5" transform="translate(176 89)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<circle cx="9" cy="7.5" r="5.5" fill="white" stroke="#777" stroke-width=".3" stroke-dasharray=".8 .8"/>
+<text x="9" y="9.6" font-size="5.8" text-anchor="middle" font-weight="bold"></text>
+</g>
+<g id="egg-1" transform="translate(16 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-2" transform="translate(36 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-3" transform="translate(56 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-4" transform="translate(76 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-5" transform="translate(96 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-6" transform="translate(116 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-7" transform="translate(136 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-8" transform="translate(156 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-9" transform="translate(176 109)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-10" transform="translate(16 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-11" transform="translate(36 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-12" transform="translate(56 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-13" transform="translate(76 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-14" transform="translate(96 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-15" transform="translate(116 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-16" transform="translate(136 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-17" transform="translate(156 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-18" transform="translate(176 129)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-19" transform="translate(16 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-20" transform="translate(36 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-21" transform="translate(56 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-22" transform="translate(76 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-23" transform="translate(96 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-24" transform="translate(116 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-25" transform="translate(136 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-26" transform="translate(156 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="egg-27" transform="translate(176 149)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<ellipse cx="9" cy="7.5" rx="4.5" ry="5.4" fill="white" stroke="#171717" stroke-width=".8"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">o</text>
+</g>
+<g id="wall-1" transform="translate(16 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-2" transform="translate(36 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-3" transform="translate(56 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-4" transform="translate(76 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-5" transform="translate(96 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-6" transform="translate(116 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-7" transform="translate(136 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-8" transform="translate(156 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-9" transform="translate(176 169)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-10" transform="translate(16 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-11" transform="translate(36 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-12" transform="translate(56 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-13" transform="translate(76 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-14" transform="translate(96 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-15" transform="translate(116 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-16" transform="translate(136 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-17" transform="translate(156 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-18" transform="translate(176 189)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-19" transform="translate(16 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-20" transform="translate(36 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-21" transform="translate(56 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-22" transform="translate(76 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-23" transform="translate(96 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-24" transform="translate(116 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-25" transform="translate(136 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-26" transform="translate(156 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="wall-27" transform="translate(176 209)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M2 2H16V13H2Z" fill="#bb4545" stroke="#292929" stroke-width=".4"/><path d="M2 5.7H16M2 9.3H16M6 2V5.7M12 5.7V9.3M7 9.3V13" fill="none" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">#</text>
+</g>
+<g id="star-1" transform="translate(16 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-2" transform="translate(36 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-3" transform="translate(56 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-4" transform="translate(76 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-5" transform="translate(96 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-6" transform="translate(116 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-7" transform="translate(136 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-8" transform="translate(156 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="star-9" transform="translate(176 229)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 2 11 5.7 15 6.3 12 9.2 12.7 13.3 9 11.3 5.3 13.3 6 9.2 3 6.3 7 5.7Z" fill="#e45b50" stroke="#292929" stroke-width=".4"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">*</text>
+</g>
+<g id="diamond-1" transform="translate(16 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-2" transform="translate(36 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-3" transform="translate(56 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-4" transform="translate(76 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-5" transform="translate(96 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-6" transform="translate(116 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-7" transform="translate(136 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-8" transform="translate(156 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<g id="diamond-9" transform="translate(176 249)">
+<rect width="18" height="18" fill="white" stroke="#888" stroke-width=".2" stroke-dasharray="1 .7"/>
+<path d="M9 1.5 15 7.5 9 13.5 3 7.5Z M9 1.5V13.5M3 7.5H15" fill="#dceefa" stroke="#292929" stroke-width=".45"/>
+<text x="9" y="16.6" font-size="2.8" text-anchor="middle" font-weight="bold">X</text>
+</g>
+<text x="16" y="274" font-size="3" >A4 · Print at 100%. Cut dashed squares. Rotate turtles to turn.</text>
+<text x="16" y="280" font-size="3" >A4 · Imprime al 100%. Recorta los cuadrados. Gira las tortugas.</text>
+<text x="16" y="286" font-size="3" >A4・倍率100%で印刷。点線で切り、亀を回して向きを変えます。</text>
+<path d="M176 277V280M176 278.5H194M194 277V280" fill="none" stroke="#171717" stroke-width=".25"/>
+<text x="185" y="284.5" font-size="2.6" text-anchor="middle">18 mm</text>
+</g></svg>
