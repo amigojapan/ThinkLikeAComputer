@@ -1,5 +1,16 @@
+from functools import partial
+from pathlib import Path
+import TLACsimulator as TLAC
+
+# Bind the simulator state so the instructions below can stay simple.
+readBoardFromFile = partial(TLAC.readBoardFromFile, TLAC.globals)
+teleportTurtleTo = partial(TLAC.teleportTurtleTo, TLAC.globals)
+printBoard = partial(TLAC.printBoard, TLAC.globals)
+peekPyramidThere = partial(TLAC.peekPyramidThere, TLAC.globals)
+simulateUserInputTeleportPyramidTo = partial(TLAC.simulateUserInputTeleportPyramidTo, TLAC.globals)
+
 #board setup
-readBoardFromFile("algorithm-pyramids1.txt")
+readBoardFromFile(Path(__file__).with_name("algorithm-pyramids1.txt"))
 #seems you need teleport turtle to fill the board for some reason I dont understand?
 teleportTurtleTo(4,9)
 print("initial board:")
@@ -9,14 +20,14 @@ printBoard()
 #insertion sort pyramids 1
 #import TLACloopyLib as l
 import sys
-def findNextElement(globals):
+def findNextElement():
     for x in range(0,9+1,1):
         print("Ax:"+str(x))
         value, _x, _y=peekPyramidThere(x,2)
         if value!="not found":
             return  value, _x, _y
     return None
-def findNextBottom(globals):
+def findNextBottom():
     for x in range(9, 0-1, -1):
         print("Bx:"+str(x))            #  value:+str(value))
         value, _x, _y=peekPyramidThere(x,4)

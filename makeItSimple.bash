@@ -26,4 +26,19 @@ sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.
 #algorythms
 sed -e 's/TLAC\.//g; s/TLAC\.globals\./,/g; s/ globals,//g; s/ ,//g; s/globals\.//g; s/globals,//g; s/\.turtle\./turtle/g; 1,9d' algorythm-insertionSortNew.py  > algorythm-insertionSortNew-simplified.py
 sed -e 's/TLAC\.globals)/)/g;s/TLAC.globals,//g;s/TLAC\.//g;s/TLAC\.globals\./,/g;s/ globals,//g;s/ ,//g;s/globals\.//g;s/globals,//g;s/\.turtle\./turtle/g;1,9d' algorithm-mazeTest.py > mazeTest-simplified.py
-sed -e 's/TLAC\.globals)/)/g;s/TLAC.globals,//g;s/TLAC\.//g;s/TLAC\.globals\./,/g;s/ globals,//g;s/ ,//g;s/globals\.//g;s/globals,//g;s/\.turtle\./turtle/g;1,9d' algorithm-insertion-sort-pyramids.py > algorithm-insertion-sort-pyramids-simplified.py
+{
+cat <<'PYTHON'
+from functools import partial
+from pathlib import Path
+import TLACsimulator as TLAC
+
+# Bind the simulator state so the instructions below can stay simple.
+readBoardFromFile = partial(TLAC.readBoardFromFile, TLAC.globals)
+teleportTurtleTo = partial(TLAC.teleportTurtleTo, TLAC.globals)
+printBoard = partial(TLAC.printBoard, TLAC.globals)
+peekPyramidThere = partial(TLAC.peekPyramidThere, TLAC.globals)
+simulateUserInputTeleportPyramidTo = partial(TLAC.simulateUserInputTeleportPyramidTo, TLAC.globals)
+
+PYTHON
+sed -e 's/TLAC\.globals)/)/g;s/TLAC.globals,//g;s/TLAC\.//g;s/TLAC\.globals\./,/g;s/ globals,//g;s/ ,//g;s/globals\.//g;s/globals,//g;s/\.turtle\./turtle/g;s/(globals)/()/g;s/readBoardFromFile("algorithm-pyramids1.txt")/readBoardFromFile(Path(__file__).with_name("algorithm-pyramids1.txt"))/;1,9d' algorithm-insertion-sort-pyramids.py
+} > algorithm-insertion-sort-pyramids-simplified.py

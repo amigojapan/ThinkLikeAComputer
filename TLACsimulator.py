@@ -73,7 +73,7 @@ def initBoard(globals):
             if ghost_found:
                 continue
 
-            # 3. Draw the background items (Walls, Goals, Diamonds, Eggs, or Space)
+            # 3. Draw the background items, including numbered pyramid sizes.
             if globals.slots[index].wall:
                 globals.board += "[#]"
             elif globals.slots[index].goal:
@@ -82,6 +82,8 @@ def initBoard(globals):
                 globals.board += "[X]"
             elif globals.slots[index].containsEgg:
                 globals.board += "[o]"
+            elif globals.slots[index].pyramidSize:
+                globals.board += "[" + str(globals.slots[index].pyramidSize) + "]"
             else:
                 globals.board += "[ ]"
                 
