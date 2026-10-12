@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn programming with Think Like A Computer. Tutorials and printable turtle board game materials in English, Spanish, and Japanese.">
+  <meta name="description" content="Learn programming with Think Like A Computer: tutorials, seven games as instruction cards, pyramid sorting, and A4 printable boards and pieces. Explore in English, Spanish, and Japanese.">
   <title>TLAC — Learn and play</title>
   <style>
     * { box-sizing: border-box; }
@@ -23,10 +23,12 @@
     .subtitle { font-size: 1.2rem; max-width: 780px; margin-top: 18px; }
     .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
     .card { background: #edf8fb; border: 1px solid #739dab; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 12px 24px; font-weight: bold; margin: 20px 0; }
     .tag { font-size: .85rem; font-weight: bold; color: #376176; margin: 0; }
     a { color: #064e79; text-underline-offset: 3px; }
     a:hover { color: #802f00; }
     .card a { margin-top: auto; font-weight: bold; align-self: flex-start; }
+    .card .resource-links { margin-top: auto; display: grid; gap: 10px; }
     .note { border-left: 5px solid #376b84; background: #edf8fb; padding: 16px 20px; margin-top: 20px; }
     [hidden] { display: none !important; }
     @media (max-width: 600px) {
@@ -63,7 +65,11 @@
       <header>
         <p class="eyebrow">TLAC · Think Like A Computer</p>
         <h1>Learn and play</h1>
-        <p class="subtitle">Discover programming one instruction at a time. Follow the turtle, explore the tutorials, and print your own board game.</p>
+        <p class="subtitle">Discover programming one instruction at a time. Follow the turtle, explore seven games, and print labeled boards and pieces to play away from the screen.</p>
+        <nav class="quick-links" aria-label="Games and boards">
+          <a href="games.html?lang=en">Games HTML →</a>
+          <a href="TLAC_boardgame/printables/all_boards.pdf">All board sizes PDF →</a>
+        </nav>
       </header>
       <section aria-labelledby="learn-en">
         <h2 id="learn-en">Learn programming</h2>
@@ -80,16 +86,32 @@
             <p>Explore recursion and classes through simple turtle examples. Compare loops with recursion and watch each program run.</p>
             <a href="TLAC_advanced_concepts.html?lang=en">Open the advanced tutorial →</a>
           </div>
+          <div class="card">
+            <p class="tag">7 GAMES · TLAC INSTRUCTION CARDS</p>
+            <h3>Games in TLAC</h3>
+            <p>Snake, Pac-Man, Sokoban, Minesweeper, Frogger, Bomberman, and Conway’s Game of Life. Follow all seven programs through numbered, plain-language cards, including their functions, decisions, and loops.</p>
+            <a href="games.html?lang=en">Open the game instruction cards →</a>
+          </div>
+          <div class="card">
+            <p class="tag">ALGORITHMS · TLAC CARDS &amp; DEBUGGER</p>
+            <h3>Insertion sort with pyramids</h3>
+            <p>Read the TLAC instruction cards, then step through the sorting process with Start, Previous, Next, and Finish. Watch the active instruction, variables, and pyramid moves as 5, 4, 3, 1, 2 becomes 1, 2, 3, 4, 5.</p>
+            <div class="resource-links">
+              <a href="algorithm-insertion-sort-pyramids.html?lang=en">Read the TLAC cards and follow the debugger →</a>
+              <a href="algorithm-insertion-sort-pyramids-output.html?lang=en">Open the step-through output →</a>
+            </div>
+          </div>
         </div>
       </section>
       <section aria-labelledby="print-en">
         <h2 id="print-en">Print and play</h2>
         <div class="cards">
           <div class="card">
-            <p class="tag">PRINTABLE PDF · A4</p>
-            <h3>Board and turtle</h3>
-            <p>Print the board and cut out the turtle to follow the instructions away from the screen.</p>
-            <a href="TLAC_boardgame/printables/boardAndTurtle.pdf">Open the board and turtle PDF →</a>
+            <p class="tag">PRINTABLE PDF · 8 A4 PAGES</p>
+            <h3>All board sizes, with coordinate labels</h3>
+            <p>Seven sizes for the games and lessons: 6×6, 8×8, 10×10, 11×11, 15×11, 15×15, and 19×14. Columns have letters and rows have numbers, so you can explain placements such as A1 or C4. Every square is 18 mm to fit the existing pieces.</p>
+            <p>The two smallest boards share a sheet. The 15×15 and 19×14 boards each join across two sheets, with assembly instructions included. A1 is the top-left square, corresponding to program coordinates (0, 0).</p>
+            <a href="TLAC_boardgame/printables/all_boards.pdf">Open all labeled boards →</a>
           </div>
           <div class="card">
             <p class="tag">PRINTABLE PDF · A4</p>
@@ -98,14 +120,18 @@
             <a href="TLAC_boardgame/printables/all_objects.pdf">Open the object cutouts PDF →</a>
           </div>
         </div>
-        <p class="note">Print both PDFs on A4 paper at 100% scale so the pieces fit the board. Cut along the dashed lines on the object sheet.</p>
+        <p class="note">Print the PDFs on A4 paper at 100% / Actual size so the pieces fit the boards. Print the board collection single-sided and use the page index to choose the sizes you need. For large boards, trim the joining edges and tape the backs together. Cut along the dashed lines on the object sheet.</p>
       </section>
     </article>
     <article lang="es" data-language="es" hidden>
       <header>
         <p class="eyebrow">TLAC · Think Like A Computer</p>
         <h1>Aprende y juega</h1>
-        <p class="subtitle">Descubre la programación, una instrucción a la vez. Sigue a la tortuga, explora los tutoriales e imprime tu propio juego de mesa.</p>
+        <p class="subtitle">Descubre la programación, una instrucción a la vez. Sigue a la tortuga, explora siete juegos e imprime tableros con coordenadas y piezas para jugar sin pantalla.</p>
+        <nav class="quick-links" aria-label="Juegos y tableros">
+          <a href="games.html?lang=es">Juegos en HTML →</a>
+          <a href="TLAC_boardgame/printables/all_boards.pdf">PDF de todos los tamaños de tablero →</a>
+        </nav>
       </header>
       <section aria-labelledby="learn-es">
         <h2 id="learn-es">Aprende a programar</h2>
@@ -122,16 +148,32 @@
             <p>Explora la recursión y las clases con ejemplos sencillos de tortugas. Compara los bucles con la recursión y observa la ejecución de cada programa.</p>
             <a href="TLAC_advanced_concepts.html?lang=es">Abrir el tutorial avanzado →</a>
           </div>
+          <div class="card">
+            <p class="tag">7 JUEGOS · TARJETAS DE INSTRUCCIONES TLAC</p>
+            <h3>Juegos en TLAC</h3>
+            <p>Snake, Pac-Man, Sokoban, Buscaminas, Frogger, Bomberman y el juego de la vida de Conway. Sigue los siete programas mediante tarjetas numeradas en lenguaje sencillo, incluidas sus funciones, decisiones y bucles.</p>
+            <a href="games.html?lang=es">Abrir las instrucciones de los juegos →</a>
+          </div>
+          <div class="card">
+            <p class="tag">ALGORITMOS · TARJETAS TLAC Y DEPURADOR</p>
+            <h3>Ordenación por inserción con pirámides</h3>
+            <p>Lee las tarjetas TLAC y recorre la ordenación con Inicio, Anterior, Siguiente y Final. Observa la instrucción activa, las variables y las pirámides mientras 5, 4, 3, 1, 2 se transforma en 1, 2, 3, 4, 5.</p>
+            <div class="resource-links">
+              <a href="algorithm-insertion-sort-pyramids.html?lang=es">Leer las tarjetas TLAC y seguir el depurador →</a>
+              <a href="algorithm-insertion-sort-pyramids-output.html?lang=es">Abrir la ejecución paso a paso →</a>
+            </div>
+          </div>
         </div>
       </section>
       <section aria-labelledby="print-es">
         <h2 id="print-es">Imprime y juega</h2>
         <div class="cards">
           <div class="card">
-            <p class="tag">PDF PARA IMPRIMIR · A4</p>
-            <h3>Tablero y tortuga</h3>
-            <p>Imprime el tablero y recorta la tortuga para seguir las instrucciones sin necesidad de una pantalla.</p>
-            <a href="TLAC_boardgame/printables/boardAndTurtle.pdf">Abrir el PDF del tablero y la tortuga →</a>
+            <p class="tag">PDF PARA IMPRIMIR · 8 PÁGINAS A4</p>
+            <h3>Todos los tamaños de tablero, con coordenadas</h3>
+            <p>Siete tamaños para juegos y lecciones: 6×6, 8×8, 10×10, 11×11, 15×11, 15×15 y 19×14. Las columnas llevan letras y las filas números para indicar posiciones como A1 o C4. Cada casilla mide 18 mm y encaja con las piezas existentes.</p>
+            <p>Los dos tableros más pequeños comparten una hoja. Los de 15×15 y 19×14 se montan con dos hojas cada uno; se incluyen instrucciones de unión. A1 es la esquina superior izquierda y corresponde a las coordenadas (0, 0) del programa.</p>
+            <a href="TLAC_boardgame/printables/all_boards.pdf">Abrir todos los tableros con coordenadas →</a>
           </div>
           <div class="card">
             <p class="tag">PDF PARA IMPRIMIR · A4</p>
@@ -140,14 +182,18 @@
             <a href="TLAC_boardgame/printables/all_objects.pdf">Abrir el PDF de las piezas →</a>
           </div>
         </div>
-        <p class="note">Imprime ambos PDF en papel A4 al 100% para que las piezas encajen en el tablero. Recorta por las líneas discontinuas de la hoja de piezas.</p>
+        <p class="note">Imprime los PDF en A4 al 100% / Tamaño real para que las piezas encajen en los tableros. Imprime la colección de tableros por una sola cara y usa el índice para elegir los tamaños que necesitas. Para los tableros grandes, recorta los bordes de unión y pega las hojas por detrás. Recorta las piezas por las líneas discontinuas.</p>
       </section>
     </article>
     <article lang="ja" data-language="ja" hidden>
       <header>
         <p class="eyebrow">TLAC · Think Like A Computer</p>
         <h1>遊びながら学ぼう</h1>
-        <p class="subtitle">命令を1つずつ追いながら、プログラミングを学びましょう。亀を動かして教材を読み、ボードゲームを印刷して遊べます。</p>
+        <p class="subtitle">命令を1つずつ追いながら、プログラミングを学びましょう。亀を動かし、7つのゲームを学び、座標付きの盤面とコマを印刷して画面の外でも遊べます。</p>
+        <nav class="quick-links" aria-label="ゲームと盤面">
+          <a href="games.html?lang=ja">ゲームのHTMLを開く →</a>
+          <a href="TLAC_boardgame/printables/all_boards.pdf">全サイズの盤面PDFを開く →</a>
+        </nav>
       </header>
       <section aria-labelledby="learn-ja">
         <h2 id="learn-ja">プログラミングを学ぶ</h2>
@@ -164,16 +210,32 @@
             <p>亀を使った簡単な例で、再帰とクラスを学びます。繰り返しと再帰を比べながら、プログラムの動きを確認できます。</p>
             <a href="TLAC_advanced_concepts.html?lang=ja">応用編の教材を開く →</a>
           </div>
+          <div class="card">
+            <p class="tag">7つのゲーム・TLAC命令カード</p>
+            <h3>TLACのゲーム</h3>
+            <p>スネーク、パックマン、倉庫番、マインスイーパー、フロッガー、ボンバーマン、コンウェイのライフゲーム。関数・条件分岐・繰り返しを含む7つのプログラム全体を、やさしい言葉の番号付きカードで追えます。</p>
+            <a href="games.html?lang=ja">ゲームの命令カードを開く →</a>
+          </div>
+          <div class="card">
+            <p class="tag">アルゴリズム・TLACカードとデバッガー</p>
+            <h3>ピラミッドの挿入ソート</h3>
+            <p>TLAC命令カードを読み、「最初」「前へ」「次へ」「最後」で並べ替えを追えます。5、4、3、1、2が1、2、3、4、5になるまで、実行中の命令・変数・ピラミッドの移動を確認できます。</p>
+            <div class="resource-links">
+              <a href="algorithm-insertion-sort-pyramids.html?lang=ja">TLACカードを読んでデバッガーで確認する →</a>
+              <a href="algorithm-insertion-sort-pyramids-output.html?lang=ja">実行結果を1ステップずつ見る →</a>
+            </div>
+          </div>
         </div>
       </section>
       <section aria-labelledby="print-ja">
         <h2 id="print-ja">印刷して遊ぶ</h2>
         <div class="cards">
           <div class="card">
-            <p class="tag">印刷用PDF・A4</p>
-            <h3>盤面と亀</h3>
-            <p>盤面を印刷して亀を切り抜けば、画面を使わずに命令を追って遊べます。</p>
-            <a href="TLAC_boardgame/printables/boardAndTurtle.pdf">盤面と亀のPDFを開く →</a>
+            <p class="tag">印刷用PDF・A4全8ページ</p>
+            <h3>全サイズの座標付き盤面</h3>
+            <p>ゲームと教材で使う6×6、8×8、10×10、11×11、15×11、15×15、19×14の7サイズを収録。列はアルファベット、行は数字で表示され、A1やC4のようにコマを置く場所を説明できます。1マス18 mmで、既存のコマに対応しています。</p>
+            <p>小さい2つの盤面は1枚にまとめています。15×15と19×14はそれぞれ2枚をつないで使い、つなぎ方も記載しています。左上のA1はプログラムの座標(0, 0)に対応します。</p>
+            <a href="TLAC_boardgame/printables/all_boards.pdf">全サイズの座標付き盤面を開く →</a>
           </div>
           <div class="card">
             <p class="tag">印刷用PDF・A4</p>
@@ -182,7 +244,7 @@
             <a href="TLAC_boardgame/printables/all_objects.pdf">切り抜きコマのPDFを開く →</a>
           </div>
         </div>
-        <p class="note">コマが盤面に合うように、両方のPDFをA4用紙に倍率100%で印刷してください。コマのシートは点線に沿って切り抜きます。</p>
+        <p class="note">コマが盤面に合うように、PDFはA4用紙に倍率100%（実際のサイズ）で印刷してください。盤面集は片面印刷にし、索引から必要なサイズのページを選べます。大きな盤面はつなぐ側の余白を切り、裏からテープでつないでください。コマはシートの点線に沿って切り抜きます。</p>
       </section>
     </article>
   </main>

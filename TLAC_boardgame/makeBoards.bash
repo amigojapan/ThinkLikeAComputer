@@ -15,9 +15,10 @@ esac
 if [[ "${1:-all}" == "all" ]]; then
     for example in docs_loops_countdown docs_loops_do_while_new docs_loops_forloop \
         docs_loops_multiple_forloops docs_loops_foreachLoop docs_loops_nested_forloops \
-        docs_operations_on_lists mazeTest algorithm-insertion-sort-pyramids; do
+        docs_operations_on_lists mazeTest; do
         python3 html_board_creaotr.py < "${example}-output.txt" > "${example}-output.html"
     done
+    python3 "$repo_dir/build_pyramid_sort.py"
 fi
 
 # Execute each actual lesson source, then create its complete board replay.

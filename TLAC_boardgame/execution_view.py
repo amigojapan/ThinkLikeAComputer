@@ -6,6 +6,7 @@ TILES = {
     ' ': 'board_empty_slot.png', 'o': 'egg.png', '#': 'wall.png',
     '^': 'turtule_up.png', 'V': 'turtule_down.png',
     '<': 'turtule_left.png', '>': 'turtule_right.png',
+    **{str(size): f'pyramid{size}.png' for size in range(1, 6)},
 }
 BOARD_CSS = '''
 .board { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); width: min(100%, calc(var(--columns) * 32px)); background: #eef4d9; border: 2px solid #355267; }
@@ -34,10 +35,10 @@ def board_html(state, width, image_root, label):
 
 
 def render_execution(data):
-    payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    payload = json.dumps({key: value for key, value in data.items() if key not in ('lesson_html', 'extra_css')}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     words = json.dumps(WORDS, ensure_ascii=False)
     tiles = json.dumps(TILES)
-    initial = board_html(data['steps'][0], data['width'], '../img', 'Initial board') if data.get('has_board', True) else ''
+    initial = board_html(data['steps'][0], data['width'], data.get('image_root', '../img'), 'Initial board') if data.get('has_board', True) else ''
     return '''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TLAC execution</title><style>
@@ -57,15 +58,22 @@ input[type=range] { width: 100%; } #range-label { display: block; margin-top: 8p
 .program-line .number { background: #173d8c; color: #fff7a3; padding: 2px 5px; margin-right: 8px; font-variant-numeric: tabular-nums; }
 .program-line.comment { color: #24633b; }
 .program-line[aria-current="step"] { background: #fff19a; border-color: #8a6200; }
+.htmlifyer-chart { padding: 12px; overflow-x: auto; font-size: 15px; line-height: 2.1; }
+.htmlifyer-chart div { border-radius: 9px; margin: 4px 0; max-width: 100%; }
+.htmlifyer-chart p { box-decoration-break: clone; -webkit-box-decoration-break: clone; overflow-wrap: anywhere; }
+.htmlifyer-chart img { width: 14px; height: 14px; vertical-align: middle; }
+.htmlifyer-chart p[aria-current="step"] { background-color: #ffcf76 !important; outline: 3px solid #8a3800; outline-offset: 2px; }
 @media (max-width: 650px) { .layout { grid-template-columns: 1fr; } main { padding: 12px; } .card, .controls { padding: 14px; } }
 @media print { .controls, .toolbar { display: none; } body { background: white; } }
-''' + BOARD_CSS + '''</style></head><body><main>
+''' + BOARD_CSS + data.get('extra_css', '') + '''</style></head><body><main>
 <div class="toolbar"><label id="language-label" for="language">Language / Idioma / 言語</label> <select id="language"><option value="en">English</option><option value="es">Español</option><option value="ja">日本語</option></select></div>
 <p><a id="back" href="''' + escape(data.get('tutorial', '../../TLAC_advanced_concepts.html')) + '''">Back to the tutorial</a></p><h1 id="title">''' + escape(data['title']['en']) + '''</h1>
+''' + data.get('lesson_html', '') + '''
+<h2 id="debugger-title" hidden></h2>
 <p id="note"></p><noscript>Enable JavaScript to navigate every recorded step. / Activa JavaScript para ver todos los pasos. / すべてのステップを見るにはJavaScriptを有効にしてください。</noscript>
-<div class="controls"><button id="first" type="button">Start</button><button id="prev" type="button">Previous</button><button id="next" type="button">Next</button><button id="last" type="button">Finish</button><label id="range-label" for="step-range">Step</label><input id="step-range" type="range" min="0" value="0"><output id="progress" aria-live="polite"></output></div>
+<div class="controls" id="debugger"><button id="first" type="button">Start</button><button id="prev" type="button">Previous</button><button id="next" type="button">Next</button><button id="last" type="button">Finish</button><label id="range-label" for="step-range">Step</label><input id="step-range" type="range" min="0" value="0"><output id="progress" aria-live="polite"></output></div>
 <section class="card"><p id="step-title" class="step-title" aria-live="polite"></p><div id="snapshot-layout" class="layout"><div id="current-board">''' + initial + '''</div><div><p id="location"></p><p id="state" class="state"></p><p id="egg-count"></p><div id="variables-panel" hidden><h2 id="variables-label" class="debug-heading"></h2><pre id="variables" class="watch-values"></pre></div></div></div><div id="output-panel" hidden><h2 id="output-label" class="debug-heading"></h2><pre id="text-output" class="text-output"></pre></div></section>
-<details id="program-panel" hidden open><summary id="program-label"></summary><ol id="program-list" class="program-list"></ol></details>
+<details id="program-panel" hidden open><summary id="program-label"></summary><div id="program-list" class="program-list"></div></details>
 <details id="all"><summary id="all-label">Show every step and its board</summary><div id="all-steps" class="all-steps"></div></details>
 </main><script>
 const run = ''' + payload + ''';
@@ -79,7 +87,7 @@ const directions = {en:{'^':'up',V:'down','<':'left','>':'right'},es:{'^':'arrib
 function board(step) {
   const el = document.createElement('div'); el.className = 'board'; el.style.setProperty('--columns', run.width);
   el.setAttribute('role','img'); el.setAttribute('aria-label', words[lang].step + ' ' + (run.steps.indexOf(step)+1));
-  for (const cell of step.cells) { const img = document.createElement('img'); img.src = '../img/' + tiles[cell]; img.alt = cell.trim() || '·'; el.append(img); }
+  for (const cell of step.cells) { const img = document.createElement('img'); img.src = (run.image_root || '../img') + '/' + tiles[cell]; img.alt = cell.trim() || '·'; el.append(img); }
   return el;
 }
 function stateText(step) {
@@ -89,7 +97,7 @@ function variablesText(step) {
   return (step.variables || []).map(v=>words[lang][v.scope]+': '+v.name+' = '+JSON.stringify(v.value)).join('\n') || words[lang].empty;
 }
 function highlightInstruction(line) {
-  for(const row of $('program-list').children) {
+  for(const row of $('program-list').querySelectorAll('[data-line]')) {
     if(Number(row.dataset.line) === line) row.setAttribute('aria-current','step');
     else row.removeAttribute('aria-current');
   }
@@ -102,11 +110,17 @@ function highlightInstruction(line) {
 function populateProgram() {
   $('program-panel').hidden=!run.instructions;
   $('program-list').replaceChildren();
+  if(run.program_html) {
+    $('program-list').innerHTML=run.program_html[lang];
+    return;
+  }
+  const list=document.createElement('ol'); list.style.listStyle='none'; list.style.padding='0';
+  $('program-list').append(list);
   for(const instruction of run.instructions || []) {
     const row=document.createElement('li'); row.className='program-line'+(instruction.comment ? ' comment' : ''); row.dataset.line=instruction.number;
     row.style.paddingLeft=(8+instruction.depth*14)+'px';
     const number=document.createElement('span');number.className='number';number.textContent=String(instruction.number).padStart(4,'0');
-    row.append(number,document.createTextNode(instruction.label[lang]));$('program-list').append(row);
+    row.append(number,document.createTextNode(instruction.label[lang]));list.append(row);
   }
 }
 function show(value, updateHash = true) {
@@ -118,6 +132,7 @@ function show(value, updateHash = true) {
   $('location').textContent = (step.line ? w.line + ' ' + String(step.line).padStart(4,'0') + ' · ' : '') + w.depth + ': ' + step.depth;
   const hasBoard=run.has_board !== false;
   $('current-board').hidden=$('state').hidden=$('egg-count').hidden=!hasBoard;
+  $('egg-count').hidden=!hasBoard || run.show_eggs === false;
   $('snapshot-layout').classList.toggle('text-only',!hasBoard);
   if(hasBoard) $('current-board').replaceChildren(board(step)); $('state').textContent = stateText(step);
   $('egg-count').textContent = w.eggs + ': ' + step.eggs.length;
@@ -138,7 +153,7 @@ function showAll() {
     heading.style.fontSize='1.1rem';
     const location = document.createElement('p');
     location.textContent=(step.line ? words[lang].line+' '+String(step.line).padStart(4,'0')+' · ' : '')+words[lang].depth+': '+step.depth;
-    const state = document.createElement('p'); state.className='state'; state.textContent=stateText(step)+'\n'+words[lang].eggs+': '+step.eggs.length;
+    const state = document.createElement('p'); state.className='state'; state.textContent=stateText(step)+(run.show_eggs === false ? '' : '\n'+words[lang].eggs+': '+step.eggs.length);
     card.append(heading,location);
     if(run.has_board !== false) card.append(board(step),state);
     if(step.variables) { const variables=document.createElement('pre');variables.className='watch-values';variables.textContent=words[lang].variables+'\n'+variablesText(step);card.append(variables); }
@@ -152,6 +167,8 @@ function translate() {
   $('language-label').textContent=w.language; $('title').textContent=w.title+' · '+run.title[lang]; document.title=$('title').textContent;
   $('back').textContent=w.back; $('back').href=(run.tutorial || '../../TLAC_advanced_concepts.html')+'?lang='+lang+'#'+run.anchor+'-'+lang;
   $('note').textContent=run.note?.[lang] || w.note; $('all-label').textContent=run.all_label?.[lang] || w.all; $('range-label').textContent=w.step;
+  $('debugger-title').hidden=!run.debugger_title; $('debugger-title').textContent=run.debugger_title?.[lang] || '';
+  for(const el of document.querySelectorAll('[data-execution-language]')) el.hidden=el.dataset.executionLanguage!==lang;
   $('variables-label').textContent=w.variables; $('output-label').textContent=w.output; $('program-label').textContent=w.program;
   for(const id of ['first','prev','next','last']) $(id).textContent=w[id];
   populateProgram();
