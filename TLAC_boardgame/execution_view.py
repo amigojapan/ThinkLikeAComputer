@@ -3,7 +3,7 @@ from html import escape
 import json
 
 TILES = {
-    ' ': 'board_empty_slot.png', 'o': 'egg.png', '#': 'wall.png',
+    ' ': 'board_empty_slot.png', 'o': 'egg.png', '#': 'wall.png', 'G': 'goal.png',
     '^': 'turtule_up.png', 'V': 'turtule_down.png',
     '<': 'turtule_left.png', '>': 'turtule_right.png',
     **{str(size): f'pyramid{size}.png' for size in range(1, 6)},

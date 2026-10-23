@@ -13,7 +13,7 @@ def isPathLeft():
 def turnLeft():
     lt()
 def turnRight():
-    lr()
+    rt()
 def moveForward():
     fd()
 
@@ -33,6 +33,6 @@ def loop_condition(current, unused):
         # stop
         return True
 
-l.loop_body = loop_body
-l.condition = loop_condition
+l.globals.loop_body = loop_body
+l.globals.condition = loop_condition
 l.do_while(0, 0, 1)

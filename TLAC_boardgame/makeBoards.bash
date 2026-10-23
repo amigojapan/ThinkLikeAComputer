@@ -19,6 +19,7 @@ if [[ "${1:-all}" == "all" ]]; then
         python3 html_board_creaotr.py < "${example}-output.txt" > "${example}-output.html"
     done
     python3 "$repo_dir/build_pyramid_sort.py"
+    python3 "$repo_dir/build_maze.py"
 fi
 
 # Execute each actual lesson source, then create its complete board replay.

@@ -78,9 +78,9 @@ class PyramidCards(Cards):
         return result
 
 
-def instruction_cards():
+def instruction_cards(source=SOURCE, renderer_class=PyramidCards):
     converted = subprocess.run(
-        [sys.executable, str(ROOT / 'htmlifyer.py'), 'en', 'HTML', str(SOURCE)],
+        [sys.executable, str(ROOT / 'htmlifyer.py'), 'en', 'HTML', str(source)],
         capture_output=True, text=True, encoding='utf-8', check=True,
     ).stdout
     body = re.search(r'<body[^>]*>(.*?)</body>', converted, re.S)
@@ -88,7 +88,7 @@ def instruction_cards():
         raise ValueError('htmlifyer.py did not produce a program body')
     charts, instructions, source_map = {}, [], None
     for lang in LANGS:
-        renderer = PyramidCards(SOURCE.read_text(encoding='utf-8'), lang)
+        renderer = renderer_class(source.read_text(encoding='utf-8'), lang)
         # The AST supplies localized wording and trace identifiers only.
         # The actual card markup and nested blocks come from htmlifyer.py.
         renderer.render()
