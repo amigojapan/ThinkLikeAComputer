@@ -8,6 +8,8 @@ import sys
 
 from bs4 import BeautifulSoup
 
+from .epub_translations import translate, game_note
+
 ROOT = Path(__file__).resolve().parents[2]
 SAMPLES = {
     'snake': ('snakerulebook.py', (15, 15), ['D', 'W', 'Q']),
@@ -24,7 +26,7 @@ class EndSample(Exception):
     pass
 
 
-def record_game(key):
+def record_game(key, language="en"):
     # Import only the simulator. Game files run in an isolated namespace with
     # scripted input; no real stdin, GUI, sleeping or external writes are used.
     if str(ROOT) not in sys.path:
@@ -34,8 +36,8 @@ def record_game(key):
     path = ROOT / filename
     page = BeautifulSoup((ROOT / 'games.html').read_text(), 'html.parser')
     section = page.find(id=key)
-    title = section.h2.select_one('[data-lang=en]').get_text(' ', strip=True)
-    cards = section.select_one('.full-program[data-lang=en]')
+    title = section.h2.select_one(f'[data-lang={language}]').get_text(' ', strip=True)
+    cards = section.select_one(f'.full-program[data-lang={language}]')
     by_source, labels, source_labels = {}, {}, {}
     for card in cards.select('.instruction-card[data-source-line]'):
         number = int(card.select_one('.instruction-number').get_text())
@@ -123,9 +125,9 @@ def record_game(key):
             depth += parent.f_code.co_filename == str(path)
             parent = parent.f_back
         steps.append({'line': by_source.get(frame.f_lineno, 0) if frame else 0,
-                      'depth': depth, 'label': {'en': label}, 'cells': ''.join(cells),
+                      'depth': depth, 'label': {language: translate(label, language)}, 'cells': ''.join(cells),
                       'eggs': [i for i, slot in enumerate(board.slots) if slot.containsEgg],
-                      'turtles': turtles, 'variables': variables, 'output': {'en': output.getvalue()}})
+                      'turtles': turtles, 'variables': variables, 'output': {language: output.getvalue()}})
 
     def sample_input(prompt=''):
         nonlocal preview_start
@@ -181,7 +183,7 @@ def record_game(key):
         TLAC.readBoardFromFile = original_read
         random.setstate(old_random)
         sys.settrace(old_trace)
-    controls = ', '.join('Enter' if c == '' else 'Space / wait' if c == ' ' else c for c in used)
+    controls = ', '.join(translate('Enter' if c == '' else 'Space / wait' if c == ' ' else c, language) for c in used)
     legend = {
         'snake': 'O = snake body; @ = food.',
         'pacman': 'M and W = ghosts; X = diamond; eggs = pellets.',
@@ -191,11 +193,8 @@ def record_game(key):
         'bomberman': 'M = enemy; numbers = bomb countdown; eggs = breakable crates.',
         'life': 'O = living cell; empty square = dead cell.',
     }[key]
-    return {'title': {'en': title + ' — sample game session'}, 'width': dimensions[0],
+    return {'title': {language: title + translate(' — sample game session', language)}, 'width': dimensions[0],
             'height': dimensions[1], 'has_board': True, 'show_eggs': key == 'pacman',
             'image_root': str(ROOT / 'TLAC_boardgame/img'), 'steps': steps,
             'preview_start_index': preview_start, 'game_key': key,
-            'run_note': f'This is one reproducible sample of the unmodified {filename} program, not every possible playthrough. '
-                        f'Player inputs: {controls}. Random seed: 7. All executed instruction steps, including setup loops, are recorded. '
-                        f'{ended} {legend} The original text output is also repeated at every step. '
-                        'Cards written on the same Python source line are shown together in the step label.'}
+            'run_note': game_note(language, filename, controls, ended, legend)}

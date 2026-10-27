@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Build the complete English portal book from the generated tutorial pages.
+"""Build a complete English, Japanese, or Spanish book from the tutorial pages.
 
-Run: python3 TLAC_boardgame/printables/build_english_epub.py
+Run: python3 TLAC_boardgame/printables/build_english_epub.py --language ja
 Requires pandoc, beautifulsoup4 and Pillow. No network access is needed.
 Rebuild the HTML tutorials first when their sources change.
 """
 from functools import lru_cache
 from collections import Counter
 import copy
+import argparse
 from hashlib import sha256
 from html import escape
 import json
@@ -25,6 +26,11 @@ import xml.etree.ElementTree as ET
 
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
+
+if __package__:
+    from .epub_translations import translate, localize_document, EDITIONS
+else:
+    from epub_translations import translate, localize_document, EDITIONS
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -101,8 +107,10 @@ def chart_css(path, slug):
 
 
 class Book:
-    def __init__(self, work):
+    def __init__(self, work, language="en"):
         self.work = work
+        self.language = language
+        self.output = HERE / f"ThinkLikeAComputer-{EDITIONS[language]}-All-Steps.epub"
         self.ids = {path.resolve(): slug for slug, _, path in SOURCES}
         self.ids[ROOT / 'TLACPortal.html'] = 'welcome'
         self.replays = {}
@@ -156,7 +164,7 @@ class Book:
         if data.get('has_board', True):
             parts += [self.state_figure(data, path, start, 'Starting board'),
                       self.state_figure(data, path, finish, 'Final board — sample ended' if data.get('game_key') else 'Final board — program finished')]
-        output = finish.get('output', {}).get('en', '')
+        output = finish.get('output', {}).get(self.language, '')
         if output:
             parts.append('<h4>Final text output</h4><pre>' + escape(output) + '</pre>')
         parts.append('</div>')
@@ -201,7 +209,7 @@ class Book:
             if tag.attrs is None:
                 continue
             language = tag.get('data-lang') or tag.get('data-language') or tag.get('data-execution-language') or tag.get('lang')
-            if language not in ('en', 'en-US'):
+            if language.split('-')[0] != self.language:
                 tag.decompose()
         for tag in content.select('script, style, noscript, .toolbar, button, select, input, .next-lesson'):
             tag.decompose()
@@ -283,7 +291,7 @@ class Book:
         for slug, title, path in SOURCES:
             self.chart_styles.append(chart_css(path, slug))
             parsed = soup(path.read_text(encoding='utf-8'))
-            content = parsed.select_one('article[lang=en]') or parsed.select_one('section.lesson[lang=en]') or parsed.select_one('main')
+            content = parsed.select_one(f'article[lang={self.language}]') or parsed.select_one(f'section.lesson[lang={self.language}]') or parsed.select_one('main')
             if slug == 'basics':
                 self.add_basic_card_walkthroughs(content)
             elif slug == 'games':
@@ -298,7 +306,7 @@ class Book:
         from TLAC_boardgame.printables.epub_game_runs import SAMPLES, record_game
         for key in SAMPLES:
             path = ROOT / 'TLAC_boardgame/game_executions' / f'{key}.html'
-            data = record_game(key)
+            data = record_game(key, self.language)
             self.register_replay(path)
             self.replay_cache[path.resolve()] = data
             section = content.find(id=key)
@@ -309,7 +317,7 @@ class Book:
         """Walk through the six introductory card examples without HTML replays."""
         rows_by_key = json.loads((ROOT / 'TLAC_8_basics_of_programming/basics_examples.json').read_text())['charts']
         for key in ('sequence-good', 'sequence-bad', 'assignment', 'conditionals', 'sequence-functions', 'output'):
-            figure = content.find(id=f'program-{key}-en')
+            figure = content.find(id=f'program-{key}-{self.language}')
             title = figure.figcaption.get_text(' ', strip=True)
             rows = rows_by_key[key]
             labels = {}
@@ -330,12 +338,12 @@ class Book:
                 watched = dict(values)
                 if has_board:
                     watched.update(X=x, Y=y)
-                steps.append({'label': {'en': label}, 'line': line, 'depth': 0,
+                steps.append({'label': {self.language: label}, 'line': line, 'depth': 0,
                               'cells': ''.join(cells), 'eggs': [],
                               'turtles': [{'name': 'Turtle', 'x': x, 'y': y, 'direction': '^'}],
                               'variables': [{'name': name, 'scope': 'global', 'value': copy.deepcopy(value)}
                                             for name, value in watched.items()],
-                              'output': {'en': ''}})
+                              'output': {self.language: ''}})
 
             snapshot(0, 'Start: before the first instruction')
             skip_until = 0
@@ -363,11 +371,11 @@ class Book:
                 elif key == 'output' and line == 2:
                     y -= 5
                 elif is_routine:
-                    if 'Brush my teeth' in label:
+                    if row['text'] == 'Function call BrushMyTeeth':
                         values['teeth_brushed'] = True
-                    elif 'Comb my hair' in label:
+                    elif row['text'] == 'Function call CombMyHair':
                         values['hair_combed'] = True
-                    elif 'Go to work' in label:
+                    elif row['text'] == 'Function call GoToWork':
                         values['left_for_work'] = True
                         values['hair_combed_when_leaving'] = values['hair_combed']
                 snapshot(line, 'After: ' + label)
@@ -375,7 +383,7 @@ class Book:
             path = ROOT / 'TLAC_boardgame/basics_executions' / f'{key}.html'
             self.register_replay(path)
             self.replay_cache[path.resolve()] = {
-                'title': {'en': title}, 'has_board': has_board,
+                'title': {self.language: title}, 'has_board': has_board,
                 'width': 10, 'height': 10, 'image_root': '../img', 'steps': steps,
                 'run_note': ('This is a card-by-card walkthrough of the lesson example. '
                              'The morning routines show the state after each conceptual action; they do not print text.'
@@ -387,7 +395,7 @@ class Book:
         for path, slug in self.replays.items():
             run_start = len(self.parts)
             data = self.replay(path)
-            title = data['title']['en']
+            title = data['title'][self.language]
             steps = data['steps']
             self.parts.append(f'<section class="complete-program-output"><h2 id="{slug}">Every step: {escape(title)}</h2>'
                               f'<p>{len(steps)} recorded steps follow here, in order. Each step repeats the full current state and output, including unchanged values.</p>'
@@ -401,14 +409,14 @@ class Book:
                 self.parts.append('<h3>Numbered instructions</h3>')
                 if data.get('program_html'):
                     self.chart_styles.append(chart_css(path, slug))
-                    fragment = soup('<div>' + data['program_html']['en'] + '</div>').div
+                    fragment = soup('<div>' + data['program_html'][self.language] + '</div>').div
                     self.parts.append(self.clean(fragment, path, slug))
                 else:
                     # This is the HTML debugger's numbered list, which has no
                     # nested block chart. Preserve its badges and indentation.
                     self.parts.append('<div class="epub-html-chart"><ol class="epub-program-list">')
                     for instruction in data['instructions']:
-                        label = instruction['label']['en']
+                        label = instruction['label'][self.language]
                         kind = ' comment' if instruction.get('comment') else ''
                         self.parts.append(f'<li class="epub-program-line{kind}" style="padding-left:{8 + instruction.get("depth", 0) * 14}px">'
                                           f'<span class="epub-program-number">{instruction["number"]:04d}</span> {escape(label)}</li>')
@@ -418,7 +426,7 @@ class Book:
                     # Keep chapter files small enough for memory-limited readers.
                     self.parts.append(f'<h2 id="{slug}-steps-{i + 1}">{escape(title)}: steps {i + 1}–{min(i + 100, len(steps))}</h2>')
                 self.step_count += 1
-                self.parts.append(f'<div class="step" id="{slug}-step-{i}"><h4>Step {i + 1}: {escape(step["label"]["en"])}</h4>')
+                self.parts.append(f'<div class="step" id="{slug}-step-{i}"><h4>Step {i + 1}: {escape(step["label"][self.language])}</h4>')
                 self.parts.append(f'<p>Instruction {step["line"]:04d} · Function call depth: {step["depth"]}</p>')
                 if data.get('has_board', True):
                     self.parts.append(self.state_figure(data, path, step, f'Board at step {i + 1}'))
@@ -427,7 +435,7 @@ class Book:
                     self.parts.append(f'<p>{escape(text)}</p>')
                 text = '\n'.join(f'{v["scope"]}: {v["name"]} = {json.dumps(v["value"], ensure_ascii=False)}' for v in step.get('variables', []))
                 self.parts.append(f'<h5>Watched values at this step</h5><pre class="step-variables">{escape(text or "No watched variables.")}</pre>')
-                output = step.get('output', {}).get('en', '')
+                output = step.get('output', {}).get(self.language, '')
                 self.parts.append(f'<h5>Complete text output at this step</h5><pre class="step-output">{escape(output or "(No text output at this step.)")}</pre>')
                 self.parts.append('</div>')
             self.parts.append('</section>')
@@ -440,7 +448,7 @@ class Book:
                      '<p>Complete runs appear directly after their lesson examples. Each step shows its board, watched values, and full text output. Nothing is collapsed, and unchanged output is repeated.</p><ol></ol></nav>').nav
         for path, slug in self.replays.items():
             data = self.replay(path)
-            index.ol.append(soup(f'<li><a href="#{slug}-step-0">{escape(data["title"]["en"])} — all {len(data["steps"])} steps</a></li>').li)
+            index.ol.append(soup(f'<li><a href="#{slug}-step-0">{escape(data["title"][self.language])} — all {len(data["steps"])} steps</a></li>').li)
             link = document.select_one(f'a[href="#{slug}"]')
             if link is None:
                 raise ValueError('No lesson position for full run: ' + slug)
@@ -478,10 +486,10 @@ class Book:
                 outputs = [p for p in node.iter(namespace + 'pre') if 'step-output' in p.get('class', '').split()]
                 variables = [p for p in node.iter(namespace + 'pre') if 'step-variables' in p.get('class', '').split()]
                 assert len(outputs) == len(variables) == 1, (slug, index, 'Missing full state')
-                output = step.get('output', {}).get('en', '') or '(No text output at this step.)'
+                output = step.get('output', {}).get(self.language, '') or translate('(No text output at this step.)', self.language)
                 assert ''.join(outputs[0].itertext()).rstrip('\n') == output.rstrip('\n'), (slug, index, 'Partial output')
                 watched = '\n'.join(f'{v["scope"]}: {v["name"]} = {json.dumps(v["value"], ensure_ascii=False)}'
-                                    for v in step.get('variables', [])) or 'No watched variables.'
+                                    for v in step.get('variables', [])) or translate('No watched variables.', self.language)
                 assert ''.join(variables[0].itertext()).rstrip('\n') == watched, (slug, index, 'Partial variables')
                 if data.get('has_board', True):
                     assert any('board-figure' in img.get('class', '').split()
@@ -504,6 +512,7 @@ class Book:
                           + escape((ROOT / 'LICENSE').read_text()) + '</pre>')
         document = soup('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Think Like A Computer — English edition</title></head><body>' + ''.join(self.parts) + '</body></html>')
         self.place_full_runs(document)
+        localize_document(document, self.language)
         self.expose_chapter_headings(document)
         ids = [tag['id'] for tag in document.select('[id]')]
         if len(ids) != len(set(ids)):
@@ -540,16 +549,18 @@ class Book:
 ''')
         subprocess.run(['pandoc', str(self.work / 'book.html'), '-f', 'html', '-t', 'epub3',
                         '--standalone', '--toc', '--toc-depth=2', '--split-level=2',
-                        '--metadata', 'lang=en', '--metadata', 'title=Think Like A Computer — All Steps Edition',
-                        '--metadata', 'subtitle=English edition — every step and complete output',
-                        '--css', str(self.work / 'book.css'), '-o', str(OUTPUT)], check=True)
-        restore_html_charts(OUTPUT, charts)
-        validate(OUTPUT)
-        self.validate_steps(OUTPUT)
-        shutil.copyfile(OUTPUT, LEGACY_OUTPUT)
-        print(f'{OUTPUT.name}: {len(SOURCES)} tutorial collections, {len(self.replays)} complete walkthroughs, '
+                        '--metadata', f'lang={self.language}', '--metadata', 'title=' + translate('Think Like A Computer — All Steps Edition', self.language),
+                        '--metadata', 'subtitle=' + translate('English edition — every step and complete output', self.language),
+                        '--metadata', 'toc-title=' + translate('Table of contents', self.language),
+                        '--css', str(self.work / 'book.css'), '-o', str(self.output)], check=True)
+        restore_html_charts(self.output, charts)
+        validate(self.output, self.language)
+        self.validate_steps(self.output)
+        if self.language == "en":
+            shutil.copyfile(self.output, LEGACY_OUTPUT)
+        print(f'{self.output.name}: {len(SOURCES)} tutorial collections, {len(self.replays)} complete walkthroughs, '
               f'{self.step_count} steps, {self.image_count} board illustrations, {self.chart_count} HTML charts; '
-              f'{OUTPUT.stat().st_size / 1024 / 1024:.1f} MiB.')
+              f'{self.output.stat().st_size / 1024 / 1024:.1f} MiB.')
 
 
 def restore_html_charts(path, charts):
@@ -610,8 +621,8 @@ def restore_html_charts(path, charts):
     rebuilt.replace(path)
 
 
-def validate(path):
-    """Check archive structure, English metadata, XML, links and local images."""
+def validate(path, language="en"):
+    """Check archive structure, edition language, XML, links and local images."""
     import posixpath
     with ZipFile(path) as archive:
         names = set(archive.namelist())
@@ -621,7 +632,7 @@ def validate(path):
         documents = {name: ET.fromstring(archive.read(name)) for name in names
                      if name.endswith(('.xhtml', '.opf', '.ncx', '.xml'))}
         package = next(doc for name, doc in documents.items() if name.endswith('.opf'))
-        assert package.find('{http://www.idpf.org/2007/opf}metadata/{http://purl.org/dc/elements/1.1/}language').text == 'en'
+        assert package.find('{http://www.idpf.org/2007/opf}metadata/{http://purl.org/dc/elements/1.1/}language').text == language
         for name, doc in documents.items():
             if not name.endswith('.xhtml'):
                 continue
@@ -641,5 +652,8 @@ def validate(path):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--language', choices=EDITIONS, default='en')
+    args = parser.parse_args()
     with tempfile.TemporaryDirectory(prefix='tlac-epub-') as directory:
-        Book(Path(directory)).build()
+        Book(Path(directory), args.language).build()
