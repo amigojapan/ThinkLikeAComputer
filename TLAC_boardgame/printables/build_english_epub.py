@@ -2,7 +2,7 @@
 """Build a complete English, Japanese, or Spanish book from the tutorial pages.
 
 Run: python3 TLAC_boardgame/printables/build_english_epub.py --language ja
-Requires pandoc, beautifulsoup4 and Pillow. No network access is needed.
+Requires beautifulsoup4 and Pillow. No network access is needed.
 Rebuild the HTML tutorials first when their sources change.
 """
 from functools import lru_cache
@@ -12,24 +12,23 @@ import argparse
 from hashlib import sha256
 from html import escape
 import json
-import mimetypes
 from pathlib import Path
-import posixpath
 import re
-import subprocess
 import shutil
 import sys
 import tempfile
 from urllib.parse import unquote, urlsplit
-from zipfile import ZipFile, ZIP_DEFLATED
+from zipfile import ZipFile
 import xml.etree.ElementTree as ET
 
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
 
 if __package__:
+    from .epub_package import package_epub
     from .epub_translations import translate, localize_document, EDITIONS
 else:
+    from epub_package import package_epub
     from epub_translations import translate, localize_document, EDITIONS
 
 HERE = Path(__file__).resolve().parent
@@ -457,7 +456,7 @@ class Book:
 
     @staticmethod
     def expose_chapter_headings(document):
-        # Pandoc cannot split at headings buried inside HTML section wrappers.
+        # Chapter boundaries must be outside HTML section wrappers.
         # Expose lesson and 100-step headings so readers never need to load an
         # entire game's thousands of steps as a single oversized XHTML file.
         for container in list(document.select('article, main, section')):
@@ -497,12 +496,14 @@ class Book:
         assert len(packaged) == expected_count, 'Missing or extra execution steps'
 
     def build(self):
+        print(f'Building {EDITIONS[self.language]} edition: collecting lessons and recordings.', flush=True)
         self.parts.append('''<h1 id="welcome">Think Like A Computer</h1>
 <p>English edition · Every step, complete output</p>
 <p>All the tutorials and games from the TLAC portal in one offline book: eight programming basics, recursion and classes, seven games, insertion sort with pyramids, and maze exploration.</p>
 <p>Read the explanations and numbered instruction cards, then follow the complete execution walkthroughs. Use your reader’s table of contents and the links within each lesson to navigate. Practice answers and game programs are expanded so they can be read without JavaScript.</p>
 <p>This edition contains static illustrations and recorded walkthroughs. Interactive debugger buttons and playable programs remain in the HTML and Python editions. The companion all_boards.pdf and all_objects.pdf files in the printables folder provide boards and pieces at their intended print size.</p>''')
         self.add_lessons()
+        print('Rendering complete walkthroughs.', flush=True)
         self.add_replays()
         if self.appendices:
             self.parts.append('<h1>Source program appendix</h1>')
@@ -512,6 +513,7 @@ class Book:
                           + escape((ROOT / 'LICENSE').read_text()) + '</pre>')
         document = soup('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Think Like A Computer — English edition</title></head><body>' + ''.join(self.parts) + '</body></html>')
         self.place_full_runs(document)
+        print('Localizing and preparing chapter navigation.', flush=True)
         localize_document(document, self.language)
         self.expose_chapter_headings(document)
         ids = [tag['id'] for tag in document.select('[id]')]
@@ -520,20 +522,10 @@ class Book:
         for a in document.select('a[href^="#"]'):
             if a['href'][1:] not in ids:
                 raise ValueError('Broken book anchor: ' + a['href'])
-        # Pandoc normalizes inline paragraphs and drops their styles. Keep
-        # anchors visible to its chapter/link resolver, then restore the exact
-        # HTML charts in the generated XHTML instead of flattening the cards.
-        charts = {}
-        for number, chart in enumerate(document.select('.epub-html-chart'), 1):
-            chart_id = f'epub-chart-{number}'
-            chart['id'] = chart_id
-            charts[chart_id] = str(chart)
-            placeholder = soup(f'<div id="{chart_id}"></div>').div
-            for tag in chart.select('[id]'):
-                placeholder.append(soup(f'<div id="{escape(tag["id"])}"></div>').div)
-            chart.replace_with(placeholder)
+        charts = document.select('.epub-html-chart')
+        for number, chart in enumerate(charts, 1):
+            chart['id'] = f'epub-chart-{number}'
         self.chart_count = len(charts)
-        (self.work / 'book.html').write_text(str(document), encoding='utf-8')
         (self.work / 'book.css').write_text(CSS + '\n'.join(self.chart_styles) + '''
 .epub-html-chart { font-family: Arial, Helvetica, sans-serif; color: #102f40; }
 .epub-html-chart .chart, .epub-html-chart .htmlifyer-chart { overflow: visible; }
@@ -547,13 +539,11 @@ class Book:
 .epub-program-line.comment { color: #24633b; background: transparent; }
 .epub-program-number { background: #173d8c; color: #fff7a3; padding: 2px 5px; margin-right: 8px; }
 ''')
-        subprocess.run(['pandoc', str(self.work / 'book.html'), '-f', 'html', '-t', 'epub3',
-                        '--standalone', '--toc', '--toc-depth=2', '--split-level=2',
-                        '--metadata', f'lang={self.language}', '--metadata', 'title=' + translate('Think Like A Computer — All Steps Edition', self.language),
-                        '--metadata', 'subtitle=' + translate('English edition — every step and complete output', self.language),
-                        '--metadata', 'toc-title=' + translate('Table of contents', self.language),
-                        '--css', str(self.work / 'book.css'), '-o', str(self.output)], check=True)
-        restore_html_charts(self.output, charts)
+        print('Packaging EPUB one chapter at a time.', flush=True)
+        package_epub(self.output, document, (self.work / 'book.css').read_text(), self.language,
+                     translate('Think Like A Computer — All Steps Edition', self.language),
+                     translate('Table of contents', self.language), self.work)
+        print('Validating archive, navigation, images, and every recorded step.', flush=True)
         validate(self.output, self.language)
         self.validate_steps(self.output)
         if self.language == "en":
@@ -561,64 +551,6 @@ class Book:
         print(f'{self.output.name}: {len(SOURCES)} tutorial collections, {len(self.replays)} complete walkthroughs, '
               f'{self.step_count} steps, {self.image_count} board illustrations, {self.chart_count} HTML charts; '
               f'{self.output.stat().st_size / 1024 / 1024:.1f} MiB.')
-
-
-def restore_html_charts(path, charts):
-    """Restore styled XHTML and package its local image assets in the EPUB."""
-    XHTML = 'http://www.w3.org/1999/xhtml'
-    OPF = 'http://www.idpf.org/2007/opf'
-    ET.register_namespace('', XHTML)
-    ET.register_namespace('epub', 'http://www.idpf.org/2007/ops')
-    with ZipFile(path) as original:
-        entries = [(info, original.read(info.filename)) for info in original.infolist()]
-    opf_name = next(info.filename for info, _ in entries if info.filename.endswith('.opf'))
-    package_root = posixpath.dirname(opf_name)
-    assets, restored = {}, set()
-    changed = {}
-    for info, data in entries:
-        if not info.filename.endswith('.xhtml'):
-            continue
-        tree = ET.fromstring(data)
-        touched = False
-        for parent in list(tree.iter()):
-            for index, node in enumerate(list(parent)):
-                chart_id = node.get('id')
-                if chart_id not in charts:
-                    continue
-                fragment = soup(charts[chart_id]).div
-                fragment['xmlns'] = XHTML
-                for img in fragment.select('img'):
-                    source = Path(img['src'])
-                    image_data = source.read_bytes()
-                    filename = 'html-chart-' + sha256(image_data).hexdigest()[:20] + source.suffix.lower()
-                    target = package_root + '/media/' + filename
-                    assets[target] = image_data
-                    img['src'] = posixpath.relpath(target, posixpath.dirname(info.filename))
-                replacement = ET.fromstring(str(fragment))
-                replacement.tail = node.tail
-                parent.remove(node)
-                parent.insert(index, replacement)
-                restored.add(chart_id)
-                touched = True
-        if touched:
-            changed[info.filename] = ET.tostring(tree, encoding='utf-8', xml_declaration=True)
-    assert restored == set(charts), ('Missing HTML charts', set(charts) - restored)
-    package = ET.fromstring(next(data for info, data in entries if info.filename == opf_name))
-    manifest = package.find(f'{{{OPF}}}manifest')
-    for number, target in enumerate(assets, 1):
-        ET.SubElement(manifest, f'{{{OPF}}}item', {
-            'id': f'html-chart-asset-{number}', 'href': posixpath.relpath(target, package_root),
-            'media-type': mimetypes.guess_type(target)[0]})
-    ET.register_namespace('', OPF)
-    ET.register_namespace('dc', 'http://purl.org/dc/elements/1.1/')
-    changed[opf_name] = ET.tostring(package, encoding='utf-8', xml_declaration=True)
-    rebuilt = path.with_suffix('.tmp.epub')
-    with ZipFile(rebuilt, 'w') as archive:
-        for info, data in entries:
-            archive.writestr(info, changed.get(info.filename, data))
-        for target, data in assets.items():
-            archive.writestr(target, data, compress_type=ZIP_DEFLATED)
-    rebuilt.replace(path)
 
 
 def validate(path, language="en"):
